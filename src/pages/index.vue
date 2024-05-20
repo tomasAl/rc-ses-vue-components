@@ -1,5 +1,5 @@
 <template>
-  <v-btn>hello!!</v-btn>
+  <Button>Test my button</Button>
   <HelloWorld />
 </template>
 
