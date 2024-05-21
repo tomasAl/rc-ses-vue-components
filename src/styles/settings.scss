@@ -8,3 +8,8 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+@forward 'vuetify/settings' with (
+  $layers: true,
+  $border-radius-root: 0px,
+);

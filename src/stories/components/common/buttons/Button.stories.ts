@@ -3,6 +3,7 @@ import Button from "@/components/common/buttons/Button.vue";
 export default {
   title: "components/common/buttons/Button",
   component: Button,
+  tags: ['autodocs'],
   argTypes: {
     color: {
       control: {
