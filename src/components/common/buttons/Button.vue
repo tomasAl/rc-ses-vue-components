@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" :loading="loading">
+  <v-btn :color="color" :loading="loading" :variant="variant">
     <!-- @slot To put any element inside the button-->
     <slot>
       {{ content }}
@@ -9,10 +9,10 @@
 
 <script setup lang="ts">
 import { withDefaults } from "vue";
-//import { makeVBtnProps } from 'vuetify/lib/components/VBtn/VBtn.mjs';
+import { makeVBtnProps } from 'vuetify/lib/components/VBtn/VBtn.mjs';
 
-//const vBtnProps = makeVBtnProps();
-//console.log('prpos button', vBtnProps)
+const vBtnProps = makeVBtnProps();
+console.log('prpos button', vBtnProps)
 
 export type Props = {
   /** Color of the button */
@@ -23,16 +23,21 @@ export type Props = {
 
   /** the content of the button */
   content?: string;
+
+  variant?: 'tonal' | 'outlined'
 };
 
 withDefaults(defineProps<Props>(), {
   loading: false,
+  variant: 'outlined',
   color: "primary",
   content: "Button",
 });
 </script>
 
 
+<!--
+example of usage
 <style lang="scss">
 @use '../../../styles/settings';
 
@@ -40,3 +45,4 @@ withDefaults(defineProps<Props>(), {
   height: settings.$button-height + 20;
 }
 </style>
+-->
