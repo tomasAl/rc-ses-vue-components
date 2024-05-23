@@ -8,7 +8,11 @@
   <h6>H1 Heading, here comes the grasshopper</h6>
 
   <div class="px-5 py-5">
-    <Button>Test my button</Button>
+    <Button color="error" variant="outlined">Button</Button>
+    <Button color="primary" variant="tonal" class="mx-2">Button</Button>
+    <br/><br/>
+    <Textfield
+    ></Textfield>
   </div>
 
 
@@ -18,4 +22,5 @@
 
 <script lang="ts" setup>
   //
+import Textfield from "../components/common/inputs/Textfield/Textfield.vue";
 </script>

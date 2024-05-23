@@ -4,13 +4,14 @@ import Colors from './colors'
 export const lightTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    primary: Colors.primary.main,
-    secondary: Colors.secondary.main,
+    ...Colors.primary,
+    ...Colors.secondary,
+    ...Colors.warning,
+    ...Colors.error,
+    ...Colors.grey,
     background: "#ffffff",
-    error: Colors.error.main,
-    info: Colors.grey.main,
-    success: Colors.secondary.main,
-    warning: Colors.warning.main,
+    info: Colors.grey.grey,
+    success: Colors.secondary.secondary,
   },
   variables: {
 

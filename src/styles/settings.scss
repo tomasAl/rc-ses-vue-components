@@ -12,23 +12,7 @@
   $layers: true,
 
   $body-font-family: 'Public Sans',
-  // $border-radius-root: 0px,
+  $border-radius-root: 3px,
 
   $typography: $typography,
 );
-
-
-.focus-with-outline {
-  &:focus::before {
-    content: "";
-    position: absolute;
-    background: transparent;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    border-radius: 0.375rem;
-    border: 2px solid black;
-    left: -4px;
-    top: -4px;
-    z-index: 1;
-  }
-}

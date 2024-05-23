@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="color" :loading="loading" :variant="variant">
+  <v-btn :color="color" :loading="loading" :variant="variant" :disabled="disabled">
     <!-- @slot To put any element inside the button-->
     <slot>
       {{ content }}
@@ -10,13 +10,14 @@
 <script setup lang="ts">
 import { withDefaults } from "vue";
 import { makeVBtnProps } from 'vuetify/lib/components/VBtn/VBtn.mjs';
+import './ButtonStyle.scss';
 
 const vBtnProps = makeVBtnProps();
 console.log('prpos button', vBtnProps)
 
 export type Props = {
   /** Color of the button */
-  color?: "primary" | "secondary" | "success" | "info" | "warning" | "error";
+  color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
 
   /** To show a loading icon */
   loading?: boolean;
@@ -24,7 +25,9 @@ export type Props = {
   /** the content of the button */
   content?: string;
 
-  variant?: 'tonal' | 'outlined'
+  variant?: 'tonal' | 'outlined';
+
+  disabled?: boolean;
 };
 
 withDefaults(defineProps<Props>(), {
@@ -32,17 +35,20 @@ withDefaults(defineProps<Props>(), {
   variant: 'outlined',
   color: "primary",
   content: "Button",
+  disabled: false,
 });
 </script>
 
 
-<!--
-example of usage
-<style lang="scss">
-@use '../../../styles/settings';
+<!--example of usage-->
+<!--<style lang="scss">
+@use '../../../../styles/settings';
 
 .test-new {
   height: settings.$button-height + 20;
 }
-</style>
--->
+
+.v-btn {
+  background: rgb(var(&#45;&#45;v-theme-something))
+}
+</style>-->
