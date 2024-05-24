@@ -13,14 +13,19 @@
     <br/><br/>
     <Textfield
     ></Textfield>
+    <SelectField></SelectField>
+    <SearchField v-model="model"/>
   </div>
 
 
   <div class="text-body-3">some some</div>
-  <HelloWorld />
+
 </template>
 
 <script lang="ts" setup>
   //
 import Textfield from "../components/common/inputs/Textfield/Textfield.vue";
+
+const model = ref('asfd')
+
 </script>

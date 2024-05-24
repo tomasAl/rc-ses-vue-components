@@ -12,6 +12,8 @@ declare module 'vue' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchField: typeof import('./components/common/inputs/SearchField.vue')['default']
+    SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
     Textfield: typeof import('./components/common/inputs/Textfield/Textfield.vue')['default']
   }
 }

@@ -2,13 +2,17 @@
   <div class="field-wrapper">
     <label class="text-subtitle-1">Test</label>
     <label class="text-subtitle-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</label>
-    <v-text-field variant="outlined" :disabled="disabled" placeholder="Placeholder text" value="blah"/>
+    <v-select
+      variant="outlined"
+      placeholder="some some"
+      :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+    ></v-select>
   </div>
 </template>
 
 <script setup lang="ts">
 import { withDefaults } from "vue";
-import './TextfieldStyle.scss';
+import './SelectFieldStyle.scss';
 
 export type Props = {
   /** Color of the button */
@@ -18,7 +22,7 @@ export type Props = {
 };
 
 withDefaults(defineProps<Props>(), {
-  disabled: true,
+  disabled: false,
 });
 </script>
 
