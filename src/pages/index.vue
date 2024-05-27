@@ -15,16 +15,27 @@
     ></Textfield>
     <SelectField></SelectField>
     <SearchField v-model="model"/>
+
+
+    <FormPanel title="Terminai ir užsakymai">
+      aaaadf
+    </FormPanel>
+    <br/><br/>
+    <FormActionPanel>
+      <ButtonBack>Atgal</ButtonBack>
+    </FormActionPanel>
   </div>
 
 
-  <div class="text-body-3">some some</div>
+
 
 </template>
 
 <script lang="ts" setup>
   //
 import Textfield from "../components/common/inputs/Textfield/Textfield.vue";
+import FormPanel from "../components/common/panels/FormPanel/FormPanel.vue";
+  import FormActionPanel from "../components/common/panels/FormActionPanel/FormActionPanel.vue";
 
 const model = ref('asfd')
 

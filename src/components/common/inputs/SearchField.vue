@@ -7,18 +7,19 @@
       :disabled="disabled"
       placeholder="Placeholder text"
       prepend-inner-icon="mdi-magnify"
-      :value="computedValue"
-      @input="updateModelValue"
+      v-model="model"
+      error
+      error-messages="abla"
     >
       <template #clear>
-        <XCircleFilledIcon />
+        <XCircleFilledIcon @click="model = ''"/>
       </template>
     </v-text-field>
   </div>
 </template>
 
 <script setup lang="ts">
-import { withDefaults, computed, defineEmits } from "vue";
+import { withDefaults, computed } from "vue";
 import XCircleFilledIcon from "../../../assets/icons/filled/XCircleFilledIcon.vue";
 
 export type Props = {
@@ -26,8 +27,6 @@ export type Props = {
   //color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
 
   disabled?: boolean;
-
-  modelValue?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -35,17 +34,7 @@ const props = withDefaults(defineProps<Props>(), {
   modelValue: undefined,
 });
 
-const emit = defineEmits(['update:modelValue'])
-
-const updateModelValue = function (e) {
-  emit('update:modelValue', e)
-}
-
-const computedValue = computed({
-  get: () => props.modelValue,
-  set: (value) => emit('update:modelValue', value)
-})
-
+const model = defineModel()
 
 </script>
 

@@ -1,0 +1,20 @@
+.v-expansion-panels.v-expansion-panels--flat {
+
+  border: 1px solid rgb(var(--v-theme-grey-400));
+  border-radius: 0.25rem;
+
+  .v-expansion-panel-title {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .v-expansion-panel--active {
+    .v-expansion-panel-title {
+      border-bottom: 1px solid rgb(var(--v-theme-grey-200));
+    }
+  }
+
+  .v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
+    min-height: 4.5rem;
+  }
+}

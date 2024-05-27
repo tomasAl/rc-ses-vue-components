@@ -9,6 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
+    ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
+    CardPanel: typeof import('./components/common/panels/CardPanel.vue')['default']
+    FormActionPanel: typeof import('./components/common/panels/FormActionPanel/FormActionPanel.vue')['default']
+    FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

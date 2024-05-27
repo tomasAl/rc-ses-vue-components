@@ -75,6 +75,6 @@
     @include make-color('grey', $hover, $active, $textColor, $haTextColor);
     @include make-color('error', $hover, $active, $textColor, $haTextColor);
     @include make-color('warning', $hover, $active, $textColor, $haTextColor);
-    @include make-focus(9px);
+    @include make-focus(10px);
   }
 }
