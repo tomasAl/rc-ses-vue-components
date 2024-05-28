@@ -1,3 +1,5 @@
+@use 'variables' as var;
+
 $typography: (
   'h1': (
     'size': 2.25rem, // 36px
@@ -31,6 +33,11 @@ $typography: (
   ),
   'body-3': (
     'size': 0.875rem, // 14px
+    'font-family': var.$body-font-family,
+    'text-transform': none,
+    'weight': 400,
+    'letter-spacing': 0,
+    'line-height': 1,
   ),
   'subtitle-1': (
     'size': 0.8125rem,  // 13px

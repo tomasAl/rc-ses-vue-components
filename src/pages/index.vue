@@ -22,7 +22,9 @@
     </FormPanel>
     <br/><br/>
     <FormActionPanel>
-      <ButtonBack>Atgal</ButtonBack>
+      <ButtonBack>Baigti pildyti vėliau</ButtonBack>
+      <div class="flex-grow-1" />
+      <Button color="primary" variant="tonal" class="font-weight-strong">Pateikti užsakymo formą</Button>
     </FormActionPanel>
   </div>
 

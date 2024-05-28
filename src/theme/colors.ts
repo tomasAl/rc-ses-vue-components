@@ -10,7 +10,7 @@ const primary = {
   'primary-800': '#155575',
   'primary-900': '#164763',
   'primary-950': '#082D44',
-  primary: '#06A0D4',
+  primary: '#0E6790',
 }
 
 const secondary = {
