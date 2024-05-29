@@ -1,5 +1,8 @@
 export default {
   elevation: 0,
   class: '',
-  style: {}, // only direct use
+  // only direct use, no nested styles here.
+  style: {
+    letterSpacing: 0
+  },
 }

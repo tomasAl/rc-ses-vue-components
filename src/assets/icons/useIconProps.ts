@@ -24,9 +24,9 @@ const useIconProps = {
     default: false
   }
 };
-
+/*
 export type IconProps = {
   [Key in keyof IconPropsBase]: IconPropsBase[Key]
-};
+};*/
 
 export default useIconProps;

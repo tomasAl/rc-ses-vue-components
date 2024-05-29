@@ -13,6 +13,7 @@ declare module 'vue' {
     CardPanel: typeof import('./components/common/panels/CardPanel.vue')['default']
     FormActionPanel: typeof import('./components/common/panels/FormActionPanel/FormActionPanel.vue')['default']
     FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
+    FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
