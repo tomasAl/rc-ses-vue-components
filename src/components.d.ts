@@ -12,13 +12,17 @@ declare module 'vue' {
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     CardPanel: typeof import('./components/common/panels/CardPanel.vue')['default']
     FormActionPanel: typeof import('./components/common/panels/FormActionPanel/FormActionPanel.vue')['default']
+    FormControl: typeof import('./components/common/forms/FormControl.vue')['default']
+    FormControll: typeof import('./components/common/forms/FormControl.vue')['default']
     FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    PaslaugosUzsakymasForm: typeof import('./components/forms/PaslaugosUzsakymasForm.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchField: typeof import('./components/common/inputs/SearchField.vue')['default']
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
+    Test: typeof import('./components/common/Test.vue')['default']
     Textfield: typeof import('./components/common/inputs/Textfield/Textfield.vue')['default']
   }
 }

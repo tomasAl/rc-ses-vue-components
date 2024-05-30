@@ -1,5 +1,13 @@
 .field-wrapper {
 
+  & > :last-child {
+    margin-top: 0.3rem;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
   label {
     display: block;
     line-height: 1rem;
@@ -8,7 +16,6 @@
   .text-subtitle-2 {
     color: rgb(var(--v-theme-grey-600));
     font-style: italic;
-    margin-bottom: 0.3rem;
   }
 
   input::placeholder {

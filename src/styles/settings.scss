@@ -15,7 +15,7 @@
 
   $body-font-family: var.$body-font-family,
   $border-radius-root: 3px,
-  $font-size-root: 0.9375rem,
+  $font-size-root: 1rem, // it affect typography
 
   $typography: $typography,
 
@@ -29,5 +29,3 @@
     'black': 900
   ),
 );
-
-@import './shared/index';

@@ -32,7 +32,6 @@
       :title="panel.title"
       :disabled="panel.disabled"
       :completed="panel.completed"
-      :expanded="panel.expanded"
       v-model="expandedPanels"
     >
       <slot :name="'panel-' + panel.id" v-bind="panel">

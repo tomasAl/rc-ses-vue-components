@@ -2,6 +2,7 @@ import { h } from 'vue'
 import type { IconSet, IconAliases, IconProps } from 'vuetify'
 import CaretLeftIcon from "./regular/CaretLeftIcon.vue";
 import CaretDownIcon from "./regular/CaretDownIcon.vue";
+import CaretUpIcon from "./regular/CaretUpIcon.vue";
 
 // Import other custom icons here
 
@@ -38,7 +39,7 @@ const aliases: IconAliases = {
   success: undefined,
   unfold: undefined,
   warning: undefined,
-  collapse: CaretDownIcon,
+  collapse: CaretUpIcon,
   complete: undefined,
   cancel: undefined,
   close: undefined,

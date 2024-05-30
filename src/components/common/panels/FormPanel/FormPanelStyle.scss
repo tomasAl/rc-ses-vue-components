@@ -4,8 +4,25 @@
   border-radius: 0.25rem;
 
   .v-expansion-panel-title {
+    height: 72px;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
+
+    &.no-hover {
+      .v-expansion-panel-title__overlay {
+        background-color: inherit;
+      }
+    }
+
+    &__icon {
+      display: none;
+    }
+  }
+
+  .v-expansion-panel-text {
+    &__wrapper {
+      padding: 2.25rem 2rem;
+    }
   }
 
   .v-expansion-panel--active {
@@ -14,7 +31,5 @@
     }
   }
 
-  .v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
-    min-height: 4.5rem;
-  }
+
 }
