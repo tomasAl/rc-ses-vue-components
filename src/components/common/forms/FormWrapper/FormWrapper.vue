@@ -3,8 +3,7 @@
     <div class="rc-form-actions">
       <v-btn
         variant="text"
-        class="text-body-3"
-        color="primary"
+        class="text-subtitle-1 text-primary-600"
         @click="expandAll"
       >
         <template #prepend>
@@ -14,8 +13,7 @@
       </v-btn>
       <v-btn
         variant="text"
-        class="text-body-3"
-        color="primary"
+        class="text-subtitle-1 text-primary-600"
         @click="collapseAll"
       >
         <template #prepend>

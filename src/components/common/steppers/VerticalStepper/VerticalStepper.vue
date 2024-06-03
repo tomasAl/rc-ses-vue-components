@@ -15,7 +15,7 @@
         </div>
         <div
           class="step-title"
-          :class="{ 'text-h6': step.active, 'text-body-3': !step.active }"
+          :class="{ 'text-h6': step.active, 'text-subtitle-1': !step.active }"
         >
           {{ step.title }}
         </div>
@@ -29,7 +29,6 @@ import './VerticalStepperStyle.scss';
 import CheckSuccessIcon from "../../../../assets/icons/regular/CheckSuccessIcon.vue";
 import DotActive from "../../../../assets/icons/filled/DotActive.vue";
 import DotInactive from "../../../../assets/icons/filled/DotInactive.vue";
-import {withDefaults} from "vue";
 import {VerticalStepperProps} from "@/types/steppers/VerticalStepperProps";
 
 

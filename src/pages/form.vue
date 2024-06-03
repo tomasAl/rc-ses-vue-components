@@ -1,17 +1,8 @@
 <template>
   <StepFormLayout :items="steps"></StepFormLayout>
-
-  <div class="px-5 py-5">
-    <VerticalStepper :items="steps"></VerticalStepper>
-    <FormWrapper :panels="panelData">
-    </FormWrapper>
-  </div>
 </template>
 
-
 <script setup lang="ts">
-
-
 
 import PaslaugosUzsakymasForm from "../components/forms/PaslaugosUzsakymasForm.vue";
 
@@ -28,16 +19,16 @@ const panelData1 = [
 ];
 
 const panelData2 = [
-  { id: 'pan-data-2-1', title: 'Panel 1', disabled: false, completed: false, expanded: false },
-  { id: 'pan-data-2-2', title: 'Panel 2', disabled: false, completed: false, expanded: true, component: PaslaugosUzsakymasForm },
-  { id: 'pan-data-2-3', title: 'Panel 3', disabled: false, completed: false, expanded: false },
+  { id: 'pan-data-2-1', title: 'Panel 111', disabled: false, completed: false, expanded: false },
+  { id: 'pan-data-2-2', title: 'Panel 222', disabled: false, completed: false, expanded: false, component: PaslaugosUzsakymasForm },
+  { id: 'pan-data-2-3', title: 'Panel 333', disabled: false, completed: false, expanded: false },
 ];
 
 const steps = [
-  { title: 'Bazinė informacija', completed: true, panels: panelData },
+  { title: 'Bazinė informacija', completed: true, active: false, panels: panelData },
   { title: 'Paslaugos užsakymas', completed: true, active: false, panels: panelData1 },
-  { title: 'Išdavimas', completed: false, active: false, panels: panelData2 },
-  { title: 'Reikalingos papildomos paslaugos', completed: false, active: true },
+  { title: 'Išdavimas', completed: false, active: true, panels: panelData2 },
+  { title: 'Reikalingos papildomos paslaugos', completed: false, active: false },
   { title: 'Terminai ir sąlygos', completed: false, active: false },
 ]
 </script>
