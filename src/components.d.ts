@@ -22,7 +22,10 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SearchField: typeof import('./components/common/inputs/SearchField.vue')['default']
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
+    StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
+    StepPageLayout: typeof import('./components/layouts/StepPageLayout.vue')['default']
     Test: typeof import('./components/common/Test.vue')['default']
     Textfield: typeof import('./components/common/inputs/Textfield/Textfield.vue')['default']
+    VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }
 }

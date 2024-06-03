@@ -19,15 +19,9 @@
 import './FormPanelStyle.scss';
 import { withDefaults, defineProps, computed, ref } from "vue";
 import CheckBoldIcon from "../../../../assets/icons/bold/CheckBoldIcon.vue";
+import {FormPanelProps} from "../../../../types/forms/FormPanelProps";
 
-type Props = {
-  id: string;
-  title: string;
-  completed?: boolean;
-  disabled?: boolean;
-};
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<FormPanelProps>(), {
   disabled: false,
   completed: false,
 });

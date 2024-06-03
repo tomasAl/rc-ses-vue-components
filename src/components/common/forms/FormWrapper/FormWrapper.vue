@@ -46,19 +46,10 @@ import {ref} from 'vue';
 import './FormWrapperStyle.scss';
 import OpenIcon from "../../../../assets/icons/regular/OpenIcon.vue";
 import CloseIcon from "../../../../assets/icons/regular/CloseIcon.vue";
+import {FormWrapperProps} from "../../../../types/forms/FormWrapperProps";
 
-type Panel = {
-  id: string;
-  title: string;
-  disabled?: boolean;
-  completed?: boolean;
-  expanded?: boolean;
-  component?: any;
-};
 
-const props = defineProps<{
-  panels: Panel[];
-}>();
+const props = defineProps<FormWrapperProps>();
 
 const expandedPanels = ref<Array<string>>([])
 
