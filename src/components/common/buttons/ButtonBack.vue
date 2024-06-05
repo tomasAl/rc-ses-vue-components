@@ -3,11 +3,10 @@
     <template #prepend>
       <CaretLeftIcon size="16" />
     </template>
-    <slot/>
+    <slot />
   </v-btn>
 </template>
 
 <script setup lang="ts">
-
-import CaretLeftIcon from "../../../assets/icons/regular/CaretLeftIcon.vue";
+import CaretLeftIcon from '@/assets/icons/regular/CaretLeftIcon.vue'
 </script>

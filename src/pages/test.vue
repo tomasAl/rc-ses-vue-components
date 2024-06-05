@@ -1,13 +1,17 @@
 <template>
   <div>
-    <ul>
+    <Textfield label="Tiskslas" description="(neprivaloma)"/>
+
+<!--    <ul>
       <li v-for="item in items" :key="item.title"  v-if="item.active">{{ item.title }}</li>
-    </ul>
+    </ul>-->
   </div>
 </template>
 
 
 <script setup lang="ts">
+
+import FieldWrapper from "../components/common/inputs/FieldWrapper/FieldWrapper.vue";
 
 type TestType = {
   active: boolean

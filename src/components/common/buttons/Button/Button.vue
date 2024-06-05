@@ -8,37 +8,37 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from "vue";
-import { makeVBtnProps } from 'vuetify/lib/components/VBtn/VBtn.mjs';
-import './ButtonStyle.scss';
+import { withDefaults } from 'vue'
 
-const vBtnProps = makeVBtnProps();
-console.log('prpos button', vBtnProps)
+// import { makeVBtnProps } from 'vuetify/lib/components/VBtn/VBtn.mjs'
+import './ButtonStyle.scss'
+
+// const vBtnProps = makeVBtnProps()
+// console.log('prpos button', vBtnProps)
 
 export type Props = {
   /** Color of the button */
-  color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
+  color?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'grey'
 
   /** To show a loading icon */
-  loading?: boolean;
+  loading?: boolean
 
   /** the content of the button */
-  content?: string;
+  content?: string
 
-  variant?: 'tonal' | 'outlined';
+  variant?: 'tonal' | 'outlined'
 
-  disabled?: boolean;
-};
+  disabled?: boolean
+}
 
 withDefaults(defineProps<Props>(), {
   loading: false,
   variant: 'outlined',
-  color: "primary",
-  content: "Button",
+  color: 'primary',
+  content: 'Button',
   disabled: false,
-});
+})
 </script>
-
 
 <!--example of usage-->
 <!--<style lang="scss">

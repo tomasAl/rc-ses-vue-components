@@ -1,24 +1,29 @@
 <template>
-  <div class="field-wrapper">
-    <label class="text-subtitle-1">Test</label>
-    <label class="text-subtitle-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</label>
-    <v-text-field variant="outlined" :disabled="disabled" placeholder="Placeholder text" value="blah"/>
-  </div>
+  <FieldWrapper :label="label" :description="description">
+    <v-text-field
+      variant="outlined"
+      :disabled="disabled"
+      placeholder="Placeholder text"
+      value="blah"
+    />
+  </FieldWrapper>
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from "vue";
-import './TextfieldStyle.scss';
+import { withDefaults } from 'vue'
 
-export type Props = {
+import { FieldProps } from '@/types/inputs/FieldProps'
+
+import './TextfieldStyle.scss'
+
+export type Props = FieldProps & {
   /** Color of the button */
-  //color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
-
-  disabled?: boolean;
-};
+  // color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
+}
 
 withDefaults(defineProps<Props>(), {
-  disabled: true,
-});
+  label: undefined,
+  description: undefined,
+  disabled: false,
+})
 </script>
-

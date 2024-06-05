@@ -1,21 +1,7 @@
-.field-wrapper {
+.rc-field-wrapper {
 
-  & > :last-child {
-    margin-top: 0.3rem;
-  }
-
-  & > :first-child {
-    margin-top: 0;
-  }
-
-  label {
-    display: block;
-    line-height: 1rem;
-  }
-
-  .text-subtitle-2 {
-    color: rgb(var(--v-theme-grey-600));
-    font-style: italic;
+  .v-input--horizontal {
+    width: 100%;
   }
 
   input::placeholder {
@@ -26,6 +12,13 @@
     color: rgb(var(--v-theme-error-600)) !important;
   }
 
+  // DEFAULT outline color
+  .v-field--variant-outlined .v-field__outline
+  {
+    color: rgb(var(--v-theme-grey-500));
+  }
+
+  // FOCUSED STATE
   .v-field--focused {
     .v-field__outline {
       --v-field-border-width: 1px;
@@ -38,25 +31,20 @@
     }
   }
 
-  // default outline color
-  .v-field--variant-outlined .v-field__outline
-  {
-    color: rgb(var(--v-theme-grey-500));
-  }
-
-  // hover outline color
+  // HOVER outline color
   .v-field--variant-outlined:hover .v-field__outline
   {
     color: rgb(var(--v-theme-grey-900));
   }
 
-  // active outline color
+  // ACTIVE outline color
   .v-field--variant-outlined.v-field--active .v-field__outline
   {
     color: rgb(var(--v-theme-grey-600));
     background: rgb(var(--v-theme-))
   }
 
+  // DISABLED STATE
   .v-input--disabled {
     input {
       color: rgb(var(--v-theme-grey-300));
@@ -66,7 +54,6 @@
       background: rgb(var(--v-theme-grey-50));
     }
   }
-
 
   .v-input__details {
     padding-inline: 0;

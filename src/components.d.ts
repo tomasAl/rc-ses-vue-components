@@ -11,6 +11,7 @@ declare module 'vue' {
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     CardPanel: typeof import('./components/common/panels/CardPanel.vue')['default']
+    FieldWrapper: typeof import('./components/common/inputs/FieldWrapper/FieldWrapper.vue')['default']
     FormActionPanel: typeof import('./components/common/panels/FormActionPanel/FormActionPanel.vue')['default']
     FormControl: typeof import('./components/common/forms/FormControl.vue')['default']
     FormControll: typeof import('./components/common/forms/FormControl.vue')['default']

@@ -1,0 +1,33 @@
+@use '../../../../styles/settings';
+
+.rc-field-wrapper {
+  display: flex;
+  align-items: center;
+
+  .rc-field-labels {
+    width: 243px;
+    text-align: right;
+    margin-right: 1.5rem;
+  }
+
+  label {
+    display: block;
+    line-height: 1rem;
+  }
+
+  .text-subtitle-2 {
+    color: rgb(var(--v-theme-grey-600));
+    font-style: italic;
+  }
+
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .rc-field-labels {
+      width: auto;
+      text-align: left;
+      margin: 0 0 0.3rem 0;
+    }
+  }
+}
