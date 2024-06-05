@@ -3,16 +3,16 @@
  *
  * Framework documentation: https://vuetifyjs.com`
  */
-
 // Styles
-import '@mdi/font/css/materialdesignicons.css'
-import 'vuetify/styles'
-
+// import '@mdi/font/css/materialdesignicons.css'
 // Composables
 import { createVuetify } from 'vuetify'
-import {darkTheme, lightTheme} from "../theme/themes";
-import defaults from '../theme';
-import { aliases, custom } from '@/assets/icons/iconSet.ts'
+import 'vuetify/styles'
+
+import { aliases, custom } from '@/assets/icons/iconSet'
+import { darkTheme, lightTheme } from '@/theme/themes'
+
+import defaults from '../theme'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
@@ -22,7 +22,7 @@ export default createVuetify({
     themes: {
       light: lightTheme,
       dark: darkTheme,
-    }
+    },
   },
   icons: {
     defaultSet: 'custom',
