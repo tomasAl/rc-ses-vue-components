@@ -4,4 +4,5 @@ export type FieldProps = {
   placeholder?: string
   error?: string
   disabled?: boolean
+  readonly?: boolean
 }

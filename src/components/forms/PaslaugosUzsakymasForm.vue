@@ -1,7 +1,9 @@
 <template>
-  <Textfield label="Tikslas" description="pasiektas" />
-  <Textfield label="Tikslas" description="pasiektas" />
-
+  <Textfield class="form-control" label="Tikslas" description="pasiektas vo xuinia ir labai ilgas tekstas kartais buna ir uzlipa ant kito lauko ir uzlipa ant kito lauko ir uzlipa ant kito lauko" />
+  <Textfield readonly class="form-control" label="Tikslas" description="pasiektas vo xuinia ir labai ilgas tekstas kartais buna ir uzlipa ant kito lauko ir uzlipa ant kito lauko ir uzlipa ant kito lauko" />
+  <Textfield class="form-control" label="Tikslas" description="pasiektas" disabled />
+  <Textfield label="Tikslas" error="input error" />
+  <Button variant="tonal">Test</Button>
   <SelectField
     v-model="selectModel"
     class="form-control"

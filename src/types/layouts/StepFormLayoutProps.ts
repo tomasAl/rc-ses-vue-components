@@ -1,10 +1,7 @@
-import {VerticalStepperItemProps} from "../steppers/VerticalStepperProps";
-import {FormWrapperPanelProps} from "../forms/FormWrapperProps";
+import { FormWrapperPanelProps } from '../forms/FormWrapperProps'
+import { VerticalStepperItemProps } from '../steppers/VerticalStepperProps'
 
-export type StepPageLayoutItemProps = VerticalStepperItemProps & {
-  component?: any;
-  panels?: Array<FormWrapperPanelProps>
-}
+export type StepPageLayoutItemProps = VerticalStepperItemProps & FormWrapperPanelProps
 
 export type StepFormLayoutProps = {
   items: Array<StepPageLayoutItemProps>

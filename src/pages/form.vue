@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import PaslaugosUzsakymasForm from '@/components/forms/PaslaugosUzsakymasForm.vue'
 
-const panelData = [
+/*const panelData = [
   {
     id: 'pan1',
     title: 'Panel 1',
@@ -66,13 +66,34 @@ const panelData2 = [
     completed: false,
     expanded: false,
   },
-]
+]*/
 
 const steps = [
-  { title: 'Bazinė informacija', completed: true, active: false, panels: panelData },
-  { title: 'Paslaugos užsakymas', completed: true, active: false, panels: panelData1 },
-  { title: 'Išdavimas', completed: false, active: true, panels: panelData2 },
-  { title: 'Reikalingos papildomos paslaugos', completed: false, active: false },
-  { title: 'Terminai ir sąlygos', completed: false, active: false },
+  {
+    id: 'step1',
+    title: 'Bazinė informacija',
+    completed: true,
+    active: false,
+    expanded: false,
+    component: PaslaugosUzsakymasForm,
+  },
+  {
+    id: 'step2',
+    title: 'Paslaugos užsakymas',
+    completed: true,
+    active: false,
+    expanded: false,
+    component: PaslaugosUzsakymasForm,
+  },
+  {
+    id: 'step3',
+    title: 'Išdavimas',
+    completed: false,
+    active: true,
+    expanded: true,
+    component: PaslaugosUzsakymasForm,
+  },
+  { id: 'step4', title: 'Reikalingos papildomos paslaugos', completed: false, active: false },
+  { id: 'step5', title: 'Terminai ir sąlygos', completed: false, active: false },
 ]
 </script>

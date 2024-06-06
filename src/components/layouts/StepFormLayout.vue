@@ -9,7 +9,7 @@
           <FormWrapper
             :key="index"
             v-if="item?.active"
-            :panels="item.panels"
+            :panels="formPanels"
           />
         </template>
       </v-col>
@@ -19,9 +19,11 @@
 
 
 <script setup lang="ts">
-import { VerticalStepperItemProps } from "../../types/steppers/VerticalStepperProps";
-import { StepFormLayoutProps } from "../../types/layouts/StepFormLayoutProps";
+import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps';
+import { StepFormLayoutProps } from '@/types/layouts/StepFormLayoutProps';
+import { FormWrapperPanelProps } from '@/types/forms/FormWrapperProps'
 
 const props = defineProps<StepFormLayoutProps>();
 const verticalStepperItems: Array<VerticalStepperItemProps> = props.items
+const formPanels: Array<FormWrapperPanelProps> = props.items
 </script>

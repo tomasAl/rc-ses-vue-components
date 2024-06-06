@@ -1,0 +1,22 @@
+@use './../../settings';
+
+@mixin make-focus($gap) {
+  &:focus {
+    @include make-focus-before($gap)
+  }
+}
+
+@mixin make-focus-before($gap) {
+  &::before {
+    content: "";
+    position: absolute;
+    background: transparent;
+    width: calc(100% + $gap);
+    height: calc(100% + $gap);
+    border-radius: settings.$border-radius-root * 2;
+    border: 2px solid black;
+    left: calc($gap / -2);
+    top: calc($gap / -2);
+    z-index: 1;
+  }
+}

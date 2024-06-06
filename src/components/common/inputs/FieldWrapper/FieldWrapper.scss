@@ -2,12 +2,13 @@
 
 .rc-field-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 
   .rc-field-labels {
-    width: 243px;
-    text-align: right;
-    margin-right: 1.5rem;
+    width: auto;
+    text-align: left;
+    margin: 0 0 0.3rem 0;
   }
 
   label {
@@ -20,14 +21,15 @@
     font-style: italic;
   }
 
-  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
-    flex-direction: column;
-    align-items: flex-start;
+  @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+    flex-direction: row;
+    align-items: center;
 
     .rc-field-labels {
-      width: auto;
-      text-align: left;
-      margin: 0 0 0.3rem 0;
+      width: 243px;
+      text-align: right;
+      margin: 0 1.5rem 0 0;
+
     }
   }
 }

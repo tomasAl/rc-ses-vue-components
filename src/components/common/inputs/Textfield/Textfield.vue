@@ -3,7 +3,11 @@
     <v-text-field
       variant="outlined"
       :disabled="disabled"
-      placeholder="Placeholder text"
+      :placeholder="placeholder"
+      :error="!!error"
+      :hide-details="!error"
+      :error-messages="error"
+      :readonly="readonly"
       value="blah"
     />
   </FieldWrapper>
@@ -25,5 +29,6 @@ withDefaults(defineProps<Props>(), {
   label: undefined,
   description: undefined,
   disabled: false,
+  error: undefined,
 })
 </script>
