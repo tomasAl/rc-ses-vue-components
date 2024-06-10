@@ -25,13 +25,12 @@
 </template>
 
 <script setup lang="ts">
-import './VerticalStepperStyle.scss';
-import CheckSuccessIcon from "../../../../assets/icons/regular/CheckSuccessIcon.vue";
-import DotActive from "../../../../assets/icons/filled/DotActive.vue";
-import DotInactive from "../../../../assets/icons/filled/DotInactive.vue";
-import {VerticalStepperProps} from "@/types/steppers/VerticalStepperProps";
+import DotActive from '@/assets/icons/filled/DotActive.vue'
+import DotInactive from '@/assets/icons/filled/DotInactive.vue'
+import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
+import { VerticalStepperProps } from '@/types/steppers/VerticalStepperProps'
 
+import './VerticalStepperStyle.scss'
 
-const props = defineProps<VerticalStepperProps>();
-
+defineProps<VerticalStepperProps>()
 </script>

@@ -1,1 +1,19 @@
 // base styles defined in @/styles/shared/fields.scss
+// custom override goes here
+
+.rc-field-wrapper {
+  .rc-text-field {
+
+    // ### ACTIVE STATE
+    .v-field--variant-outlined.v-field--active .v-field__outline
+    {
+      --v-field-border-width: 2px;
+      color: rgb(var(--v-theme-primary));
+      box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

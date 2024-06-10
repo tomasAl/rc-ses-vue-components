@@ -1,12 +1,7 @@
 import { ColorType } from '@/types/common/ColorType'
+import { FieldProps } from '@/types/inputs/FieldProps'
 
-export type SelectProps = {
-  label?: string
-  description?: string
-  placeholder?: string
-  error?: string
-
+export type SelectProps = FieldProps & {
   items: Array<string>
-  disabled?: boolean
   color?: ColorType
 }

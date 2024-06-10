@@ -1,23 +1,30 @@
 <template>
-  <div class="field-wrapper">
-    <label v-if="label" class="text-subtitle-1">{{ label }}</label>
-    <label v-if="description" class="text-subtitle-2">{{ description }}</label>
+  <FieldWrapper :label="label" :description="description" :for="name">
     <v-select
+      ref="selectField"
+      v-model="model"
+      :name="name"
+      class="rc-select-field"
       variant="outlined"
       :placeholder="placeholder"
       :items="items"
-      v-model="model"
       :hide-details="!error"
-      :error="error"
+      :error="!!error"
       :error-messages="error"
+      :active="false"
+      :menu-props="{ offset: 6 }"
+      @focus="addActiveClass"
+      @blur="removeActiveClass"
     ></v-select>
-  </div>
+  </FieldWrapper>
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from "vue";
-import './SelectFieldStyle.scss';
-import {SelectProps} from "@/types/inputs/SelectProps";
+import { withDefaults } from 'vue'
+
+import { SelectProps } from '@/types/inputs/SelectProps'
+
+import './SelectFieldStyle.scss'
 
 withDefaults(defineProps<SelectProps>(), {
   disabled: false,
@@ -26,8 +33,24 @@ withDefaults(defineProps<SelectProps>(), {
   description: undefined,
   placeholder: undefined,
   error: undefined,
-});
+  name: undefined,
+})
 
 const model = defineModel<string>()
-</script>
 
+const selectField = ref()
+
+function addActiveClass() {
+  const fieldElement = selectField.value?.$el.querySelector('.v-field')
+  if (fieldElement) {
+    fieldElement.classList.add('v-field--active')
+  }
+}
+
+function removeActiveClass() {
+  const fieldElement = selectField.value?.$el.querySelector('.v-field')
+  if (fieldElement) {
+    fieldElement.classList.remove('v-field--active')
+  }
+}
+</script>

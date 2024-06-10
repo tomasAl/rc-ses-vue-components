@@ -1,6 +1,9 @@
 <template>
-  <FieldWrapper :label="label" :description="description">
+  <FieldWrapper :label="label" :description="description" :for="name">
     <v-text-field
+      v-model="model"
+      :name="name"
+      class="rc-text-field"
       variant="outlined"
       :disabled="disabled"
       :placeholder="placeholder"
@@ -8,7 +11,7 @@
       :hide-details="!error"
       :error-messages="error"
       :readonly="readonly"
-      value="blah"
+      :type="type"
     />
   </FieldWrapper>
 </template>
@@ -17,18 +20,22 @@
 import { withDefaults } from 'vue'
 
 import { FieldProps } from '@/types/inputs/FieldProps'
+import { InputType } from '@/types/inputs/InputType'
 
 import './TextfieldStyle.scss'
 
-export type Props = FieldProps & {
-  /** Color of the button */
-  // color?: "primary" | "secondary" | "success" | "info" | "warning" | "error" | "grey";
+export type TextfieldProps = FieldProps & {
+  type?: InputType
 }
 
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<TextfieldProps>(), {
+  name: undefined,
   label: undefined,
   description: undefined,
   disabled: false,
   error: undefined,
+  type: 'text',
 })
+
+const model = defineModel<string | number>()
 </script>
