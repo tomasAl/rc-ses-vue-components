@@ -1,8 +1,11 @@
 import { h } from 'vue'
-import type { IconSet, IconAliases, IconProps } from 'vuetify'
-import CaretLeftIcon from "./regular/CaretLeftIcon.vue";
-import CaretDownIcon from "./regular/CaretDownIcon.vue";
-import CaretUpIcon from "./regular/CaretUpIcon.vue";
+import type { IconAliases, IconProps, IconSet } from 'vuetify'
+
+import CaretDownIcon from './regular/CaretDownIcon.vue'
+import CaretLeftIcon from './regular/CaretLeftIcon.vue'
+import CaretUpIcon from './regular/CaretUpIcon.vue'
+import MagnifyingGlassIcon from './regular/MagnifyingGlassIcon.vue'
+import XIcon from './regular/XIcon.vue'
 
 // Import other custom icons here
 
@@ -42,8 +45,9 @@ const aliases: IconAliases = {
   collapse: CaretUpIcon,
   complete: undefined,
   cancel: undefined,
-  close: undefined,
+  close: XIcon,
   back: CaretLeftIcon,
+  search: MagnifyingGlassIcon,
 }
 
 const custom: IconSet = {
@@ -54,9 +58,9 @@ const custom: IconSet = {
 
       // Add other cases here
       default:
-        return h('span')  // Fallback if the icon is not found
+        return h('span') // Fallback if the icon is not found
     }
-  }
+  },
 }
 
 export { aliases, custom }
