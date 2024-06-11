@@ -1,6 +1,6 @@
 <template>
   <div class="rc-field-wrapper">
-    <div class="rc-field-labels">
+    <div v-if="label || description" class="rc-field-labels">
       <label v-if="label" :for="props.for" class="text-subtitle-1 text-md-h6">
         {{ label }}
       </label>

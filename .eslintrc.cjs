@@ -27,8 +27,9 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     "import/no-named-as-default": 'off',
   },
-  parser: 'vue-eslint-parser',
-  /*parserOptions: {
+
+/*  parser: 'vue-eslint-parser',
+  /!*parserOptions: {
     ecmaVersion: 2021,
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
@@ -37,7 +38,7 @@ module.exports = {
       impliedStrict: false,
       jsx: false,
     },
-  },*/
+  },*!/
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx', '.vue'],
@@ -50,5 +51,5 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue', 'mjs'],
       },
     },
-  },
+  },*/
 }

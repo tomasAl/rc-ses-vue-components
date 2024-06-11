@@ -12,21 +12,23 @@
       :error-messages="error"
       :readonly="readonly"
       :type="type"
-    />
+      :prepend-inner-icon="prependInnerIcon"
+      :append-icon="appendIcon"
+      @click:append="$emit('click:append', $event)"
+    >
+      <template #clear>
+        <slot name="clear" />
+      </template>
+    </v-text-field>
   </FieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
-import { FieldProps } from '@/types/inputs/FieldProps'
-import { InputType } from '@/types/inputs/InputType'
+import { TextfieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
-
-export type TextfieldProps = FieldProps & {
-  type?: InputType
-}
 
 withDefaults(defineProps<TextfieldProps>(), {
   name: undefined,
@@ -35,7 +37,12 @@ withDefaults(defineProps<TextfieldProps>(), {
   disabled: false,
   error: undefined,
   type: 'text',
+
+  prependInnerIcon: undefined,
+  appendIcon: undefined,
 })
+
+defineEmits(['click:append'])
 
 const model = defineModel<string | number>()
 </script>

@@ -1,21 +1,3 @@
 // base styles defined in @/styles/shared/fields.scss
 // custom override goes here
 
-.rc-field-wrapper {
-  .rc-select-field {
-
-    // ACTIVE STATE, when select is expanded
-    .v-field[aria-expanded="true"] {
-      .v-field__outline
-      {
-        --v-field-border-width: 2px;
-        color: rgb(var(--v-theme-primary));
-        box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
-
-        &::before {
-          display: none;
-        }
-      }
-    }
-  }
-}

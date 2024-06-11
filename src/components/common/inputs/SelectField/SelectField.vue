@@ -12,16 +12,19 @@
       :error="!!error"
       :error-messages="error"
       :active="false"
-      :menu-props="{ offset: 6 }"
-      @focus="addActiveClass"
-      @blur="removeActiveClass"
-    ></v-select>
+      :menu-props="{ offset: 6, class: 'rc-searchable-menu', location: 'bottom' }"
+    >
+      <template #prepend-item>
+        <SearchableArea />
+      </template>
+    </v-select>
   </FieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
+import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
 import { SelectProps } from '@/types/inputs/SelectProps'
 
 import './SelectFieldStyle.scss'
@@ -39,18 +42,4 @@ withDefaults(defineProps<SelectProps>(), {
 const model = defineModel<string>()
 
 const selectField = ref()
-
-function addActiveClass() {
-  const fieldElement = selectField.value?.$el.querySelector('.v-field')
-  if (fieldElement) {
-    fieldElement.classList.add('v-field--active')
-  }
-}
-
-function removeActiveClass() {
-  const fieldElement = selectField.value?.$el.querySelector('.v-field')
-  if (fieldElement) {
-    fieldElement.classList.remove('v-field--active')
-  }
-}
 </script>
