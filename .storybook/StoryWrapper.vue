@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import '../src/styles/shared/index.scss'
+import '../src/styles/shared/storybook.scss'
 export default {
   props: {
     themeName: String,
@@ -16,13 +18,14 @@ export default {
 
 <style lang="scss">
 .v-application__wrap {
-  //min-height: 350px !important;
-  height: 100vh;
+  min-height: auto;
+  height: auto;
 }
 
 .v-main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
 }
 </style>

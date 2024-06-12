@@ -6,16 +6,16 @@
     @click:append="$emit('click:append', $event)"
   >
     <template #clear>
-      <XCircleFilledIcon @click="model = ''" />
+      <slot name="clear">
+        <XCircleFilledIcon @click="model = ''" />
+      </slot>
     </template>
   </Textfield>
 </template>
 
 <script setup lang="ts">
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
-import { TextfieldProps } from '@/types/inputs/TextFieldProps'
-
-type SearchFieldProps = Omit<TextfieldProps, 'prependInnerIcon'>
+import { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 
 defineEmits(['click:append'])
 const props = defineProps<SearchFieldProps>()

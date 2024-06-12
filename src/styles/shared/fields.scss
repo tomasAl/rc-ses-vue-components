@@ -132,5 +132,16 @@
         margin-bottom: 6px;
       }
     }
+
+    .rc-menu-list-item {
+      .v-list-item__content {
+        display: flex;
+        align-items: center;
+
+        .v-list-item-title {
+          flex-grow: 1;
+        }
+      }
+    }
   }
 }

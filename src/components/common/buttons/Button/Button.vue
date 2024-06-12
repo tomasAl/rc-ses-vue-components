@@ -35,7 +35,7 @@ withDefaults(defineProps<Props>(), {
   loading: false,
   variant: 'outlined',
   color: 'primary',
-  content: 'Button',
+  content: undefined,
   disabled: false,
 })
 </script>

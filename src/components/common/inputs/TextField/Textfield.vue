@@ -26,11 +26,11 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
-import { TextfieldProps } from '@/types/inputs/TextFieldProps'
+import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
 
-withDefaults(defineProps<TextfieldProps>(), {
+withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
   label: undefined,
   description: undefined,

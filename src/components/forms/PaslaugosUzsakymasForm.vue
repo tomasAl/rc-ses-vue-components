@@ -32,7 +32,6 @@
     label="Tikslas"
     :items="['test1', 'test2', 'test3']"
   />
-  <SearchField />
 </template>
 
 <script setup lang="ts">

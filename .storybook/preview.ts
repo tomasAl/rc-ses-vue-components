@@ -11,6 +11,7 @@ const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
     controls: {
+      sort: 'requiredFirst',
       expanded: true,
       matchers: {
         color: /(background|color)$/i,
@@ -18,6 +19,8 @@ const preview: Preview = {
       },
     },
   },
+
+  tags: ['autodocs']
 };
 
 export default preview;
