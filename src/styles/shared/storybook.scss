@@ -1,3 +1,5 @@
+@use '../settings';
+
 .storybook-field {
   display: flex;
   flex-direction: column;
@@ -25,5 +27,10 @@
     font-size: 0.875rem;
     height: 32px;
     top: -32px;
+    //display: none;
+
+    @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+      left: 100px;
+    }
   }
 }

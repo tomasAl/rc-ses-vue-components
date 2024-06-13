@@ -3,13 +3,10 @@
  *
  * Framework documentation: https://vuetifyjs.com`
  */
-// Styles
-// import '@mdi/font/css/materialdesignicons.css'
-// Composables
 import { createVuetify } from 'vuetify'
 import 'vuetify/styles'
 
-import { aliases, custom } from '@/assets/icons/iconSet'
+import { aliases, rcIcons } from '@/assets/icons/iconSet'
 import { darkTheme, lightTheme } from '@/theme/themes'
 
 import defaults from '../theme'
@@ -25,10 +22,10 @@ export default createVuetify({
     },
   },
   icons: {
-    defaultSet: 'custom',
+    defaultSet: 'rc',
     aliases,
     sets: {
-      custom,
+      rc: rcIcons,
     },
   },
 })

@@ -1,13 +1,15 @@
-import { h } from 'vue'
+import { Component, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
-import CaretDownIcon from './regular/CaretDownIcon.vue'
+import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
+import CheckIcon from '@/assets/icons/regular/CheckIcon.vue'
+
 import CaretLeftIcon from './regular/CaretLeftIcon.vue'
 import CaretUpIcon from './regular/CaretUpIcon.vue'
 import MagnifyingGlassIcon from './regular/MagnifyingGlassIcon.vue'
 import XIcon from './regular/XIcon.vue'
 
-// Import other custom icons here
+const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
 const aliases: IconAliases = {
   calendar: undefined,
@@ -17,10 +19,10 @@ const aliases: IconAliases = {
   clear: undefined,
   delete: undefined,
   delimiter: undefined,
-  dropdown: CaretDownIcon,
+  dropdown: Icon16px(CaretDownFilledIcon),
   edit: undefined,
   error: undefined,
-  expand: CaretDownIcon,
+  expand: CaretDownFilledIcon,
   file: undefined,
   first: undefined,
   info: undefined,
@@ -48,12 +50,13 @@ const aliases: IconAliases = {
   close: XIcon,
   back: CaretLeftIcon,
   search: MagnifyingGlassIcon,
+  checkPrimary: Icon16px(CheckIcon, 'primary'),
 }
 
-const custom: IconSet = {
+const rcIcons: IconSet = {
   component: (props: IconProps) => {
     switch (props.icon) {
-      case 'CaretLeftIcon':
+      case 'rc-caret-left':
         return h(CaretLeftIcon, props)
 
       // Add other cases here
@@ -63,4 +66,4 @@ const custom: IconSet = {
   },
 }
 
-export { aliases, custom }
+export { aliases, rcIcons }

@@ -24,7 +24,7 @@ declare module 'vue' {
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
     StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
     Test: typeof import('./components/common/Test.vue')['default']
-    Textfield: typeof import('./components/common/inputs/Textfield/Textfield.vue')['default']
+    Textfield: typeof import('./components/common/inputs/TextField/Textfield.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }
 }

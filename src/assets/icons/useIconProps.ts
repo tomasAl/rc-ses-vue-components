@@ -1,4 +1,8 @@
 const useIconProps = {
+  tag: {
+    type: String,
+    required: false,
+  },
   size: {
     type: [Number, String],
     required: false,
@@ -6,6 +10,7 @@ const useIconProps = {
   },
   color: {
     type: String,
+    required: false,
     default: '',
   },
   dark: {

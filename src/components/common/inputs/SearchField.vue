@@ -7,7 +7,7 @@
   >
     <template #clear>
       <slot name="clear">
-        <XCircleFilledIcon @click="model = ''" />
+        <XCircleFilledIcon v-if="!props.readonly" @click="model = ''" />
       </slot>
     </template>
   </Textfield>
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
-import { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
+import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 
 defineEmits(['click:append'])
 const props = defineProps<SearchFieldProps>()
