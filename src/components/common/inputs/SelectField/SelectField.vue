@@ -14,29 +14,51 @@
       :menu-props="menuProps"
       :readonly="readonly"
       :disabled="disabled"
+      transition="scroll-y-transition"
+      :multiple="multiple"
+      @update:menu="updateVList"
+      @update:focused="() => searchValue = ''"
     >
       <template #prepend-item>
-        <SearchableArea v-if="searchable" v-model="searchValue" />
+        <SearchableArea
+          v-if="searchable"
+          v-model="searchValue"
+          :multiple="multiple"
+          @update-check-all="checkAll"
+        />
       </template>
 
       <template #item="{ item, props }">
-        {{ test(item, props) }}
         <v-list-item
           v-bind="props"
           class="rc-menu-list-item"
           :subtitle="item.raw.subtitle"
-          append-icon="$checkPrimary"
-        />
+          :append-icon="model === item.value ? '$checkPrimary' : undefined"
+        >
+          <template #prepend>
+            <v-checkbox
+              v-if="multiple"
+              base-color="white"
+              color="primary"
+              :model-value="model?.includes(<never>item.value)"
+              hide-details
+            ></v-checkbox>
+          </template>
+        </v-list-item>
       </template>
     </v-select>
   </FieldWrapper>
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
+import { v4 as uuidv4 } from 'uuid'
+import { nextTick, withDefaults, watch } from 'vue'
 
 import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
-import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
+import type {
+  SelectFieldItemType,
+  SelectFieldProps,
+} from '@/types/inputs/SelectFieldProps'
 
 import './SelectFieldStyle.scss'
 
@@ -49,38 +71,88 @@ const selectProps = withDefaults(defineProps<SelectFieldProps>(), {
   error: undefined,
   name: undefined,
   searchable: false,
+  multiple: false,
   items: () => [],
 })
 
-const model = defineModel<string>()
+const model = defineModel<any[] | null | undefined>()
 
 const selectRef = ref()
 const searchValue = ref<string>()
+
+const menuId = uuidv4()
 const menuProps = ref({
+  id: menuId,
   offset: 6,
   class: { 'rc-searchable-menu': selectProps.searchable },
 })
 
-const testItems = [
-  { title: 't1', value: 't1', subtitle: 's1' },
-  { title: 't2', value: 't2', subtitle: 's2' },
-  { title: 't3', value: 't3' },
-  { title: 't4', value: 't4' },
-  { title: 'a4', value: 'a4' },
-  { title: 'b4', value: 'b4' },
-]
+const getItemValueForSearch = (item: SelectFieldItemType): string => {
+  if (typeof item === 'string') {
+    return item
+  }
+
+  return `${item.title} ${item?.subtitle}`
+}
+
+const getItemValue = (item: SelectFieldItemType): string => {
+  if (typeof item === 'string') {
+    return item
+  }
+
+  return item.value.toString()
+}
+
+const updateVList = () => {
+  // nextTick() - not always works, especially when searchValue becomes empty
+  setTimeout(() => {
+    const menu = document.getElementById(menuId)
+
+    if (!menu) {
+      return
+    }
+
+    const list = menu.querySelector('.v-list')
+
+    if (!list) {
+      return
+    }
+
+    if (list.scrollHeight > list.clientHeight) {
+      list.classList.add("rc-scrollable")
+    } else {
+      list.classList.remove("rc-scrollable")
+    }
+  }, 200)
+}
 
 const computedItems = computed(() => {
   if (!searchValue.value) {
-    return testItems
+    return selectProps.items
   }
 
-  return testItems
-  // return testItems.filter((item: string) => item.includes(<string>searchValue.value))
+  return selectProps.items.filter(
+    (item: SelectFieldItemType) =>
+      getItemValueForSearch(item).includes(<string>searchValue.value)
+  )
 })
 
-const test = (item, props) => {
-  console.log('test', item, props)
+watch(computedItems, () => {
+  updateVList()
+})
+
+const checkAll = (value: boolean) => {
+  model.value = value
+    ? computedItems.value.map((item: SelectFieldItemType) => getItemValue(item))
+    : []
 }
+
+const isSelectedAll = computed(() => {
+  return model.value?.length === selectProps.items.length
+})
+
+const isSelectedSome = computed(() => {
+  return !model.value ? false : model.value?.length > 0
+})
 
 </script>

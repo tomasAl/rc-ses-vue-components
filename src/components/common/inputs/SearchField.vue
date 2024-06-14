@@ -10,6 +10,8 @@
         <XCircleFilledIcon v-if="!props.readonly" @click="model = ''" />
       </slot>
     </template>
+
+    <template #prepend><slot name="prepend" /></template>
   </Textfield>
 </template>
 

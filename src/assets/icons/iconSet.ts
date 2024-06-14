@@ -2,8 +2,12 @@ import { Component, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
+import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
+import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
+import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
 import CheckIcon from '@/assets/icons/regular/CheckIcon.vue'
 
+import RadioOffIcon from './inputs/RadioOffIcon.vue'
 import CaretLeftIcon from './regular/CaretLeftIcon.vue'
 import CaretUpIcon from './regular/CaretUpIcon.vue'
 import MagnifyingGlassIcon from './regular/MagnifyingGlassIcon.vue'
@@ -14,8 +18,8 @@ const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color 
 const aliases: IconAliases = {
   calendar: undefined,
   checkboxIndeterminate: undefined,
-  checkboxOff: undefined,
-  checkboxOn: undefined,
+  checkboxOff: CheckboxOffIcon,
+  checkboxOn: CheckboxOnIcon,
   clear: undefined,
   delete: undefined,
   delimiter: undefined,
@@ -33,8 +37,8 @@ const aliases: IconAliases = {
   next: undefined,
   plus: undefined,
   prev: undefined,
-  radioOff: undefined,
-  radioOn: undefined,
+  radioOff: RadioOffIcon,
+  radioOn: RadioOnIcon,
   ratingEmpty: undefined,
   ratingFull: undefined,
   ratingHalf: undefined,

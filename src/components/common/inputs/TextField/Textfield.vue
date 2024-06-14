@@ -16,9 +16,8 @@
       :append-icon="appendIcon"
       @click:append="$emit('click:append', $event)"
     >
-      <template #clear>
-        <slot name="clear" />
-      </template>
+      <template #clear><slot name="clear" /></template>
+      <template #prepend><slot name="prepend" /></template>
     </v-text-field>
   </FieldWrapper>
 </template>

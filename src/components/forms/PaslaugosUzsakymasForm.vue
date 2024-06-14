@@ -22,26 +22,47 @@
     class="form-control"
     label="Tikslas"
     searchable
-    :items="['test1', 'test2', 'test3', 'test1', 'test2', 'test3', 'test1', 'test2', 'test3', 'test1', 'test2', 'test3']"
+    :multiple="true"
+    :items="[
+      { title: 'test1', value: 't1' },
+      { title: 'test2', value: 't2' },
+      { title: 'test3', value: 't3' },
+      { title: 'test4', value: 't4' },
+      { title: 'laba', value: 'lab' },
+      { title: 'krab', value: 'krab' },
+    ]"
   />
 
   <Textfield class="form-control" label="Tikslas" description="pasiektas" disabled />
   <Textfield label="Tikslas" error="input error" />
   <Button variant="tonal">Test</Button>
   <SelectField
-    v-model="selectModel"
-
     label="Tikslas"
     name="tikslas"
-    :items="['test1', 'test2', 'test3', 'test1', 'test2', 'test3', 'test1', 'test2', 'test3', 'test1', 'test2', 'test3']"
+    :items="[
+      'test1',
+      'test2',
+      'test3',
+      'test1',
+      'test2',
+      'test3',
+      'test1',
+      'test2',
+      'test3',
+      'test1',
+      'test2',
+      'test3',
+    ]"
   />
 
+  <v-select :items="['vienas', 'du', 'trys', 'keturi', 'penki']" multiple></v-select>
 
-
-
+  <input v-maska="'#-#'" />
+  <v-text-field v-maska="'#-#'"></v-text-field>
 </template>
 
 <script setup lang="ts">
+import { vMaska } from 'maska/vue'
 import { ref } from 'vue'
 
 const selectModel = ref()

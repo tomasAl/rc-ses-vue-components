@@ -17,6 +17,7 @@ declare module 'vue' {
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     PaslaugosUzsakymasForm: typeof import('./components/forms/PaslaugosUzsakymasForm.vue')['default']
+    PhoneField: typeof import('./components/common/inputs/PhoneField.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SearchableArea: typeof import('./components/common/inputs/shared/SearchableArea/SearchableArea.vue')['default']
