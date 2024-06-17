@@ -1,0 +1,23 @@
+.rc-number-stepper {
+  position: relative;
+  //display: flex;
+
+  .v-container {
+    padding: 0px;
+  }
+
+  .rc-ns-col-input {
+    flex-basis: 70%;
+  }
+
+  .rc-ns-col-actions {
+    display: flex;
+    flex-basis: 30%;
+  }
+
+
+  .v-btn {
+    height: 100%;
+    flex-grow: 1;
+  }
+}
