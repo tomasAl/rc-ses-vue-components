@@ -18,5 +18,7 @@
     left: calc($gap / -2);
     top: calc($gap / -2);
     z-index: 1;
+    pointer-events: none;
   }
 }
+
