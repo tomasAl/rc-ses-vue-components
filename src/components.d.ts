@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Alert: typeof import('./components/common/Alert/Alert.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
@@ -19,6 +20,7 @@ declare module 'vue' {
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     NumberStepper: typeof import('./components/common/inputs/NumberStepperField/NumberStepper.vue')['default']
+    NumberStepperField: typeof import('./components/common/inputs/NumberStepperField/NumberStepperField.vue')['default']
     PaslaugosUzsakymasForm: typeof import('./components/forms/PaslaugosUzsakymasForm.vue')['default']
     PhoneField: typeof import('./components/common/inputs/PhoneField.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

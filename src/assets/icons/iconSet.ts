@@ -12,6 +12,11 @@ import CaretLeftIcon from './regular/CaretLeftIcon.vue'
 import CaretUpIcon from './regular/CaretUpIcon.vue'
 import MagnifyingGlassIcon from './regular/MagnifyingGlassIcon.vue'
 import XIcon from './regular/XIcon.vue'
+import MinusIcon from '@/assets/icons/regular/MinusIcon.vue'
+import PlusIcon from '@/assets/icons/regular/PlusIcon.vue'
+import WarningFilledIcon from '@/assets/icons/filled/WarningFilledIcon.vue'
+import InfoFilledIcon from '@/assets/icons/filled/InfoFilledIcon.vue'
+import WarningDiamondFilledIcon from '@/assets/icons/filled/WarningDiamondFilledIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -25,17 +30,17 @@ const aliases: IconAliases = {
   delimiter: undefined,
   dropdown: Icon16px(CaretDownFilledIcon),
   edit: undefined,
-  error: undefined,
+  error: WarningDiamondFilledIcon,
   expand: CaretDownFilledIcon,
   file: undefined,
   first: undefined,
-  info: undefined,
+  info: InfoFilledIcon,
   last: undefined,
   loading: undefined,
   menu: undefined,
-  minus: undefined,
+  minus: MinusIcon,
   next: undefined,
-  plus: undefined,
+  plus: PlusIcon,
   prev: undefined,
   radioOff: RadioOffIcon,
   radioOn: RadioOnIcon,
@@ -47,7 +52,7 @@ const aliases: IconAliases = {
   subgroup: undefined,
   success: undefined,
   unfold: undefined,
-  warning: undefined,
+  warning: WarningFilledIcon,
   collapse: CaretUpIcon,
   complete: undefined,
   cancel: undefined,
