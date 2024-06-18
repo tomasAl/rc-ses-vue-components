@@ -1,20 +1,27 @@
 <template>
   <FieldWrapper :label="label" :description="description" :for="name">
-    <NumberStepper />
+    <NumberStepper
+      v-model="model"
+      :min="min"
+      :max="max"
+      :step="step"
+      :disabled="disabled"
+      :readonly="readonly"
+    />
   </FieldWrapper>
 </template>
 
 
 <script setup lang="ts">
-import './CheckboxFieldStyle.scss'
 import { withDefaults } from 'vue'
+import { NumberStepperProps } from '@/types/inputs/NumberStepperProps'
 
-const props = withDefaults(defineProps<CheckboxFieldProps>(), {
+withDefaults(defineProps<NumberStepperProps>(), {
   disabled: false,
-  color: 'primary',
-  label: undefined,
+  min: 1,
+  step: 1,
 })
 
-const model = defineModel<boolean>()
+const model = defineModel<string | number | undefined>()
 
 </script>

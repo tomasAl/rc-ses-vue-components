@@ -17,6 +17,7 @@ import PlusIcon from '@/assets/icons/regular/PlusIcon.vue'
 import WarningFilledIcon from '@/assets/icons/filled/WarningFilledIcon.vue'
 import InfoFilledIcon from '@/assets/icons/filled/InfoFilledIcon.vue'
 import WarningDiamondFilledIcon from '@/assets/icons/filled/WarningDiamondFilledIcon.vue'
+import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -50,7 +51,7 @@ const aliases: IconAliases = {
   sortAsc: undefined,
   sortDesc: undefined,
   subgroup: undefined,
-  success: undefined,
+  success: CheckCircleFilledIcon,
   unfold: undefined,
   warning: WarningFilledIcon,
   collapse: CaretUpIcon,

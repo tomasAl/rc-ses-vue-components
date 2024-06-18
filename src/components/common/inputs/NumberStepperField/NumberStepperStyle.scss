@@ -1,6 +1,6 @@
 .rc-number-stepper {
   position: relative;
-
+  width: 100%;
   display: flex;
 
   .v-container {
@@ -20,7 +20,7 @@
 
 
   .v-btn {
-    max-width: 3.5rem;
+    max-width: 3.125rem;
     height: 100%;
     flex-grow: 1;
     padding: 0;

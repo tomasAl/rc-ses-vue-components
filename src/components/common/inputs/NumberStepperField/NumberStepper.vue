@@ -7,7 +7,7 @@
           @input="handleInput"
           @blur="onBlur"
           :disabled="disabled"
-
+          :readonly="readonly"
         />
       </v-col>
       <v-col class="rc-ns-col-actions">
@@ -15,6 +15,7 @@
           class="minus bg-grey-100"
           @click="minusClick"
           :disabled="disabled"
+          :readonly="readonly"
         >
           <v-icon icon="$minus"></v-icon>
         </v-btn>
@@ -22,6 +23,7 @@
           class="plus bg-grey-100"
           @click="plusClick"
           :disabled="disabled"
+          :readonly="readonly"
         >
           <v-icon icon="$plus"></v-icon>
         </v-btn>
