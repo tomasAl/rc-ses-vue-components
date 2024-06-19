@@ -1,7 +1,7 @@
 <template>
   <IconSVG v-bind="$props">
-    <rect x="1" y="1" width="18" height="18" rx="9" fill="white" />
-    <rect x="1" y="1" width="18" height="18" rx="9" stroke="#DFE2E5" stroke-width="2" />
+    <rect x="1" y="1" width="22" height="22" rx="11" fill="white"/>
+    <rect x="1" y="1" width="22" height="22" rx="11" stroke="#9DA6B2" stroke-width="2"/>
   </IconSVG>
 </template>
 

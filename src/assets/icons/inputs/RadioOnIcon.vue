@@ -1,8 +1,8 @@
 <template>
   <IconSVG v-bind="$props">
-    <rect x="1" y="1" width="20" height="20" rx="10" fill="#00A879" />
-    <rect x="1" y="1" width="20" height="20" rx="10" stroke="#00A879" stroke-width="2" />
-    <circle cx="11" cy="11" r="5" fill="white" />
+    <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" fill="#06A0D4"/>
+    <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="#06A0D4"/>
+    <circle cx="12" cy="12" r="5" fill="white"/>
   </IconSVG>
 </template>
 

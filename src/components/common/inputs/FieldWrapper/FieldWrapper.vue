@@ -8,7 +8,12 @@
         {{ description }}
       </label>
     </div>
-    <slot />
+    <div
+      class="rc-field-content"
+      :class="{ 'rc-field-content--variant-outlined': variant === 'outlined' }"
+    >
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -19,11 +24,13 @@ type Props = {
   label?: string
   description?: string
   for?: string
+  variant: 'text' | 'outlined'
 }
 
 const props = withDefaults(defineProps<Props>(), {
   label: undefined,
   description: undefined,
   for: undefined,
+  variant: 'text',
 })
 </script>

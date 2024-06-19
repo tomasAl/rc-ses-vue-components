@@ -7,14 +7,14 @@
   width: 100%;
 
   .rc-field-labels {
-    width: auto;
+    flex: 1 0 auto;
     text-align: left;
     margin: 0 0 0.3rem 0;
-  }
 
-  label {
-    display: block;
-    line-height: 1rem;
+    label {
+      display: block;
+      line-height: 1rem;
+    }
   }
 
   .text-subtitle-2 {
@@ -27,7 +27,7 @@
     align-items: center;
 
     .rc-field-labels {
-      width: 243px;
+      flex: 0 0 243px;
       text-align: right;
       margin: 0 1.5rem 0 0;
 

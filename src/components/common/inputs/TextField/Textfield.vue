@@ -15,6 +15,7 @@
       :prepend-inner-icon="prependInnerIcon"
       :append-icon="appendIcon"
       @click:append="$emit('click:append', $event)"
+      @blur="$emit('blur', $event)"
     >
       <template #clear><slot name="clear" /></template>
       <template #prepend><slot name="prepend" /></template>
@@ -41,7 +42,7 @@ withDefaults(defineProps<TextFieldProps>(), {
   appendIcon: undefined,
 })
 
-defineEmits(['click:append'])
+defineEmits(['click:append', 'blur'])
 
 const model = defineModel<string | number>()
 </script>
