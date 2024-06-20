@@ -11,16 +11,19 @@
     :error-messages="error"
   >
     <template #label>
-      <slot name="label"><slot>{{ content }}</slot></slot>
+      <slot name="label"
+        ><slot>{{ content }}</slot></slot
+      >
     </template>
   </v-checkbox>
 </template>
 
-
 <script setup lang="ts">
-import './CheckboxFieldStyle.scss'
 import { withDefaults } from 'vue'
+
 import { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
+
+import './CheckboxFieldStyle.scss'
 
 withDefaults(defineProps<CheckboxProps>(), {
   disabled: false,
@@ -31,8 +34,7 @@ withDefaults(defineProps<CheckboxProps>(), {
 const model = defineModel<boolean>()
 const classes = computed(() => {
   return {
-    'rc-checkbox--checked': model.value
+    'rc-checkbox--checked': model.value,
   }
 })
-
 </script>

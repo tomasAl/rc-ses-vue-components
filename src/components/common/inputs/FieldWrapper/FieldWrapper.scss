@@ -22,6 +22,15 @@
     font-style: italic;
   }
 
+  .rc-field-content {
+    width: 100%;
+    overflow: visible;
+
+    &.v-card--variant-outlined {
+      padding: 0.5rem;
+    }
+  }
+
   @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
     flex-direction: row;
     align-items: center;

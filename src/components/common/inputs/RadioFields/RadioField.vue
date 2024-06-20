@@ -6,17 +6,13 @@
     :for="name"
     variant="outlined"
   >
-    <v-radio-group
-      class="rc-radios"
-      inline
-      hide-details
-    >
+    <v-radio-group class="rc-radios" inline hide-details>
       <Radio
         v-for="(option, index) in options"
         :key="index"
         :value="option.value"
-        @click="model = option.value"
         :label="option.label"
+        @click="model = option.value"
       >
       </Radio>
     </v-radio-group>
@@ -24,8 +20,6 @@
 </template>
 
 <script setup lang="ts">
-
-// :class="{ 'v-btn--active': selectedOption === option.value }"
 import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
 
 import './RadioButtonsFieldStyle.scss'
@@ -37,5 +31,4 @@ withDefaults(defineProps<RadioFieldProps>(), {
 })
 
 const model = defineModel<string>()
-
 </script>
