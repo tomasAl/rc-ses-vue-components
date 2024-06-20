@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper :label="label" :description="description" :for="name">
+  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <v-text-field
       v-model="model"
       :name="name"
@@ -16,9 +16,11 @@
       :append-icon="appendIcon"
       @click:append="$emit('click:append', $event)"
       @blur="$emit('blur', $event)"
+      @focus="$emit('focus', $event)"
     >
       <template #clear><slot name="clear" /></template>
       <template #prepend><slot name="prepend" /></template>
+      <template #append><slot name="append" /></template>
     </v-text-field>
   </FieldWrapper>
 </template>
@@ -30,7 +32,7 @@ import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
 
-withDefaults(defineProps<TextFieldProps>(), {
+const props = withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
   label: undefined,
   description: undefined,
@@ -42,7 +44,9 @@ withDefaults(defineProps<TextFieldProps>(), {
   appendIcon: undefined,
 })
 
-defineEmits(['click:append', 'blur'])
+const { fieldLabel, fieldDescription, ...textFieldProps } = props
+
+defineEmits(['click:append', 'blur', 'focus'])
 
 const model = defineModel<string | number>()
 </script>

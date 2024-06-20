@@ -1,17 +1,38 @@
 <template>
   <div class="rc-number-stepper" :class="stepperClasses">
-    <v-row no-gutters>
-      <v-col class="rc-ns-col-input">
-        <Textfield
-          v-model="model"
+    <Textfield
+      v-model="model"
+      :disabled="disabled"
+      :readonly="readonly"
+      @input="handleInput"
+      @blur="onBlur"
+      @focus="onFocus"
+    >
+      <template #append>
+        <v-btn
+          class="minus bg-grey-100"
+          @click="minusClick"
           :disabled="disabled"
           :readonly="readonly"
-          @input="handleInput"
           @blur="onBlur"
           @focus="onFocus"
-        />
-      </v-col>
-      <v-col class="rc-ns-col-actions">
+        >
+          <v-icon icon="$minus"></v-icon>
+        </v-btn>
+        <v-btn
+          class="plus bg-grey-100"
+          @click="plusClick"
+          :disabled="disabled"
+          :readonly="readonly"
+          @blur="onBlur"
+          @focus="onFocus"
+        >
+          <v-icon icon="$plus"></v-icon>
+        </v-btn>
+      </template>
+    </Textfield>
+  </div>
+<!--      <div class="rc-ns-col-actions">
         <v-btn
           class="minus bg-grey-100"
           @click="minusClick"
@@ -28,9 +49,7 @@
         >
           <v-icon icon="$plus"></v-icon>
         </v-btn>
-      </v-col>
-    </v-row>
-  </div>
+      </div>-->
 </template>
 
 <script setup lang="ts">

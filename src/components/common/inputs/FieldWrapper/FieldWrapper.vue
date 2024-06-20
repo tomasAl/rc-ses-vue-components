@@ -12,9 +12,12 @@
         {{ description }}
       </label>
     </div>
-    <v-card class="rc-field-content" :variant="variant" color="grey-500">
+    <div
+      class="rc-field-content"
+      :class="{ 'rc-field-content--variant-outlined': variant === 'outlined' }"
+    >
       <slot />
-    </v-card>
+    </div>
   </div>
 </template>
 

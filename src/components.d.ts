@@ -20,6 +20,7 @@ declare module 'vue' {
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     NumberStepper: typeof import('./components/common/inputs/NumberStepperField/NumberStepper.vue')['default']
+    NumberStepper2: typeof import('./components/common/inputs/NumberStepperField/NumberStepper2.vue')['default']
     NumberStepperField: typeof import('./components/common/inputs/NumberStepperField/NumberStepperField.vue')['default']
     PaslaugosUzsakymasForm: typeof import('./components/forms/PaslaugosUzsakymasForm.vue')['default']
     PhoneField: typeof import('./components/common/inputs/PhoneField.vue')['default']
@@ -34,6 +35,7 @@ declare module 'vue' {
     StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
     Test: typeof import('./components/common/Test.vue')['default']
     Textfield: typeof import('./components/common/inputs/TextField/Textfield.vue')['default']
+    TextInput: typeof import('./components/common/inputs/TextField/TextInput.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }
 }

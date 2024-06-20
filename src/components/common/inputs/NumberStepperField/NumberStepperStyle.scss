@@ -1,23 +1,11 @@
 .rc-number-stepper {
   position: relative;
-  width: 100%;
+  width: auto;
   display: flex;
 
-  .v-container {
-    padding: 0px;
+  .v-input--horizontal .v-input__append {
+    margin-inline-start: 0;
   }
-
-  .rc-ns-col-input {
-    flex: 0 0 13.25rem;
-  }
-
-  .rc-ns-col-actions {
-    display: flex;
-    flex: 1;
-    justify-content: flex-start; /* Distribute buttons evenly */
-    align-items: center;
-  }
-
 
   .v-btn {
     max-width: 3.125rem;
@@ -25,25 +13,89 @@
     flex-grow: 1;
     padding: 0;
 
-    border: 1px solid rgb(var(--v-theme-grey-500));
+    .v-btn__underlay {
+      border: 1px solid rgb(var(--v-theme-grey-500));
+    }
+    //
 
     &.minus {
-      border-left: none;
-      border-right: none;
-      border-radius: 0;
+      .v-btn__underlay {
+        border: 1px solid rgb(var(--v-theme-grey-500));
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+      }
     }
 
     &.plus {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      .v-btn__underlay {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
     }
   }
 
   .rc-text-field {
+    input {
+      min-width: 100px;
+    }
+
     .v-field__outline__end {
-      // border-right: none;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      border-right-color: rgb(var(--v-theme-grey-500));
     }
   }
+
+  // HOVER STATE
+  &:hover {
+    .v-btn {
+      .v-btn__underlay {
+        border-top-color: rgb(var(--v-theme-primary));
+        border-bottom-color: rgb(var(--v-theme-primary));
+      }
+      &.plus {
+        .v-btn__underlay {
+          border-right-color: rgb(var(--v-theme-primary));
+        }
+      }
+    }
+  }
+
+  // FOCUS STATE
+  &.rc-focus {
+
+    .v-input {
+      border-radius: 3px;
+      box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
+    }
+
+    .v-btn {
+      .v-btn__underlay {
+        border-top-color: rgb(var(--v-theme-primary));
+        border-bottom-color: rgb(var(--v-theme-primary));
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        // box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
+      }
+
+      &.plus {
+        .v-btn__underlay {
+          border-right-width: 2px;
+          border-right-color: rgb(var(--v-theme-primary));
+        }
+      }
+    }
+
+    .rc-text-field {
+      .v-field__outline {
+        box-shadow: none !important;
+      }
+      .v-field__outline__end {
+        border-right-width: 1px;
+      }
+    }
+  }
+
 }
