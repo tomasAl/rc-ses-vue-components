@@ -18,6 +18,9 @@ import WarningFilledIcon from '@/assets/icons/filled/WarningFilledIcon.vue'
 import InfoFilledIcon from '@/assets/icons/filled/InfoFilledIcon.vue'
 import WarningDiamondFilledIcon from '@/assets/icons/filled/WarningDiamondFilledIcon.vue'
 import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.vue'
+import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
+import PaperclipIcon from '@/assets/icons/regular/PaperclipIcon.vue'
+import XCircleFilledIcon from './filled/XCircleFilledIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -26,14 +29,14 @@ const aliases: IconAliases = {
   checkboxIndeterminate: undefined,
   checkboxOff: CheckboxOffIcon,
   checkboxOn: CheckboxOnIcon,
-  clear: undefined,
+  clear: XCircleFilledIcon,
   delete: undefined,
   delimiter: undefined,
   dropdown: Icon16px(CaretDownFilledIcon),
   edit: undefined,
   error: WarningDiamondFilledIcon,
   expand: CaretDownFilledIcon,
-  file: undefined,
+  file: PaperclipIcon,
   first: undefined,
   info: InfoFilledIcon,
   last: undefined,
@@ -61,6 +64,7 @@ const aliases: IconAliases = {
   back: CaretLeftIcon,
   search: MagnifyingGlassIcon,
   checkPrimary: Icon16px(CheckIcon, 'primary'),
+  upload: UploadIcon
 }
 
 const rcIcons: IconSet = {

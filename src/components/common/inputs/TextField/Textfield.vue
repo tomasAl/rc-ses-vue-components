@@ -32,7 +32,7 @@ import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
 
-const props = withDefaults(defineProps<TextFieldProps>(), {
+withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
   label: undefined,
   description: undefined,
@@ -43,8 +43,6 @@ const props = withDefaults(defineProps<TextFieldProps>(), {
   prependInnerIcon: undefined,
   appendIcon: undefined,
 })
-
-const { fieldLabel, fieldDescription, ...textFieldProps } = props
 
 defineEmits(['click:append', 'blur', 'focus'])
 

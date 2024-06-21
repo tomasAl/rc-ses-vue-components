@@ -14,11 +14,20 @@
     color: rgb(var(--v-theme-grey-500));
   }
 
+  &.v-input {
+    --v-input-control-height: 44px;
+    --v-input-padding-top: 16px;
+  }
+
   .v-field {
-    --v-field-padding-start: 0.75rem;
-    --v-field-padding-end: 0.75rem; // 12px
-    --v-field-input-padding-top: 0.8125rem; // 13px
-    --v-field-input-padding-bottom: 0.8125rem;
+    --v-field-padding-start: 0.8125rem;
+    --v-field-padding-end: 0.8125rem; // 13px
+    --v-field-input-padding-top: 0.75rem; // 12px
+    --v-field-input-padding-bottom: 0.75rem;
+
+    .v-field__input {
+      font-size: 0.9375rem;
+    }
   }
 
   .v-input--density-default {
