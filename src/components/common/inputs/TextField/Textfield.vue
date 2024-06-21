@@ -18,9 +18,9 @@
       @blur="$emit('blur', $event)"
       @focus="$emit('focus', $event)"
     >
-      <template #clear><slot name="clear" /></template>
-      <template #prepend><slot name="prepend" /></template>
-      <template #append><slot name="append" /></template>
+      <template v-if="$slots.clear" #clear><slot name="clear" /></template>
+      <template v-if="$slots.prepend" #prepend><slot name="prepend" /></template>
+      <template v-if="$slots.append" #append><slot name="append" /></template>
     </v-text-field>
   </FieldWrapper>
 </template>

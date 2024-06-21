@@ -43,7 +43,7 @@
   }
 
   // ### FOCUSED STATE
-  .v-field--focused {
+  .v-field--focused, .rc-focused {
     .v-field__outline {
       --v-field-border-width: 1px;
       color: rgb(var(--v-theme-grey-900));
@@ -170,7 +170,6 @@
       }
 
       .v-list-item-subtitle {
-        font-style: italic;
         font-weight: 500;
         font-size: 0.75rem;
       }

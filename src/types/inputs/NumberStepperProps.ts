@@ -1,8 +1,9 @@
-import { FieldProps } from '@/types/inputs/FieldProps'
+import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
-
-export type NumberStepperProps = FieldProps & {
-  max?: number,
-  min?: number,
-  step?: number,
+export type NumberStepperProps = InputProps & {
+  max?: number
+  min?: number
+  step?: number
 }
+
+export type NumberStepperFieldProps = FieldProps &  NumberStepperProps

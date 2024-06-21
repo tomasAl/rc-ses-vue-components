@@ -1,5 +1,5 @@
 import { ColorType } from '@/types/common/ColorType'
-import { FieldProps } from '@/types/inputs/FieldProps'
+import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type SelectFieldItemType = {
   title: string
@@ -7,10 +7,11 @@ export type SelectFieldItemType = {
   subtitle?: string
 }
 
-export type SelectFieldProps = FieldProps & {
-  items: Array<SelectFieldItemType>
-  searchable?: boolean
-  color?: ColorType
-  multiple?: boolean
-  direction?: 'vertical' | 'horizontal'
-}
+export type SelectFieldProps = InputProps &
+  FieldProps & {
+    items: Array<SelectFieldItemType>
+    searchable?: boolean
+    color?: ColorType
+    multiple?: boolean
+    direction?: 'vertical' | 'horizontal'
+  }

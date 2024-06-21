@@ -67,12 +67,58 @@
   <CheckboxField v-model="check" class="form-control" field-label="Sutikimas" label="test label pam tes tlabel pam labai ilgas labelas darlabel pam label pam tes tlabel pam labai ilgas labelas tes tlabel pam labai ilgas labelas ilgesnis ir title bus gal kazkada" error="test error labai labai netgi labai ilgas erroras kuris kazkada turi baiktis cia tik testas" />
  -->
   <Checkbox>Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.</Checkbox>
+  <Radio label="test"></Radio>
 
   <CheckboxField v-model="check" label="Sutikimas">
     Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.
   </CheckboxField>
 
-  <NumberStepper></NumberStepper>
+  <CheckboxField class="form-control" v-model="check" label="Sutikimas" content="1112 Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.">
+  </CheckboxField>
+
+  <br/><br/>
+  <NumberStepperField label="Plus-minus" error="test" />
+
+  <br/><br/>
+  <NumberStepper :min="5" :max="20" :step="0.2"></NumberStepper>
+
+  <v-text-field></v-text-field>
+
+  <br/><br/>
+  <Alert variant="light" type="success" title="Title of light" class="form-control">
+    Bah trah mah this is alert...!!!
+  </Alert>
+  <RadioButtonsField
+    label="test"
+    descripton="test"
+    :options="[
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3 Option 3', value: 'option3' },
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+    ]"
+  ></RadioButtonsField>
+
+  <RadioField
+    label="test"
+    descripton="test"
+    variant="outlined"
+    :options="[
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 3 Option 3', value: 'option3' },
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+      { label: 'Option 1', value: 'option1' },
+      { label: 'Option 2', value: 'option2' },
+    ]"
+  ></RadioField>
+  <v-card variant="outlined" color="primary">
+    test
+  </v-card>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper :label="label" :description="description" :for="name">
+  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <v-select
       ref="selectRef"
       v-model="model"
@@ -52,7 +52,7 @@
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { nextTick, withDefaults, watch } from 'vue'
+import { withDefaults, watch } from 'vue'
 
 import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
 import type {
@@ -88,16 +88,16 @@ const menuProps = ref({
 })
 
 const getItemValueForSearch = (item: SelectFieldItemType): string => {
-  if (typeof item === 'string') {
-    return item
+  if (typeof item.value === 'string') {
+    return item.value
   }
 
   return `${item.title} ${item?.subtitle}`
 }
 
 const getItemValue = (item: SelectFieldItemType): string => {
-  if (typeof item === 'string') {
-    return item
+  if (typeof item.value === 'string') {
+    return item.value
   }
 
   return item.value.toString()
@@ -146,13 +146,4 @@ const checkAll = (value: boolean) => {
     ? computedItems.value.map((item: SelectFieldItemType) => getItemValue(item))
     : []
 }
-
-const isSelectedAll = computed(() => {
-  return model.value?.length === selectProps.items.length
-})
-
-const isSelectedSome = computed(() => {
-  return !model.value ? false : model.value?.length > 0
-})
-
 </script>

@@ -1,47 +1,54 @@
 <template>
   <div class="rc-number-stepper" :class="stepperClasses">
-    <v-row no-gutters>
-      <v-col class="rc-ns-col-input">
-        <Textfield
-          v-model="model"
-          :disabled="disabled"
-          :readonly="readonly"
-          @input="handleInput"
-          @blur="onBlur"
-          @focus="onFocus"
-        />
-      </v-col>
-      <v-col class="rc-ns-col-actions">
+    <v-text-field
+      v-model="model"
+      :disabled="disabled"
+      :focused="focused"
+      :readonly="readonly"
+      :hide-details="true"
+      :error="!!error"
+      @input="handleInput"
+      @blur="onBlur"
+      @focus="onFocus"
+    >
+      <template #append>
         <v-btn
           class="minus bg-grey-100"
-          @click="minusClick"
-          :disabled="disabled"
           :readonly="readonly"
+          @click="minusClick"
+          @blur="onBlur"
+          @focus="onFocus"
         >
           <v-icon icon="$minus"></v-icon>
         </v-btn>
         <v-btn
           class="plus bg-grey-100"
-          @click="plusClick"
-          :disabled="disabled"
           :readonly="readonly"
+          @click="plusClick"
+          @blur="onBlur"
+          @focus="onFocus"
         >
           <v-icon icon="$plus"></v-icon>
         </v-btn>
-      </v-col>
-    </v-row>
+      </template>
+    </v-text-field>
+    <div v-if="error" class="text-error text-subtitle-2">
+      {{ error }}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import './NumberStepperStyle.scss'
 import { withDefaults } from 'vue'
+
 import { NumberStepperProps } from '@/types/inputs/NumberStepperProps'
+
+import './NumberStepperStyle.scss'
 
 const props = withDefaults(defineProps<NumberStepperProps>(), {
   max: Infinity,
   min: -Infinity,
-  step: 1
+  step: 1,
 })
 
 const focused = ref<boolean>(false)
@@ -53,7 +60,7 @@ const roundToStep = (value: number, step: number) => {
 
   // Avoid floating point precision issues
   return parseFloat(roundedValue.toFixed(10))
-};
+}
 
 const handleInput = (event: InputEvent) => {
   const input = (event.target as HTMLInputElement).value
@@ -99,7 +106,10 @@ const plusClick = () => {
 
 const stepperClasses = computed(() => {
   return {
-    'rc-focus': focused.value
+    'rc-focused': focused.value,
+    'rc-error': !!props.error,
+    'rc-readonly': props.readonly,
+    'rc-disabled': props.disabled,
   }
 })
 </script>
