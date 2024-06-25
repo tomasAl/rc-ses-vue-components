@@ -1,10 +1,73 @@
 <template>
+
+  <v-tooltip text="Tooltip">
+    <template v-slot:activator="{ props }">
+      <v-btn v-bind="props" @click="console.log(props)">Tooltip</v-btn>
+    </template>
+  </v-tooltip>
+
+  <Tooltip text="blah">
+    <template #activator="{ props }">
+      <v-btn v-bind="props" @click="console.log(props)">Tooltip show</v-btn>
+    </template>
+
+  </Tooltip>
+
+
+  <v-tabs v-model="tab" class="rc-tabs">
+    <Tab value="one" disabled>Item One 1</Tab>
+    <Tab value="two" variant="text">Item Two</Tab>
+    <Tab value="three" variant="text">Item Three</Tab>
+  </v-tabs>
+  <v-tabs-window v-model="tab" class="form-control">
+    <v-tabs-window-item value="one"> One </v-tabs-window-item>
+    <v-tabs-window-item value="two"> Two </v-tabs-window-item>
+    <v-tabs-window-item value="three"> Three </v-tabs-window-item>
+  </v-tabs-window>
+
+  <v-tabs v-model="tab" class="rc-tabs">
+    <Tab value="one" variant="outlined" disabled>Visos <span class="count">0</span></Tab>
+    <Tab value="two" variant="outlined">Item Two <span class="count">0</span></Tab>
+    <Tab value="three" variant="outlined">Item Three <span class="count">0</span></Tab>
+  </v-tabs>
+
+  <v-tabs-window v-model="tab" class="form-control">
+    <v-tabs-window-item value="one"> One </v-tabs-window-item>
+    <v-tabs-window-item value="two"> Two </v-tabs-window-item>
+    <v-tabs-window-item value="three"> Three </v-tabs-window-item>
+  </v-tabs-window>
+
+
+  <v-text-field name="bla">
+
+    <template v-slot:append>
+      <v-btn icon="null">
+        <v-icon icon="$tooltip"/>
+        <v-tooltip activator="parent">
+          my tooltip
+        </v-tooltip>
+      </v-btn>
+    </template>
+  </v-text-field>
+
+
   <Textfield
     class="form-control"
     label="Tikslas"
-    error="bla"
+    readonly
     description="pasiektas ir labai ilgas tekstas kartais buna ir uzlipa ant kito lauko ir uzlipa ant kito lauko ir uzlipa ant kito lauko"
-  />
+  >
+    <template v-slot:append>
+      <v-btn icon="null">
+        <v-icon icon="$tooltip"/>
+        <v-tooltip activator="parent">
+          my tooltip
+        </v-tooltip>
+      </v-btn>
+    </template>
+  </Textfield>
+
+
   <Textfield
     class="form-control"
     label="Tikslas"
@@ -60,37 +123,47 @@
   <input v-maska="'#-#'" />
   <v-text-field v-maska="'#-#'"></v-text-field>
 
-  <br/>
-  <br/>
+  <br />
+  <br />
 
-<!--
+  <!--
   <CheckboxField v-model="check" class="form-control" field-label="Sutikimas" label="test label pam tes tlabel pam labai ilgas labelas darlabel pam label pam tes tlabel pam labai ilgas labelas tes tlabel pam labai ilgas labelas ilgesnis ir title bus gal kazkada" error="test error labai labai netgi labai ilgas erroras kuris kazkada turi baiktis cia tik testas" />
  -->
-  <Checkbox>Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.</Checkbox>
+  <Checkbox
+    >Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų
+    neatskleisiu tretiesiems asmenims.</Checkbox
+  >
   <Radio label="test"></Radio>
 
   <CheckboxField v-model="check" label="Sutikimas">
-    Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.
+    Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų
+    neatskleisiu tretiesiems asmenims.
   </CheckboxField>
 
-  <CheckboxField class="form-control" v-model="check" label="Sutikimas" content="1112 Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims.">
+  <CheckboxField
+    v-model="check"
+    class="form-control"
+    label="Sutikimas"
+    content="1112 Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims."
+  >
   </CheckboxField>
 
-  <br/><br/>
+  <br /><br />
   <NumberStepperField label="Plus-minus" error="test" />
 
-  <br/><br/>
+  <br /><br />
   <NumberStepper :min="5" :max="20" :step="0.2"></NumberStepper>
 
   <v-text-field></v-text-field>
 
-  <br/><br/>
+  <br /><br />
   <Alert variant="light" type="success" title="Title of light" class="form-control">
     Bah trah mah this is alert...!!!
   </Alert>
   <RadioButtonsField
     label="test"
     descripton="test"
+    class="form-control"
     :options="[
       { label: 'Option 1', value: 'option1' },
       { label: 'Option 2', value: 'option2' },
@@ -106,6 +179,7 @@
     label="test"
     descripton="test"
     variant="outlined"
+    class="form-control"
     :options="[
       { label: 'Option 1', value: 'option1' },
       { label: 'Option 2', value: 'option2' },
@@ -116,15 +190,13 @@
       { label: 'Option 2', value: 'option2' },
     ]"
   ></RadioField>
-  <v-card variant="outlined" color="primary">
-    test
-  </v-card>
 </template>
 
 <script setup lang="ts">
 import { vMaska } from 'maska/vue'
 import { ref } from 'vue'
 
+const tab = ref()
 const selectModel = ref()
 const check = ref()
 </script>

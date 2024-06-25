@@ -38,6 +38,7 @@ declare module 'vue' {
     Test: typeof import('./components/common/Test.vue')['default']
     Textfield: typeof import('./components/common/inputs/TextField/Textfield.vue')['default']
     TextInput: typeof import('./components/common/inputs/TextField/TextInput.vue')['default']
+    Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }
 }

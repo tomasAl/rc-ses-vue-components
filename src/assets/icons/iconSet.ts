@@ -21,6 +21,7 @@ import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.v
 import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import PaperclipIcon from '@/assets/icons/regular/PaperclipIcon.vue'
 import XCircleFilledIcon from './filled/XCircleFilledIcon.vue'
+import questionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -64,7 +65,8 @@ const aliases: IconAliases = {
   back: CaretLeftIcon,
   search: MagnifyingGlassIcon,
   checkPrimary: Icon16px(CheckIcon, 'primary'),
-  upload: UploadIcon
+  upload: UploadIcon,
+  tooltip: questionIcon
 }
 
 const rcIcons: IconSet = {
