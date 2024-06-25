@@ -34,10 +34,6 @@
     --v-input-control-height: 2.75rem;
   }
 
-  .v-field--error:not(.v-field--disabled) .v-field__outline {
-    color: rgb(var(--v-theme-error-500)) !important;
-  }
-
   // ### DEFAULT STATE
   .v-field--variant-outlined
   {
@@ -51,6 +47,12 @@
     }
   }
 
+  // ### HOVER STATE
+  .v-field--variant-outlined:hover .v-field__outline
+  {
+    color: rgb(var(--v-theme-primary));
+  }
+
   // ### FOCUSED STATE
   .v-field--focused, .rc-focused {
     .v-field__outline {
@@ -58,16 +60,6 @@
       color: rgb(var(--v-theme-grey-900));
       @include make-focus-before(8px);
     }
-
-    &.v-field--error .v-field__outline {
-      box-shadow: 0 0 0 3px rgba(var(--v-theme-error-600), 0.2) !important;
-    }
-  }
-
-  // ### HOVER STATE
-  .v-field--variant-outlined:hover .v-field__outline
-  {
-    color: rgb(var(--v-theme-primary));
   }
 
   // ### ACTIVE STATE = FOCUSED & ACTIVE
@@ -119,6 +111,17 @@
 
   .v-input__details {
     padding-inline: 0;
+  }
+
+  // ERROR STATE
+  .v-field--focused, .rc-focused {
+    &.v-field--error .v-field__outline {
+      box-shadow: 0 0 0 3px rgba(var(--v-theme-error-600), 0.2) !important;
+    }
+
+    &.v-field--error:not(.v-field--disabled) .v-field__outline {
+      color: rgb(var(--v-theme-error-500)) !important;
+    }
   }
 }
 

@@ -1,5 +1,11 @@
 <template>
-  <v-btn :color="color" :loading="loading" :variant="variant" :disabled="disabled">
+  <v-btn
+    class="rc-btn"
+    :color="color"
+    :loading="loading"
+    :variant="variant"
+    :disabled="disabled"
+  >
     <!-- @slot To put any element inside the button-->
     <slot>
       {{ content }}
