@@ -1,4 +1,5 @@
-import {ThemeDefinition} from "vuetify";
+import { ThemeDefinition } from 'vuetify'
+
 import Colors from './colors'
 
 export const lightTheme: ThemeDefinition = {
@@ -9,24 +10,22 @@ export const lightTheme: ThemeDefinition = {
     ...Colors.warning,
     ...Colors.error,
     ...Colors.grey,
-    background: "#ffffff",
-    info: Colors.grey.grey,
-    success: Colors.secondary.secondary,
+    ...Colors.success,
+    ...Colors.info,
+    background: '#ffffff',
   },
-  variables: {
-
-  },
-};
+  variables: {},
+}
 
 export const darkTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    primary: "#d35400",
-    secondary: "#8e44ad",
-    background: "#2f3640",
-    error: "#c0392b",
-    info: "#2980b9",
-    success: "#27ae60",
-    warning: "#f1c40f",
+    primary: '#d35400',
+    secondary: '#8e44ad',
+    background: '#2f3640',
+    error: '#c0392b',
+    info: '#2980b9',
+    success: '#27ae60',
+    warning: '#f1c40f',
   },
-};
+}

@@ -13,6 +13,7 @@ declare module 'vue' {
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     Checkbox: typeof import('./components/common/inputs/CheckboxField/Checkbox.vue')['default']
     CheckboxField: typeof import('./components/common/inputs/CheckboxField/CheckboxField.vue')['default']
+    DatePicker: typeof import('./components/common/inputs/DatePickerField/DatePicker.vue')['default']
     FieldWrapper: typeof import('./components/common/inputs/FieldWrapper/FieldWrapper.vue')['default']
     FileInput: typeof import('./components/common/inputs/FileInputField/FileInput.vue')['default']
     FormActionPanel: typeof import('./components/common/panels/FormActionPanel/FormActionPanel.vue')['default']

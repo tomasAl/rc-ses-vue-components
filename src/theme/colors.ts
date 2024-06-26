@@ -28,6 +28,21 @@ const secondary = {
   secondary: '#00c288',
 }
 
+const success = {
+  'success-50': secondary['secondary-50'],
+  'success-100': secondary['secondary-100'],
+  'success-200': secondary['secondary-200'],
+  'success-300': secondary['secondary-300'],
+  'success-400': secondary['secondary-400'],
+  'success-500': secondary['secondary-500'],
+  'success-600': secondary['secondary-600'],
+  'success-700': secondary['secondary-700'],
+  'success-800': secondary['secondary-800'],
+  'success-900': secondary['secondary-900'],
+  'success-950': secondary['secondary-950'],
+  success: secondary['secondary'],
+}
+
 const grey = {
   'grey-50': '#f9fafb',
   'grey-100': '#edeff2',
@@ -41,6 +56,21 @@ const grey = {
   'grey-900': '#222d3d',
   'grey-950': '#0f161f',
   grey: '#6b737f',
+}
+
+const info = {
+  'info-50': grey['grey-50'],
+  'info-100': grey['grey-100'],
+  'info-200': grey['grey-200'],
+  'info-300': grey['grey-300'],
+  'info-400': grey['grey-400'],
+  'info-500': grey['grey-500'],
+  'info-600': grey['grey-600'],
+  'info-700': grey['grey-700'],
+  'info-800': grey['grey-800'],
+  'info-900': grey['grey-900'],
+  'info-950': grey['grey-950'],
+  success: grey['grey'],
 }
 
 const warning = {
@@ -73,7 +103,7 @@ const error = {
   error: '#fa5a46',
 }
 
-export const MergedColors = { ...primary, ...secondary, ...grey, ...warning, ...error }
+export const MergedColors = { ...primary, ...secondary, ...grey, ...warning, ...error, ...success, ...info }
 
-export const Colors = { primary, secondary, grey, warning, error }
-export default { primary, secondary, grey, warning, error }
+export const Colors = { primary, secondary, grey, warning, error, success, info }
+export default { primary, secondary, grey, warning, error, success, info }

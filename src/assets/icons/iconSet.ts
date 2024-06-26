@@ -23,6 +23,8 @@ import PaperclipIcon from '@/assets/icons/regular/PaperclipIcon.vue'
 import XCircleFilledIcon from './filled/XCircleFilledIcon.vue'
 import questionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
+import CaretRightIcon from '@/assets/icons/regular/CaretRightIcon.vue'
+import QuestionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -45,9 +47,9 @@ const aliases: IconAliases = {
   loading: undefined,
   menu: undefined,
   minus: MinusIcon,
-  next: undefined,
+  next: CaretRightIcon,
   plus: PlusIcon,
-  prev: undefined,
+  prev: CaretLeftIcon,
   radioOff: RadioOffIcon,
   radioOn: RadioOnIcon,
   ratingEmpty: undefined,
@@ -55,7 +57,7 @@ const aliases: IconAliases = {
   ratingHalf: undefined,
   sortAsc: undefined,
   sortDesc: undefined,
-  subgroup: undefined,
+  subgroup: QuestionIcon,
   success: CheckCircleFilledIcon,
   unfold: undefined,
   warning: WarningFilledIcon,
