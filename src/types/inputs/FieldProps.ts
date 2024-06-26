@@ -9,4 +9,5 @@ export type InputProps = {
 export type FieldProps = {
   fieldLabel?: string
   fieldDescription?: string
+  fieldTooltip?: string
 }

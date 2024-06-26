@@ -20,6 +20,7 @@ declare module 'vue' {
     FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    ModalInfo: typeof import('./components/modals/ModalInfo.vue')['default']
     NumberStepper: typeof import('./components/common/inputs/NumberStepperField/NumberStepper.vue')['default']
     NumberStepper2: typeof import('./components/common/inputs/NumberStepperField/NumberStepper2.vue')['default']
     NumberStepperField: typeof import('./components/common/inputs/NumberStepperField/NumberStepperField.vue')['default']

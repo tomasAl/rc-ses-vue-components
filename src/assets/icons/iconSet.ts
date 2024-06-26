@@ -22,6 +22,7 @@ import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import PaperclipIcon from '@/assets/icons/regular/PaperclipIcon.vue'
 import XCircleFilledIcon from './filled/XCircleFilledIcon.vue'
 import questionIcon from '@/assets/icons/regular/QuestionIcon.vue'
+import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
@@ -74,6 +75,9 @@ const rcIcons: IconSet = {
     switch (props.icon) {
       case 'rc-caret-left':
         return h(CaretLeftIcon, props)
+
+      case 'rc-success':
+        return h(CheckSuccessIcon, props)
 
       // Add other cases here
       default:

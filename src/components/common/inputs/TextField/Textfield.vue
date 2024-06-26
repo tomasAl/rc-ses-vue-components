@@ -1,5 +1,10 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <FieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :for="name"
+    :tooltip="fieldTooltip"
+  >
     <v-text-field
       v-model="model"
       :name="name"
@@ -34,11 +39,12 @@ import './TextfieldStyle.scss'
 
 withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
-  label: undefined,
-  description: undefined,
   disabled: false,
   error: undefined,
   type: 'text',
+  fieldLabel: undefined,
+  fieldDescription: undefined,
+  fieldTooltip: undefined,
 
   prependInnerIcon: undefined,
   appendIcon: undefined,

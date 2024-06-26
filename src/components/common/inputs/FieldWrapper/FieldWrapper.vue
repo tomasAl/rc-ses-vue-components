@@ -1,13 +1,23 @@
 <template>
   <div class="rc-field-wrapper">
     <div v-if="label || description" class="rc-field-labels">
-      <label
-        v-if="label"
-        :for="props.for"
-        class="text-subtitle-1 text-md-body-2 font-weight-medium"
-      >
-        {{ label }}
-      </label>
+      <div class="rc-field-label-title">
+
+        <label
+          v-if="label"
+          :for="props.for"
+          class="text-subtitle-1 text-md-body-2 font-weight-medium"
+        >
+          {{ label }}
+        </label>
+
+        <v-tooltip v-if="tooltip" class="rc-tooltip" :text="tooltip" location="top">
+          <template #activator="activator">
+            <v-icon v-bind="activator" icon="$tooltip" size="small" class="ml-2"/>
+          </template>
+        </v-tooltip>
+
+      </div>
       <label v-if="description" :for="props.for" class="text-subtitle-2">
         {{ description }}
       </label>
@@ -29,6 +39,7 @@ type Props = {
   description?: string
   for?: string
   variant?: 'text' | 'outlined'
+  tooltip?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -36,5 +47,6 @@ const props = withDefaults(defineProps<Props>(), {
   description: undefined,
   for: undefined,
   variant: 'text',
+  tooltip: undefined
 })
 </script>

@@ -15,6 +15,16 @@
       display: block;
       line-height: 1rem;
     }
+
+    .rc-field-label-title {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      label {
+        display: inline-block;
+      }
+    }
   }
 
   .text-subtitle-2 {
