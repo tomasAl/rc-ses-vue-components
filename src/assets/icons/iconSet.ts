@@ -25,11 +25,12 @@ import questionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
 import CaretRightIcon from '@/assets/icons/regular/CaretRightIcon.vue'
 import QuestionIcon from '@/assets/icons/regular/QuestionIcon.vue'
+import CalendarBlankIcon from './regular/CalendarBlankIcon.vue'
 
 const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
 
 const aliases: IconAliases = {
-  calendar: undefined,
+  calendar: CalendarBlankIcon,
   checkboxIndeterminate: undefined,
   checkboxOff: CheckboxOffIcon,
   checkboxOn: CheckboxOnIcon,
