@@ -6,7 +6,7 @@
     :tooltip="fieldTooltip"
   >
     <v-text-field
-      v-model="model"
+      v-model="modelValue"
       :name="name"
       class="rc-text-field"
       variant="outlined"
@@ -22,6 +22,7 @@
       @click:append="$emit('click:append', $event)"
       @blur="$emit('blur', $event)"
       @focus="$emit('focus', $event)"
+      @input="$emit('input', $event)"
     >
       <template v-if="$slots.clear" #clear><slot name="clear" /></template>
       <template v-if="$slots.prepend" #prepend><slot name="prepend" /></template>
@@ -37,7 +38,7 @@ import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
 
-withDefaults(defineProps<TextFieldProps>(), {
+const props = withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
   disabled: false,
   error: undefined,
@@ -48,9 +49,11 @@ withDefaults(defineProps<TextFieldProps>(), {
 
   prependInnerIcon: undefined,
   appendIcon: undefined,
+  value: undefined,
 })
 
-defineEmits(['click:append', 'blur', 'focus'])
+defineEmits(['click:append', 'blur', 'focus', 'input'])
 
-const model = defineModel<string | number>()
+const modelValue = defineModel<string>()
+modelValue.value = props.value
 </script>

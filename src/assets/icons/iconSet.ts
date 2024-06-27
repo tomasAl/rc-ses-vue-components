@@ -66,6 +66,7 @@ const aliases: IconAliases = {
   complete: undefined,
   cancel: undefined,
   close: XIcon,
+  closeFilled: XCircleFilledIcon,
   back: CaretLeftIcon,
   search: MagnifyingGlassIcon,
   checkPrimary: Icon16px(CheckIcon, 'primary'),

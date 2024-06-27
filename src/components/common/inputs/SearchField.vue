@@ -11,7 +11,7 @@
       </slot>
     </template>
 
-    <template #prepend><slot name="prepend" /></template>
+    <template v-if="$slots.prepend" #prepend><slot name="prepend" /></template>
   </Textfield>
 </template>
 

@@ -38,6 +38,7 @@ declare module 'vue' {
     StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
     Tab: typeof import('./components/common/tabs/Tab.vue')['default']
     Test: typeof import('./components/common/Test.vue')['default']
+    TestInput: typeof import('./components/common/inputs/TestInput.vue')['default']
     Textfield: typeof import('./components/common/inputs/TextField/Textfield.vue')['default']
     TextInput: typeof import('./components/common/inputs/TextField/TextInput.vue')['default']
     Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']

@@ -18,9 +18,16 @@
     :hide-input-icon="false"
     menu-class-name="custom-datepicker-menu"
     input-class-name="custom-datepicker-input"
-    class="custom-datepicker"
-
+    class="rc-datepicker"
   >
+    <template #dp-input="inputBind">
+      <TestInput :value="inputBind.value" @click="console.log(inputBind)">
+
+      </TestInput>
+    </template>
+
+
+
     <template #arrow-left>
       <v-icon icon="$prev"></v-icon>
     </template>
@@ -30,9 +37,15 @@
     </template>
 
     <template #action-preview>
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisWeek">Ši savaitė</v-btn>
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisMonth">Šis mėnuo</v-btn>
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getLastMonth">Praėjęs mėnuo</v-btn>
+      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisWeek"
+        >Ši savaitė</v-btn
+      >
+      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisMonth"
+        >Šis mėnuo</v-btn
+      >
+      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getLastMonth"
+        >Praėjęs mėnuo</v-btn
+      >
     </template>
 
     <template #calendar-icon>
@@ -57,6 +70,8 @@
 import DatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import { computed, ref } from 'vue'
+
+import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
 
 import './VueDatepickerStyle.scss'
 

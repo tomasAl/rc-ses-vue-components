@@ -1,18 +1,34 @@
 <template>
 
-  <v-tooltip text="Tooltip">
-    <template v-slot:activator="{ props }">
-      <v-btn v-bind="props" @click="console.log(props)">Tooltip</v-btn>
-    </template>
-  </v-tooltip>
 
-  <Tooltip text="blah">
+  <SearchField v-model="modelSearch"/>
+  <VueDatepicker :is-range="true" />
+
+  <Textfield value="blah" />
+  <TestInput v-model="modelSearch" value="saas" @click="console.log(modelSearch)"></TestInput>
+
+  <Tooltip title="test" description="blah mah">
     <template #activator="{ props }">
-      <v-btn v-bind="props" @click="console.log(props)">Tooltip show</v-btn>
+      <v-btn v-bind="props" @click="console.log(props)">Tooltip</v-btn>
     </template>
 
   </Tooltip>
 
+  <ModalInfo
+    v-model="modal"
+    icon="rc-success"
+    icon-color="success-600"
+    title="Mes atsinaujinome!"
+    description="Sveiki atvykę į naująją Registrų centro savitarnos svetainę. Čia galėsite peržiūrėti ir valdyti visus savo užsakymus ir užsakyti naujas paslaugas."
+  >
+    <template #activator="{ props }">
+      <v-btn v-bind="props">Open Modal</v-btn>
+    </template>
+    <template #actions>
+      <v-btn variant="tonal" @click="console.log('cusotm action')">Custom Action</v-btn>
+      <v-btn variant="tonal" @click="modal = false">Close</v-btn>
+    </template>
+  </ModalInfo>
 
   <v-tabs v-model="tab" class="rc-tabs">
     <Tab value="one" disabled>Item One 1</Tab>
@@ -55,6 +71,7 @@
     class="form-control"
     label="Tikslas"
     readonly
+    tooltip="blah"
     description="pasiektas ir labai ilgas tekstas kartais buna ir uzlipa ant kito lauko ir uzlipa ant kito lauko ir uzlipa ant kito lauko"
   >
     <template v-slot:append>
@@ -129,6 +146,7 @@
   <!--
   <CheckboxField v-model="check" class="form-control" field-label="Sutikimas" label="test label pam tes tlabel pam labai ilgas labelas darlabel pam label pam tes tlabel pam labai ilgas labelas tes tlabel pam labai ilgas labelas ilgesnis ir title bus gal kazkada" error="test error labai labai netgi labai ilgas erroras kuris kazkada turi baiktis cia tik testas" />
  -->
+<!--
   <Checkbox
     >Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų
     neatskleisiu tretiesiems asmenims.</Checkbox
@@ -147,8 +165,9 @@
     content="1112 Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų neatskleisiu tretiesiems asmenims."
   >
   </CheckboxField>
+-->
 
-  <br /><br />
+<!--  <br /><br />
   <NumberStepperField label="Plus-minus" error="test" />
 
   <br /><br />
@@ -189,13 +208,17 @@
       { label: 'Option 1', value: 'option1' },
       { label: 'Option 2', value: 'option2' },
     ]"
-  ></RadioField>
+  ></RadioField>-->
 </template>
 
 <script setup lang="ts">
 import { vMaska } from 'maska/vue'
 import { ref } from 'vue'
+import VueDatepicker from '@/components/common/inputs/DatePickerField/VueDatepicker.vue'
+import TestInput from '@/components/common/inputs/TestInput.vue'
 
+const modelSearch = ref('search')
+const modal = ref(false)
 const tab = ref()
 const selectModel = ref()
 const check = ref()
