@@ -1,29 +1,28 @@
 <template>
-  <v-text-field v-model="model" :value="inputValue" @input="updateValue">
+  <v-text-field
+    v-model="model"
+    :value="inputValue"
+    @input="updateValue"
+    @blur="$emit('blur', $event)"
+    @focus="$emit('focus', $event)"
+    hide-details
+  >
+    <template v-if="$slots.clear" #clear><slot name="clear" /></template>
   </v-text-field>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import useFieldMixin from './shared/FieldMixin'
 
 const props = defineProps<{
   modelValue?: string
   value?: string
 }>()
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void
-}>()
+const emit = defineEmits(['update:modelValue', 'blur', 'focus'])
 
-const inputValue = computed(() => props.modelValue ?? props.value ?? '')
+const { inputValue, updateValue, modelRef } = useFieldMixin(props, emit)
 
-const updateValue = (event: Event) => {
-  const target = event.target as HTMLInputElement
-  const newValue = target.value
-
-  emit('update:modelValue', newValue)
-}
-
-const model = defineModel()
-model.value = props.value
+const model = defineModel<any>()
+model.value = modelRef.value
 </script>

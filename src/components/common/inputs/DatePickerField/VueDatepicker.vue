@@ -8,12 +8,12 @@
     locale="lt"
     month-name-format="long"
     :range="isRange"
-    :multi-calendars="isRange ? 2 : 1"
-    format="yyyy-MM-dd"
+    :multi-calendars="isRange ? 2 : 0"
+    :format="formatPreview"
     :placeholder="isRange ? 'Select date range' : 'Select date'"
     :auto-apply="false"
     :close-on-auto-apply="false"
-    :teleport="true"
+    :teleport="false"
     :min-range="1"
     :hide-input-icon="false"
     menu-class-name="custom-datepicker-menu"
@@ -21,12 +21,12 @@
     class="rc-datepicker"
   >
     <template #dp-input="inputBind">
-      <TestInput :value="inputBind.value" @click="console.log(inputBind)">
-
-      </TestInput>
+      <Textfield v-bind="inputBind" prepend-inner-icon="$calendar" />
     </template>
 
-
+    <template #clear-icon="{ clear }">
+      <XCircleFilledIcon @click="clear" />
+    </template>
 
     <template #arrow-left>
       <v-icon icon="$prev"></v-icon>
@@ -61,15 +61,15 @@
       >
         Uždaryti
       </v-btn>
-      <v-btn @click="handleBlur" color="primary">Gerai</v-btn>
+      <v-btn color="primary" @click="selectDate">Gerai</v-btn>
     </template>
   </DatePicker>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import DatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
 
@@ -85,13 +85,32 @@ const props = defineProps({
 const datepickerRef = ref(null)
 const date = ref(null)
 
-const handleInternal = (selectedDate) => {
-  // Do something
-  date.value = selectedDate
+const formatSingleDate = (dt: Date): string => {
+  return dt.toISOString().split('T')[0] // YYYY-MM-DD
 }
 
-const handleBlur = () => {
-  if (datepickerRef) {
+const formatDateRange = (startDate: Date, endDate: Date): any => {
+  const start = formatSingleDate(startDate)
+  const end = formatSingleDate(endDate)
+  return `${start}  →  ${end}`
+}
+
+const formatPreview = (
+  dt: string | ((date: Date) => string) | ((dates: Date[]) => string),
+): string => {
+  if (Array.isArray(dt) && dt.length === 2) {
+    // Date range function
+    return formatDateRange(dt[0], dt[1])
+  }
+  if (typeof dt === 'object') {
+    // Single date
+    return formatSingleDate(new Date(dt))
+  }
+  return 'Invalid date format'
+}
+
+const selectDate = () => {
+  if (datepickerRef.value) {
     datepickerRef.value.selectDate()
   }
 }

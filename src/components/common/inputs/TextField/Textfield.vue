@@ -6,7 +6,7 @@
     :tooltip="fieldTooltip"
   >
     <v-text-field
-      v-model="modelValue"
+      v-model="model"
       :name="name"
       class="rc-text-field"
       variant="outlined"
@@ -19,10 +19,11 @@
       :type="type"
       :prepend-inner-icon="prependInnerIcon"
       :append-icon="appendIcon"
+      :value="inputValue"
+      @input="onInput"
       @click:append="$emit('click:append', $event)"
       @blur="$emit('blur', $event)"
       @focus="$emit('focus', $event)"
-      @input="$emit('input', $event)"
     >
       <template v-if="$slots.clear" #clear><slot name="clear" /></template>
       <template v-if="$slots.prepend" #prepend><slot name="prepend" /></template>
@@ -37,6 +38,7 @@ import { withDefaults } from 'vue'
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 import './TextfieldStyle.scss'
+import useFieldMixin from '@/components/common/inputs/shared/FieldMixin'
 
 const props = withDefaults(defineProps<TextFieldProps>(), {
   name: undefined,
@@ -50,10 +52,18 @@ const props = withDefaults(defineProps<TextFieldProps>(), {
   prependInnerIcon: undefined,
   appendIcon: undefined,
   value: undefined,
+  modelValue: undefined,
 })
 
-defineEmits(['click:append', 'blur', 'focus', 'input'])
+const emits = defineEmits(['update:modelValue', 'click:append', 'blur', 'focus', 'input'])
 
-const modelValue = defineModel<string>()
-modelValue.value = props.value
+const { inputValue, updateValue, modelRef } = useFieldMixin(props, emits)
+
+const model = defineModel<any>()
+model.value = modelRef.value
+
+const onInput = (event) => {
+  updateValue(event)
+  emits('input', event)
+}
 </script>

@@ -4,6 +4,7 @@ export type InputProps = {
   disabled?: boolean
   readonly?: boolean
   placeholder?: string
+  modelValue?: any
   value?: any
 }
 
