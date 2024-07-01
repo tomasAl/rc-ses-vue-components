@@ -1,5 +1,6 @@
 <template>
-
+  <TextField2 placeholder="wtf" />
+  <v-text-field />
 
   <SearchField v-model="modelSearch"/>
   <VueDatepicker :is-range="true" />

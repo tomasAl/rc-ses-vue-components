@@ -9,3 +9,14 @@ export type TextInputProps = InputProps & {
 }
 
 export type TextFieldProps = FieldProps & TextInputProps
+
+export type TextFieldProps2 = {
+  name?: string
+  error?: string
+  disabled?: boolean
+  what?: string
+  /*readonly?: boolean
+  placeholder?: string
+  modelValue?: any
+  value?: any*/
+}

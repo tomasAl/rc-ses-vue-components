@@ -16,8 +16,5 @@ export default defineComponent({
   name: 'CaretDownFilledIcon',
   components: { IconSVG },
   props: useIconProps,
-  mounted() {
-    console.log('Component mounted.', this.$props)
-  },
 })
 </script>
