@@ -28,7 +28,7 @@ const Template: StoryFn<TextFieldProps2> = (args) => ({
         <div class="storybook-field-previews-title">State previews</div>
         <TextField2 class="form-control" label="Read-only" readonly v-model="modelReadOnly"></TextField2>
         <TextField2 class="form-control" label="Disabled" disabled v-model="modelDisabled"></TextField2>
-        <TextField2 label="Error" error="Klaidos pranešimas"></TextField2>
+
       </div>
     </div>
   `,
@@ -36,8 +36,6 @@ const Template: StoryFn<TextFieldProps2> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-/*  label: 'Antraštė',
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",*/
   name: 'antraste',
+  placeholder: 'wwww',
 }

@@ -1,17 +1,25 @@
 <template>
-  <v-text-field v-bind="$props"> </v-text-field>
+  <v-text-field v-bind="props"> </v-text-field>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { makeVTextFieldProps } from 'vuetify/lib/components/VTextField/VTextField.mjs'
+<script setup lang="ts">
+import { VTextField } from 'vuetify/components/VTextField'
 
-export default defineComponent({
-  name: 'TextField2',
-  props: makeVTextFieldProps(),
+import { TextFieldProps2 } from '@/types/inputs/TextFieldProps'
+
+/*
+type TextFieldCustomProps = VTextField['$props']
+const props = defineProps<TextFieldCustomProps>()
+*/
+
+// eslint-disable-next-line vue/prop-name-casing
+const props = withDefaults(defineProps<TextFieldProps2>(), {
+  foo: 'test',
+  placeholder: 'test',
 })
-</script>
 
+console.log('defaults t2', props)
+</script>
 
 <!--<script setup lang="ts">
 
@@ -24,7 +32,6 @@ type MyCustom = UnwrapReadonlyArray<VTextField['rules']>
 const props = defineProps<MyCustom>()
 
 </script>-->
-
 
 <!--
 <script lang="ts">

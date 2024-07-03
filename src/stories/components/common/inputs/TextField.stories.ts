@@ -36,8 +36,8 @@ const Template: StoryFn<TextFieldProps> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-  label: 'Antraštė',
-  description:
+  fieldLabel: 'Antraštė',
+  fieldDescription:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   name: 'antraste',
 }
