@@ -27,6 +27,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'import/no-named-as-default': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'vue/prop-name-casing': 'off',
   },
 
 /*  parser: 'vue-eslint-parser',

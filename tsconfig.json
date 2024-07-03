@@ -14,16 +14,17 @@
       "vite/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-vue-router/client",
-      "node"
+      "node",
+      "vuetify"
     ],
     "allowJs": false,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": [
     "./src/**/*.ts",
