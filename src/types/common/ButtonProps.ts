@@ -1,8 +1,7 @@
 import { VBtn } from 'vuetify/components'
 
 import { ColorType } from '@/types/common/ColorType'
-
-type ReservedKeys = 'key' | 'ref' | '$children'
+import { ReservedKeys } from '@/types/reserved/ReservedKeys'
 
 interface ButtonInterface extends /* @vue-ignore */ Partial<VBtn['$props']> {}
 
