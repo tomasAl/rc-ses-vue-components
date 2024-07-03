@@ -1,8 +1,8 @@
 <template>
   <FieldWrapper
     class="rc-radio-buttons-field"
-    :label="label"
-    :description="description"
+    :label="fieldLabel"
+    :description="fieldDescription"
     :for="name"
     variant="outlined"
   >

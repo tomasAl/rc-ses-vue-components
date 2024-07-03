@@ -1,5 +1,5 @@
 <template>
-  <v-radio class="rc-radio" v-bind="props" :class="classes" color="primary" />
+  <v-radio class="rc-radio" v-bind="props" :class="classes" />
 </template>
 
 <script setup lang="ts">
@@ -9,7 +9,9 @@ import { RadioProps } from '@/types/inputs/RadioProps'
 
 import './RadioStyle.scss'
 
-const props = defineProps<RadioProps>()
+const props = withDefaults(defineProps<RadioProps>(), {
+  color: 'primary'
+})
 
 const model = defineModel<boolean>()
 const classes = computed(() => {
