@@ -1,9 +1,13 @@
 <template>
 
-  <TextField v-model="modelSearch" error="blah">
-  </TextField>
+  <v-text-field prepend-inner-icon="$search" append-icon="$search" prefix="blax"></v-text-field>
+  <TextField2 v-model="modelSearch" class="form-control" :field-props="{suffix: 'blah'}" />
 
-  <SearchField v-model="modelSearch"/>
+  <TextField class="form-control" :input-field-props="{suffix: 'blah', prefix: 'test'}" error="blah"></TextField>
+
+  <SearchField v-model="modelSearch" class="form-control" placeholder="test" name="search" />
+
+
   <VueDatepicker :is-range="true" />
 
   <Tooltip title="test" description="blah mah">

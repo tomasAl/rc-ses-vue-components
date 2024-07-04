@@ -28,6 +28,11 @@
     .v-field__input {
       font-size: 0.9375rem;
     }
+
+    .v-text-field__suffix, .v-text-field__prefix {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   .v-input--density-default {

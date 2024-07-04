@@ -28,6 +28,7 @@ module.exports = {
     'import/no-named-as-default': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'vue/prop-name-casing': 'off',
+    'vue/dot-notation': 'off'
   },
 
 /*  parser: 'vue-eslint-parser',
