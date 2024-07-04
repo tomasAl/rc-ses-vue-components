@@ -1,5 +1,5 @@
 <template>
-  <Textfield
+  <TextField
     v-model="model"
     prepend-inner-icon="$search"
     v-bind="props"
@@ -12,7 +12,7 @@
     </template>
 
     <template v-if="$slots.prepend" #prepend><slot name="prepend" /></template>
-  </Textfield>
+  </TextField>
 </template>
 
 <script setup lang="ts">

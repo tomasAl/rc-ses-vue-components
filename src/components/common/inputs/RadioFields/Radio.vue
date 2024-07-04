@@ -10,7 +10,7 @@ import { RadioProps } from '@/types/inputs/RadioProps'
 import './RadioStyle.scss'
 
 const props = withDefaults(defineProps<RadioProps>(), {
-  color: 'primary'
+  color: 'primary',
 })
 
 const model = defineModel<boolean>()

@@ -1,8 +1,8 @@
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 export default function useTextFieldMixin(
   props: { modelValue?: string; value?: string },
-  emit: (event: 'update:modelValue', value: string) => void,
+  emit: (event: any, value: string) => void,
 ) {
   const inputValue = computed(() => props.modelValue ?? props.value ?? '')
 
@@ -12,11 +12,16 @@ export default function useTextFieldMixin(
     emit('update:modelValue', newValue)
   }
 
-  const modelRef = ref(inputValue.value)
+  const onInput = (event: Event) => {
+    updateValue(event)
+    const target = event.target as HTMLInputElement
+    const newValue = target.value
+    emit('input', newValue)
+  }
 
   return {
     inputValue,
     updateValue,
-    modelRef,
+    onInput,
   }
 }

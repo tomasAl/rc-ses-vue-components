@@ -21,7 +21,7 @@
     class="rc-datepicker"
   >
     <template #dp-input="inputBind">
-      <Textfield v-bind="inputBind" prepend-inner-icon="$calendar" />
+      <TextField v-bind="inputBind" prepend-inner-icon="$calendar" />
     </template>
 
     <template #clear-icon="{ clear }">

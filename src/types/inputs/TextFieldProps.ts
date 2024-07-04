@@ -1,27 +1,12 @@
 import { VTextField } from 'vuetify/components'
 
 import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
-import { InputType } from '@/types/inputs/InputType'
+import { ReservedKeys } from '@/types/reserved/ReservedKeys'
 
-export type TextInputProps = InputProps & {
-  type?: InputType
+interface TextFieldInterface extends /* @vue-ignore */ Partial<VTextField['$props']> {}
 
-  appendIcon?: string
-  prependInnerIcon?: string
-}
-
-export type TextFieldProps = FieldProps & TextInputProps
-
-type InputProps2 = {
-  placeholder?: string
-}
-
-interface TextFieldInterface extends /* @vue-ignore */ Partial<VTextField['$props']> {
-  foo?: string
-}
-
-export type TextFieldProps2 = InputProps2 &
-  Omit<TextFieldInterface, 'key' | 'ref' | '$children'>
+export type TextFieldProps = FieldProps & InputProps &
+  Omit<TextFieldInterface, ReservedKeys | 'error' | 'color' | 'hideDetails' | 'errorMessages' | 'modelValue' | 'value'>
 
 /*
 interface TextFieldInterface {

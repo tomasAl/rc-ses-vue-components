@@ -1,7 +1,7 @@
 // TextField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import TextField from '@/components/common/inputs/TextField/Textfield.vue'
+import TextField from '@/components/common/inputs/TextField/TextField.vue'
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 export default {

@@ -1,12 +1,10 @@
 <template>
-  <TextField2 placeholder="wtf" />
-  <v-text-field />
+
+  <TextField v-model="modelSearch" error="blah">
+  </TextField>
 
   <SearchField v-model="modelSearch"/>
   <VueDatepicker :is-range="true" />
-
-  <Textfield value="blah" />
-  <TestInput v-model="modelSearch" value="saas" @click="console.log(modelSearch)"></TestInput>
 
   <Tooltip title="test" description="blah mah">
     <template #activator="{ props }">
@@ -68,7 +66,7 @@
   </v-text-field>
 
 
-  <Textfield
+  <TextField
     class="form-control"
     label="Tikslas"
     readonly
@@ -83,15 +81,15 @@
         </v-tooltip>
       </v-btn>
     </template>
-  </Textfield>
+  </TextField>
 
 
-  <Textfield
+  <TextField
     class="form-control"
     label="Tikslas"
     description="pasiektas ir labai ilgas tekstas kartais buna ir uzlipa ant kito lauko ir uzlipa ant kito lauko ir uzlipa ant kito lauko"
   />
-  <Textfield
+  <TextField
     readonly
     class="form-control"
     label="readonly"
@@ -114,8 +112,8 @@
     ]"
   />
 
-  <Textfield class="form-control" label="Tikslas" description="pasiektas" disabled />
-  <Textfield label="Tikslas" error="input error" />
+  <TextField class="form-control" label="Tikslas" description="pasiektas" disabled />
+  <TextField label="Tikslas" error="input error" />
   <Button variant="tonal">Test</Button>
   <SelectField
     label="Tikslas"
@@ -216,7 +214,6 @@
 import { vMaska } from 'maska/vue'
 import { ref } from 'vue'
 import VueDatepicker from '@/components/common/inputs/DatePickerField/VueDatepicker.vue'
-import TestInput from '@/components/common/inputs/TestInput.vue'
 
 const modelSearch = ref('search')
 const modal = ref(false)

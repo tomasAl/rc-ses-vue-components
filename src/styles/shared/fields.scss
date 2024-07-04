@@ -114,13 +114,22 @@
   }
 
   // ERROR STATE
-  .v-field--focused, .rc-focused {
-    &.v-field--error .v-field__outline {
-      box-shadow: 0 0 0 3px rgba(var(--v-theme-error-600), 0.2) !important;
+  &.v-input--error {
+
+    &:hover {
+      .v-field__outline {
+        color: rgb(var(--v-theme-error-500)) !important;
+      }
     }
 
-    &.v-field--error:not(.v-field--disabled) .v-field__outline {
-      color: rgb(var(--v-theme-error-500)) !important;
+    .v-field--focused, .rc-focused {
+      &.v-field--error .v-field__outline {
+        box-shadow: 0 0 0 3px rgba(var(--v-theme-error-600), 0.2) !important;
+      }
+
+      &.v-field--error:not(.v-field--disabled) .v-field__outline {
+        color: rgb(var(--v-theme-error-500)) !important;
+      }
     }
   }
 }

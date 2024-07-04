@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 //
-import Textfield from '@/components/common/inputs/TextField/Textfield.vue'
+import Textfield from '@/components/common/inputs/TextField/TextField.vue'
 
 import FormActionPanel from '../components/common/panels/FormActionPanel/FormActionPanel.vue'
 
