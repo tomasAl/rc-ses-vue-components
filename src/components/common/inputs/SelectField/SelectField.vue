@@ -4,7 +4,7 @@
       ref="selectRef"
       v-model="model"
       :name="name"
-      class="rc-select-field"
+      class="rc-field rc-select-field"
       variant="outlined"
       :placeholder="placeholder"
       :items="computedItems"
@@ -88,10 +88,6 @@ const menuProps = ref({
 })
 
 const getItemValueForSearch = (item: SelectFieldItemType): string => {
-  if (typeof item.value === 'string') {
-    return item.value
-  }
-
   return `${item.title} ${item?.subtitle}`
 }
 

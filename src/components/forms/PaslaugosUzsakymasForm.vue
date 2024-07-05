@@ -1,14 +1,39 @@
 <template>
+  <CheckboxField label="test"/>
+  <br/>
+  <br/>
 
-  <v-text-field prepend-inner-icon="$search" append-icon="$search" prefix="blax"></v-text-field>
-  <TextField2 v-model="modelSearch" class="form-control" :field-props="{suffix: 'blah'}" />
+  <NumberStepperField class="form-control" />
+  <TextField
+    field-tooltip="uh bah"
+    field-label="search test"
+    v-model="modelSearch"
+    class="form-control"
+    :input-field-props="{
+      appendIcon: '$close',
+      suffix: 'blah',
+      prefix: 'test',
+      clearable: true,
+      'onClick:clear': () => console.log('test'),
+    }"
+    @change="console.log('bla')"
+  ></TextField>
 
-  <TextField class="form-control" :input-field-props="{suffix: 'blah', prefix: 'test'}" error="blah"></TextField>
-
-  <SearchField v-model="modelSearch" class="form-control" placeholder="test" name="search" />
-
-
-  <VueDatepicker :is-range="true" />
+  <SelectField
+    v-model="selectModel"
+    class="form-control"
+    label="Tikslas"
+    searchable
+    :multiple="true"
+    :items="[
+      { title: 'test1', value: 't1', subtitle: 'lorem ipsum blah, bloom' },
+      { title: 'test2', value: 't2' },
+      { title: 'test3', value: 't3' },
+      { title: 'test4', value: 't4' },
+      { title: 'laba', value: 'lab' },
+      { title: 'krab', value: 'krab' },
+    ]"
+  />
 
   <Tooltip title="test" description="blah mah">
     <template #activator="{ props }">
@@ -69,7 +94,7 @@
     </template>
   </v-text-field>
 
-
+<!--
   <TextField
     class="form-control"
     label="Tikslas"
@@ -136,9 +161,7 @@
       'test2',
       'test3',
     ]"
-  />
-
-  <v-select :items="['vienas', 'du', 'trys', 'keturi', 'penki']" multiple></v-select>
+  />-->
 
   <input v-maska="'#-#'" />
   <v-text-field v-maska="'#-#'"></v-text-field>

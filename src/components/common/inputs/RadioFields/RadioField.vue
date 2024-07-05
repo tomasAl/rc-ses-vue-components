@@ -4,7 +4,7 @@
     :label="fieldLabel"
     :description="fieldDescription"
     :for="name"
-    variant="outlined"
+    :variant="variant"
   >
     <v-radio-group class="rc-radios" inline hide-details>
       <Radio

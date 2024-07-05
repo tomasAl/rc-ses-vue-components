@@ -2,6 +2,7 @@
   <v-checkbox
     v-model="model"
     class="rc-checkbox"
+    v-bind="fieldProps"
     :class="classes"
     :name="name"
     :color="color"
@@ -9,12 +10,11 @@
     :hide-details="!error"
     :error="!!error"
     :error-messages="error"
+    :readonly="readonly"
+    :placeholder="placeholder"
+    :label="label"
   >
-    <template #label>
-      <slot name="label"
-        ><slot>{{ content }}</slot></slot
-      >
-    </template>
+
   </v-checkbox>
 </template>
 
@@ -26,7 +26,6 @@ import { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
 import './CheckboxFieldStyle.scss'
 
 withDefaults(defineProps<CheckboxProps>(), {
-  disabled: false,
   color: 'primary',
   label: undefined,
 })

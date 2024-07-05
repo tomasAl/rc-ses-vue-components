@@ -2,6 +2,7 @@
   <div class="rc-number-stepper" :class="stepperClasses">
     <v-text-field
       v-model="model"
+      class="rc-field"
       :disabled="disabled"
       :focused="focused"
       :readonly="readonly"

@@ -1,13 +1,11 @@
 <template>
   <TextField
     v-model="model"
-    prepend-inner-icon="$search"
     v-bind="props"
-    @click:append="$emit('click:append', $event)"
   >
     <template #clear>
       <slot name="clear">
-        <XCircleFilledIcon v-if="!props.readonly" @click="model = ''" />
+        <XCircleFilledIcon v-if="!props.readonly" :color="error ? 'error-600' : 'primary'" @click="model = ''" />
       </slot>
     </template>
 
@@ -26,9 +24,9 @@
     <template v-if="$slots['prepend']" #prepend="binds"
       ><slot name="prepend" v-bind="binds"
     /></template>
-    <template v-if="$slots['prepend-inner']" #prepend-inner="binds"
-      ><slot name="prepend-inner" v-bind="binds"
-    /></template>
+    <template #prepend-inner>
+      <v-icon icon="$search" />
+    </template>
   </TextField>
 </template>
 
@@ -39,9 +37,4 @@ import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 defineEmits(['click:append'])
 const props = defineProps<SearchFieldProps>()
 const model = defineModel<string | number>()
-
-/* let reactiveProps = reactive({ ...props })
-reactiveProps['prepend-inner-icon'] = '$search'
-let alteredProps = toRefs(reactiveProps) */
-
 </script>

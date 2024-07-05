@@ -1,14 +1,12 @@
-import { FieldProps } from '@/types/inputs/FieldProps'
+import type { VCheckbox } from 'vuetify/components'
+
 import { ColorType } from '@/types/common/ColorType'
+import { FieldProps, InputFieldOmits, InputProps } from '@/types/inputs/FieldProps'
 
-export type CheckboxProps = Omit<FieldProps, 'description' | 'label' | 'placeholder'> & {
+export type CheckboxProps = InputProps & {
+  fieldProps?: Omit<VCheckbox['$props'], InputFieldOmits | 'label'>
   color?: ColorType
-  card?: boolean
-  content?: string
+  label?: string
 }
 
-export type CheckboxFieldProps = Omit<FieldProps, 'placeholder'> & {
-  color?: ColorType
-  card?: boolean
-  content?: string
-}
+export type CheckboxFieldProps = FieldProps & CheckboxProps

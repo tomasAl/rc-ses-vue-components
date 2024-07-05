@@ -19,7 +19,6 @@ import './AlertStyle.scss'
 import { withDefaults } from 'vue'
 import { AlertProps } from '@/types/common/AlertProps'
 
-
 const props = withDefaults(defineProps<AlertProps>(), {
   id: undefined,
   text: undefined,

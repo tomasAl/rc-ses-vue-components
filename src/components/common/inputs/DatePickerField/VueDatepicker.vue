@@ -16,8 +16,8 @@
     :teleport="false"
     :min-range="1"
     :hide-input-icon="false"
-    menu-class-name="custom-datepicker-menu"
-    input-class-name="custom-datepicker-input"
+    menu-class-name="rc-datepicker-menu"
+    input-class-name="rc-datepicker-input"
     class="rc-datepicker"
   >
     <template #dp-input="inputBind">
@@ -75,7 +75,7 @@ import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
 
 import './VueDatepickerStyle.scss'
 
-const props = defineProps({
+defineProps({
   isRange: {
     type: Boolean,
     default: false,

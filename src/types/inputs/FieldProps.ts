@@ -4,8 +4,17 @@ export type InputProps = {
   disabled?: boolean
   readonly?: boolean
   placeholder?: string
-  value?: any
 }
+
+export type InputFieldOmits =
+  | 'name'
+  | 'error'
+  | 'disabled'
+  | 'readonly'
+  | 'placeholder'
+  | 'hideDetails'
+  | 'errorMessages'
+  | 'color'
 
 export type FieldProps = {
   fieldLabel?: string

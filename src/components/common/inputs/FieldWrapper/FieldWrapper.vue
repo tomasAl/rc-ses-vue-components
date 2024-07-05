@@ -11,9 +11,9 @@
           {{ label }}
         </label>
 
-        <v-tooltip v-if="tooltip" class="rc-tooltip" :text="tooltip" location="top">
+        <v-tooltip v-if="tooltip" class="rc-tooltip" :text="tooltip" location="top" >
           <template #activator="activator">
-            <v-icon v-bind="activator" icon="$tooltip" size="small" class="ml-2"/>
+            <v-icon v-bind="activator.props" icon="$tooltip" size="small" class="ml-2" />
           </template>
         </v-tooltip>
 

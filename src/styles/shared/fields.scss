@@ -45,6 +45,12 @@
     .v-field__outline {
       color: rgb(var(--v-theme-grey-500));
       --v-field-border-opacity: 1 !important;
+
+      &__notch .v-label {
+        background: rgb(var(--v-theme-background));
+        padding: 0 8px;
+        margin: 0;
+      }
     }
 
     .v-field__underlay {
