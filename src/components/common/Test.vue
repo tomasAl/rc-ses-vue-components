@@ -1,15 +1,18 @@
 <template>
   <div class="flex">
-  <span v-if="isButtonHover" class="text-subtitle-1 mr-3 text-grey-600 text-decoration-underline">Suskleisti</span>
-  <v-btn :icon="'$expand'" @mouseover="onMouseOver" @mouseout="onMouseOut"/>
+    <span
+      v-if="isButtonHover"
+      class="text-subtitle-1 mr-3 text-grey-600 text-decoration-underline"
+      >Suskleisti</span
+    >
+    <v-btn :icon="'$expand'" @mouseover="onMouseOver" @mouseout="onMouseOut" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 
-import {ref} from "vue";
-
-const isButtonHover = ref<boolean>(false);
+const isButtonHover = ref<boolean>(false)
 
 function onMouseOver() {
   isButtonHover.value = true

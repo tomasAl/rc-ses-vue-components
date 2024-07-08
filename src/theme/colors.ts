@@ -103,7 +103,15 @@ const error = {
   error: '#fa5a46',
 }
 
-export const MergedColors = { ...primary, ...secondary, ...grey, ...warning, ...error, ...success, ...info }
+export const MergedColors = {
+  ...primary,
+  ...secondary,
+  ...grey,
+  ...warning,
+  ...error,
+  ...success,
+  ...info,
+}
 
 export const Colors = { primary, secondary, grey, warning, error, success, info }
 export default { primary, secondary, grey, warning, error, success, info }

@@ -86,7 +86,10 @@
     ]"
   />
 
-  <NumberStepperField field-label="Egzempliorių skaičius" field-description="(neprivaloma)" />
+  <NumberStepperField
+    field-label="Egzempliorių skaičius"
+    field-description="(neprivaloma)"
+  />
 </template>
 
 <script setup lang="ts">

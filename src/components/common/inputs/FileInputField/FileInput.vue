@@ -35,7 +35,7 @@ const model = defineModel<File | File[] | null | undefined>()
 
 const props = defineProps<FileInputProps>()
 
- const classes = computed(() => {
+const classes = computed(() => {
   return {
     'rc-file-empty': !model.value,
   }

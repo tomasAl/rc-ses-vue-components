@@ -7,14 +7,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import useIconProps from "../useIconProps";
-import IconSVG from "../IconSVG.vue";
+import { defineComponent } from 'vue'
+
+import IconSVG from '../IconSVG.vue'
+import useIconProps from '../useIconProps'
 
 export default defineComponent({
-  name: "CaretLeftIcon",
-  components: {IconSVG},
+  name: 'CaretLeftIcon',
+  components: { IconSVG },
   props: useIconProps,
-});
+})
 </script>
-

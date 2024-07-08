@@ -28,10 +28,10 @@ module.exports = {
     'import/no-named-as-default': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'vue/prop-name-casing': 'off',
-    'vue/dot-notation': 'off'
+    'vue/dot-notation': 'off',
   },
 
-/*  parser: 'vue-eslint-parser',
+  /*  parser: 'vue-eslint-parser',
   /!*parserOptions: {
     ecmaVersion: 2021,
     parser: '@typescript-eslint/parser',
@@ -54,5 +54,5 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue', 'mjs'],
       },
     },
-  },*/
+  }, */
 }

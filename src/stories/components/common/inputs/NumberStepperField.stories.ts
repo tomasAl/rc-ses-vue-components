@@ -1,7 +1,6 @@
 // NumberStepperField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-
 import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
 import { NumberStepperProps } from '@/types/inputs/NumberStepperProps'
 

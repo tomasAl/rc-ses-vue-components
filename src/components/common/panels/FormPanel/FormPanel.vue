@@ -2,7 +2,6 @@
   <v-expansion-panels v-model="panelModel" flat>
     <v-expansion-panel :disabled="disabled" :value="id">
       <v-expansion-panel-title static :collapse-icon="null" :expand-icon="null">
-<!--        <CheckBoldIcon v-if="completed" class="mr-3" size="18" color="secondary" />-->
         <span class="text-h5">{{ title }}</span>
         <span class="flex-grow-1" />
         <v-btn class="panel-icon" :icon="isExpanded ? '$collapse' : '$expand'" />
@@ -30,7 +29,7 @@ const props = withDefaults(defineProps<FormPanelProps>(), {
 const model = defineModel<Array<string>>()
 
 const panelModel = computed<Array<string>>({
-  get: () => model.value ? model.value : [],
+  get: () => (model.value ? model.value : []),
   set: (value?: Array<string>) => {
     if (!model.value) {
       return

@@ -34,10 +34,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { FormWrapperProps } from '@/types/forms/FormWrapperProps'
-
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
+import { FormWrapperProps } from '@/types/forms/FormWrapperProps'
+
 import './FormWrapperStyle.scss'
 
 const props = defineProps<FormWrapperProps>()

@@ -17,7 +17,7 @@
       transition="scroll-y-transition"
       :multiple="multiple"
       @update:menu="updateVList"
-      @update:focused="() => searchValue = ''"
+      @update:focused="() => (searchValue = '')"
     >
       <template v-if="searchable" #prepend-item>
         <SearchableArea

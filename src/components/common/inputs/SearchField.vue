@@ -1,11 +1,12 @@
 <template>
-  <TextField
-    v-model="model"
-    v-bind="props"
-  >
+  <TextField v-model="model" v-bind="props">
     <template #clear>
       <slot name="clear">
-        <XCircleFilledIcon v-if="!props.readonly" :color="error ? 'error-600' : 'primary'" @click="model = ''" />
+        <XCircleFilledIcon
+          v-if="!props.readonly"
+          :color="error ? 'error-600' : 'primary'"
+          @click="model = ''"
+        />
       </slot>
     </template>
 

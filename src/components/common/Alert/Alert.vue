@@ -15,9 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import './AlertStyle.scss'
 import { withDefaults } from 'vue'
+
 import { AlertProps } from '@/types/common/AlertProps'
+
+import './AlertStyle.scss'
 
 const props = withDefaults(defineProps<AlertProps>(), {
   id: undefined,
@@ -31,8 +33,7 @@ const props = withDefaults(defineProps<AlertProps>(), {
 const classes = computed(() => {
   return {
     'rc-alert-light': props.variant === 'light',
-    'rc-alert-dark': props.variant === 'dark'
+    'rc-alert-dark': props.variant === 'dark',
   }
 })
 </script>
-

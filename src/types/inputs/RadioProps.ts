@@ -1,8 +1,8 @@
 import { VRadio } from 'vuetify/components'
 
+import { ColorType } from '@/types/common/ColorType'
 import { InputProps } from '@/types/inputs/FieldProps'
 import { ReservedKeys } from '@/types/reserved/ReservedKeys'
-import { ColorType } from '@/types/common/ColorType'
 
 interface RadioInterface extends /* @vue-ignore */ Partial<VRadio['$props']> {}
 

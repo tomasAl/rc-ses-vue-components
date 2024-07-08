@@ -1,8 +1,8 @@
 // Alert.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import { AlertProps } from '@/types/common/AlertProps'
 import Alert from '@/components/common/Alert/Alert.vue'
+import { AlertProps } from '@/types/common/AlertProps'
 
 export default {
   title: 'components/common/Alert',
@@ -11,12 +11,12 @@ export default {
   tags: ['autodocs'],
 } as Meta
 
-const lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+const lorem =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
 
 const Template: StoryFn<AlertProps> = (args) => ({
   components: { Alert },
   setup() {
-
     return { args, lorem }
   },
   template: `
@@ -38,7 +38,6 @@ const Template: StoryFn<AlertProps> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-  text:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
+  text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   id: 'sutikimas',
 }

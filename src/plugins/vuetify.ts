@@ -4,12 +4,11 @@
  * Framework documentation: https://vuetifyjs.com`
  */
 import { createVuetify } from 'vuetify'
+import { en, lt } from 'vuetify/locale'
 import 'vuetify/styles'
 
 import { aliases, rcIcons } from '@/assets/icons/iconSet'
 import { darkTheme, lightTheme } from '@/theme/themes'
-
-import { lt, en } from 'vuetify/locale'
 
 import defaults from '../theme'
 
@@ -19,7 +18,7 @@ export default createVuetify({
   locale: {
     locale: 'lt',
     fallback: 'en',
-    messages: { lt, en }
+    messages: { lt, en },
   },
   theme: {
     defaultTheme: 'light',

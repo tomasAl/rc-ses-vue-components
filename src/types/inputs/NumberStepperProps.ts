@@ -6,4 +6,4 @@ export type NumberStepperProps = InputProps & {
   step?: number
 }
 
-export type NumberStepperFieldProps = FieldProps &  NumberStepperProps
+export type NumberStepperFieldProps = FieldProps & NumberStepperProps

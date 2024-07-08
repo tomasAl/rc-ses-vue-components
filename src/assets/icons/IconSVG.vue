@@ -26,7 +26,9 @@ export default defineComponent({
     })
 
     const computedFill = computed(() => {
-      return props.color ? MergedColors[props.color] : 'currentcolor'
+      return props.color
+        ? MergedColors[props.color as keyof typeof MergedColors]
+        : 'currentcolor'
     })
 
     return {
