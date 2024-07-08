@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/vue3-vite"
-import { mergeConfig } from 'vite'
 import path from 'path'
 
 const config: StorybookConfig = {
@@ -15,8 +14,10 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
+    autodocs: true,
   },
   async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
     return mergeConfig(config, {
       resolve: {
         alias: {
