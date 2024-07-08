@@ -33,7 +33,7 @@ Norėdami lokaliai startuoti Storybook aplikaciją:
 
 ## Pavyzdinė forma
 
-Repozitorijoje galite rasti pavyzdinės formos komponento implementaciją (`src\components\forms\PaslaugosUzsakymasForm.vue`).
+Repozitorijoje galite rasti pavyzdinės formos komponento implementaciją (`src\pages\index.ts` ir `src\components\forms\*`).
 
 Norėdami peržiūrėti pavyzdinę formą naršyklėje:
 
