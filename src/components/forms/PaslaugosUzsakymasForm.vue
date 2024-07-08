@@ -1,15 +1,35 @@
 <template>
-  <CheckboxField label="test"/>
-  <br/>
-  <br/>
+  <CheckboxField label="test" />
+  <br />
+  <br />
+
+  <v-radio-group readonly>
+    <v-radio label="Radio One" value="one"></v-radio>
+    <v-radio label="Radio Two" value="two"></v-radio>
+    <v-radio label="Radio Three" value="three"></v-radio>
+  </v-radio-group>
+
+  <RadioField
+    class="form-control"
+    field-label="Read-only"
+    :readonly="true"
+    :options="[
+      { label: 'Pasirinkimas 1', value: 'p1' },
+      { label: 'Pasirinkimas 2', value: 'p2' },
+      { label: 'Pasirinkimas 3', value: 'p3' },
+      { label: 'Pasirinkimas 4', value: 'p4' },
+    ]"
+  >
+    lorem ipsum description
+  </RadioField>
 
   <NumberStepperField class="form-control" />
   <TextField
+    v-model="modelSearch"
     field-tooltip="uh bah"
     field-label="search test"
-    v-model="modelSearch"
     class="form-control"
-    :input-field-props="{
+    :v-text-field-props="{
       appendIcon: '$close',
       suffix: 'blah',
       prefix: 'test',
@@ -22,9 +42,9 @@
   <SelectField
     v-model="selectModel"
     class="form-control"
-    label="Tikslas"
-    searchable
-    :multiple="true"
+    field-label="Tikslas"
+    :searchable="true"
+    :multiple="false"
     :items="[
       { title: 'test1', value: 't1', subtitle: 'lorem ipsum blah, bloom' },
       { title: 'test2', value: 't2' },
@@ -39,7 +59,6 @@
     <template #activator="{ props }">
       <v-btn v-bind="props" @click="console.log(props)">Tooltip</v-btn>
     </template>
-
   </Tooltip>
 
   <ModalInfo
@@ -81,20 +100,16 @@
     <v-tabs-window-item value="three"> Three </v-tabs-window-item>
   </v-tabs-window>
 
-
   <v-text-field name="bla">
-
-    <template v-slot:append>
+    <template #append>
       <v-btn icon="null">
-        <v-icon icon="$tooltip"/>
-        <v-tooltip activator="parent">
-          my tooltip
-        </v-tooltip>
+        <v-icon icon="$tooltip" />
+        <v-tooltip activator="parent"> my tooltip </v-tooltip>
       </v-btn>
     </template>
   </v-text-field>
 
-<!--
+  <!--
   <TextField
     class="form-control"
     label="Tikslas"
@@ -172,7 +187,7 @@
   <!--
   <CheckboxField v-model="check" class="form-control" field-label="Sutikimas" label="test label pam tes tlabel pam labai ilgas labelas darlabel pam label pam tes tlabel pam labai ilgas labelas tes tlabel pam labai ilgas labelas ilgesnis ir title bus gal kazkada" error="test error labai labai netgi labai ilgas erroras kuris kazkada turi baiktis cia tik testas" />
  -->
-<!--
+  <!--
   <Checkbox
     >Pagal užsakymą gautus duomenis naudosiu nurodytam duomenų tikslui ir šių duomenų
     neatskleisiu tretiesiems asmenims.</Checkbox
@@ -193,7 +208,7 @@
   </CheckboxField>
 -->
 
-<!--  <br /><br />
+  <!--  <br /><br />
   <NumberStepperField label="Plus-minus" error="test" />
 
   <br /><br />
@@ -240,6 +255,7 @@
 <script setup lang="ts">
 import { vMaska } from 'maska/vue'
 import { ref } from 'vue'
+
 import VueDatepicker from '@/components/common/inputs/DatePickerField/VueDatepicker.vue'
 
 const modelSearch = ref('search')

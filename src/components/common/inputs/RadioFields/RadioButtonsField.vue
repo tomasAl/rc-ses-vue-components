@@ -12,6 +12,8 @@
         :class="{ 'v-btn--active': selectedOption === option.value }"
         :value="option.value"
         variant="outlined"
+        :disabled="disabled"
+        :readonly="readonly"
         @click="model = option.value"
       >
         {{ option.label }}
@@ -21,8 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import './RadioButtonsFieldStyle.scss'
 import { RadioButtonsFieldProps } from '@/types/inputs/RadioFieldProps'
+
+import './RadioButtonsFieldStyle.scss'
 
 withDefaults(defineProps<RadioButtonsFieldProps>(), {
   label: undefined,
@@ -34,6 +37,4 @@ const model = defineModel<string>()
 const selectedOption = computed(() => {
   return model.value ? model.value : null
 })
-
 </script>
-

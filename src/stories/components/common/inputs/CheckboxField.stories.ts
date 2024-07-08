@@ -11,7 +11,8 @@ export default {
   tags: ['autodocs'],
 } as Meta
 
-const lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
+const lorem =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
 
 const Template: StoryFn<CheckboxFieldProps> = (args) => ({
   components: { CheckboxField },
@@ -25,7 +26,7 @@ const Template: StoryFn<CheckboxFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <CheckboxField v-bind="args" v-model="model"></CheckboxField>
+        <CheckboxField v-bind="args" v-model="model">{{ lorem }}</CheckboxField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
@@ -40,7 +41,5 @@ const Template: StoryFn<CheckboxFieldProps> = (args) => ({
 export const Main = Template.bind({})
 Main.args = {
   label: 'Sutikimas',
-  content:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   name: 'sutikimas',
 }

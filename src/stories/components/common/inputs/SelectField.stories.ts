@@ -3,6 +3,7 @@ import { Meta, StoryFn } from '@storybook/vue3'
 
 import SelectField from '@/components/common/inputs/SelectField/SelectField.vue'
 import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
+import { SelectFieldItemType } from '@/types/inputs/SelectFieldProps'
 
 export default {
   title: 'components/common/inputs/SelectField',
@@ -13,14 +14,32 @@ export default {
   tags: ['autodocs'],
 } as Meta
 
-const selectItems: Array<string> = [
-  'Pasirinkimas 1',
-  'Pasirinkimas 2',
-  'Pasirinkimas 3',
-  'Pasirinkimas 4',
-  'Pasirinkimas 5',
-  'Pasirinkimas 6',
-  'Pasirinkimas 7',
+const selectItems: Array<SelectFieldItemType> = [
+  {
+    title: 'Pasirinkimas 1',
+    value: 'pasirinkimas1',
+    subtitle: 'Lorem ipsum as description',
+  },
+  {
+    title: 'Pasirinkimas 2',
+    value: 'pasirinkimas2',
+    subtitle: 'Lorem ipsum as description',
+  },
+  {
+    title: 'Pasirinkimas 3',
+    value: 'pasirinkimas3',
+    subtitle: 'Lorem ipsum as description',
+  },
+  {
+    title: 'Pasirinkimas 4',
+    value: 'pasirinkimas4',
+    subtitle: 'Lorem ipsum as description',
+  },
+  {
+    title: 'Pasirinkimas 5',
+    value: 'pasirinkimas5',
+    subtitle: 'Lorem ipsum as description',
+  },
 ]
 
 const Template: StoryFn<SelectFieldProps> = (args) => ({
@@ -50,8 +69,8 @@ const Template: StoryFn<SelectFieldProps> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-  label: 'Pasirinkti',
-  description:
+  fieldLabel: 'Pasirinkti',
+  fieldDescription:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   name: 'pasirinkti',
   placeholder: 'Pasirinkite',

@@ -4,7 +4,7 @@ import { FieldProps, InputFieldOmits, InputProps } from '@/types/inputs/FieldPro
 
 export type TextFieldProps = FieldProps &
   InputProps & {
-    inputFieldProps?: Omit<VTextField['$props'], InputFieldOmits>
+    VTextFieldProps?: Omit<VTextField['$props'], InputFieldOmits>
   }
 
 /* interface TextFieldInterface extends /!* @vue-ignore *!/ Partial<VTextField['$props']> {}

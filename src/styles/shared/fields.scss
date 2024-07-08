@@ -150,11 +150,18 @@
 // BASIC STYLING
 
 .v-overlay-container .v-menu.v-overlay{
+
+  &.rc-searchable-menu {
+    .v-overlay__content .v-list {
+      margin-top: 81px;
+    }
+  }
+
   .v-overlay__content {
     background: white;
 
     .v-list {
-      margin: 81px 6px 6px 6px;
+      margin: 6px 6px 6px 6px;
       padding: 0;
       box-shadow: none;
 

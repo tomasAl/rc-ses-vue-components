@@ -19,9 +19,8 @@
       @update:menu="updateVList"
       @update:focused="() => searchValue = ''"
     >
-      <template #prepend-item>
+      <template v-if="searchable" #prepend-item>
         <SearchableArea
-          v-if="searchable"
           v-model="searchValue"
           :multiple="multiple"
           @update-check-all="checkAll"
@@ -52,7 +51,7 @@
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { withDefaults, watch } from 'vue'
+import { watch } from 'vue'
 
 import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
 import type {
@@ -99,6 +98,16 @@ const getItemValue = (item: SelectFieldItemType): string => {
   return item.value.toString()
 }
 
+const computedItems = computed(() => {
+  if (!searchValue.value) {
+    return selectProps.items
+  }
+
+  return selectProps.items.filter((item: SelectFieldItemType) =>
+    searchValue.value ? getItemValueForSearch(item).includes(searchValue.value) : false,
+  )
+})
+
 const updateVList = () => {
   // nextTick() - not always works, especially when searchValue becomes empty
   setTimeout(() => {
@@ -115,23 +124,12 @@ const updateVList = () => {
     }
 
     if (list.scrollHeight > list.clientHeight) {
-      list.classList.add("rc-scrollable")
+      list.classList.add('rc-scrollable')
     } else {
-      list.classList.remove("rc-scrollable")
+      list.classList.remove('rc-scrollable')
     }
   }, 200)
 }
-
-const computedItems = computed(() => {
-  if (!searchValue.value) {
-    return selectProps.items
-  }
-
-  return selectProps.items.filter(
-    (item: SelectFieldItemType) =>
-      getItemValueForSearch(item).includes(<string>searchValue.value)
-  )
-})
 
 watch(computedItems, () => {
   updateVList()

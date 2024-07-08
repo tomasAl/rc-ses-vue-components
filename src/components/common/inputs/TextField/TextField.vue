@@ -7,7 +7,7 @@
   >
     <v-text-field
       v-model="model"
-      v-bind="inputFieldProps"
+      v-bind="VTextFieldProps"
       class="rc-field rc-text-field"
       variant="outlined"
       :error="!!error"

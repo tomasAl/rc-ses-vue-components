@@ -6,13 +6,21 @@
     :for="name"
     :variant="variant"
   >
-    <v-radio-group class="rc-radios" inline hide-details>
+    <v-radio-group
+      v-model="model"
+      class="rc-radios"
+      inline
+      :disabled="disabled"
+      :readonly="readonly"
+      :error="!!error"
+      :hide-details="!error"
+      :error-messages="error"
+    >
       <Radio
         v-for="(option, index) in options"
         :key="index"
         :value="option.value"
         :label="option.label"
-        @click="model = option.value"
       >
       </Radio>
     </v-radio-group>
@@ -25,7 +33,6 @@ import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
 import './RadioButtonsFieldStyle.scss'
 
 withDefaults(defineProps<RadioFieldProps>(), {
-  label: undefined,
   options: () => [],
   variant: 'text',
 })
