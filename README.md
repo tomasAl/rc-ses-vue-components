@@ -39,7 +39,7 @@ Norėdami peržiūrėti pavyzdinę formą naršyklėje:
 
  - sukompiliuokite aplikaciją: `npm run build`;
  - startuokite aplikaciją *preview* rėžime: `npm run preview`;
- - naršyklėje atidarykite [http://localhost:8080/](http://localhost:8080/);
+ - naršyklėje atidarykite [http://localhost:4173/](http://localhost:4173/);
 
 Alternatyviai, esant poreikiui pavyzdinės formos peržiūra galima ir *development* rėžime:
 
