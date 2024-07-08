@@ -13,7 +13,7 @@ import IconSVG from '../IconSVG.vue'
 import useIconProps from '../useIconProps'
 
 export default defineComponent({
-  name: 'MagnifyingGlassFilledIcon ',
+  name: 'MagnifyingGlassFilledIcon',
   components: { IconSVG },
   props: useIconProps,
 })

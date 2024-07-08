@@ -16,7 +16,6 @@
 <script setup lang="ts">
 import { computed, defineProps, withDefaults } from 'vue'
 
-import CheckBoldIcon from '@/assets/icons/bold/CheckBoldIcon.vue'
 import { FormPanelProps } from '@/types/forms/FormPanelProps'
 
 import './FormPanelStyle.scss'
