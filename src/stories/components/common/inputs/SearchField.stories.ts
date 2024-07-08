@@ -8,13 +8,12 @@ const meta = {
   title: 'components/common/inputs/SearchField',
   component: SearchField,
   argTypes: {
-    label: { control: 'text' },
-    description: { control: 'text' },
+    fieldLabel: { control: 'text' },
+    fieldDescription: { control: 'text' },
     name: { control: 'text' },
     disabled: { control: 'boolean' },
     readonly: { control: 'boolean', type: 'boolean' },
     error: { control: 'text' },
-    type: { control: 'text' },
   },
 } satisfies Meta<SearchFieldProps>
 
@@ -47,12 +46,11 @@ const Template: StoryFn<SearchFieldProps> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-  label: 'Paieška',
-  description:
+  fieldLabel: 'Paieška',
+  fieldDescription:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   name: 'antraste',
   disabled: false,
   error: undefined,
-  type: 'text',
   placeholder: 'Ieškoti',
 }

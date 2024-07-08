@@ -2,7 +2,7 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
-import { NumberStepperProps } from '@/types/inputs/NumberStepperProps'
+import { NumberStepperFieldProps } from '@/types/inputs/NumberStepperProps'
 
 export default {
   title: 'components/common/inputs/NumberStepperField',
@@ -11,7 +11,7 @@ export default {
   tags: ['autodocs'],
 } as Meta
 
-const Template: StoryFn<NumberStepperProps> = (args) => ({
+const Template: StoryFn<NumberStepperFieldProps> = (args) => ({
   components: { NumberStepperField },
   setup() {
     const modelReadOnly = ref('Negalima redaguoti')
@@ -36,8 +36,8 @@ const Template: StoryFn<NumberStepperProps> = (args) => ({
 
 export const Main = Template.bind({})
 Main.args = {
-  label: 'Kiekis',
-  description:
+  fieldLabel: 'Egzempliorių skaičius',
+  fieldDescription:
     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
   name: 'kiekis',
 }

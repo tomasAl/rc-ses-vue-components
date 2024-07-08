@@ -82,8 +82,8 @@ defineProps({
   },
 })
 
-const datepickerRef = ref(null)
-const date = ref(null)
+const datepickerRef = ref<any>(null)
+const date = ref<any>(null)
 
 const formatSingleDate = (dt: Date): string => {
   return dt.toISOString().split('T')[0] // YYYY-MM-DD
@@ -125,20 +125,26 @@ const getThisWeek = () => {
   const today = new Date()
   const firstDay = new Date(today.setDate(today.getDate() - today.getDay() + 1))
   const lastDay = new Date(today.setDate(today.getDate() - today.getDay() + 7))
-  date.value = [firstDay, lastDay]
+  if (date.value) {
+    date.value = [firstDay, lastDay]
+  }
 }
 
 const getThisMonth = () => {
   const today = new Date()
   const firstDay = new Date(today.getFullYear(), today.getMonth(), 1)
   const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0)
-  date.value = [firstDay, lastDay]
+  if (date.value) {
+    date.value = [firstDay, lastDay]
+  }
 }
 
 const getLastMonth = () => {
   const today = new Date()
   const firstDay = new Date(today.getFullYear(), today.getMonth() - 1, 1)
   const lastDay = new Date(today.getFullYear(), today.getMonth(), 0)
-  date.value = [firstDay, lastDay]
+  if (date.value) {
+    date.value = [firstDay, lastDay]
+  }
 }
 </script>

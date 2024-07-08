@@ -34,7 +34,7 @@ import './FileInputStyle.scss'
 const model = defineModel<File | File[] | null | undefined>()
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const props = defineProps<FileInputProps>()
+defineProps<FileInputProps>()
 
 const classes = computed(() => {
   return {
