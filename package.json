@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "preview-storybook": "http-server ./storybook-static"
   },
   "dependencies": {
     "@storybook/docs-tools": "^8.1.7",
@@ -51,6 +52,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-vue": "^9.22.0",
+    "http-server": "^14.1.1",
     "sass": "^1.71.1",
     "storybook": "^8.1.7",
     "typescript": "^5.4.5",
