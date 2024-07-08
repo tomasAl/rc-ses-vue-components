@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Alert: typeof import('./components/common/Alert/Alert.vue')['default']
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     Checkbox: typeof import('./components/common/inputs/CheckboxField/Checkbox.vue')['default']
@@ -19,7 +18,6 @@ declare module 'vue' {
     FormControl: typeof import('./components/common/forms/FormControl.vue')['default']
     FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     IsdavimasForm: typeof import('./components/forms/IsdavimasForm.vue')['default']
     ModalInfo: typeof import('./components/modals/ModalInfo.vue')['default']
     NumberStepper: typeof import('./components/common/inputs/NumberStepperField/NumberStepper.vue')['default']
