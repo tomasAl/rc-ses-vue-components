@@ -9,8 +9,8 @@
         :class="{ active: step.active }"
       >
         <div class="step-icon">
-          <CheckSuccessIcon v-if="step.completed" />
-          <DotActive v-else-if="step.active" />
+          <v-icon v-if="step.completed" icon="rc-success" color="success-500" />
+          <DotActive v-else-if="step.active" color="primary" />
           <DotInactive v-else />
         </div>
         <div
@@ -31,6 +31,7 @@ import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
 import { VerticalStepperProps } from '@/types/steppers/VerticalStepperProps'
 
 import './VerticalStepperStyle.scss'
+import CheckIcon from '@/assets/icons/regular/CheckIcon.vue'
 
 defineProps<VerticalStepperProps>()
 </script>

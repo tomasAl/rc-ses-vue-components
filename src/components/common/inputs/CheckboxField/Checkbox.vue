@@ -14,7 +14,9 @@
     :placeholder="placeholder"
     :label="label"
   >
-
+    <template v-if="$slots.label" #label="labelProps">
+      <slot name="label" v-bind="labelProps">{{ label }}</slot>
+    </template>
   </v-checkbox>
 </template>
 

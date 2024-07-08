@@ -6,10 +6,9 @@
   .step {
     display: flex;
     align-items: center;
-    // height: 1.5rem;
     z-index: 1;
 
-    &-icon {
+    &-icon, &-icon .v-icon {
       height: 1.5rem;
       width: 1.5rem;
     }

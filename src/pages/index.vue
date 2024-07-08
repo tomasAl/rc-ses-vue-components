@@ -1,34 +1,50 @@
 <template>
-  <h1 class="text-h1">H1 Heading, here comes the grasshopper</h1>
-  <h2>H1 Heading, here comes the grasshopper</h2>
-  <h3>H1 Heading, here comes the grasshopper</h3>
-  <h4>H1 Heading, here comes the grasshopper</h4>
-  <h5>H1 Heading, here comes the grasshopper</h5>
-  <h6>H1 Heading, here comes the grasshopper</h6>
-
-  <div class="px-5 py-5">
-    <Button color="error" variant="outlined">Button</Button>
-    <Button color="primary" variant="tonal" class="mx-2">Button</Button>
-    <br /><br />
-    <Textfield></Textfield>
-    <SearchField v-model="model" />
-
-    <br /><br />
-    <FormActionPanel>
-      <ButtonBack>Baigti pildyti vėliau</ButtonBack>
-      <div class="flex-grow-1" />
-      <Button color="primary" variant="tonal" class="font-weight-strong"
-        >Pateikti užsakymo formą</Button
-      >
-    </FormActionPanel>
-  </div>
+  <StepFormLayout :items="steps"></StepFormLayout>
 </template>
 
-<script lang="ts" setup>
-//
-import Textfield from '@/components/common/inputs/TextField/TextField.vue'
+<script setup lang="ts">
+import IsdavimasForm from '@/components/forms/IsdavimasForm.vue'
+import PapildomosPaslaugosForm from '@/components/forms/PapildomosPaslaugosForm.vue'
+import PaslaugosUzsakymasForm from '@/components/forms/PaslaugosUzsakymasForm.vue'
+import TerminaiForm from '@/components/forms/TerminaiForm.vue'
 
-import FormActionPanel from '../components/common/panels/FormActionPanel/FormActionPanel.vue'
-
-const model = ref('asfd')
+const steps = [
+  {
+    id: 'step1',
+    title: 'Bazinė informacija',
+    completed: true,
+    active: false,
+    expanded: false,
+  },
+  {
+    id: 'step2',
+    title: 'Paslaugos užsakymas',
+    completed: false,
+    active: true,
+    expanded: true,
+    component: PaslaugosUzsakymasForm,
+  },
+  {
+    id: 'step3',
+    title: 'Išdavimas',
+    completed: false,
+    active: false,
+    expanded: false,
+    component: IsdavimasForm,
+  },
+  {
+    id: 'step4',
+    title: 'Reikalingos papildomos paslaugos',
+    completed: false,
+    active: false,
+    component: PapildomosPaslaugosForm,
+  },
+  {
+    id: 'step5',
+    title: 'Terminai ir sąlygos',
+    completed: false,
+    active: false,
+    component: TerminaiForm,
+  },
+]
 </script>

@@ -2,28 +2,26 @@
   <v-container>
     <v-row>
       <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
-        <VerticalStepper :items="verticalStepperItems" style="margin-top: 2.875rem"></VerticalStepper>
+        <VerticalStepper
+          :items="verticalStepperItems"
+          style="margin-top: 2.875rem"
+        ></VerticalStepper>
       </v-col>
       <v-col sm="12" md="8" lg="9" xl="10">
         <template v-for="(item, index) in items">
-          <FormWrapper
-            :key="index"
-            v-if="item?.active"
-            :panels="formPanels"
-          />
+          <FormWrapper v-if="item?.active" :key="index" :panels="formPanels" />
         </template>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-
 <script setup lang="ts">
-import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps';
-import { StepFormLayoutProps } from '@/types/layouts/StepFormLayoutProps';
 import { FormWrapperPanelProps } from '@/types/forms/FormWrapperProps'
+import { StepFormLayoutProps } from '@/types/layouts/StepFormLayoutProps'
+import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps'
 
-const props = defineProps<StepFormLayoutProps>();
+const props = defineProps<StepFormLayoutProps>()
 const verticalStepperItems: Array<VerticalStepperItemProps> = props.items
 const formPanels: Array<FormWrapperPanelProps> = props.items
 </script>

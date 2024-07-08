@@ -40,7 +40,7 @@ const success = {
   'success-800': secondary['secondary-800'],
   'success-900': secondary['secondary-900'],
   'success-950': secondary['secondary-950'],
-  success: secondary['secondary'],
+  success: secondary.secondary,
 }
 
 const grey = {
@@ -70,7 +70,7 @@ const info = {
   'info-800': grey['grey-800'],
   'info-900': grey['grey-900'],
   'info-950': grey['grey-950'],
-  success: grey['grey'],
+  success: grey.grey,
 }
 
 const warning = {
