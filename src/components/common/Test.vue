@@ -5,6 +5,7 @@
       class="text-subtitle-1 mr-3 text-grey-600 text-decoration-underline"
       >Suskleisti</span
     >
+    <!-- eslint-disable-next-line vuejs-accessibility/mouse-events-have-key-events -->
     <v-btn :icon="'$expand'" @mouseover="onMouseOver" @mouseout="onMouseOut" />
   </div>
 </template>

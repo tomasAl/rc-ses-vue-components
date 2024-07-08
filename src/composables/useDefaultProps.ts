@@ -3,7 +3,7 @@ import { ComputedRef, computed } from 'vue'
 type PropsObject = Record<string, any>
 type DefaultValuesObject = Record<string, string | number | boolean | undefined>
 
-export function useDefaultProps(
+export default function useDefaultProps(
   props: any,
   defaultValues: DefaultValuesObject,
 ): ComputedRef<PropsObject> {
