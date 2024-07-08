@@ -1,7 +1,7 @@
 {
   "name": "rc-ses-vue-components",
-  "author": "UAB Codeopera",
-  "version": "0.0.0",
+  "author": "Codeopera, UAB",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
