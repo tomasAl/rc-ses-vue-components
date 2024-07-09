@@ -4,7 +4,11 @@
       <v-expansion-panel-title static :collapse-icon="null" :expand-icon="null">
         <span class="text-h5">{{ title }}</span>
         <span class="flex-grow-1" />
-        <v-btn class="panel-icon" :icon="isExpanded ? '$collapse' : '$expand'" />
+        <v-btn
+          class="panel-icon"
+          :icon="isExpanded ? '$collapse' : '$expand'"
+          size="2.5rem"
+        />
       </v-expansion-panel-title>
       <v-expansion-panel-text>
         <slot></slot>

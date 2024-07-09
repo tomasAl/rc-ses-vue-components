@@ -18,6 +18,7 @@ declare module 'vue' {
     FormControl: typeof import('./components/common/forms/FormControl.vue')['default']
     FormPanel: typeof import('./components/common/panels/FormPanel/FormPanel.vue')['default']
     FormWrapper: typeof import('./components/common/forms/FormWrapper/FormWrapper.vue')['default']
+    HeaderPanel: typeof import('./components/common/panels/HeaderPanel/HeaderPanel.vue')['default']
     IsdavimasForm: typeof import('./components/forms/IsdavimasForm.vue')['default']
     ModalInfo: typeof import('./components/modals/ModalInfo.vue')['default']
     NumberStepper: typeof import('./components/common/inputs/NumberStepperField/NumberStepper.vue')['default']

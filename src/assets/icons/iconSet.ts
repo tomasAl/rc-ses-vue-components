@@ -10,6 +10,7 @@ import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
 import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
 import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
 import CalendarBlankIcon from '@/assets/icons/regular/CalendarBlankIcon.vue'
+import CaretDownIcon from '@/assets/icons/regular/CaretDownIcon.vue'
 import CaretRightIcon from '@/assets/icons/regular/CaretRightIcon.vue'
 import CheckIcon from '@/assets/icons/regular/CheckIcon.vue'
 import CheckSuccessIcon from '@/assets/icons/regular/CheckSuccessIcon.vue'
@@ -39,7 +40,7 @@ const aliases: IconAliases = {
   dropdown: Icon16px(CaretDownFilledIcon),
   edit: undefined,
   error: WarningDiamondFilledIcon,
-  expand: CaretDownFilledIcon,
+  expand: CaretDownIcon,
   file: PaperclipIcon,
   first: undefined,
   info: InfoFilledIcon,
