@@ -9,7 +9,25 @@
         padalinyje."
   >
   </HeaderPanel>
-  <StepFormLayout :items="steps"></StepFormLayout>
+  <StepFormLayout :items="steps">
+    <template #actions>
+      <Button variant="text" color="primary-700" prepend-icon="$prev" class="font-weight-regular">Baigti pildyti vėliau</Button>
+      <div class="flex-grow-1" />
+      <Button size="large" class="text-body-2 font-weight-strong">
+        Pridėti į krepšelį
+
+        <template #append>
+          <ArrowRightIcon color="grey-900"/>
+        </template>
+      </Button>
+    </template>
+
+    <template #actions-after>
+      <div class="d-flex pt-4 justify-center">
+        <Button variant="text" color="grey-600" class="text-decoration-underline">Atšaukti pildymą ir ištrinti formos duomenis</Button>
+      </div>
+    </template>
+  </StepFormLayout>
 </template>
 
 <script setup lang="ts">
@@ -18,6 +36,7 @@ import IsdavimasForm from '@/components/forms/IsdavimasForm.vue'
 import PapildomosPaslaugosForm from '@/components/forms/PapildomosPaslaugosForm.vue'
 import PaslaugosUzsakymasForm from '@/components/forms/PaslaugosUzsakymasForm.vue'
 import TerminaiForm from '@/components/forms/TerminaiForm.vue'
+import ArrowRightIcon from '@/assets/icons/regular/ArrowRightIcon.vue'
 
 const steps = [
   {

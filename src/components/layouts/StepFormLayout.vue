@@ -11,6 +11,12 @@
         <template v-for="(item, index) in items">
           <FormWrapper v-if="item?.active" :key="index" :panels="formPanels" />
         </template>
+
+        <FormActionPanel v-if="$slots.actions">
+          <slot name="actions"></slot>
+        </FormActionPanel>
+
+        <slot v-if="$slots['actions-after']" name="actions-after"/>
       </v-col>
     </v-row>
   </v-container>

@@ -31,7 +31,7 @@ const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color 
 
 const aliases: IconAliases = {
   calendar: CalendarBlankIcon,
-  checkboxIndeterminate: undefined,
+  checkboxIndeterminate: CheckboxOffIcon,
   checkboxOff: CheckboxOffIcon,
   checkboxOn: CheckboxOnIcon,
   clear: XCircleFilledIcon,

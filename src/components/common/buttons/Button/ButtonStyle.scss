@@ -31,6 +31,11 @@
 }
 
 .rc-btn {
+
+  .v-btn__content {
+    text-transform: none;
+  }
+
   &.v-btn--disabled {
     background: rgb(var(--v-theme-grey-50)) !important;
     color: rgb(var(--v-theme-grey-300)) !important;
