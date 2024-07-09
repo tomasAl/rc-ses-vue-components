@@ -2,28 +2,13 @@ import { StoryFn } from '@storybook/vue3'
 
 import Button from '@/components/common/buttons/Button/Button.vue'
 import { ButtonProps } from '@/types/common/ButtonProps'
+import ButtonArgTypes from '@/stories/components/argTypes/components/ButtonArgTypes'
 
 export default {
   title: 'components/common/buttons/Button',
   component: Button,
   tags: ['autodocs'],
-  argTypes: {
-    color: {
-      control: {
-        options: ['primary', 'secondary', 'success', 'info', 'warning', 'error'],
-      },
-    },
-    loading: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    content: {
-      control: {
-        type: 'text',
-      },
-    },
-  },
+  argTypes: ButtonArgTypes,
 }
 
 const Template: StoryFn<ButtonProps> = (args) => ({
@@ -49,4 +34,5 @@ const Template: StoryFn<ButtonProps> = (args) => ({
 export const Primary = Template.bind({})
 Primary.args = {
   color: 'primary',
+  loading: false,
 }

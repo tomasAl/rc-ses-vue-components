@@ -3,12 +3,12 @@ import { Meta, StoryFn } from '@storybook/vue3'
 
 import TextField from '@/components/common/inputs/TextField/TextField.vue'
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
+import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 
 export default {
   title: 'components/common/inputs/TextField',
   component: TextField,
-
-  tags: ['autodocs'],
+  argTypes: TextFieldArgTypes,
 } as Meta
 
 const Template: StoryFn<TextFieldProps> = (args) => ({

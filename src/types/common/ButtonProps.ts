@@ -8,4 +8,5 @@ interface ButtonInterface extends /* @vue-ignore */ Partial<VBtn['$props']> {}
 export type ButtonProps = Omit<ButtonInterface, ReservedKeys | 'color' | 'variant'> & {
   color?: ColorType
   variant?: 'tonal' | 'outlined' | 'text'
+  loading?: boolean
 }
