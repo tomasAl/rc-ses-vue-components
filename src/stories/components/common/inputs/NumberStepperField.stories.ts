@@ -3,11 +3,12 @@ import { Meta, StoryFn } from '@storybook/vue3'
 
 import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
 import { NumberStepperFieldProps } from '@/types/inputs/NumberStepperProps'
+import NumberStepperArgTypes from '@/stories/components/argTypes/components/NumberStepperArgTypes'
 
 export default {
   title: 'components/common/inputs/NumberStepperField',
   component: NumberStepperField,
-
+  argTypes: NumberStepperArgTypes,
   tags: ['autodocs'],
 } as Meta
 

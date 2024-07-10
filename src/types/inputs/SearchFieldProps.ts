@@ -1,3 +1,3 @@
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
-export type SearchFieldProps = Omit<TextFieldProps, 'prependInnerIcon'>
+export type SearchFieldProps = Omit<TextFieldProps, 'prependInnerIcon' | 'modelValue'>

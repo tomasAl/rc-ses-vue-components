@@ -1,5 +1,8 @@
+import type { VSelect } from 'vuetify/components'
+
 import { ColorType } from '@/types/common/ColorType'
-import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
+import { FieldProps, InputFieldOmits, InputProps } from '@/types/inputs/FieldProps'
+import { ReservedKeys } from '@/types/reserved/ReservedKeys'
 
 export type SelectFieldItemType = {
   title: string
@@ -7,11 +10,13 @@ export type SelectFieldItemType = {
   subtitle?: string
 }
 
+interface SelectFieldInterface extends /* @vue-ignore */ Partial<VSelect['$props']> {}
+
 export type SelectFieldProps = InputProps &
-  FieldProps & {
+  FieldProps &
+  Omit<SelectFieldInterface, ReservedKeys | InputFieldOmits | 'items'> & {
     items: Array<SelectFieldItemType>
     searchable?: boolean
     color?: ColorType
     multiple?: boolean
-    direction?: 'vertical' | 'horizontal'
   }

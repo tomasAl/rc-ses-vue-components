@@ -1,8 +1,14 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <FieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :for="name"
+  >
     <v-select
       ref="selectRef"
       v-model="model"
+      v-bind="$attrs"
       :name="name"
       class="rc-field rc-select-field"
       variant="outlined"
@@ -61,11 +67,12 @@ import type {
 
 import './SelectFieldStyle.scss'
 
+defineOptions({
+  inheritAttrs: false,
+})
+
 const selectProps = withDefaults(defineProps<SelectFieldProps>(), {
   disabled: false,
-  color: undefined,
-  label: undefined,
-  description: undefined,
   placeholder: undefined,
   error: undefined,
   name: undefined,

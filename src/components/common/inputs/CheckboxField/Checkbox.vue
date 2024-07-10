@@ -2,7 +2,7 @@
   <v-checkbox
     v-model="model"
     class="rc-checkbox"
-    v-bind="fieldProps"
+    v-bind="props"
     :class="classes"
     :name="name"
     :color="color"
@@ -27,7 +27,7 @@ import { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
 
 import './CheckboxFieldStyle.scss'
 
-withDefaults(defineProps<CheckboxProps>(), {
+const props = withDefaults(defineProps<CheckboxProps>(), {
   color: 'primary',
   label: undefined,
 })

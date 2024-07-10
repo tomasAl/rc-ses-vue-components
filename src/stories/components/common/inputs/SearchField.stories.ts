@@ -2,20 +2,14 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import SearchField from '@/components/common/inputs/SearchField.vue'
+import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 
 const meta = {
   title: 'components/common/inputs/SearchField',
   component: SearchField,
-  argTypes: {
-    fieldLabel: { control: 'text' },
-    fieldDescription: { control: 'text' },
-    name: { control: 'text' },
-    disabled: { control: 'boolean' },
-    readonly: { control: 'boolean', type: 'boolean' },
-    error: { control: 'text' },
-  },
-} satisfies Meta<SearchFieldProps>
+  argTypes: TextFieldArgTypes,
+} as Meta
 
 export default meta
 

@@ -2,11 +2,9 @@
   <div class="rc-searchable-area">
     <SearchField
       v-model="model"
-      :input-field-props="{
-        appendIcon: '$close',
-        'onClick:append': () => clear(),
-      }"
+      append-icon="$close"
       placeholder="Ieškoti"
+      @click:append="() => clear()"
     >
       <template #clear><span></span></template>
       <template v-if="multiple" #prepend>

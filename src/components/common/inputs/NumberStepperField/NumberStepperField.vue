@@ -20,6 +20,7 @@ import { NumberStepperFieldProps } from '@/types/inputs/NumberStepperProps'
 withDefaults(defineProps<NumberStepperFieldProps>(), {
   disabled: false,
   min: 1,
+  max: Infinity,
   step: 1,
 })
 

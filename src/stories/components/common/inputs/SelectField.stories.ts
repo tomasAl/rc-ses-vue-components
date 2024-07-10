@@ -2,15 +2,14 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import SelectField from '@/components/common/inputs/SelectField/SelectField.vue'
+import SelectArgTypes from '@/stories/components/argTypes/components/SelectArgTypes'
 import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
 import { SelectFieldItemType } from '@/types/inputs/SelectFieldProps'
 
 export default {
   title: 'components/common/inputs/SelectField',
   component: SelectField,
-  argTypes: {
-    searchable: { control: 'boolean', type: 'boolean' },
-  },
+  argTypes: SelectArgTypes,
   tags: ['autodocs'],
 } as Meta
 
@@ -59,9 +58,9 @@ const Template: StoryFn<SelectFieldProps> = (args) => ({
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-         <SelectField class="form-control" label="Read-only" readonly v-model="modelReadOnly" :items="items"></SelectField>
-         <SelectField class="form-control" label="Disabled" disabled v-model="modelDisabled" :items="items"></SelectField>
-         <SelectField label="Error" error="Klaidos pranešimas" v-model="modelError" :items="items"></SelectField>
+         <SelectField class="form-control" field-label="Read-only" readonly v-model="modelReadOnly" :items="items"></SelectField>
+         <SelectField class="form-control" field-label="Disabled" disabled v-model="modelDisabled" :items="items"></SelectField>
+         <SelectField field-label="Error" error="Klaidos pranešimas" v-model="modelError" :items="items"></SelectField>
       </div>
     </div>
   `,

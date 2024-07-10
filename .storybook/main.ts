@@ -13,9 +13,7 @@ const config: StorybookConfig = {
     name: "@storybook/vue3-vite",
     options: {},
   },
-  docs: {
-    autodocs: true,
-  },
+  docs: {},
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
     return mergeConfig(config, {
