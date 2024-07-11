@@ -7,4 +7,5 @@ export type FormWrapperPanelProps = FormPanelProps & {
 
 export type FormWrapperProps = {
   panels: Array<FormWrapperPanelProps>
+  hideTopActions?: boolean
 }

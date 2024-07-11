@@ -1,80 +1,45 @@
 <template>
   <HeaderPanel
     drop-shadow
-    :breadcrumbs="['Savitarna', 'Paslaugos užsakymo forma']"
-    title="Nekilnojamojo turto registro išrašas pagal nurodytą turto adresą"
-    description="Šiame puslapyje Jūs galite užsisakyti Nekilnojamojo turto registro išrašus,
-        pažymas bei kitus dokumentus. Užsakytą NTR išrašą, pažymą ar kitą dokumentą
-        galėsite gauti elektroniniu būdu arba atsiimti pasirinktame VĮ Registrų centro
-        padalinyje."
+    :breadcrumbs="['Pradžia', 'Pavyzdžiai']"
+    title="Formų bei komponentų pavyzdžiai"
+    description="Formos ir komponentai yra esminės bet kokios vartotojo sąsajos dalys, kurios padeda kurti sąveiką tarp vartotojo ir programos. Formos yra struktūrizuoti laukai, skirti duomenų įvedimui, pavyzdžiui, prisijungimo vardai, slaptažodžiai ar atsiliepimai. Jos gali būti paprastos, su keletu teksto laukų, arba sudėtingos, apimantys įvairias parinktis, tokias kaip išskleidžiami sąrašai ar radijo mygtukai. Komponentai yra pakartotinai naudojami UI elementai, tokie kaip mygtukai, etiketės, perjungikliai ir slankikliai, kurie padeda standartizuoti ir optimizuoti vartotojo sąsajos kūrimą. Kartu šie elementai formuoja naudotojui draugiškas sąsajas, leidžiančias efektyviai ir patogiai bendrauti su programinės įrangos funkcijomis."
   >
   </HeaderPanel>
-  <StepFormLayout :items="steps">
-    <template #actions>
-      <Button variant="text" color="primary-700" prepend-icon="$prev" class="font-weight-regular">Baigti pildyti vėliau</Button>
-      <div class="flex-grow-1" />
-      <Button size="large" class="text-body-2 font-weight-strong">
-        Pridėti į krepšelį
-
-        <template #append>
-          <ArrowRightIcon color="grey-900"/>
-        </template>
-      </Button>
-    </template>
-
-    <template #actions-after>
-      <div class="d-flex pt-4 justify-center">
-        <Button variant="text" color="grey-600" class="text-decoration-underline">Atšaukti pildymą ir ištrinti formos duomenis</Button>
-      </div>
-    </template>
-  </StepFormLayout>
+  <v-container>
+    <v-list>
+      <v-list-item
+        v-for="item in items"
+        :key="item.value"
+        append-icon="$next"
+        @click="router.push(item.routeTo)"
+      >
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-container>
 </template>
 
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import IsdavimasForm from '@/components/forms/IsdavimasForm.vue'
-import PapildomosPaslaugosForm from '@/components/forms/PapildomosPaslaugosForm.vue'
-import PaslaugosUzsakymasForm from '@/components/forms/PaslaugosUzsakymasForm.vue'
-import TerminaiForm from '@/components/forms/TerminaiForm.vue'
-import ArrowRightIcon from '@/assets/icons/regular/ArrowRightIcon.vue'
 
-const steps = [
+const router = useRouter()
+
+const items = ref([
   {
-    id: 'step1',
-    title: 'Bazinė informacija',
-    completed: true,
-    active: false,
-    expanded: false,
+    title: 'Vienos formos pavyzdys',
+    value: 1,
+    routeTo: '/singleForm',
   },
   {
-    id: 'step2',
-    title: 'Paslaugos užsakymas',
-    completed: false,
-    active: true,
-    expanded: true,
-    component: PaslaugosUzsakymasForm,
+    title: 'Kelių formų pavyzdys',
+    value: 2,
+    routeTo: '/multiForm',
   },
   {
-    id: 'step3',
-    title: 'Išdavimas',
-    completed: false,
-    active: false,
-    expanded: false,
-    component: IsdavimasForm,
+    title: 'Skirtuko tipo formos pavyzdys',
+    value: 3,
+    routeTo: '/tabForm',
   },
-  {
-    id: 'step4',
-    title: 'Reikalingos papildomos paslaugos',
-    completed: false,
-    active: false,
-    component: PapildomosPaslaugosForm,
-  },
-  {
-    id: 'step5',
-    title: 'Terminai ir sąlygos',
-    completed: false,
-    active: false,
-    component: TerminaiForm,
-  },
-]
+])
 </script>

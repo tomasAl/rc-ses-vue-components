@@ -1,18 +1,24 @@
 <template>
   <div class="rc-form-wrapper">
     <div class="rc-form-actions">
-      <v-btn variant="text" class="text-subtitle-1 text-primary-600" @click="expandAll">
-        <template #prepend>
-          <OpenIcon size="16" />
-        </template>
-        Praskleisti visus
-      </v-btn>
-      <v-btn variant="text" class="text-subtitle-1 text-primary-600" @click="collapseAll">
-        <template #prepend>
-          <CloseIcon size="16" />
-        </template>
-        Suskleisti visus
-      </v-btn>
+      <div v-if="!hideTopActions">
+        <v-btn variant="text" class="text-subtitle-1 text-primary-600" @click="expandAll">
+          <template #prepend>
+            <OpenIcon size="16" />
+          </template>
+          Praskleisti visus
+        </v-btn>
+        <v-btn
+          variant="text"
+          class="text-subtitle-1 text-primary-600"
+          @click="collapseAll"
+        >
+          <template #prepend>
+            <CloseIcon size="16" />
+          </template>
+          Suskleisti visus
+        </v-btn>
+      </div>
     </div>
 
     <FormPanel

@@ -5,4 +5,5 @@ export type StepPageLayoutItemProps = VerticalStepperItemProps & FormWrapperPane
 
 export type StepFormLayoutProps = {
   items: Array<StepPageLayoutItemProps>
+  singleForm?: boolean
 }

@@ -3,20 +3,26 @@
     <v-row>
       <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
         <VerticalStepper
+          v-if="verticalStepperItems.length > 1 || !singleForm"
           :items="verticalStepperItems"
           style="margin-top: 2.875rem"
         ></VerticalStepper>
       </v-col>
       <v-col sm="12" md="8" lg="9" xl="10">
         <template v-for="(item, index) in items">
-          <FormWrapper v-if="item?.active" :key="index" :panels="formPanels" />
+          <FormWrapper
+            v-if="item?.active"
+            :key="index"
+            :panels="formPanels"
+            :hide-top-actions="singleForm"
+          />
         </template>
 
         <FormActionPanel v-if="$slots.actions">
           <slot name="actions"></slot>
         </FormActionPanel>
 
-        <slot v-if="$slots['actions-after']" name="actions-after"/>
+        <slot v-if="$slots['actions-after']" name="actions-after" />
       </v-col>
     </v-row>
   </v-container>
