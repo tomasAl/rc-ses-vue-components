@@ -7,4 +7,7 @@ interface TextFieldInterface extends /* @vue-ignore */ Partial<VTextField['$prop
 
 export type TextFieldProps = FieldProps &
   InputProps &
-  Omit<TextFieldInterface, ReservedKeys | InputFieldOmits>
+  Omit<TextFieldInterface, ReservedKeys | InputFieldOmits> & {
+  counter?: string | number | boolean
+  messages?: string | readonly string[]
+}

@@ -44,6 +44,7 @@ declare module 'vue' {
     TextField: typeof import('./components/common/inputs/TextField/TextField.vue')['default']
     TextField2: typeof import('./components/common/inputs/TextField/TextField2.vue')['default']
     Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']
+    UzsakymasForm: typeof import('./components/examples/singleForm/UzsakymasForm.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
     VueDatepicker: typeof import('./components/common/inputs/DatePickerField/VueDatepicker.vue')['default']
   }

@@ -10,8 +10,8 @@
   </StepFormLayout>
 </template>
 <script setup lang="ts">
-import PaslaugosUzsakymasForm from '@/components/examples/multiForm/PaslaugosUzsakymasForm.vue'
 import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
+import UzsakymasForm from './UzsakymasForm.vue';
 
 const steps = [
   {
@@ -19,7 +19,7 @@ const steps = [
     title: 'Paslaugos užsakymo forma',
     active: true,
     expanded: true,
-    component: PaslaugosUzsakymasForm,
+    component: UzsakymasForm,
   },
 ]
 </script>

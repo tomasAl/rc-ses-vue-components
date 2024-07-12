@@ -11,12 +11,14 @@
       class="rc-field rc-text-field"
       variant="outlined"
       :error="!!error"
-      :hide-details="!error"
+      :hide-details="!(!!error || !!counter || !!messages)"
       :error-messages="error"
       :readonly="readonly"
       :disabled="disabled"
       :placeholder="placeholder"
+      :counter="counter"
       :name="name"
+      :messages="messages"
     >
       <template v-if="$slots['append']" #append="binds">
         <slot name="append" v-bind="binds" />
