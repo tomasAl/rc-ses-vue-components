@@ -2,7 +2,11 @@
   <v-card class="rc-header-panel">
     <div v-if="dropShadow" class="rc-shadow"></div>
     <v-container>
-      <v-breadcrumbs :items="breadcrumbs as string[]" density="compact" class="pl-0 text-subtitle-2">
+      <v-breadcrumbs
+        :items="breadcrumbs as string[]"
+        density="compact"
+        class="pl-0 text-subtitle-2"
+      >
         <template v-if="$slots['breadcrumb-title']" #title="titleBinds">
           <slot name="breadcrumb-title" v-bind="titleBinds"></slot>
         </template>
