@@ -8,6 +8,7 @@
       :readonly="readonly"
       :hide-details="true"
       :error="!!error"
+      :max-width="maxWidth"
       @input="handleInput"
       @blur="onBlur"
       @focus="onFocus"

@@ -8,6 +8,7 @@
       :disabled="disabled"
       :readonly="readonly"
       :error="error"
+      :max-width="maxWidth"
     />
   </FieldWrapper>
 </template>

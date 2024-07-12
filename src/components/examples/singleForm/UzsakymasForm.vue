@@ -30,32 +30,49 @@
     :searchable="true"
     :multiple="true"
     :items="[
-        {
-          title: 'Tikslas 1',
-          value: 't1',
-          subtitle:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        },
-        { title: 'Tikslas 2', value: 't2' },
-        { title: 'Tikslas 3', value: 't3' },
-        {
-          title: 'Tikslas 4',
-          value: 't4',
-          subtitle:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        },
-        { title: 'Tikslas 5', value: 't5' },
-        { title: 'Tikslas 6', value: 't6' },
-      ]"
+      {
+        title: 'Tikslas 1',
+        value: 't1',
+        subtitle:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      },
+      { title: 'Tikslas 2', value: 't2' },
+      { title: 'Tikslas 3', value: 't3' },
+      {
+        title: 'Tikslas 4',
+        value: 't4',
+        subtitle:
+          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      },
+      { title: 'Tikslas 5', value: 't5' },
+      { title: 'Tikslas 6', value: 't6' },
+    ]"
   />
 
   <SearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
 
+  <NumberStepperField
+    v-model="modelSkaicius"
+    class="form-control"
+    field-label="Skaičius"
+    :max-width="300"
+  />
+
+  <CheckboxField
+    v-model="modelSutikimas"
+    class="form-control"
+    label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    field-label="Sutikimas"
+    error="oh"
+  />
+
 </template>
 
 <script setup lang="ts">
-  const modelTrumpasTekstas = ref()
-  const modelIlgasTekstas = ref()
-  const modelTikslas = ref()
-  const modelIeskoti = ref()
+const modelTrumpasTekstas = ref()
+const modelIlgasTekstas = ref()
+const modelTikslas = ref()
+const modelIeskoti = ref()
+const modelSkaicius = ref()
+const modelSutikimas = ref()
 </script>
