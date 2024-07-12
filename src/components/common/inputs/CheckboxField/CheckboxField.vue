@@ -1,6 +1,11 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
-    <v-card class="rc-checkbox-field bg-grey-50" color="grey" variant="outlined">
+  <FieldWrapper
+    class="rc-checkbox-field"
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :for="name"
+  >
+    <v-card class="bg-grey-50" color="grey" variant="outlined">
       <Checkbox v-model="model" v-bind="props"> </Checkbox>
     </v-card>
   </FieldWrapper>

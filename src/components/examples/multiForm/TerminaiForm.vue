@@ -1,5 +1,5 @@
 <template>
-  <Checkbox>
+  <Checkbox v-model="checkModel">
     <template #label>
       <span class="font-weight-strong"
         >Užsakydamas darbus esu susipažinęs su darbų atlikimo ir atlyginimo tvarka ir
@@ -10,3 +10,7 @@
     </template>
   </Checkbox>
 </template>
+
+<script setup lang="ts">
+const checkModel = ref()
+</script>

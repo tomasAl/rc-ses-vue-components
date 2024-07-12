@@ -63,7 +63,6 @@
     class="form-control"
     label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     field-label="Sutikimas"
-    error="oh"
   />
 
 </template>
