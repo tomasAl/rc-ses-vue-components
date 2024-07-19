@@ -14,7 +14,7 @@
   $layers: true,
 
   $body-font-family: var.$body-font-family,
-  $border-radius-root: 3px,
+  $border-radius-root: var.$border-radius-root,
   $font-size-root: 1rem, // it affect typography
 
   $typography: $typography,

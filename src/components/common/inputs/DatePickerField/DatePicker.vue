@@ -7,10 +7,12 @@
     :month-change-on-scroll="true"
     locale="lt"
     month-name-format="long"
-    :range="isRange"
-    :multi-calendars="isRange ? 2 : 0"
+    :name="name"
+    :disabled="disabled"
+    :readonly="readonly"
+    :range="range"
+    :multi-calendars="range ? 2 : 0"
     :format="formatPreview"
-    :placeholder="isRange ? 'Select date range' : 'Select date'"
     :auto-apply="false"
     :close-on-auto-apply="false"
     :teleport="false"
@@ -21,7 +23,16 @@
     class="rc-datepicker"
   >
     <template #dp-input="inputBind">
-      <TextField v-bind="inputBind" prepend-inner-icon="$calendar" />
+      <TextField
+        v-bind="inputBind"
+        prepend-inner-icon="$calendar"
+        :placeholder="placeholder"
+        :name="name"
+        :disabled="disabled"
+        :readonly="readonly"
+        :error="error"
+        :max-width="maxWidth"
+      />
     </template>
 
     <template #clear-icon="{ clear }">
@@ -36,7 +47,7 @@
       <v-icon icon="$next" />
     </template>
 
-    <template #action-preview>
+    <template v-if="range" #action-preview>
       <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisWeek"
         >Ši savaitė</v-btn
       >
@@ -72,18 +83,14 @@ import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue'
 
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
+import { DatePickerProps } from '@/types/inputs/DatePickerProps'
 
-import './VueDatepickerStyle.scss'
+import './DatePickerStyle.scss'
 
-defineProps({
-  isRange: {
-    type: Boolean,
-    default: false,
-  },
-})
+defineProps<DatePickerProps>()
 
 const datepickerRef = ref<any>(null)
-const date = ref<any>(null)
+const date = defineModel<any>()
 
 const formatSingleDate = (dt: Date): string => {
   return dt.toISOString().split('T')[0] // YYYY-MM-DD

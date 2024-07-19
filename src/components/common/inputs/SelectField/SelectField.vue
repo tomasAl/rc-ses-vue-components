@@ -94,7 +94,7 @@ const menuProps = ref({
 })
 
 const getItemValueForSearch = (item: SelectFieldItemType): string => {
-  return `${item.title} ${item?.subtitle}`
+  return `${item.title} ${item?.subtitle}`.toLowerCase()
 }
 
 const getItemValue = (item: SelectFieldItemType): string => {

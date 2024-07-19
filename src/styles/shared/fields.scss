@@ -39,6 +39,11 @@
     --v-input-control-height: 2.75rem;
   }
 
+  .v-input__details {
+    padding-inline: 0;
+    min-height: auto;
+  }
+
   // ### DEFAULT STATE
   .v-field--variant-outlined
   {
@@ -118,10 +123,6 @@
         display: none !important;
       }
     }
-  }
-
-  .v-input__details {
-    padding-inline: 0;
   }
 
   // ERROR STATE

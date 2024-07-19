@@ -1,3 +1,4 @@
-import { InputProps } from '@/types/inputs/FieldProps'
+import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type FileInputProps = InputProps
+export type FileInputFieldProps = FileInputProps & FieldProps
