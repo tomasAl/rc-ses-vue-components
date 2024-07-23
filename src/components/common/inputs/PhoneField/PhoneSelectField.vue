@@ -1,35 +1,3 @@
-<!--
-<template>
-  <v-select
-    class="rc-field rc-select-field"
-    variant="outlined"
-    :items="[
-      {
-        name: 'Afganistan',
-        code: 'AF',
-        phoneCode: '+93',
-        flag: 'afganistan',
-      },
-      {
-        name: 'Albania',
-        code: 'AL',
-        phoneCode: '+355',
-        flag: 'albania',
-      },
-      {
-        name: 'Algeria',
-        code: 'DZ',
-        phoneCode: '+213',
-        flag: 'algeria',
-      },
-    ]"
-  >
-  </v-select>
-</template>
-
-<script setup lang="ts"></script>
--->
-
 <template>
   <FieldWrapper
     :label="fieldLabel"
@@ -57,13 +25,13 @@
       transition="scroll-y-transition"
       @update:menu="updateVList"
     >
-      <template v-if="selectedCountry" #prepend>
-        <v-icon :icon="selectedCountry?.flag" class="mr-2" />
+      <template v-if="selectedCountry" #prepend-inner>
+        <IconFlag :iso="selectedCountry" class="mr-2" />
       </template>
       <template #item="{ item, props }">
         <v-list-item v-bind="props" class="rc-menu-list-item">
           <template #prepend>
-            <v-img :src="item.raw.flag" class="mr-2" />
+            <IconFlag :iso="item.raw.iso" class="mr-2" />
           </template>
           <template #title> {{ item.raw.name }} ({{ item.raw.code }}) </template>
           <template #subtitle></template>
@@ -86,6 +54,9 @@ import { v4 as uuidv4 } from 'uuid'
 import { computed, ref } from 'vue'
 
 import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
+import IconFlag from '@/assets/icons/IconFlag.vue'
+
+import './PhoneFieldStyle.scss'
 
 defineOptions({
   inheritAttrs: false,
@@ -106,7 +77,7 @@ withDefaults(defineProps<SelectFieldProps>(), {
   name: undefined,
 })
 
-const selectedCountry = ref<Country | null>(null)
+const selectedCountry = ref<string | undefined>(undefined)
 const phoneNumber = ref('')
 const selectRef = ref()
 
@@ -114,18 +85,13 @@ const menuId = uuidv4()
 const menuProps = ref({
   id: menuId,
   offset: 6,
+  class: 'rc-phone-select-menu',
 })
-
-/* const countries = [
-  { name: 'United States', code: '+1', flag: 'mdi-flag-us', mask: '+1 (###) ###-####' },
-  { name: 'United Kingdom', code: '+44', flag: 'mdi-flag-gb', mask: '+44 #### ######' },
-  // Add more countries here
-] */
 
 console.log('all countries', countries)
 
 const mask = computed(() => {
-  const country = countries.find(({ name }) => name === selectedCountry.value ?? '')
+  const country = countries.find(({ iso }) => iso === selectedCountry.value?.iso)
   return country ? country.mask : ''
 })
 

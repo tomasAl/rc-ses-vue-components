@@ -158,12 +158,24 @@
     }
   }
 
+  &.rc-card-menu {
+    .v-overlay__content {
+      .v-list {
+        margin: 0 !important;
+        padding: 6px !important;
+      }
+    }
+  }
+
   .v-overlay__content {
     background: white;
 
     .v-list {
       margin: 6px 6px 6px 6px;
       padding: 0;
+    }
+
+    .v-list {
       box-shadow: none;
 
       &::-webkit-scrollbar {

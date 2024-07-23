@@ -15,7 +15,7 @@ interface SelectFieldInterface extends /* @vue-ignore */ Partial<VSelect['$props
 export type SelectFieldProps = InputProps &
   FieldProps &
   Omit<SelectFieldInterface, ReservedKeys | InputFieldOmits | 'items'> & {
-    items: Array<SelectFieldItemType>
+    items?: Array<SelectFieldItemType>
     searchable?: boolean
     color?: ColorType
     multiple?: boolean
