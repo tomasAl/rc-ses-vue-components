@@ -1,4 +1,6 @@
-export type AlertProps = {
+import type { Alert } from '@/library'
+
+export interface AlertProps {
   id?: string
   text?: string
   title?: string
@@ -6,3 +8,10 @@ export type AlertProps = {
   variant?: 'light' | 'dark'
   closeable?: boolean
 }
+
+declare module 'vue' {
+  interface GlobalComponents {
+    Alert: typeof Alert
+  }
+}
+

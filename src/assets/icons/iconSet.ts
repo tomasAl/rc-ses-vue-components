@@ -1,4 +1,4 @@
-import { Component, h } from 'vue'
+import { h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
@@ -27,9 +27,7 @@ import CaretUpIcon from './regular/CaretUpIcon.vue'
 import MagnifyingGlassIcon from './regular/MagnifyingGlassIcon.vue'
 import XIcon from './regular/XIcon.vue'
 
-const Icon16px = (icon: Component, color?: string) => h(icon, { size: 16, color })
-
-const aliases: IconAliases = {
+const aliases: Partial<IconAliases> = {
   calendar: CalendarBlankIcon,
   checkboxIndeterminate: CheckboxOffIcon,
   checkboxOff: CheckboxOffIcon,
@@ -37,7 +35,7 @@ const aliases: IconAliases = {
   clear: XCircleFilledIcon,
   delete: undefined,
   delimiter: undefined,
-  dropdown: Icon16px(CaretDownFilledIcon),
+  dropdown: CaretDownFilledIcon,
   edit: undefined,
   error: WarningDiamondFilledIcon,
   expand: CaretDownIcon,
@@ -69,7 +67,7 @@ const aliases: IconAliases = {
   closeFilled: XCircleFilledIcon,
   back: CaretLeftIcon,
   search: MagnifyingGlassIcon,
-  checkPrimary: Icon16px(CheckIcon, 'primary'),
+  checkPrimary: CheckIcon,
   upload: UploadIcon,
   tooltip: QuestionIcon,
 }

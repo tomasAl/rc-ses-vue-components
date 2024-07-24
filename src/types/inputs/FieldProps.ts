@@ -16,7 +16,7 @@ export type InputFieldOmits =
   | 'errorMessages'
   | 'color'
 
-export type FieldProps = {
+export interface FieldProps {
   fieldLabel?: string
   fieldDescription?: string
   fieldTooltip?: string

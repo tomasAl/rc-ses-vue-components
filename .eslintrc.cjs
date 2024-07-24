@@ -23,6 +23,11 @@ module.exports = {
     '@vue/eslint-config-prettier',
     'plugin:storybook/recommended',
   ],
+  ignorePatterns: [
+    '.eslintrc.cjs',
+    'vite.config.build.mts',
+    'vite.config.mts',
+  ],
   rules: {
     'vue/multi-word-component-names': 'off',
     'import/no-named-as-default': 'off',
@@ -30,6 +35,12 @@ module.exports = {
     'vue/prop-name-casing': 'off',
     'vue/dot-notation': 'off',
   },
+	globals: {
+		Entry: true,
+	},
+	parserOptions: {
+		parser: '@typescript-eslint/parser',
+	},
 
   /*  parser: 'vue-eslint-parser',
   /!*parserOptions: {

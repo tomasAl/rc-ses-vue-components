@@ -1,7 +1,7 @@
 <template>
   <v-expansion-panels v-model="panelModel" flat>
     <v-expansion-panel :disabled="disabled" :value="id">
-      <v-expansion-panel-title static :collapse-icon="null" :expand-icon="null">
+      <v-expansion-panel-title static :collapse-icon="undefined" :expand-icon="undefined">
         <span class="text-h5">{{ title }}</span>
         <span class="flex-grow-1" />
         <v-btn
