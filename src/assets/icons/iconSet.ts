@@ -83,6 +83,9 @@ const rcIcons: IconSet = {
       case 'rc-success':
         return h(CheckSuccessIcon, props)
 
+      case 'rc-caret-down-filled':
+        return h(CaretDownFilledIcon, props)
+
       // Add other cases here
       default:
         return h('span') // Fallback if the icon is not found

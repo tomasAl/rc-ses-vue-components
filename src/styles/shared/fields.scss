@@ -156,6 +156,10 @@
     .v-overlay__content .v-list {
       margin-top: 81px;
     }
+
+    .v-overlay__content .v-card .rc-menu-scroll {
+      margin-top: 74px;
+    }
   }
 
   &.rc-card-menu {
@@ -175,7 +179,12 @@
       padding: 0;
     }
 
-    .v-list {
+    .v-card {
+      margin: 0;
+      padding: 6px;
+    }
+
+    .v-list, .rc-menu-scroll {
       box-shadow: none;
 
       &::-webkit-scrollbar {

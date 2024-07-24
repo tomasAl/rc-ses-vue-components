@@ -3,48 +3,81 @@
     <v-text-field
       ref="input"
       v-model="inputValue"
+      v-maska="{
+        mask: selectedCountry?.mask,
+        preProcess: handleMultipleMasks,
+      }"
+      :placeholder="computedPlaceholder"
       class="rc-field rc-phone-input-field"
       hide-details
-      @click:append="openMenu"
-    ></v-text-field>
+      @update:focused="() => (searchValue = '')"
+      @blur="activator = undefined"
+    >
+      <template #prepend-inner>
+        <div
+          class="d-flex align-center"
+          type="button"
+          @click="openMenu"
+          @keydown="() => {}"
+        >
+          <IconFlag :iso="selectedCountry?.iso" class="mr-2" />
+          <v-icon icon="rc-caret-down-filled" size="14" />
+          <div class="divider mx-2" />
+          <span>{{ selectedCountry?.code }}</span>
+        </div>
+      </template>
+    </v-text-field>
     <v-menu
+      :id="menuId"
       v-model="menu"
-      :activator="input"
+      :activator="activator"
       :close-on-content-click="false"
       :transition="'slide-y-transition'"
       offset="6"
-      max-height="300"
-      class="rc-card-menu"
+      class="rc-card-menu rc-phone-field-menu rc-searchable-menu"
+      @update="updateVList"
     >
-<!--      <v-list elevation="4" :items="countries" item-title="name" item-value="iso">
-        <template #prepend="{ item }">
-          <IconFlag iso="AX" />
-        </template>
-      </v-list>-->
-
-      <v-virtual-scroll
-        :items="countries"
-        height="300"
-        item-height="48"
-      >
-        <template #default="{ item }">
-          <v-list-item :key="item.iso" @click="selectItem(item)">
-            <template #prepend>
-              <IconFlag :iso="item.iso" />
-            </template>
-            {{ item.name }}
-          </v-list-item>
-        </template>
-      </v-virtual-scroll>
+      <v-card elevation="4">
+        <SearchableArea v-model="searchValue" />
+        <v-virtual-scroll
+          :items="computedCountries"
+          max-height="300"
+          item-height="48"
+          class="rc-menu-scroll rc-scrollable"
+        >
+          <template #default="{ item }">
+            <v-list-item
+              :key="item.iso"
+              class="rc-menu-list-item"
+              @click="selectItem(item)"
+            >
+              <template #prepend>
+                <IconFlag :iso="item.iso" />
+              </template>
+              <template #title>
+                {{ item.name }} ({{ item.iso }})
+                <span class="flex-grow-1" />
+                {{ item.code }}
+              </template>
+            </v-list-item>
+          </template>
+        </v-virtual-scroll>
+      </v-card>
     </v-menu>
   </div>
 </template>
 
 <script setup lang="ts">
 import countries from 'countries-phone-masks'
-import { ref } from 'vue'
+import { Mask, MaskOptions } from 'maska'
+import { vMaska } from 'maska/vue'
+import { v4 as uuidv4 } from 'uuid'
+import { ref, watch } from 'vue'
 
 import IconFlag from '@/assets/icons/IconFlag.vue'
+import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
+
+import './PhoneFieldStyle.scss'
 
 interface Country {
   name: string
@@ -54,40 +87,90 @@ interface Country {
   mask: string
 }
 
-const inputValue = ref('')
+const activator = ref()
+const searchValue = ref<string>()
+const selectedCountry = ref<Country | undefined>(undefined)
+const inputValue = ref()
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
-
-const itemsPerPage = 20
-const currentPage = ref(1)
-
-const visibleCountries = computed(() => {
-  return countries.slice(0, currentPage.value * itemsPerPage)
-})
-
-const loadMoreItems = (indexes: number[]) => {
-  if (indexes[indexes.length - 1] >= visibleCountries.value.length - 5) {
-    currentPage.value += 1
-  }
-}
+const menuId = uuidv4()
 
 // Methods
 const openMenu = () => {
-  menu.value = true
+  activator.value = input.value
 }
 
-const closeMenu = () => {
+const getItemValueForSearch = (item: Country): string => {
+  return `${item.name} ${item?.iso} ${item?.code}`.toLowerCase()
+}
+
+const computedCountries = computed(() => {
+  if (!searchValue.value) {
+    return countries
+  }
+
+  return countries.filter((item: Country) =>
+    searchValue.value ? getItemValueForSearch(item).includes(searchValue.value) : false,
+  )
+})
+
+const updateVList = () => {
+  // nextTick() - not always works, especially when searchValue becomes empty
   setTimeout(() => {
-    menu.value = false
+    const menuEl = document.getElementById(menuId)
+
+    if (!menuEl) {
+      return
+    }
+
+    const list = menuEl.querySelector('.rc-menu-scroll')
+
+    if (!list) {
+      return
+    }
+
+    if (list.scrollHeight > list.clientHeight) {
+      list.classList.add('rc-scrollable')
+    } else {
+      list.classList.remove('rc-scrollable')
+    }
   }, 200)
 }
 
+watch(computedCountries, () => {
+  updateVList()
+})
+
 const selectItem = (country: Country) => {
-  inputValue.value = country.iso
+  selectedCountry.value = country
   menu.value = false
 }
-</script>
 
-<style scoped>
-/* Add any required styles here */
-</style>
+const computedPlaceholder = computed(() => {
+  return Array.isArray(selectedCountry?.value?.mask)
+    ? selectedCountry.value.mask.join(', ')
+    : selectedCountry?.value?.mask
+})
+
+const maskInstance = ref<Mask | null>(null)
+
+const handleMultipleMasks = (value: string): string => {
+  if (Array.isArray(selectedCountry?.value?.mask)) {
+    if (!maskInstance.value) {
+      const maskOptions: MaskOptions = { mask: selectedCountry.value.mask }
+      maskInstance.value = new Mask(maskOptions)
+    }
+    return maskInstance.value.masked(value)
+  }
+  return value
+}
+
+watch(
+  () => selectedCountry?.value?.mask,
+  () => {
+    // Reset the mask instance when the mask changes
+    maskInstance.value = null
+  },
+  { deep: true },
+)
+</script>
