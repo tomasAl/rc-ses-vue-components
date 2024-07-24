@@ -41,7 +41,7 @@ declare module 'vue' {
     RadioField: typeof import('./components/common/inputs/RadioFields/RadioField.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SearchableArea: typeof import('./components/common/inputs/shared/SearchableArea/SearchableArea.vue')['default']
+    SearchableArea: typeof import('./components/common/inputs/SearchableArea/SearchableArea.vue')['default']
     SearchField: typeof import('./components/common/inputs/SearchField.vue')['default']
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
     StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
