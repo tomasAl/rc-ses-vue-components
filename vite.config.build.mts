@@ -8,6 +8,7 @@ import { defineConfig } from 'vite'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from 'vite-plugin-dts'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 import pkg from './package.json'
 
@@ -62,13 +63,19 @@ export default defineConfig({
       styles: 'none',
     }),
     cssInjectedByJsPlugin({ topExecutionPriority: false }),
+		viteStaticCopy({
+			targets: [
+				{
+					src: './src/styles/vuetify/*',
+					dest: 'styles/vuetify',
+				},
+			]
+		}),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
 			'@types': fileURLToPath(new URL('./src/types', import.meta.url)),
-      // '@': path.resolve(__dirname, import.meta.url),
-			// '@types': path.resolve(__dirname, './src/types'),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.mts', '.ts', '.tsx', '.vue'],
   },

@@ -1,12 +1,12 @@
-import { defineAsyncComponent } from 'vue'
-import type { App } from 'vue'
+import type { App, Plugin } from 'vue'
 
 import Alert from '@/components/common/Alert/Alert.vue'
 import Button from '@/components/common/buttons/Button/Button.vue'
 import FormWrapper from '@/components/common/forms/FormWrapper/FormWrapper.vue'
 import Checkbox from '@/components/common/inputs/CheckboxField/Checkbox.vue'
 import CheckboxField from '@/components/common/inputs/CheckboxField/CheckboxField.vue'
-import Datepicker from '@/components/common/inputs/DatePickerField/VueDatepicker.vue'
+import DatePicker from '@/components/common/inputs/DatePickerField/DatePicker.vue'
+import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FieldWrapper from '@/components/common/inputs/FieldWrapper/FieldWrapper.vue'
 import FileInput from '@/components/common/inputs/FileInputField/FileInput.vue'
 import NumberStepper from '@/components/common/inputs/NumberStepperField/NumberStepper.vue'
@@ -23,168 +23,67 @@ import FormPanel from '@/components/common/panels/FormPanel/FormPanel.vue'
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
 import VerticalStepper from '@/components/common/steppers/VerticalStepper/VerticalStepper.vue'
 import StepFormLayout from '@/components/layouts/StepFormLayout.vue'
-import rcCreateVuetify from '@/plugins/vuetify'
+import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 
 // eslint-disable-next-line symbol-description
 export const globalOptions = Symbol()
 
-export function createRcSesComponents(options: object = {}) {
+export function createRcSesComponents(options: object = {}): Plugin<[]> {
   const install = (app: App) => {
     app.provide(globalOptions, options)
 
-    app.component(
-      'FieldWrapper',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/FieldWrapper/FieldWrapper.vue'),
-      ),
-    )
+    app
+      .component('HeaderPanel', HeaderPanel)
+      .component('FieldWrapper', FieldWrapper)
+      .component('FormWrapper', FormWrapper)
+      .component('FormPanel', FormPanel)
+      .component('StepFormLayout', StepFormLayout)
 
-    app.component(
-      'FormWrapper',
-      defineAsyncComponent(
-        () => import('@/components/common/forms/FormWrapper/FormWrapper.vue'),
-      ),
-    )
+    app.component('VerticalStepper', VerticalStepper)
 
-    app.component(
-      'VerticalStepper',
-      defineAsyncComponent(
-        () => import('@/components/common/steppers/VerticalStepper/VerticalStepper.vue'),
-      ),
-    )
+    app.component('FormActionPanel', FormActionPanel)
 
-    app.component(
-      'FormActionPanel',
-      defineAsyncComponent(
-        () => import('@/components/common/panels/FormActionPanel/FormActionPanel.vue'),
-      ),
-    )
+    app.component('Alert', Alert)
 
-    app.component(
-      'FormPanel',
-      defineAsyncComponent(
-        () => import('@/components/common/panels/FormPanel/FormPanel.vue'),
-      ),
-    )
+    // eslint-disable-next-line vue/no-reserved-component-names
+    app.component('Button', Button)
 
-    app.component(
-      'StepFormLayout',
-      defineAsyncComponent(() => import('@/components/layouts/StepFormLayout.vue')),
-    )
+    app.component('Checkbox', Checkbox)
 
-    app.component(
-      'HeaderPanel',
-      defineAsyncComponent(
-        () => import('@/components/common/panels/HeaderPanel/HeaderPanel.vue'),
-      ),
-    )
+    app.component('CheckboxField', CheckboxField)
 
-    app.component(
-      'Alert',
-      defineAsyncComponent(() => import('@/components/common/Alert/Alert.vue')),
-    )
+    app.component('DatePicker', DatePicker).component('DatePickerField', DatePickerField)
 
-    app.component(
-      'Button',
-      defineAsyncComponent(() => import('@/components/common/buttons/Button/Button.vue')),
-    )
+    app.component('FileInput', FileInput)
 
-    app.component(
-      'Checkbox',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/CheckboxField/Checkbox.vue'),
-      ),
-    )
-    app.component(
-      'CheckboxField',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/CheckboxField/CheckboxField.vue'),
-      ),
-    )
+    app
+      .component('NumberStepper', NumberStepper)
+      .component('NumberStepperField', NumberStepperField)
 
-    app.component(
-      'Datepicker',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/DatePickerField/VueDatepicker.vue'),
-      ),
-    )
+    app
+      .component('Radio', Radio)
+      .component('RadioField', RadioField)
+      .component('RadioButtonsField', RadioButtonsField)
 
-    app.component(
-      'FileInput',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/FileInputField/FileInput.vue'),
-      ),
-    )
+    app.component('SearchableArea', SearchableArea).component('SearchField', SearchField)
 
-    app.component(
-      'NumberStepper',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/NumberStepperField/NumberStepper.vue'),
-      ),
-    )
-    app.component(
-      'NumberStepperField',
-      defineAsyncComponent(
-        () =>
-          import('@/components/common/inputs/NumberStepperField/NumberStepperField.vue'),
-      ),
-    )
+    app.component('SelectField', SelectField)
 
-    app.component(
-      'Radio',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/RadioFields/Radio.vue'),
-      ),
-    )
-    app.component(
-      'RadioButtonsField',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/RadioFields/RadioButtonsField.vue'),
-      ),
-    )
-    app.component(
-      'RadioField',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/RadioFields/RadioField.vue'),
-      ),
-    )
-
-    app.component(
-      'SearchableArea',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/SearchableArea/SearchableArea.vue'),
-      ),
-    )
-    app.component(
-      'SearchField',
-      defineAsyncComponent(() => import('@/components/common/inputs/SearchField.vue')),
-    )
-    app.component(
-      'SelectField',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/SelectField/SelectField.vue'),
-      ),
-    )
-
-    app.component(
-      'TextField',
-      defineAsyncComponent(
-        () => import('@/components/common/inputs/TextField/TextField.vue'),
-      ),
-    )
+    app.component('TextField', TextField)
   }
 
   return { install }
 }
 
-export { rcCreateVuetify }
+export { createRcSesVuetify }
+
 export { FormActionPanel, FormPanel, HeaderPanel }
 export { FieldWrapper, FormWrapper, VerticalStepper }
 export { Alert, Button }
 export { Checkbox, CheckboxField }
 export { FileInput }
-export { Datepicker }
+export { DatePicker, DatePickerField }
 export { StepFormLayout }
 export { NumberStepper, NumberStepperField }
 export { Radio, RadioButtonsField, RadioField }

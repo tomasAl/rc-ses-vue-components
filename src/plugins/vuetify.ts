@@ -3,6 +3,7 @@
  *
  * Framework documentation: https://vuetifyjs.com`
  */
+import { Plugin } from 'vue'
 import { createVuetify } from 'vuetify'
 import { en, lt } from 'vuetify/locale'
 import 'vuetify/styles'
@@ -12,7 +13,7 @@ import { darkTheme, lightTheme } from '@/theme/themes'
 
 import defaults from '../theme'
 
-const rcCreateVuetify = (): ReturnType<typeof createVuetify> =>
+const createRcSesVuetify = (): Plugin<[]> =>
   createVuetify({
     defaults,
     locale: {
@@ -36,4 +37,4 @@ const rcCreateVuetify = (): ReturnType<typeof createVuetify> =>
     },
   })
 
-export default rcCreateVuetify
+export default createRcSesVuetify
