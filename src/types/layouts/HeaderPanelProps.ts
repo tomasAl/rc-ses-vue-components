@@ -1,11 +1,13 @@
-export type BreadcrumbItemObectType = {
+import { VBreadcrumbs } from 'vuetify/components'
+
+export interface BreadcrumbItemObectType {
   title?: string
   disabled?: boolean
   href?: string
 }
 
-export type HeaderPanelProps = {
-  breadcrumbs?: Array<string> | Array<BreadcrumbItemObectType>
+export interface HeaderPanelProps {
+  breadcrumbs?: VBreadcrumbs['$props']['items']
   title?: string
   description?: string
   dropShadow?: boolean

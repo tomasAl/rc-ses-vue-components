@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
-import { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
+import type { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
 
 import './CheckboxFieldStyle.scss'
 

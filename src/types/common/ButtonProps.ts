@@ -1,12 +1,20 @@
-import { VBtn } from 'vuetify/components'
+import type { VBtn } from 'vuetify/components'
 
+import type Button from '@/components/common/buttons/Button/Button.vue'
 import { ColorType } from '@/types/common/ColorType'
-import { ReservedKeys } from '@/types/reserved/ReservedKeys'
 
-interface ButtonInterface extends /* @vue-ignore */ Partial<VBtn['$props']> {}
-
-export type ButtonProps = Omit<ButtonInterface, ReservedKeys | 'color' | 'variant'> & {
+export interface ButtonProps {
+  active?: VBtn['$props']['active']
+  appendIcon?: VBtn['$props']['appendIcon']
+  block?: VBtn['$props']['block']
   color?: ColorType
+  density?: VBtn['$props']['density']
+  loading?: VBtn['$props']['loading']
   variant?: 'tonal' | 'outlined' | 'text'
-  loading?: boolean
+}
+
+declare module 'vue' {
+  interface GlobalComponents {
+    Button: typeof Button
+  }
 }

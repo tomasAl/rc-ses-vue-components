@@ -1,4 +1,4 @@
-@use '../../../../styles/settings';
+@use '../../../../styles/vuetify/settings.scss';
 @import '../../../../styles/shared/mixins/makeFocus';
 
 @mixin make-color($color, $hover, $active, $textColor: 950, $haTextColor: null) {

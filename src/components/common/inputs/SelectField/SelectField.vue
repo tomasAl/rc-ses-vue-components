@@ -45,7 +45,7 @@
               v-if="multiple"
               base-color="white"
               color="primary"
-              :model-value="model?.includes(<never>item.value)"
+              :model-value="model?.includes(item.value)"
               hide-details
             ></v-checkbox>
           </template>
@@ -59,7 +59,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import { watch } from 'vue'
 
-import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
 import type {
   SelectFieldItemType,
   SelectFieldProps,

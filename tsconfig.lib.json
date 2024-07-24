@@ -22,12 +22,7 @@
 		"noUnusedParameters": true,
     "outDir": "dist",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-			"@types/*": [
-				"./src/types/*"
-			],
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
 		"rootDir": "src",
@@ -43,9 +38,10 @@
     //   "vuetify",
     // ],
    "typeRoots": [
-     "./src/types",
+     "./src/plugin/types",
      "./node_modules/@types",
-     "./node_modules/vuetify"
+     "./node_modules/vuetify",
+     "./src/types"
    ],
    "types": [
      "node"
@@ -55,10 +51,12 @@
   "exclude": [
     "dist",
     "build",
-    "node_modules"
+    "node_modules",
+    "local_modules",
+    "cypress",
+    "./src/router/**/*",
   ],
   "include": [
-    "package.json",
     "./src/**/*.vue",
     "./src/**/*.ts",
     "./src/**/*.tsx",

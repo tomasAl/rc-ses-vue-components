@@ -19,7 +19,7 @@
       :hide-details="!error"
       :error="!!error"
       :error-messages="error"
-      :menu-props="menuProps"
+      :menu-props="selectMenuProps"
       :readonly="readonly"
       :disabled="disabled"
       transition="scroll-y-transition"
@@ -53,8 +53,8 @@ import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref } from 'vue'
 
-import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
 import IconFlag from '@/assets/icons/IconFlag.vue'
+import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
 
 import './PhoneFieldStyle.scss'
 
@@ -82,17 +82,19 @@ const phoneNumber = ref('')
 const selectRef = ref()
 
 const menuId = uuidv4()
-const menuProps = ref({
+const selectMenuProps = ref({
   id: menuId,
   offset: 6,
   class: 'rc-phone-select-menu',
 })
 
-console.log('all countries', countries)
+// console.log('all countries', countries)
 
 const mask = computed(() => {
-  const country = countries.find(({ iso }) => iso === selectedCountry.value?.iso)
-  return country ? country.mask : ''
+  const country: Country | undefined = countries.find(
+    ({ iso }) => iso === selectedCountry.value,
+  )
+  return country?.mask ?? ''
 })
 
 const updateVList = () => {

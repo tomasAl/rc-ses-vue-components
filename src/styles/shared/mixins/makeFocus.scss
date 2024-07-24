@@ -1,4 +1,4 @@
-@use './../../settings';
+@use './../../vuetify/settings.scss';
 
 @mixin make-focus($gap) {
   &:focus {

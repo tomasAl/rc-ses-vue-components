@@ -4,7 +4,7 @@
     class="rc-file-input"
     :class="classes"
     :clearable="!readonly"
-    :prepend-icon="null"
+    :prepend-icon="undefined"
     :disabled="disabled"
     :placeholder="placeholder"
     :error="!!error"

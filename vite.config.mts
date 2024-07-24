@@ -1,49 +1,47 @@
-// Plugins
-import Vue from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
-import AutoImport from 'unplugin-auto-import/vite'
-import Fonts from 'unplugin-fonts/vite'
-import Components from 'unplugin-vue-components/vite'
-import VueRouter from 'unplugin-vue-router/vite'
-// Utilities
+// import { resolve } from 'path'
+import autoImport from 'unplugin-auto-import/vite'
+import fonts from 'unplugin-fonts/vite'
+import components from 'unplugin-vue-components/vite'
+import vueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
-import Layouts from 'vite-plugin-vue-layouts'
-import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+// import dts from 'vite-plugin-dts'
+import layouts from 'vite-plugin-vue-layouts'
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  define: { 'process.env': {} },
   plugins: [
-    VueRouter({
+    vueRouter({
       dts: 'src/typed-router.d.ts',
     }),
-    Layouts(),
-    AutoImport({
+    layouts(),
+    autoImport({
+      dts: 'src/auto-imports.d.ts',
       imports: [
         'vue',
         {
+          vue: ['CSSProperties'],
+          vuetify: ['useTheme'],
           'vue-router/auto': ['useRoute', 'useRouter'],
         },
       ],
-      dts: 'src/auto-imports.d.ts',
-      eslintrc: {
-        enabled: true,
-      },
       vueTemplate: true,
     }),
-    Components({
+    components({
       dts: 'src/components.d.ts',
     }),
-    Vue({
+    vue({
       template: { transformAssetUrls },
     }),
-    // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
-    Vuetify({
+    vuetify({
       autoImport: true,
       styles: {
-        configFile: 'src/styles/settings.scss',
+        configFile: 'src/styles/vuetify/settings.scss',
       },
     }),
-    Fonts({
+    fonts({
       google: {
         families: [
           {
@@ -53,11 +51,15 @@ export default defineConfig({
         ],
       },
     }),
+    // dts({
+    //   copyDtsFiles: true,
+    //   rollupTypes: true,
+    // }),
   ],
-  define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+			'@types': fileURLToPath(new URL('./src/types', import.meta.url)),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },

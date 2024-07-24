@@ -1,18 +1,7 @@
-/**
- * src/styles/settings.scss
- *
- * Configures SASS variables and Vuetify overwrites
- */
-
-// https://vuetifyjs.com/features/sass-variables/`
-
-
 @use 'typography' as *;
 @use 'variables' as var;
 
 @forward 'vuetify/settings' with (
-  $layers: true,
-
   $body-font-family: var.$body-font-family,
   $border-radius-root: var.$border-radius-root,
   $font-size-root: 1rem, // it affect typography

@@ -93,7 +93,7 @@ const datepickerRef = ref<any>(null)
 const date = defineModel<any>()
 
 const formatSingleDate = (dt: Date): string => {
-  return dt.toISOString().split('T')[0] // YYYY-MM-DD
+  return dt.toISOString().split('T')[0] ?? '' // YYYY-MM-DD
 }
 
 const formatDateRange = (startDate: Date, endDate: Date): any => {
