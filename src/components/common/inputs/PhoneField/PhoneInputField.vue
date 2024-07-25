@@ -1,16 +1,30 @@
 <template>
-  <div>
+  <FieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :for="name"
+  >
     <v-text-field
       ref="input"
       v-model="inputValue"
+      v-bind="$attrs"
       v-maska="{
         mask: selectedCountry?.mask,
         preProcess: handleMultipleMasks,
       }"
       :placeholder="computedPlaceholder"
       class="rc-field rc-phone-input-field"
-      hide-details
+      :error="!!error"
+      :hide-details="!(!!error || !!counter || !!messages)"
+      :error-messages="error"
+      :readonly="readonly"
+      :disabled="disabled"
+      :counter="counter"
+      :name="name"
+      :messages="messages"
       @update:focused="() => (searchValue = '')"
+      @input="handleModel"
       @blur="activator = undefined"
     >
       <template #prepend-inner>
@@ -26,56 +40,59 @@
           <span>{{ selectedCountry?.code }}</span>
         </div>
       </template>
+
+      <v-menu
+        :id="menuId"
+        v-model="menu"
+        :activator="activator"
+        :close-on-content-click="false"
+        :transition="'slide-y-transition'"
+        offset="6"
+        class="rc-card-menu rc-phone-field-menu rc-searchable-menu"
+        @update="updateVList"
+      >
+        <v-card elevation="4">
+          <SearchableArea v-model="searchValue" />
+          <v-virtual-scroll
+            :items="computedCountries"
+            max-height="300"
+            item-height="48"
+            class="rc-menu-scroll rc-scrollable"
+          >
+            <template #default="{ item }">
+              <v-list-item
+                :key="item.iso"
+                class="rc-menu-list-item"
+                @click="selectItem(item)"
+              >
+                <template #prepend>
+                  <IconFlag :iso="item.iso" />
+                </template>
+                <template #title>
+                  {{ item.name }} ({{ item.iso }})
+                  <span class="flex-grow-1" />
+                  {{ item.code }}
+                </template>
+              </v-list-item>
+            </template>
+          </v-virtual-scroll>
+        </v-card>
+      </v-menu>
     </v-text-field>
-    <v-menu
-      :id="menuId"
-      v-model="menu"
-      :activator="activator"
-      :close-on-content-click="false"
-      :transition="'slide-y-transition'"
-      offset="6"
-      class="rc-card-menu rc-phone-field-menu rc-searchable-menu"
-      @update="updateVList"
-    >
-      <v-card elevation="4">
-        <SearchableArea v-model="searchValue" />
-        <v-virtual-scroll
-          :items="computedCountries"
-          max-height="300"
-          item-height="48"
-          class="rc-menu-scroll rc-scrollable"
-        >
-          <template #default="{ item }">
-            <v-list-item
-              :key="item.iso"
-              class="rc-menu-list-item"
-              @click="selectItem(item)"
-            >
-              <template #prepend>
-                <IconFlag :iso="item.iso" />
-              </template>
-              <template #title>
-                {{ item.name }} ({{ item.iso }})
-                <span class="flex-grow-1" />
-                {{ item.code }}
-              </template>
-            </v-list-item>
-          </template>
-        </v-virtual-scroll>
-      </v-card>
-    </v-menu>
-  </div>
+  </FieldWrapper>
 </template>
 
 <script setup lang="ts">
+import { PhoneInputFieldProps } from '@types/inputs/PhoneInputFieldProps'
 import countries from 'countries-phone-masks'
 import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { ref, watch } from 'vue'
+import { VTextField } from 'vuetify/components/VTextField'
 
 import IconFlag from '@/assets/icons/IconFlag.vue'
-import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
+import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
 
 import './PhoneFieldStyle.scss'
 
@@ -87,9 +104,16 @@ interface Country {
   mask: string
 }
 
+defineOptions({
+  inheritAttrs: false,
+})
+
+const props = defineProps<PhoneInputFieldProps>()
+
+const model = defineModel<string | undefined>()
 const activator = ref()
 const searchValue = ref<string>()
-const selectedCountry = ref<Country | undefined>(undefined)
+const selectedCountry = ref<Country | undefined>(countries[0] ?? undefined)
 const inputValue = ref()
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
@@ -97,7 +121,18 @@ const menuId = uuidv4()
 
 // Methods
 const openMenu = () => {
-  activator.value = input.value
+  if (!props.readonly && !props.disabled) {
+    activator.value = 'parent'
+  }
+}
+
+const handleModel = () => {
+  if (!inputValue.value) {
+    model.value = undefined
+    return
+  }
+
+  model.value = (selectedCountry?.value?.code ?? '') + inputValue.value
 }
 
 const getItemValueForSearch = (item: Country): string => {
@@ -144,6 +179,7 @@ watch(computedCountries, () => {
 const selectItem = (country: Country) => {
   selectedCountry.value = country
   menu.value = false
+  handleModel()
 }
 
 const computedPlaceholder = computed(() => {
