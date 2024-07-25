@@ -108,11 +108,6 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const getDefaultCountry = ():Country | undefined => {
-  const defaultCountry = countries.find((country) => country.iso.toLowerCase() === props.defaultIso?.toLowerCase())
-  return defaultCountry ?? countries[0] ?? undefined
-}
-
 const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
   defaultIso: undefined,
   fieldLabel: undefined,
@@ -120,6 +115,13 @@ const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
   fieldTooltip: undefined,
   density: 'default',
 })
+
+const getDefaultCountry = (): Country | undefined => {
+  const defaultCountry = countries.find(
+    (country) => country.iso.toLowerCase() === props.defaultIso?.toLowerCase(),
+  )
+  return defaultCountry ?? countries[0] ?? undefined
+}
 
 const model = defineModel<string | undefined>()
 const activator = ref()
