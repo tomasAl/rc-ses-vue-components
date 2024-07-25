@@ -1,10 +1,4 @@
-import { VBreadcrumbs } from 'vuetify/components'
-
-export interface BreadcrumbItemObectType {
-  title?: string
-  disabled?: boolean
-  href?: string
-}
+import type { VBreadcrumbs } from 'vuetify/components'
 
 export interface HeaderPanelProps {
   breadcrumbs?: VBreadcrumbs['$props']['items']

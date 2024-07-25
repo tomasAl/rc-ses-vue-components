@@ -83,7 +83,6 @@
 </template>
 
 <script setup lang="ts">
-import { PhoneInputFieldProps } from '@types/inputs/PhoneInputFieldProps'
 import countries from 'countries-phone-masks'
 import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
@@ -93,6 +92,7 @@ import { VTextField } from 'vuetify/components/VTextField'
 
 import IconFlag from '@/assets/icons/IconFlag.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
+import { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
 
 import './PhoneFieldStyle.scss'
 
