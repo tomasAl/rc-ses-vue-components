@@ -6,6 +6,7 @@
 import { createApp } from 'vue'
 
 import registerPlugins from '@/plugins'
+import '@/styles/shared/index.scss'
 
 import App from './App.vue'
 import router from './router'
