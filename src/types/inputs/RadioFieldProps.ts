@@ -1,4 +1,6 @@
-import { OptionType } from '@/types/common/OptionType'
+import type { VRadioGroup } from 'vuetify/components'
+
+import type { OptionType } from '@/types/common/OptionType'
 import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type RadioFieldProps = FieldProps &
@@ -6,6 +8,7 @@ export type RadioFieldProps = FieldProps &
     options: Array<OptionType>
     variant?: 'text' | 'outlined'
     name?: string
+    vRadioGroupProps?: Partial<VRadioGroup['$props']>
   }
 
 export type RadioButtonsFieldProps = Omit<RadioFieldProps, 'variant'>

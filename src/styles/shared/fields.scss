@@ -39,6 +39,11 @@
     --v-input-control-height: 2.75rem;
   }
 
+  .v-input__details {
+    padding-inline: 0;
+    min-height: auto;
+  }
+
   // ### DEFAULT STATE
   .v-field--variant-outlined
   {
@@ -120,10 +125,6 @@
     }
   }
 
-  .v-input__details {
-    padding-inline: 0;
-  }
-
   // ERROR STATE
   &.v-input--error {
 
@@ -155,6 +156,19 @@
     .v-overlay__content .v-list {
       margin-top: 81px;
     }
+
+    .v-overlay__content .v-card .rc-menu-scroll {
+      margin-top: 74px;
+    }
+  }
+
+  &.rc-card-menu {
+    .v-overlay__content {
+      .v-list {
+        margin: 0 !important;
+        padding: 6px !important;
+      }
+    }
   }
 
   .v-overlay__content {
@@ -163,6 +177,14 @@
     .v-list {
       margin: 6px 6px 6px 6px;
       padding: 0;
+    }
+
+    .v-card {
+      margin: 0;
+      padding: 6px;
+    }
+
+    .v-list, .rc-menu-scroll {
       box-shadow: none;
 
       &::-webkit-scrollbar {

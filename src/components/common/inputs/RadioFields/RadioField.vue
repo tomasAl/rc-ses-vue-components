@@ -8,6 +8,7 @@
   >
     <v-radio-group
       v-model="model"
+      v-bind="vRadioGroupProps"
       class="rc-radios"
       inline
       :disabled="disabled"
@@ -28,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+import type { VRadioGroup } from 'vuetify/components'
+
 import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
 
 import './RadioButtonsFieldStyle.scss'
@@ -35,7 +38,8 @@ import './RadioButtonsFieldStyle.scss'
 withDefaults(defineProps<RadioFieldProps>(), {
   options: () => [],
   variant: 'text',
-})
+  // VRadioGroupProps: () => ({}) as Partial<VRadioGroup['$props']>,
+} as const)
 
 const model = defineModel<string>()
 </script>

@@ -45,7 +45,7 @@
               v-if="multiple"
               base-color="white"
               color="primary"
-              :model-value="model?.includes(<never>item.value)"
+              :model-value="model?.includes(item.value)"
               hide-details
             ></v-checkbox>
           </template>
@@ -57,9 +57,8 @@
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
-import SearchableArea from '@/components/common/inputs/shared/SearchableArea/SearchableArea.vue'
 import type {
   SelectFieldItemType,
   SelectFieldProps,
@@ -94,7 +93,7 @@ const menuProps = ref({
 })
 
 const getItemValueForSearch = (item: SelectFieldItemType): string => {
-  return `${item.title} ${item?.subtitle}`
+  return `${item.title} ${item?.subtitle}`.toLowerCase()
 }
 
 const getItemValue = (item: SelectFieldItemType): string => {

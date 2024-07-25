@@ -6,4 +6,10 @@ export type ColorType =
   | 'warning'
   | 'error'
   | 'grey'
-  | string
+  | `primary-${string}`
+  | `secondary-${string}`
+  | `success-${string}`
+  | `info-${string}`
+  | `warning-${string}`
+  | `error-${string}`
+  | `grey-${string}`

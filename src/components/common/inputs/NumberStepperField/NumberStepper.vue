@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
+import { computed, ref, withDefaults } from 'vue'
 
 import { NumberStepperProps } from '@/types/inputs/NumberStepperProps'
 

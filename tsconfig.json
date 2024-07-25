@@ -1,38 +1,53 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+		"allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
     "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": false,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+    "outDir": "dist",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     },
     "resolveJsonModule": true,
+		"rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
     "types": [
-      "vite/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-vue-router/client",
       "node",
-      "vuetify"
     ],
-    "allowJs": false,
-    "strict": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
+    "useDefineForClassFields": true,
   },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
   "include": [
-    "./src/**/*.ts",
+    "package.json",
     "./src/**/*.vue",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
     "./src/typed-router.d.ts"
   ],
-  "exclude": ["dist", "node_modules", "cypress"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

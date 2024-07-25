@@ -15,9 +15,9 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
+import { computed, withDefaults } from 'vue'
 
-import { AlertProps } from '@/types/common/AlertProps'
+import type { AlertProps } from '@/types/common/AlertProps'
 
 import './AlertStyle.scss'
 

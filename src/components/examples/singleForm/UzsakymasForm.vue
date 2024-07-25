@@ -51,6 +51,23 @@
 
   <SearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
 
+  <DatePickerField
+    v-model="modelData"
+    field-label="Data"
+    class="form-control"
+    :max-width="150"
+    placeholder="Data"
+  />
+
+  <DatePickerField
+    v-model="modelLaikotarpis"
+    field-label="Laikotarpis"
+    class="form-control"
+    range
+    :max-width="300"
+    placeholder="Pradžia  →  Pabaiga"
+  />
+
   <NumberStepperField
     v-model="modelSkaicius"
     class="form-control"
@@ -63,16 +80,62 @@
     class="form-control"
     label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     field-label="Sutikimas"
-    error="oh"
   />
 
+  <FileInputField field-label="Bylos įkėlimas" class="form-control" />
+
+  <v-divider class="form-control" />
+
+  <TextField
+    v-model="modelPavadinimas"
+    class="form-control"
+    field-label="Pavadinimas"
+    name="pavadinimas"
+    placeholder="Pavadinimas"
+    messages="Lorem Ipsum is simply dummy text."
+  />
+
+  <RadioField
+    field-label="Pasirinkimas"
+    class="form-control"
+    :v-radio-group-props="{
+      class: 'bg-grey-100',
+    }"
+    :options="[
+      { value: 'p1', label: 'Pasirinkimas #1' },
+      { value: 'p2', label: 'Pasirinkimas #2' },
+      { value: 'p3', label: 'Pasirinkimas #3' },
+      { value: 'p4', label: 'Pasirinkimas #4' },
+      { value: 'p5', label: 'Labai ilgas pasirinkimas #5' },
+    ]"
+  />
+
+  <RadioButtonsField
+    field-label="Pasirinkimas"
+    :options="[
+      { value: 'p1', label: 'Pasirinkimas #1' },
+      { value: 'p2', label: 'Pasirinkimas #2' },
+      { value: 'p3', label: 'Pasirinkimas #3' },
+      { value: 'p4', label: 'Pasirinkimas #4' },
+      { value: 'p5', label: 'Labai ilgas pasirinkimas #5' },
+    ]"
+  />
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
+import FileInputField from '@/components/common/inputs/FileInputField/FileInputField.vue'
+
 const modelTrumpasTekstas = ref()
+const modelPavadinimas = ref()
 const modelIlgasTekstas = ref()
 const modelTikslas = ref()
 const modelIeskoti = ref()
 const modelSkaicius = ref()
 const modelSutikimas = ref()
+
+const modelData = ref()
+const modelLaikotarpis = ref()
 </script>

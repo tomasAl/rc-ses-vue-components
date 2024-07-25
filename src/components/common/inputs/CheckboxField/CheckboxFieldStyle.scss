@@ -76,5 +76,12 @@
 
 .rc-checkbox-field {
   width: 100%;
-  padding: 1rem 1.25rem;
+
+  .v-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .rc-field-labels {
+    max-height: 4.5rem;
+  }
 }

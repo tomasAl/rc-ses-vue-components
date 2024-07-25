@@ -2,7 +2,7 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import Alert from '@/components/common/Alert/Alert.vue'
-import { AlertProps } from '@/types/common/AlertProps'
+import type { AlertProps } from '@/types/common/AlertProps'
 
 export default {
   title: 'components/common/Alert',

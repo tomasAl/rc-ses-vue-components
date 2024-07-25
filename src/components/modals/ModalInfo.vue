@@ -36,9 +36,9 @@
 </template>
 
 <script setup lang="ts">
-import { ColorType } from '@/types/common/ColorType'
+import type { ColorType } from '@/types/common/ColorType'
 
-interface ModalInfoProps {
+export interface ModalInfoProps {
   icon?: string
   iconColor?: ColorType
   title: string
