@@ -1,7 +1,7 @@
+import * as path from 'path'
 import commonjs from '@rollup/plugin-commonjs'
 import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
-import * as path from 'path'
 import typescript from 'rollup-plugin-typescript2'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
@@ -14,24 +14,25 @@ import pkg from './package.json'
 
 const scopedPackageName = pkg.name
 const packageName = scopedPackageName.replace('/', '-').replace('@', '')
-const entry = './src/library.ts'
 
 export default defineConfig({
   publicDir: false,
   build: {
     lib: {
-      entry,
+      entry: './src/library/index.ts',
       name: pkg.name,
       formats: ['es', 'cjs'],
       fileName: packageName,
     },
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, entry),
+        main: path.resolve(__dirname, './src/library/index.ts'),
+        icons: path.resolve(__dirname, './src/library/icons.ts'),
       },
       external: [...Object.keys(pkg.dependencies || {}), /^vuetify($|\/.+)/],
       output: {
         exports: 'named',
+        preserveModules: false,
       },
     },
   },
@@ -55,14 +56,21 @@ export default defineConfig({
       staticImport: true,
     }),
     typescript({
+      // abortOnError: false,
+      // clean: true,
+      // verbosity: 2,
       check: true,
-      include: ['./src/**/*.vue', './src/**/*.ts'],
+      tsconfig: './tsconfig.lib.json',
+      include: ['./src/**/*.{vue|ts|tsx|d.ts}', './src/typed-router.d.ts'],
     }),
     vuetify({
       autoImport: true,
       styles: 'none',
     }),
-    cssInjectedByJsPlugin({ topExecutionPriority: false }),
+    cssInjectedByJsPlugin({
+      topExecutionPriority: false,
+      // jsAssetsFilterFunction: (outputChunk) => outputChunk.name === 'index'
+    }),
 		viteStaticCopy({
 			targets: [
 				{
@@ -75,7 +83,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-			'@types': fileURLToPath(new URL('./src/types', import.meta.url)),
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.mts', '.ts', '.tsx', '.vue'],
   },

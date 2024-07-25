@@ -4,19 +4,19 @@
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/rc-ses-vue-components.cjs",
-  "types": "./dist/library.d.ts",
   "module": "./dist/rc-ses-vue-components.js",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/library.d.ts",
-        "default": "./dist/rc-ses-vue-components.js"
-      },
-      "require": {
-        "types": "./dist/library.d.ts",
-        "default": "./dist/rc-ses-vue-components.cjs"
-      },
+      "types": "./dist/library/index.d.ts",
+      "import": "./dist/rc-ses-vue-components.js",
+      "require": "./dist/rc-ses-vue-components.cjs",
       "default": "./dist/rc-ses-vue-components.cjs"
+    },
+    "./icons": {
+      "types": "./dist/library/icons.d.ts",
+      "import": "./dist/rc-ses-vue-components2.js",
+      "require": "./dist/rc-ses-vue-components2.cjs",
+      "default": "./dist/rc-ses-vue-components2.cjs"
     },
     "./vuetify/settings.scss": "./src/styles/vuetify/settings.scss",
     "./package.json": "./package.json"
