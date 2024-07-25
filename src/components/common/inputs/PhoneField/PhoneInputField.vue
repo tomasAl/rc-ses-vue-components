@@ -113,7 +113,13 @@ const getDefaultCountry = ():Country | undefined => {
   return defaultCountry ?? countries[0] ?? undefined
 }
 
-const props = defineProps<PhoneInputFieldProps>()
+const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
+  defaultIso: undefined,
+  fieldLabel: undefined,
+  fieldDescription: undefined,
+  fieldTooltip: undefined,
+  density: 'default',
+})
 
 const model = defineModel<string | undefined>()
 const activator = ref()
