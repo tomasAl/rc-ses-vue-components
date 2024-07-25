@@ -12,7 +12,6 @@ declare module 'vue' {
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     Checkbox: typeof import('./components/common/inputs/CheckboxField/Checkbox.vue')['default']
     CheckboxField: typeof import('./components/common/inputs/CheckboxField/CheckboxField.vue')['default']
-    Datepicker: typeof import('./components/common/inputs/DatePickerField/Datepicker.vue')['default']
     DatePicker: typeof import('./components/common/inputs/DatePickerField/DatePicker.vue')['default']
     DatePickerField: typeof import('./components/common/inputs/DatePickerField/DatePickerField.vue')['default']
     ExampleMultiForm: typeof import('./components/examples/multiForm/ExampleMultiForm.vue')['default']
@@ -33,7 +32,6 @@ declare module 'vue' {
     NumberStepperField: typeof import('./components/common/inputs/NumberStepperField/NumberStepperField.vue')['default']
     PapildomosPaslaugosForm: typeof import('./components/examples/multiForm/PapildomosPaslaugosForm.vue')['default']
     PaslaugosUzsakymasForm: typeof import('./components/examples/multiForm/PaslaugosUzsakymasForm.vue')['default']
-    PhoneField: typeof import('./components/common/inputs/PhoneField/PhoneField.vue')['default']
     PhoneInputField: typeof import('./components/common/inputs/PhoneField/PhoneInputField.vue')['default']
     PhoneSelectField: typeof import('./components/common/inputs/PhoneField/PhoneSelectField.vue')['default']
     Radio: typeof import('./components/common/inputs/RadioFields/Radio.vue')['default']
@@ -52,6 +50,5 @@ declare module 'vue' {
     Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']
     UzsakymasForm: typeof import('./components/examples/singleForm/UzsakymasForm.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
-    VueDatepicker: typeof import('./components/common/inputs/DatePickerField/VueDatepicker.vue')['default']
   }
 }

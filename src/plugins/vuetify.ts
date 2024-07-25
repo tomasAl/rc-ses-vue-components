@@ -37,4 +37,4 @@ const createRcSesVuetify = (): Plugin<[]> =>
     },
   })
 
-export default createRcSesVuetify
+export default createRcSesVuetify()

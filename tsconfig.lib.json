@@ -54,13 +54,14 @@
     "node_modules",
     "local_modules",
     "cypress",
-    "./src/router/**/*",
+    "./src/router/*",
+    "./src/App.vue",
+    "./src/main.ts",
   ],
   "include": [
     "./src/**/*.vue",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./src/typed-router.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
