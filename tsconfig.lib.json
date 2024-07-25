@@ -30,38 +30,39 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ESNext",
-    // "types": [
-    //   "vite/client",
-    //   "vite-plugin-vue-layouts/client",
-    //   "unplugin-vue-router/client",
-    //   "node",
-    //   "vuetify",
-    // ],
-   "typeRoots": [
-     "./src/plugin/types",
-     "./node_modules/@types",
-     "./node_modules/vuetify",
-     "./src/types"
-   ],
-   "types": [
-     "node"
-   ],
+    "types": [
+      "vite-plugin-vue-layouts/client",
+      "unplugin-vue-router/client",
+      "node",
+    ],
     "useDefineForClassFields": true,
   },
   "exclude": [
-    "dist",
+    ".storybook",
     "build",
+    "dist",
     "node_modules",
-    "local_modules",
-    "cypress",
-    "./src/router/*",
-    "./src/App.vue",
-    "./src/main.ts",
+
+    "src/layouts",
+    "src/pages",
+    "src/router",
+    "src/stories",
+
+    "src/auto-imports.d.ts",
+    "src/components.d.ts",
+    // "src/typed-router.d.ts",
+    "src/*.d.ts",
+    "src/*.vue",
+    "src/*.ts",
   ],
   "include": [
-    "./src/**/*.vue",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+
+    "src/shims-vue.d.ts",
+    "src/typed-router.d.ts",
+    "src/vite-env.d.ts",
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

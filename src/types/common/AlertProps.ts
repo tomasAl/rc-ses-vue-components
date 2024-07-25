@@ -1,4 +1,4 @@
-import type { Alert } from '@/library'
+import Alert from '@/components/common/Alert/Alert.vue'
 
 export interface AlertProps {
   id?: string
@@ -14,4 +14,3 @@ declare module 'vue' {
     Alert: typeof Alert
   }
 }
-

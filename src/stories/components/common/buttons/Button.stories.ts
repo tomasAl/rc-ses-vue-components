@@ -2,7 +2,7 @@ import { StoryFn } from '@storybook/vue3'
 
 import Button from '@/components/common/buttons/Button/Button.vue'
 import ButtonArgTypes from '@/stories/components/argTypes/components/ButtonArgTypes'
-import { ButtonProps } from '@/types/common/ButtonProps'
+import type { ButtonProps } from '@/types/common/ButtonProps'
 
 export default {
   title: 'components/common/buttons/Button',

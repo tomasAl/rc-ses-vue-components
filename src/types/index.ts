@@ -1,5 +1,5 @@
-import { AlertProps } from '@/types/common/AlertProps'
-import { ButtonProps } from '@/types/common/ButtonProps'
+import type { AlertProps } from '@/types/common/AlertProps'
+import type { ButtonProps } from '@/types/common/ButtonProps'
 
 declare module '*.scss'
 

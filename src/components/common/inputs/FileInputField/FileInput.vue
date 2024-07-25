@@ -27,6 +27,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import { FileInputProps } from '@/types/inputs/FileInputProps'
 
 import './FileInputStyle.scss'

@@ -23,6 +23,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import { RadioButtonsFieldProps } from '@/types/inputs/RadioFieldProps'
 
 import './RadioButtonsFieldStyle.scss'

@@ -1,7 +1,7 @@
 import type { VBtn } from 'vuetify/components'
 
 import type Button from '@/components/common/buttons/Button/Button.vue'
-import { ColorType } from '@/types/common/ColorType'
+import type { ColorType } from '@/types/common/ColorType'
 
 export interface ButtonProps {
   active?: VBtn['$props']['active']

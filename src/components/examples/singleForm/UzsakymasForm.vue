@@ -123,6 +123,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FileInputField from '@/components/common/inputs/FileInputField/FileInputField.vue'
 

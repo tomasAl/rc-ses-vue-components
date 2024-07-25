@@ -1,6 +1,6 @@
 import type { VRadioGroup } from 'vuetify/components'
 
-import { OptionType } from '@/types/common/OptionType'
+import type { OptionType } from '@/types/common/OptionType'
 import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type RadioFieldProps = FieldProps &

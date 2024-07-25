@@ -1,6 +1,6 @@
 import type { VCheckbox } from 'vuetify/components'
 
-import { ColorType } from '@/types/common/ColorType'
+import type { ColorType } from '@/types/common/ColorType'
 import type { FieldProps, InputFieldOmits, InputProps } from '@/types/inputs/FieldProps'
 import { ReservedKeys } from '@/types/reserved/ReservedKeys'
 

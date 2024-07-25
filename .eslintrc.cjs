@@ -27,6 +27,7 @@ module.exports = {
     '.eslintrc.cjs',
     'vite.config.build.mts',
     'vite.config.mts',
+    'dist',
   ],
   rules: {
     'vue/multi-word-component-names': 'off',

@@ -20,5 +20,5 @@ import type { HeaderPanelProps } from '@/types/layouts/HeaderPanelProps'
 
 import './HeaderPanelStyle.scss'
 
-defineProps<HeaderPanelProps>()
+withDefaults(defineProps<HeaderPanelProps>(), {})
 </script>

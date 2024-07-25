@@ -1,12 +1,10 @@
 import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
-// import { resolve } from 'path'
 import autoImport from 'unplugin-auto-import/vite'
 import fonts from 'unplugin-fonts/vite'
 import components from 'unplugin-vue-components/vite'
 import vueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
-// import dts from 'vite-plugin-dts'
 import layouts from 'vite-plugin-vue-layouts'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
@@ -51,17 +49,12 @@ export default defineConfig({
         ],
       },
     }),
-    // dts({
-    //   copyDtsFiles: true,
-    //   rollupTypes: true,
-    // }),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-			'@types': fileURLToPath(new URL('./src/types', import.meta.url)),
     },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.mts', '.ts', '.tsx', '.vue'],
   },
   server: {
     port: 3000,

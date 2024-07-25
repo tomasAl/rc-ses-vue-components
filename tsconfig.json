@@ -22,12 +22,7 @@
 		"noUnusedParameters": true,
     "outDir": "dist",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-			"@types/*": [
-				"./src/types/*"
-			],
+      "@/*": ["./src/*"],
     },
     "resolveJsonModule": true,
 		"rootDir": "src",
@@ -35,21 +30,11 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ESNext",
-    // "types": [
-    //   "vite/client",
-    //   "vite-plugin-vue-layouts/client",
-    //   "unplugin-vue-router/client",
-    //   "node",
-    //   "vuetify",
-    // ],
-   "typeRoots": [
-     "./src/types",
-     "./node_modules/@types",
-     "./node_modules/vuetify"
-   ],
-   "types": [
-     "node"
-   ],
+    "types": [
+      "vite-plugin-vue-layouts/client",
+      "unplugin-vue-router/client",
+      "node",
+    ],
     "useDefineForClassFields": true,
   },
   "exclude": [

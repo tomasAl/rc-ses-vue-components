@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue'
+import { computed, withDefaults } from 'vue'
 
 import type { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
 
