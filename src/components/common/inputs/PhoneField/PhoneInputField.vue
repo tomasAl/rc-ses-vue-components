@@ -108,13 +108,18 @@ defineOptions({
   inheritAttrs: false,
 })
 
+const getDefaultCountry = ():Country | undefined => {
+  const defaultCountry = countries.find((country) => country.iso.toLowerCase() === props.defaultIso?.toLowerCase())
+  return defaultCountry ?? countries[0] ?? undefined
+}
+
 const props = defineProps<PhoneInputFieldProps>()
 
 const model = defineModel<string | undefined>()
 const activator = ref()
 const searchValue = ref<string>()
-const selectedCountry = ref<Country | undefined>(countries[0] ?? undefined)
-const inputValue = ref()
+const selectedCountry = ref<Country | undefined>(getDefaultCountry())
+const inputValue = ref(model.value)
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
 const menuId = uuidv4()

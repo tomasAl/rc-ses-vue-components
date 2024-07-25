@@ -23,6 +23,7 @@ import FormPanel from '@/components/common/panels/FormPanel/FormPanel.vue'
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
 import VerticalStepper from '@/components/common/steppers/VerticalStepper/VerticalStepper.vue'
 import StepFormLayout from '@/components/layouts/StepFormLayout.vue'
+import PhoneInputField from '@/components/common/inputs/PhoneField/PhoneInputField.vue'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 
@@ -71,6 +72,8 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
     app.component('SelectField', SelectField)
 
     app.component('TextField', TextField)
+
+    app.component('PhoneInputField', PhoneInputField)
   }
 
   return { install }
@@ -89,3 +92,4 @@ export { NumberStepper, NumberStepperField }
 export { Radio, RadioButtonsField, RadioField }
 export { SearchableArea, SelectField, SearchField }
 export { TextField }
+export { PhoneInputField }
