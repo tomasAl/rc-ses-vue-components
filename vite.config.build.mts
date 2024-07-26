@@ -29,7 +29,10 @@ export default defineConfig({
         main: path.resolve(__dirname, './src/library/index.ts'),
         icons: path.resolve(__dirname, './src/library/icons.ts'),
       },
-      external: [...Object.keys(pkg.dependencies || {}), /^vuetify($|\/.+)/],
+      external: [
+        ...Object.keys(pkg.dependencies || {}),
+        /^vuetify($|\/.+)/,
+      ],
       output: {
         exports: 'named',
         preserveModules: false,
@@ -56,12 +59,12 @@ export default defineConfig({
       staticImport: true,
     }),
     typescript({
-      // abortOnError: false,
-      // clean: true,
-      // verbosity: 2,
       check: true,
       tsconfig: './tsconfig.lib.json',
-      include: ['./src/**/*.{vue|ts|tsx|d.ts}', './src/typed-router.d.ts'],
+      include: [
+        './src/**/*.{vue|ts|tsx|d.ts}',
+        './src/typed-router.d.ts',
+      ],
     }),
     vuetify({
       autoImport: true,

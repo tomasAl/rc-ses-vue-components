@@ -49,6 +49,13 @@
     ]"
   />
 
+  <PhoneInputField
+    v-model="modelTelefonas"
+    field-label="Telefono Nr."
+    class="form-control"
+    default-iso="lt"
+  />
+
   <SearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
 
   <DatePickerField
@@ -135,6 +142,7 @@ const modelTikslas = ref()
 const modelIeskoti = ref()
 const modelSkaicius = ref()
 const modelSutikimas = ref()
+const modelTelefonas = ref()
 
 const modelData = ref()
 const modelLaikotarpis = ref()

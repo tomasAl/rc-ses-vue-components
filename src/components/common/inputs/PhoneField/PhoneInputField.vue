@@ -34,7 +34,10 @@
           @click="openMenu"
           @keydown="() => {}"
         >
-          <IconFlag :iso="selectedCountry?.iso" class="mr-2" />
+          <div
+            class="flag-sprite-map mr-2"
+            :class="`flag-sprite-map-${selectedCountry?.iso.toUpperCase()}`"
+          />
           <v-icon icon="rc-caret-down-filled" size="14" />
           <div class="divider mx-2" />
           <span>{{ selectedCountry?.code }}</span>
@@ -66,7 +69,10 @@
                 @click="selectItem(item)"
               >
                 <template #prepend>
-                  <IconFlag :iso="item.iso" />
+                  <div
+                    class="flag-sprite-map mr-2"
+                    :class="`flag-sprite-map-${item?.iso.toUpperCase()}`"
+                  />
                 </template>
                 <template #title>
                   {{ item.name }} ({{ item.iso }})
@@ -88,11 +94,9 @@ import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
-import { VTextField } from 'vuetify/components/VTextField'
 
-import IconFlag from '@/assets/icons/IconFlag.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
-import { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
+import type { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
 
 import './PhoneFieldStyle.scss'
 
@@ -108,13 +112,26 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const props = defineProps<PhoneInputFieldProps>()
+const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
+  defaultIso: undefined,
+  fieldLabel: undefined,
+  fieldDescription: undefined,
+  fieldTooltip: undefined,
+  density: 'default',
+})
+
+const getDefaultCountry = (): Country | undefined => {
+  const defaultCountry = countries.find(
+    (country) => country.iso.toLowerCase() === props.defaultIso?.toLowerCase(),
+  )
+  return defaultCountry ?? countries[0] ?? undefined
+}
 
 const model = defineModel<string | undefined>()
 const activator = ref()
 const searchValue = ref<string>()
-const selectedCountry = ref<Country | undefined>(countries[0] ?? undefined)
-const inputValue = ref()
+const selectedCountry = ref<Country | undefined>(getDefaultCountry())
+const inputValue = ref(model.value)
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
 const menuId = uuidv4()
