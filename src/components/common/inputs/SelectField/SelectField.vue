@@ -59,6 +59,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
+import SelectFieldDefaults from '@/components/common/inputs/SelectField/SelectFieldDefaults'
 import type {
   SelectFieldItemType,
   SelectFieldProps,
@@ -70,15 +71,7 @@ defineOptions({
   inheritAttrs: false,
 })
 
-const selectProps = withDefaults(defineProps<SelectFieldProps>(), {
-  disabled: false,
-  placeholder: undefined,
-  error: undefined,
-  name: undefined,
-  searchable: false,
-  multiple: false,
-  items: () => [],
-})
+const selectProps = withDefaults(defineProps<SelectFieldProps>(), SelectFieldDefaults)
 
 const model = defineModel<any[] | null | undefined>()
 

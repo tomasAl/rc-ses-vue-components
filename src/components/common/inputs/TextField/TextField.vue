@@ -48,12 +48,14 @@
 <script setup lang="ts">
 import { VTextField } from 'vuetify/components/VTextField'
 
+import TextFieldDefaults from '@/components/common/inputs/TextField/TextFieldDefaults'
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-defineProps<TextFieldProps>()
+withDefaults(defineProps<TextFieldProps>(), TextFieldDefaults)
+
 const model = defineModel<any>()
 </script>

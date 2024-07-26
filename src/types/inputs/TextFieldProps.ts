@@ -1,13 +1,50 @@
 import type { VTextField } from 'vuetify/components'
 
-import { FieldProps, InputFieldOmits, InputProps } from '@/types/inputs/FieldProps'
-import { ReservedKeys } from '@/types/reserved/ReservedKeys'
-
-interface TextFieldInterface extends Partial<VTextField['$props']> {}
+import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type TextFieldProps = FieldProps &
-  InputProps &
-  Omit<TextFieldInterface, ReservedKeys | InputFieldOmits> & {
-    counter?: string | number | boolean
-    messages?: string | readonly string[]
+  InputProps & {
+    active?: VTextField['$props']['active']
+    appendIcon?: VTextField['$props']['appendIcon']
+    appendInnerIcon?: VTextField['$props']['appendInnerIcon']
+    autofocus?: VTextField['$props']['autofocus']
+    baseColor?: VTextField['$props']['baseColor']
+    bgColor?: VTextField['$props']['bgColor']
+    centerAffix?: VTextField['$props']['centerAffix']
+    clearable?: VTextField['$props']['clearable']
+    clearIcon?: VTextField['$props']['clearIcon']
+    counter?: VTextField['$props']['counter']
+    counterValue?: VTextField['$props']['counterValue']
+    density?: VTextField['$props']['density']
+    direction?: VTextField['$props']['direction']
+    dirty?: VTextField['$props']['dirty']
+    flat?: VTextField['$props']['flat']
+    focused?: VTextField['$props']['focused']
+    hideSpinButtons?: VTextField['$props']['hideSpinButtons']
+    hint?: VTextField['$props']['hint']
+    id?: VTextField['$props']['id']
+    loading?: VTextField['$props']['loading']
+    maxErrors?: VTextField['$props']['maxErrors']
+    maxWidth?: VTextField['$props']['maxWidth']
+    messages?: VTextField['$props']['messages']
+    minWidth?: VTextField['$props']['minWidth']
+    persistentClear?: VTextField['$props']['persistentClear']
+    persistentCounter?: VTextField['$props']['persistentCounter']
+    persistentHint?: VTextField['$props']['persistentHint']
+    persistentPlaceholder?: VTextField['$props']['persistentPlaceholder']
+    prefix?: VTextField['$props']['prefix']
+    prependIcon?: VTextField['$props']['prependIcon']
+    prependInnerIcon?: VTextField['$props']['prependInnerIcon']
+    readonly?: VTextField['$props']['readonly']
+    reverse?: VTextField['$props']['reverse']
+    role?: VTextField['$props']['role']
+    rules?: VTextField['$props']['role']
+    singleLine?: VTextField['$props']['role']
+    suffix?: VTextField['$props']['role']
+    theme?: VTextField['$props']['role']
+    tile?: VTextField['$props']['role']
+    type?: VTextField['$props']['role']
+    validateOn?: VTextField['$props']['role']
+    validationValue?: VTextField['$props']['role']
+    width?: VTextField['$props']['role']
   }
