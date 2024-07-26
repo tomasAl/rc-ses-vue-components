@@ -34,7 +34,10 @@
           @click="openMenu"
           @keydown="() => {}"
         >
-          <IconFlag :iso="selectedCountry?.iso" class="mr-2" />
+          <div
+            class="flag-sprite-map mr-2"
+            :class="`flag-sprite-map-${selectedCountry?.iso.toUpperCase()}`"
+          />
           <v-icon icon="rc-caret-down-filled" size="14" />
           <div class="divider mx-2" />
           <span>{{ selectedCountry?.code }}</span>
@@ -66,7 +69,10 @@
                 @click="selectItem(item)"
               >
                 <template #prepend>
-                  <IconFlag :iso="item.iso" />
+                  <div
+                    class="flag-sprite-map mr-2"
+                    :class="`flag-sprite-map-${item?.iso.toUpperCase()}`"
+                  />
                 </template>
                 <template #title>
                   {{ item.name }} ({{ item.iso }})
@@ -89,7 +95,6 @@ import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
-import IconFlag from '@/assets/icons/IconFlag.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
 import type { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
 

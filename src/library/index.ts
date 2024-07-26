@@ -13,7 +13,6 @@ import FileInputField from '@/components/common/inputs/FileInputField/FileInputF
 import NumberStepper from '@/components/common/inputs/NumberStepperField/NumberStepper.vue'
 import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
 import PhoneInputField from '@/components/common/inputs/PhoneField/PhoneInputField.vue'
-import PhoneSelectField from '@/components/common/inputs/PhoneField/PhoneSelectField.vue'
 import Radio from '@/components/common/inputs/RadioFields/Radio.vue'
 import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
 import RadioField from '@/components/common/inputs/RadioFields/RadioField.vue'
@@ -64,9 +63,7 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('NumberStepper', NumberStepper)
       .component('NumberStepperField', NumberStepperField)
 
-    app
-      .component('PhoneInputField', PhoneInputField)
-      .component('PhoneSelectField', PhoneSelectField)
+    app.component('PhoneInputField', PhoneInputField)
 
     app
       .component('Radio', Radio)
@@ -93,7 +90,7 @@ export { FileInput, FileInputField }
 export { DatePicker, DatePickerField }
 export { StepFormLayout }
 export { NumberStepper, NumberStepperField }
-export { PhoneInputField, PhoneSelectField }
+export { PhoneInputField }
 export { Radio, RadioButtonsField, RadioField }
 export { SearchableArea, SelectField, SearchField }
 export { TextField }
