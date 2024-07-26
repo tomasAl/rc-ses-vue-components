@@ -1,5 +1,6 @@
-import { TextFieldProps } from './TextFieldProps'
+import type { TextFieldProps } from './TextFieldProps'
 
-export type PhoneInputFieldProps = Omit<TextFieldProps, 'placeholder'> & {
+export interface PhoneInputFieldProps
+  extends /* @vue-ignore */ Omit<TextFieldProps, 'placeholder'> {
   defaultIso?: string
 }

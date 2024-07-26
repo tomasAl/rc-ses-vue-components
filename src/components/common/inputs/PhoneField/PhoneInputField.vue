@@ -88,11 +88,10 @@ import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
-import { VTextField } from 'vuetify/components/VTextField'
 
 import IconFlag from '@/assets/icons/IconFlag.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
-import { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
+import type { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
 
 import './PhoneFieldStyle.scss'
 
