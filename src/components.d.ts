@@ -33,7 +33,6 @@ declare module 'vue' {
     PapildomosPaslaugosForm: typeof import('./components/examples/multiForm/PapildomosPaslaugosForm.vue')['default']
     PaslaugosUzsakymasForm: typeof import('./components/examples/multiForm/PaslaugosUzsakymasForm.vue')['default']
     PhoneInputField: typeof import('./components/common/inputs/PhoneField/PhoneInputField.vue')['default']
-    PhoneSelectField: typeof import('./components/common/inputs/PhoneField/PhoneSelectField.vue')['default']
     Radio: typeof import('./components/common/inputs/RadioFields/Radio.vue')['default']
     RadioButtonsField: typeof import('./components/common/inputs/RadioFields/RadioButtonsField.vue')['default']
     RadioField: typeof import('./components/common/inputs/RadioFields/RadioField.vue')['default']
