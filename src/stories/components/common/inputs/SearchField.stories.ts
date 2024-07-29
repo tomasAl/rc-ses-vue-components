@@ -1,7 +1,7 @@
 // SearchField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import SearchField from '@/components/common/inputs/SearchField.vue'
+import SearchField from '@/components/common/inputs/SearchField/SearchField.vue'
 import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 

@@ -23,14 +23,12 @@
 <script setup lang="ts">
 import { computed, withDefaults } from 'vue'
 
+import CheckboxDefaults from '@/components/common/inputs/CheckboxField/CheckboxDefaults'
 import type { CheckboxProps } from '@/types/inputs/CheckboxFieldProps'
 
 import './CheckboxFieldStyle.scss'
 
-const props = withDefaults(defineProps<CheckboxProps>(), {
-  color: 'primary',
-  label: undefined,
-})
+const props = withDefaults(defineProps<CheckboxProps>(), CheckboxDefaults)
 
 const model = defineModel<boolean>()
 const classes = computed(() => {

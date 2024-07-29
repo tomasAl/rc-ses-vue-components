@@ -33,8 +33,9 @@
 
 <script setup lang="ts">
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
+import SearchFieldDefaults from '@/components/common/inputs/SearchField/SearchFieldDefaults'
 import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 
-const props = defineProps<SearchFieldProps>()
-const model = defineModel<string | number>()
+const props = withDefaults(defineProps<SearchFieldProps>(), SearchFieldDefaults)
+const model = defineModel<string | number | undefined>()
 </script>

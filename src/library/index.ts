@@ -16,7 +16,7 @@ import PhoneInputField from '@/components/common/inputs/PhoneField/PhoneInputFie
 import Radio from '@/components/common/inputs/RadioFields/Radio.vue'
 import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
 import RadioField from '@/components/common/inputs/RadioFields/RadioField.vue'
-import SearchField from '@/components/common/inputs/SearchField.vue'
+import SearchField from '@/components/common/inputs/SearchField/SearchField.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
 import SelectField from '@/components/common/inputs/SelectField/SelectField.vue'
 import TextField from '@/components/common/inputs/TextField/TextField.vue'

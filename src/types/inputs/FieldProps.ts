@@ -15,6 +15,8 @@ export type InputFieldOmits =
   | 'hideDetails'
   | 'errorMessages'
   | 'color'
+  | 'label'
+  | 'rounded'
 
 export interface FieldProps {
   fieldLabel?: string

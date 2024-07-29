@@ -18,6 +18,7 @@ const packageName = scopedPackageName.replace('/', '-').replace('@', '')
 export default defineConfig({
   publicDir: false,
   build: {
+    cssCodeSplit: true,
     lib: {
       entry: './src/library/index.ts',
       name: pkg.name,
@@ -72,7 +73,8 @@ export default defineConfig({
     }),
     cssInjectedByJsPlugin({
       topExecutionPriority: false,
-      // jsAssetsFilterFunction: (outputChunk) => outputChunk.name === 'index'
+      relativeCSSInjection: true,
+      jsAssetsFilterFunction: (outputChunk) => outputChunk.name === 'main',
     }),
 		viteStaticCopy({
 			targets: [
