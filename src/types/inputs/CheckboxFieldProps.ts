@@ -36,4 +36,4 @@ export type CheckboxProps = InputProps & {
   width?: VCheckbox['$props']['width']
 }
 
-export interface CheckboxFieldProps extends FieldProps, CheckboxProps {}
+export type CheckboxFieldProps = FieldProps & CheckboxProps

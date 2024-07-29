@@ -8,19 +8,6 @@ export type SelectFieldItemType = {
   value: string | number
   subtitle?: string
 }
-/*
-
-interface SelectFieldInterface extends /!* @vue-ignore *!/ Partial<VSelect['$props']> {}
-
-export type SelectFieldProps = InputProps &
-  FieldProps &
-  Omit<SelectFieldInterface, ReservedKeys | InputFieldOmits | 'items' | 'menuProps'> & {
-    items?: Array<SelectFieldItemType>
-    searchable?: boolean
-    color?: ColorType
-    multiple?: boolean
-  }
-*/
 
 export type SelectFieldProps = TextFieldProps & {
   items?: Array<SelectFieldItemType>
@@ -37,14 +24,14 @@ export type SelectFieldProps = TextFieldProps & {
   itemChildren?: VSelect['$props']['itemChildren']
   itemColor?: VSelect['$props']['itemColor']
   itemProps?: VSelect['$props']['itemProps']
-  itemTitle: VSelect['$props']['itemTitle']
-  itemValue: VSelect['$props']['itemValue']
-  listProps: VSelect['$props']['listProps']
-  menu: VSelect['$props']['menu']
-  menuIcon: VSelect['$props']['menuIcon']
-  openOnClear: VSelect['$props']['openOnClear']
-  returnObject: VSelect['$props']['returnObject']
-  role: VSelect['$props']['role']
-  transition: VSelect['$props']['transition']
-  valueComparator: VSelect['$props']['valueComparator']
+  itemTitle?: VSelect['$props']['itemTitle']
+  itemValue?: VSelect['$props']['itemValue']
+  listProps?: VSelect['$props']['listProps']
+  menu?: VSelect['$props']['menu']
+  menuIcon?: VSelect['$props']['menuIcon']
+  openOnClear?: VSelect['$props']['openOnClear']
+  returnObject?: VSelect['$props']['returnObject']
+  role?: VSelect['$props']['role']
+  transition?: VSelect['$props']['transition']
+  valueComparator?: VSelect['$props']['valueComparator']
 }

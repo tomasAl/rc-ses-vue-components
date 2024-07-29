@@ -3,6 +3,7 @@
     class="rc-radio-buttons-field"
     :label="fieldLabel"
     :description="fieldDescription"
+    :tooltip="fieldTooltip"
     :for="name"
   >
     <div class="rc-radios">
@@ -25,12 +26,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { RadioButtonsFieldProps } from '@/types/inputs/RadioFieldProps'
+import { RadioButtonsFieldProps } from '@/types/inputs/RadioButtonsFieldProps'
 
 import './RadioButtonsFieldStyle.scss'
 
 withDefaults(defineProps<RadioButtonsFieldProps>(), {
-  label: undefined,
   options: () => [],
 })
 

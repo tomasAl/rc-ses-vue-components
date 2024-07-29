@@ -89,7 +89,7 @@
     field-label="Sutikimas"
   />
 
-  <FileInputField field-label="Bylos įkėlimas" class="form-control" />
+  <FileInputField v-model="modelFile" field-label="Bylos įkėlimas" class="form-control" />
 
   <v-divider class="form-control" />
 
@@ -99,10 +99,10 @@
     field-label="Pavadinimas"
     name="pavadinimas"
     placeholder="Pavadinimas"
-    messages="Lorem Ipsum is simply dummy text."
   />
 
   <RadioField
+    v-model="modeRadioPasirinkimas"
     field-label="Pasirinkimas"
     class="form-control"
     :v-radio-group-props="{
@@ -135,6 +135,8 @@ import { ref } from 'vue'
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FileInputField from '@/components/common/inputs/FileInputField/FileInputField.vue'
 
+const modelFile = ref()
+const modeRadioPasirinkimas = ref()
 const modelTrumpasTekstas = ref()
 const modelPavadinimas = ref()
 const modelIlgasTekstas = ref()

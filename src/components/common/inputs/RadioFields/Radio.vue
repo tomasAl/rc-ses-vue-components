@@ -5,18 +5,16 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import RadioDefaults from '@/components/common/inputs/RadioFields/RadioDefaults'
 import { RadioProps } from '@/types/inputs/RadioProps'
 
 import './RadioStyle.scss'
 
-const props = withDefaults(defineProps<RadioProps>(), {
-  color: 'primary',
-})
+const props = withDefaults(defineProps<RadioProps>(), RadioDefaults)
 
-const model = defineModel<boolean>()
 const classes = computed(() => {
   return {
-    'rc-radio--checked': model.value,
+    'rc-radio--checked': props.modelValue,
     'rc-radio--readonly': props.readonly,
   }
 })

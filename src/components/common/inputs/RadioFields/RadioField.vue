@@ -3,14 +3,15 @@
     class="rc-radio-buttons-field"
     :label="fieldLabel"
     :description="fieldDescription"
+    :tooltip="fieldTooltip"
     :for="name"
     :variant="variant"
   >
     <v-radio-group
       v-model="model"
-      v-bind="vRadioGroupProps"
+      v-bind="$attrs"
       class="rc-radios"
-      inline
+      :inline="inline"
       :disabled="disabled"
       :readonly="readonly"
       :error="!!error"
@@ -31,15 +32,16 @@
 <script setup lang="ts">
 import type { VRadioGroup } from 'vuetify/components'
 
+import RadioFieldDefaults from '@/components/common/inputs/RadioFields/RadioFieldDefaults'
 import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
 
 import './RadioButtonsFieldStyle.scss'
 
-withDefaults(defineProps<RadioFieldProps>(), {
-  options: () => [],
-  variant: 'text',
-  // VRadioGroupProps: () => ({}) as Partial<VRadioGroup['$props']>,
-} as const)
+defineOptions({
+  inheritAttrs: false,
+})
 
-const model = defineModel<string>()
+withDefaults(defineProps<RadioFieldProps>(), RadioFieldDefaults)
+
+const model = defineModel<string | undefined>()
 </script>

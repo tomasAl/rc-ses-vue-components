@@ -1,8 +1,9 @@
 import { ColorType } from '@/types/common/ColorType'
 
-const CheckboxDefaults = {
+const RadioFieldDefaults = {
+  options: () => [],
+  variant: 'text' as const,
   appendIcon: undefined,
-  baseColor: undefined,
   centerAffix: undefined,
   color: 'primary' as ColorType,
   defaultsTarget: undefined,
@@ -11,15 +12,14 @@ const CheckboxDefaults = {
   disabled: false,
   error: undefined,
   // errorMessages: [] - omitted
-  falseIcon: '$checkboxOff',
-  falseValue: undefined,
+  // falseIcon: '$checkboxOff',
   focused: false,
+  height: undefined,
   // hideDetails: false - omitted
   hideSpinButtons: false,
   hint: undefined,
   id: undefined,
-  indeterminate: false,
-  indeterminateIcon: '$checkboxIndeterminate',
+  inline: true,
   label: undefined,
   maxErrors: 1,
   maxWidth: undefined,
@@ -29,16 +29,15 @@ const CheckboxDefaults = {
   name: undefined,
   persistentHint: false,
   readonly: false,
+  prependIcon: undefined,
   // ripple: false - omitted
   rules: undefined,
   theme: undefined,
   trueIcon: undefined,
-  trueValue: undefined,
-  type: 'checkbox',
+  type: 'radio',
   validateOn: undefined,
-  value: undefined,
   validationValue: undefined,
   width: undefined,
 }
 
-export default CheckboxDefaults
+export default RadioFieldDefaults

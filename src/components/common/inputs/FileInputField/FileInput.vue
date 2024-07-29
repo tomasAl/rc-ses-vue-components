@@ -4,14 +4,13 @@
     class="rc-file-input"
     :class="classes"
     :clearable="!readonly"
-    :prepend-icon="undefined"
+    prepend-icon=""
     :disabled="disabled"
     :placeholder="placeholder"
     :error="!!error"
     :hide-details="!error"
     :error-messages="error"
     :readonly="readonly"
-    type="file"
     :name="name"
   >
     <template v-if="model" #prepend-inner>
@@ -35,7 +34,6 @@ import './FileInputStyle.scss'
 
 const model = defineModel<File | File[] | null | undefined>()
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 defineProps<FileInputProps>()
 
 const classes = computed(() => {

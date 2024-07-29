@@ -1,6 +1,6 @@
 import type { VTextField } from 'vuetify/components'
 
-import { FieldProps, InputProps } from '@/types/inputs/FieldProps'
+import type { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type TextFieldProps = FieldProps &
   InputProps & {
@@ -38,13 +38,13 @@ export type TextFieldProps = FieldProps &
     readonly?: VTextField['$props']['readonly']
     reverse?: VTextField['$props']['reverse']
     role?: VTextField['$props']['role']
-    rules?: VTextField['$props']['role']
-    singleLine?: VTextField['$props']['role']
-    suffix?: VTextField['$props']['role']
-    theme?: VTextField['$props']['role']
-    tile?: VTextField['$props']['role']
-    type?: VTextField['$props']['role']
-    validateOn?: VTextField['$props']['role']
-    validationValue?: VTextField['$props']['role']
-    width?: VTextField['$props']['role']
+    rules?: VTextField['$props']['rules']
+    singleLine?: VTextField['$props']['singleLine']
+    suffix?: VTextField['$props']['suffix']
+    theme?: VTextField['$props']['theme']
+    tile?: VTextField['$props']['tile']
+    type?: VTextField['$props']['type']
+    validateOn?: VTextField['$props']['validateOn']
+    validationValue?: VTextField['$props']['validationValue']
+    width?: VTextField['$props']['width']
   }
