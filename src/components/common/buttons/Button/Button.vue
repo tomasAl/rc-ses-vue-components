@@ -22,10 +22,7 @@ import { withDefaults } from 'vue'
 import type { ButtonProps } from '@/types/common/ButtonProps'
 
 import './ButtonStyle.scss'
+import ButtonDefaults from '@/components/common/buttons/Button/ButtonDefaults'
 
-const props = withDefaults(defineProps<ButtonProps>(), {
-  color: 'primary',
-  variant: 'tonal',
-  density: 'default',
-})
+const props = withDefaults(defineProps<ButtonProps>(), ButtonDefaults)
 </script>

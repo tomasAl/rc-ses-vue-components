@@ -1,12 +1,9 @@
 <template>
   <v-alert
-    :id="id"
     class="rc-alert"
-    :title="title"
-    :type="type"
+    v-bind="props"
     variant="flat"
     :class="classes"
-    :closable="closeable"
   >
     <template #text>
       <slot>{{ text }}</slot>
@@ -20,15 +17,9 @@ import { computed, withDefaults } from 'vue'
 import type { AlertProps } from '@/types/common/AlertProps'
 
 import './AlertStyle.scss'
+import AlertDefaults from '@/components/common/Alert/AlertDefaults'
 
-const props = withDefaults(defineProps<AlertProps>(), {
-  id: undefined,
-  text: undefined,
-  title: undefined,
-  type: 'info',
-  variant: 'light',
-  closable: false,
-})
+const props = withDefaults(defineProps<AlertProps>(), AlertDefaults)
 
 const classes = computed(() => {
   return {
