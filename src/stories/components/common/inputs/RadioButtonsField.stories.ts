@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/vue3'
 
 import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
 import FieldArgTypes from '@/stories/components/argTypes/common/FieldArgTypes'
-import { RadioButtonsFieldProps } from '@/types/inputs/RadioFieldProps'
+import type { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
 
 export default {
   title: 'components/common/inputs/RadioButtonsField',
@@ -22,7 +22,7 @@ const options = [
   { label: 'Pasirinkimas 4', value: 'p4' },
 ]
 
-const Template: StoryFn<RadioButtonsFieldProps> = (args) => ({
+const Template: StoryFn<RadioFieldProps> = (args) => ({
   components: { RadioButtonsField },
   setup() {
     const model = ref('p1')
