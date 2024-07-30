@@ -18,14 +18,6 @@ export default {
 
 <style lang="scss">
 .v-application__wrap {
-  min-height: auto;
-  height: auto;
-}
-
-.v-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+  min-height: auto !important;
 }
 </style>
