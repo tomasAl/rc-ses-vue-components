@@ -25,6 +25,7 @@ import PlusIcon from '@/assets/icons/regular/PlusIcon.vue'
 import QuestionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import XIcon from '@/assets/icons/regular/XIcon.vue'
+import { TrashIcon } from '@/assets/icons/regular'
 
 const aliases: Partial<IconAliases> = {
   calendar: CalendarBlankIcon,
@@ -32,7 +33,7 @@ const aliases: Partial<IconAliases> = {
   checkboxOff: CheckboxOffIcon,
   checkboxOn: CheckboxOnIcon,
   clear: XCircleFilledIcon,
-  delete: undefined,
+  delete: TrashIcon,
   delimiter: undefined,
   dropdown: CaretDownFilledIcon,
   edit: undefined,

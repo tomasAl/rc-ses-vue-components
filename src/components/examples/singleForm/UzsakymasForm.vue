@@ -1,4 +1,11 @@
 <template>
+
+  <v-file-input v-model="modelMFile" multiple></v-file-input>
+
+  <FileInputField v-model="modelFile" multiple field-label="Bylos įkėlimas" class="form-control" />
+  <FileDropzone v-model="modelMFile" class="form-control" multiple />
+  <FileDropzoneField field-label="Upload" v-model="modelMFile" class="form-control" multiple />
+
   <TextField
     v-model="modelTrumpasTekstas"
     class="form-control"
@@ -89,7 +96,7 @@
     field-label="Sutikimas"
   />
 
-  <FileInputField v-model="modelFile" field-label="Bylos įkėlimas" class="form-control" />
+
 
   <v-divider class="form-control" />
 
@@ -134,6 +141,9 @@ import { ref } from 'vue'
 
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FileInputField from '@/components/common/inputs/FileInputField/FileInputField.vue'
+import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
+
+const modelMFile = ref()
 
 const modelFile = ref()
 const modeRadioPasirinkimas = ref()
