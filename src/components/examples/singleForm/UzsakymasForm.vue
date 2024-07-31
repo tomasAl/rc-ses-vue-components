@@ -1,11 +1,4 @@
 <template>
-
-  <v-file-input v-model="modelMFile" multiple></v-file-input>
-
-  <FileInputField v-model="modelFile" multiple field-label="Bylos įkėlimas" class="form-control" />
-  <FileDropzone v-model="modelMFile" class="form-control" multiple />
-  <FileDropzoneField field-label="Upload" v-model="modelMFile" class="form-control" multiple />
-
   <TextField
     v-model="modelTrumpasTekstas"
     class="form-control"
@@ -126,6 +119,7 @@
 
   <RadioButtonsField
     field-label="Pasirinkimas"
+    class="form-control"
     :options="[
       { value: 'p1', label: 'Pasirinkimas #1' },
       { value: 'p2', label: 'Pasirinkimas #2' },
@@ -134,18 +128,17 @@
       { value: 'p5', label: 'Labai ilgas pasirinkimas #5' },
     ]"
   />
+
+  <FileDropzoneField v-model="modelFiles"  field-label="Įkelti dokumentus"  multiple />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
-import FileInputField from '@/components/common/inputs/FileInputField/FileInputField.vue'
 import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
 
-const modelMFile = ref()
-
-const modelFile = ref()
+const modelFiles = ref()
 const modeRadioPasirinkimas = ref()
 const modelTrumpasTekstas = ref()
 const modelPavadinimas = ref()

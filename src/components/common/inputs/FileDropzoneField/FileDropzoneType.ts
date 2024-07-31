@@ -5,4 +5,3 @@ export type FileDropzoneProps = Partial<FileUploadOptions> & {
   name?: string,
 }
 export type FileDropzoneFieldProps = FieldProps & FileDropzoneProps
-

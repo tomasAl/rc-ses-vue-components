@@ -13,7 +13,7 @@ export default {
   density: 'default' as VAlert['$props']['density'],
   elevation: undefined,
   height: undefined,
-  icon: null,
+  icon: undefined,
   location: undefined,
   maxHeight: undefined,
   maxWidth: undefined,
