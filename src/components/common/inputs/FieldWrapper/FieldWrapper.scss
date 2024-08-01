@@ -12,20 +12,8 @@
     flex-grow: 1;
 
 
-    label {
-      display: block;
-      line-height: 1rem;
-      text-align: right;
-    }
-
-    .rc-field-label-title {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-
-      label {
-        display: inline-block;
-      }
+    .rc-field-description {
+      margin-bottom: 0.25rem;
     }
   }
 
@@ -52,6 +40,22 @@
       align-content: center;
       justify-content: center;
       margin: 0 1.5rem 0 0;
+    }
+
+    label {
+      display: block;
+      line-height: 1rem;
+      text-align: right;
+    }
+
+    .rc-field-label-title {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      label {
+        display: inline-block;
+      }
     }
   }
 }

@@ -17,7 +17,28 @@
         padalinyje."
   >
   </HeaderPanel>
-  <v-container> Comming soon! </v-container>
+  <v-container>
+    <TabbedPanel
+      title="test 123"
+      :items="[
+        { title: 'Fizinis asmuo', value: 'asmuo' },
+        { title: 'Juridinis asmuo', value: 'juridinis' },
+        { title: 'Advokatų, antstolių kontora, notarų biuras', value: 'kontora', active: true },
+        { title: 'Advokatų biuras', value: 3 },
+        { title: 'Notarų biuras', value: 4 },
+        { title: 'Biuras', value: 5 },
+        { title: 'Siuras', value: 6 },
+      ]"
+    >
+      <template #asmuo>
+        test
+      </template>
+
+      <template #juridinis>
+        juridinis
+      </template>
+    </TabbedPanel>
+  </v-container>
 </template>
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'

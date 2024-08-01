@@ -16,7 +16,7 @@
           </template>
         </v-tooltip>
       </div>
-      <label v-if="description" :for="props.for" class="text-subtitle-2">
+      <label v-if="description" :for="props.for" class="text-subtitle-2 rc-field-description">
         {{ description }}
       </label>
     </div>

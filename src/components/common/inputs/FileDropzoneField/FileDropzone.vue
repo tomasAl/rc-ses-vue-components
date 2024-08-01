@@ -5,11 +5,13 @@
       v-bind="getRootProps()"
       :class="{
         isDragActive,
+        'rc-disabled': restProps.disabled,
+        'rc-error': error,
       }"
     >
-      <input v-bind="getInputProps()" :name="name"/>
+      <input v-bind="getInputProps()" :name="name" />
       <div class="dropzone-content">
-        <v-icon icon="$upload" class="mb-2" size="24"/>
+        <v-icon icon="$upload" class="mb-2" size="24" />
         <p class="text-subtitle-1 mb-1 font-weight-strong">
           Nutempkite failą čia arba įkelkite iš kompiuterio
         </p>
@@ -25,12 +27,16 @@
         rounded
       >
         <template #append>
-          <v-icon class="icon-delete" icon="$delete" size="20" @click="handleClickDeleteFile(index)"/>
+          <v-icon
+            class="icon-delete"
+            icon="$delete"
+            size="20"
+            @click="handleClickDeleteFile(index)"
+          />
         </template>
         <v-list-item-title class="text-subtitle-1">{{ file.name }}</v-list-item-title>
       </v-list-item>
     </v-list>
-
   </div>
 </template>
 
@@ -48,15 +54,14 @@ const state = reactive({
   files: [] as any[],
 })
 
-const { onDrop, getFilesFromEvent, name, ...restProps } = props as FileDropzoneProps
+const { onDrop, getFilesFromEvent, name, error, ...restProps } =
+  props as FileDropzoneProps
 
 const filesFromEvent = getFilesFromEvent === undefined ? {} : { getFilesFromEvent }
 
-const { getRootProps, getInputProps, isDragActive } = useDropzone({
-  onDrop: onDropFile,
-  ...filesFromEvent,
-  ...restProps,
-})
+function updateModel() {
+  model.value = state.files
+}
 
 function onDropFile(acceptFiles: any[], rejectReasons: FileRejectReason[], event: Event) {
   state.files = acceptFiles
@@ -67,12 +72,14 @@ function onDropFile(acceptFiles: any[], rejectReasons: FileRejectReason[], event
   }
 }
 
+const { getRootProps, getInputProps, isDragActive } = useDropzone({
+  onDrop: onDropFile,
+  ...filesFromEvent,
+  ...restProps,
+})
+
 function handleClickDeleteFile(index: number) {
   state.files.splice(index, 1)
   updateModel()
-}
-
-function updateModel() {
-  model.value = state.files
 }
 </script>

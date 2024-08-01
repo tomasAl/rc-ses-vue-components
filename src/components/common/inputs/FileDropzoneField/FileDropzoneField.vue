@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { FileDropzoneFieldProps } from '@/components/common/inputs/FileDropzoneField/FileDropzoneType'
 
 const props = defineProps<FileDropzoneFieldProps>()

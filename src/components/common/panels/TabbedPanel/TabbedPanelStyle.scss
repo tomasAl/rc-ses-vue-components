@@ -1,0 +1,19 @@
+.rc-tabbed-panel {
+  border: 1px solid rgba(var(--v-theme-grey-400));
+  padding: 0;
+  margin: 0;
+
+  .rc-tabbed-panel-header {
+    padding: 0;
+    background: rgba(var(--v-theme-grey-50));
+
+    .v-card-title {
+      padding: 1.25rem 1.25rem;
+    }
+  }
+
+  .rc-tab-window {
+    background: white;
+    padding: 1.5rem;
+  }
+}
