@@ -16,6 +16,7 @@ declare module 'vue' {
     DatePickerField: typeof import('./components/common/inputs/DatePickerField/DatePickerField.vue')['default']
     ExampleMultiForm: typeof import('./components/examples/multiForm/ExampleMultiForm.vue')['default']
     ExampleSingleForm: typeof import('./components/examples/singleForm/ExampleSingleForm.vue')['default']
+    ExampleTabbedForm: typeof import('./components/examples/tabbedForm/ExampleTabbedForm.vue')['default']
     FieldWrapper: typeof import('./components/common/inputs/FieldWrapper/FieldWrapper.vue')['default']
     FileDropzone: typeof import('./components/common/inputs/FileDropzoneField/FileDropzone.vue')['default']
     FileDropzoneField: typeof import('./components/common/inputs/FileDropzoneField/FileDropzoneField.vue')['default']
@@ -51,6 +52,7 @@ declare module 'vue' {
     TextField: typeof import('./components/common/inputs/TextField/TextField.vue')['default']
     Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']
     UzsakymasForm: typeof import('./components/examples/singleForm/UzsakymasForm.vue')['default']
+    UzsakymasTabForm: typeof import('./components/examples/tabbedForm/UzsakymasTabForm.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }
 }

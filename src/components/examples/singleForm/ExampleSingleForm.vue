@@ -11,7 +11,8 @@
 </template>
 <script setup lang="ts">
 import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
-import UzsakymasForm from './UzsakymasForm.vue';
+
+import UzsakymasForm from './UzsakymasForm.vue'
 
 const steps = [
   {
