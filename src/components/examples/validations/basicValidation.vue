@@ -1,0 +1,25 @@
+<template>
+  <Form @submit="onSubmit">
+    <v-text-field v-model="email" :error-messages="errors.email" label="Email" />
+    <v-btn type="submit">Submit</v-btn>
+  </Form>
+</template>
+
+<script setup lang="ts">
+import { useField, useForm } from 'vee-validate'
+import * as yup from 'yup'
+
+const schema = yup.object({
+  email: yup.string().required().email(),
+})
+
+const { handleSubmit, errors } = useForm({
+  validationSchema: schema,
+})
+
+const { value: email } = useField('email')
+
+const onSubmit = handleSubmit((values) => {
+  console.log(values)
+})
+</script>

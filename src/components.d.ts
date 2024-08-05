@@ -8,12 +8,15 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Alert: typeof import('./components/common/Alert/Alert.vue')['default']
+    BasicValidation: typeof import('./components/examples/validations/basicValidation.vue')['default']
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
     ButtonBack: typeof import('./components/common/buttons/ButtonBack.vue')['default']
     Checkbox: typeof import('./components/common/inputs/CheckboxField/Checkbox.vue')['default']
     CheckboxField: typeof import('./components/common/inputs/CheckboxField/CheckboxField.vue')['default']
+    CustomValidation: typeof import('./components/examples/validations/customValidation.vue')['default']
     DatePicker: typeof import('./components/common/inputs/DatePickerField/DatePicker.vue')['default']
     DatePickerField: typeof import('./components/common/inputs/DatePickerField/DatePickerField.vue')['default']
+    DefaultValidation: typeof import('./components/examples/validations/defaultValidation.vue')['default']
     ExampleMultiForm: typeof import('./components/examples/multiForm/ExampleMultiForm.vue')['default']
     ExampleSingleForm: typeof import('./components/examples/singleForm/ExampleSingleForm.vue')['default']
     ExampleTabbedForm: typeof import('./components/examples/tabbedForm/ExampleTabbedForm.vue')['default']
