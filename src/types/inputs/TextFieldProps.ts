@@ -38,7 +38,8 @@ export type TextFieldProps = FieldProps &
     readonly?: VTextField['$props']['readonly']
     reverse?: VTextField['$props']['reverse']
     role?: VTextField['$props']['role']
-    rules?: VTextField['$props']['rules']
+    // rules?: VTextField['$props']['rules']
+    // rules?: string
     singleLine?: VTextField['$props']['singleLine']
     suffix?: VTextField['$props']['suffix']
     theme?: VTextField['$props']['theme']

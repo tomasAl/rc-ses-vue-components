@@ -42,7 +42,7 @@ const TextFieldDefaults = {
   reverse: false,
   role: undefined,
   // rounded: undefined - omitted
-  rules: undefined,
+  // rules: undefined, - omitted
   singleLine: undefined,
   suffix: undefined,
   theme: undefined,
