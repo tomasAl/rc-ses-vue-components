@@ -1,26 +1,26 @@
 <template>
-  <Form @submit="onSubmit">
-    <v-text-field v-model="email" v-bind="emailProps" :error-messages="errors.email" label="Email" />
-    <v-btn type="submit">Submit</v-btn>
-  </Form>
+  <VeeForm v-slot="{ handleSubmit }" :validation-schema="schema" as="div">
+    <form @submit="handleSubmit($event, onSubmit)">
+      <Field name="email" type="email" />
+      <ErrorMessage name="email" />
+      <Field name="password" type="password" />
+      <ErrorMessage name="password" />
+      <button type="submit">Submit</button>
+    </form>
+  </VeeForm>
 </template>
 
 <script setup lang="ts">
-import { toTypedSchema } from '@vee-validate/yup'
-import { Form, useField, useForm } from 'vee-validate'
+import { ErrorMessage, Field, Form as VeeForm } from 'vee-validate'
 import * as yup from 'yup'
 
 const schema = yup.object({
   email: yup.string().required().email(),
+  password: yup.string().required().min(8),
 })
-
-const { handleSubmit, errors, defineField } = useForm({
-  validationSchema: toTypedSchema(schema),
-})
-
-const [email, emailProps] = defineField('email')
-
-const onSubmit = handleSubmit((values) => {
+function onSubmit(values) {
+  // Submit values to API...
+  // alert(JSON.stringify(values, null, 2))
   console.log(values)
-})
+}
 </script>
