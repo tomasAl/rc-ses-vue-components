@@ -27,6 +27,16 @@ import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import XIcon from '@/assets/icons/regular/XIcon.vue'
 import { TrashIcon } from '@/assets/icons/regular'
 
+function createIconComponent(icon: any, size: number) {
+  return defineComponent({
+    setup(_, { attrs }) {
+      return () => h(icon, { ...attrs, size })
+    },
+  })
+}
+
+const Icon16pxCaretDown = createIconComponent(CaretDownFilledIcon, 16)
+
 const aliases: Partial<IconAliases> = {
   calendar: CalendarBlankIcon,
   checkboxIndeterminate: CheckboxOffIcon,
@@ -35,7 +45,7 @@ const aliases: Partial<IconAliases> = {
   clear: XCircleFilledIcon,
   delete: TrashIcon,
   delimiter: undefined,
-  dropdown: CaretDownFilledIcon,
+  dropdown: Icon16pxCaretDown,
   edit: undefined,
   error: WarningDiamondFilledIcon,
   expand: CaretDownIcon,

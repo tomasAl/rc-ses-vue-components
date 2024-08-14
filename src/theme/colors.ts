@@ -1,5 +1,5 @@
 const primary = {
-  'primary-50': '#F3FBFE',
+  'primary-50': '#ECF9FE',
   'primary-100': '#DCF4FC',
   'primary-200': '#B9E9FA',
   'primary-300': '#88DAF7',
@@ -45,17 +45,17 @@ const success = {
 
 const grey = {
   'grey-50': '#f9fafb',
-  'grey-100': '#edeff2',
-  'grey-200': '#dfe1e5',
-  'grey-300': '#d0d4d9',
-  'grey-400': '#bcc3cc',
-  'grey-500': '#9da6b2',
-  'grey-600': '#6b737f',
-  'grey-700': '#4e5866',
-  'grey-800': '#343e4c',
-  'grey-900': '#222d3d',
-  'grey-950': '#0f161f',
-  grey: '#6b737f',
+  'grey-100': '#f0f2f5',
+  'grey-200': '#dce0e5',
+  'grey-300': '#c5cad1',
+  'grey-400': '#a9afb8',
+  'grey-500': '#8e959e',
+  'grey-600': '#6b747f',
+  'grey-700': '#4a5361',
+  'grey-800': '#29323d',
+  'grey-900': '#1f2733',
+  'grey-950': '#10161f',
+  grey: '#6b747f',
 }
 
 const info = {
@@ -100,7 +100,7 @@ const error = {
   'error-800': '#63231b',
   'error-900': '#4a1a14',
   'error-950': '#31110d',
-  error: '#fa5a46',
+  error: '#c84838',
 }
 
 export const MergedColors = {

@@ -29,7 +29,7 @@
     >
       <template #prepend-inner>
         <div
-          class="d-flex align-center"
+          class="flag-wrapper"
           type="button"
           @click="openMenu"
           @keydown="() => {}"

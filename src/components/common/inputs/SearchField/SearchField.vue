@@ -4,7 +4,7 @@
       <slot name="clear">
         <XCircleFilledIcon
           v-if="!props.readonly"
-          :color="error ? 'error-600' : 'primary'"
+          :color="error ? 'error-600' : 'grey-900'"
           @click="model = ''"
         />
       </slot>

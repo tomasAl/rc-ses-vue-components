@@ -11,7 +11,6 @@
         placeholder="Tekstas"
         messages="Lorem Ipsum is simply dummy text."
         counter="10"
-        :error="errors.trumpas"
       ></TextField>
 
       <TextField
@@ -126,10 +125,7 @@
       <RadioField
         v-model="modeRadioPasirinkimas"
         field-label="Pasirinkimas"
-        class="form-control"
-        :v-radio-group-props="{
-          class: 'bg-grey-100',
-        }"
+        class="form-control bg-grey-100"
         :options="[
           { value: 'p1', label: 'Pasirinkimas #1' },
           { value: 'p2', label: 'Pasirinkimas #2' },
@@ -153,7 +149,7 @@
 
       <FileDropzoneField v-model="modelFiles" field-label="Įkelti dokumentus" multiple />
 
-      <button type="submit" @click="submitForm">Submit</button>
+<!--      <button type="submit" @click="submitForm">Submit</button>-->
     </form>
   </VeeForm>
 </template>

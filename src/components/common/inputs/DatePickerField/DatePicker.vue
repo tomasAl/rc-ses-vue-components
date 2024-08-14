@@ -36,7 +36,7 @@
     </template>
 
     <template #clear-icon="{ clear }">
-      <XCircleFilledIcon @click="clear" />
+      <XCircleFilledIcon @click="clear" color="grey-900"/>
     </template>
 
     <template #arrow-left>
