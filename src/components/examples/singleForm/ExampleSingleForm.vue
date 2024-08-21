@@ -1,5 +1,5 @@
 <template>
-  <StepFormLayout :items="steps" single-form>
+  <ServiceFormContainer :items="steps" single-form>
     <template #actions>
       <FormActions />
     </template>
@@ -7,7 +7,18 @@
     <template #actions-after>
       <FormActionsAfter />
     </template>
-  </StepFormLayout>
+
+    <template #default>
+      <Accordion
+        id="singleForm"
+        v-model="expandedPanels"
+        title="My accordion title"
+        :completed="false"
+      >
+        <UzsakymasForm />
+      </Accordion>
+    </template>
+  </ServiceFormContainer>
 </template>
 <script setup lang="ts">
 import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
@@ -19,8 +30,8 @@ const steps = [
     id: 'step2',
     title: 'Paslaugos užsakymo forma',
     active: true,
-    expanded: true,
-    component: UzsakymasForm,
   },
 ]
+
+const expandedPanels = ref<Array<string>>(['singleForm'])
 </script>

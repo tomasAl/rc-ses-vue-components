@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Accordion: typeof import('./components/common/Accordion/Accordion.vue')['default']
     Alert: typeof import('./components/common/Alert/Alert.vue')['default']
     BasicValidation: typeof import('./components/examples/validations/basicValidation.vue')['default']
     Button: typeof import('./components/common/buttons/Button/Button.vue')['default']
@@ -47,7 +48,7 @@ declare module 'vue' {
     SearchableArea: typeof import('./components/common/inputs/SearchableArea/SearchableArea.vue')['default']
     SearchField: typeof import('./components/common/inputs/SearchField/SearchField.vue')['default']
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
-    StepFormLayout: typeof import('./components/layouts/StepFormLayout.vue')['default']
+    ServiceFormContainer: typeof import('./components/layouts/ServiceFormContainer.vue')['default']
     Tab: typeof import('./components/common/tabs/Tab.vue')['default']
     TabbedPanel: typeof import('./components/common/panels/TabbedPanel/TabbedPanel.vue')['default']
     TerminaiForm: typeof import('./components/examples/multiForm/TerminaiForm.vue')['default']
@@ -55,6 +56,9 @@ declare module 'vue' {
     TextField: typeof import('./components/common/inputs/TextField/TextField.vue')['default']
     Tooltip: typeof import('./components/common/tooltip/Tooltip.vue')['default']
     UzsakymasForm: typeof import('./components/examples/singleForm/UzsakymasForm.vue')['default']
+    UzsakymasFormTest: typeof import('./components/examples/singleForm/UzsakymasFormTest.vue')['default']
+    UzsakymasFormTest2: typeof import('./components/examples/singleForm/UzsakymasFormTest2.vue')['default']
+    UzsakymasFormTest3: typeof import('./components/examples/singleForm/UzsakymasFormTest3.vue')['default']
     UzsakymasTabForm: typeof import('./components/examples/tabbedForm/UzsakymasTabForm.vue')['default']
     VerticalStepper: typeof import('./components/common/steppers/VerticalStepper/VerticalStepper.vue')['default']
   }

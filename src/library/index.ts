@@ -24,7 +24,7 @@ import FormActionPanel from '@/components/common/panels/FormActionPanel/FormActi
 import FormPanel from '@/components/common/panels/FormPanel/FormPanel.vue'
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
 import VerticalStepper from '@/components/common/steppers/VerticalStepper/VerticalStepper.vue'
-import StepFormLayout from '@/components/layouts/StepFormLayout.vue'
+import ServiceFormContainer from '@/components/layouts/ServiceFormContainer.vue'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 
@@ -40,7 +40,7 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('FieldWrapper', FieldWrapper)
       .component('FormWrapper', FormWrapper)
       .component('FormPanel', FormPanel)
-      .component('StepFormLayout', StepFormLayout)
+      .component('ServiceFormContainer', ServiceFormContainer)
 
     app.component('VerticalStepper', VerticalStepper)
 
@@ -88,7 +88,7 @@ export { Alert, Button }
 export { Checkbox, CheckboxField }
 export { FileInput, FileInputField }
 export { DatePicker, DatePickerField }
-export { StepFormLayout }
+export { ServiceFormContainer }
 export { NumberStepper, NumberStepperField }
 export { PhoneInputField }
 export { Radio, RadioButtonsField, RadioField }
