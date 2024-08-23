@@ -48,9 +48,11 @@
 
 <script setup lang="ts">
 import { StepFormLayoutProps } from '@/types/layouts/StepFormLayoutProps'
-import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps'
+// import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps'
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
+
+import './ServiceFormContainerStyle.scss'
 
 const props = defineProps<StepFormLayoutProps>()
 const hideTopActions = ref<boolean>(false)

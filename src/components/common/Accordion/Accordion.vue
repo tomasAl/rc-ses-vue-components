@@ -20,19 +20,22 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import './AccordionStyle.scss'
 import {
   AccordionControllerState,
-  AccordionProps, AccordionState,
+  AccordionProps,
+  AccordionState,
 } from '@/components/common/Accordion/types/AccordionControllerState'
+
+import './AccordionStyle.scss'
 
 const props = defineProps<AccordionProps>()
 
 const allStates = inject<AccordionControllerState>('state')
 const toggleAccordion = inject('toggleAccordion')
-const state: AccordionState | undefined = allStates && allStates.value ? allStates.value[props.id] : undefined
+const state: AccordionState | undefined =
+  allStates && allStates.value ? allStates.value[props.id] : undefined
 
-const expanded = computed(() => props.expanded || state?.expanded ? [props.id] : [])
+const expanded = computed(() => (props.expanded || state?.expanded ? [props.id] : []))
 const isExpanded = computed(() => expanded.value.length)
 
 console.log('expanded', expanded.value)

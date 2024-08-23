@@ -1,5 +1,5 @@
 <template>
-  <ServiceFormContainer :accordionController="accordionController" single-form>
+  <ServiceFormContainer :accordion-controller="accordionController" single-form>
     <template #actions>
       <FormActions />
     </template>

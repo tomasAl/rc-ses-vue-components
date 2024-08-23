@@ -24,7 +24,7 @@ import FormActionPanel from '@/components/common/panels/FormActionPanel/FormActi
 import FormPanel from '@/components/common/panels/FormPanel/FormPanel.vue'
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
 import VerticalStepper from '@/components/common/steppers/VerticalStepper/VerticalStepper.vue'
-import ServiceFormContainer from '@/components/layouts/ServiceFormContainer.vue'
+import ServiceFormContainer from '@/components/layouts/ServiceFormContainer/ServiceFormContainer.vue'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 
