@@ -1,5 +1,5 @@
 <template>
-  <ServiceFormContainer :items="steps" single-form>
+  <ServiceFormContainer :accordionController="accordionController" single-form>
     <template #actions>
       <FormActions />
     </template>
@@ -11,9 +11,7 @@
     <template #default>
       <Accordion
         id="singleForm"
-        v-model="expandedPanels"
-        title="My accordion title"
-        :completed="false"
+        state="completed"
       >
         <UzsakymasForm />
       </Accordion>
@@ -24,14 +22,13 @@
 import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
 
 import UzsakymasForm from './UzsakymasForm.vue'
+import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 
-const steps = [
-  {
-    id: 'step2',
-    title: 'Paslaugos užsakymo forma',
-    active: true,
-  },
-]
-
-const expandedPanels = ref<Array<string>>(['singleForm'])
+const accordionController = useAccordionController({
+  singleForm: {
+    expanded: true,
+    state: 'completed',
+    title: 'Bazinė informacija',
+  }
+})
 </script>
