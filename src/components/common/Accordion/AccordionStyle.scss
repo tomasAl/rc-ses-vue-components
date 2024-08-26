@@ -1,3 +1,5 @@
+@use '../../../styles/vuetify/settings.scss';
+
 .v-expansion-panels.v-expansion-panels--flat {
   margin-bottom: 1rem;
   border: 1px solid rgb(var(--v-theme-grey-400));
@@ -62,6 +64,50 @@
       border-bottom: 1px solid rgb(var(--v-theme-grey-200));
     }
   }*/
+
+
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    border-radius: 0;
+    border: none;
+    margin: 0;
+
+    .v-expansion-panel {
+      border-radius: 0;
+    }
+
+    .v-expansion-panel-text__wrapper {
+      padding: 0.5rem 1.5rem 1.5rem;
+      margin-top:0;
+    }
+
+    .v-expansion-panel-title {
+      .v-expansion-panel-title__overlay {
+        background-color: rgb(255, 255, 255);
+      }
+
+      .panel-icon {
+        .v-btn__overlay {
+          background: white;
+        }
+      }
+
+      &:hover {
+        .v-expansion-panel-title__overlay {
+          background-color: rgb(255, 255, 255);
+        }
+
+        .panel-icon {
+          .v-btn__overlay {
+            background: white;
+          }
+
+          svg {
+            fill: black;
+          }
+        }
+      }
+    }
+  }
 
 
 }

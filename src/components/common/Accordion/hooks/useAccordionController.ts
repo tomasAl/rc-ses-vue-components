@@ -20,9 +20,9 @@ function useAccordionController(initialState: AccordionControllerState) {
   const expandAll = () => {
     const nextState = { ...state.value }
     Object.keys(nextState).forEach((k) => {
-      //if (nextState[k]) {
-        nextState[k].expanded = true
-      //}
+      // if (nextState[k]) {
+      nextState[k].expanded = true
+      // }
     })
     state.value = nextState
   }

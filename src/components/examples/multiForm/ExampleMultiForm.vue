@@ -1,5 +1,5 @@
 <template>
-  <ServiceFormContainer :items="steps">
+  <ServiceFormContainer :accordion-controller="accordionController">
     <template #actions>
       <FormActions />
     </template>
@@ -48,6 +48,7 @@
   </ServiceFormContainer>
 </template>
 <script setup lang="ts">
+import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 import IsdavimasForm from '@/components/examples/multiForm/IsdavimasForm.vue'
 import PapildomosPaslaugosForm from '@/components/examples/multiForm/PapildomosPaslaugosForm.vue'
 import PaslaugosUzsakymasForm from '@/components/examples/multiForm/PaslaugosUzsakymasForm.vue'
@@ -56,36 +57,31 @@ import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
 
 const expandedPanels = ref<Array<string>>(['paslaugosForm'])
 
-const steps = [
-  {
-    id: 'step1',
+const accordionController = useAccordionController({
+  basicForm: {
+    expanded: false,
+    state: 'completed',
     title: 'Bazinė informacija',
-    completed: true,
-    active: false,
   },
-  {
-    id: 'step2',
+  serviceForm: {
+    expanded: true,
+    state: 'pending',
     title: 'Paslaugos užsakymas',
-    completed: false,
-    active: true,
   },
-  {
-    id: 'step3',
+  issueForm: {
+    expanded: false,
+    state: 'completed',
     title: 'Išdavimas',
-    completed: false,
-    active: false,
   },
-  {
-    id: 'step4',
+  additionalServicesForm: {
+    expanded: false,
+    state: 'completed',
     title: 'Reikalingos papildomos paslaugos',
-    completed: false,
-    active: false,
   },
-  {
-    id: 'step5',
+  termsForm: {
+    expanded: false,
+    state: 'completed',
     title: 'Terminai ir sąlygos',
-    completed: false,
-    active: false,
   },
-]
+})
 </script>

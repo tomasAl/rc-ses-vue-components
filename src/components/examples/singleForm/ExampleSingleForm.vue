@@ -9,26 +9,23 @@
     </template>
 
     <template #default>
-      <Accordion
-        id="singleForm"
-        state="completed"
-      >
+      <Accordion id="singleForm" state="completed">
         <UzsakymasForm />
       </Accordion>
     </template>
   </ServiceFormContainer>
 </template>
 <script setup lang="ts">
+import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
 
 import UzsakymasForm from './UzsakymasForm.vue'
-import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 
 const accordionController = useAccordionController({
   singleForm: {
     expanded: true,
     state: 'completed',
     title: 'Bazinė informacija',
-  }
+  },
 })
 </script>
