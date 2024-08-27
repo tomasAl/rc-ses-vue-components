@@ -61,7 +61,7 @@ const props = defineProps<StepFormLayoutProps>()
 
 const { collapseAll, expandAll, state, toggleAccordion } = props.accordionController
 
-provide('state', state)
+provide('states', state)
 provide('collapseAll', collapseAll)
 provide('expandAll', expandAll)
 provide('toggleAccordion', toggleAccordion)

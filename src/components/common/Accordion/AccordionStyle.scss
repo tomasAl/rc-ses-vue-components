@@ -69,7 +69,11 @@
   @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
     border-radius: 0;
     border: none;
-    margin: 0;
+    margin: 0.5rem 0 0;
+
+    &:last-child {
+      margin-bottom: 0.5rem !important;
+    }
 
     .v-expansion-panel {
       border-radius: 0;

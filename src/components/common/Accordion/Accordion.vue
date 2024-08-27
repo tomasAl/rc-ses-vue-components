@@ -30,15 +30,16 @@ import './AccordionStyle.scss'
 
 const props = defineProps<AccordionProps>()
 
-const allStates = inject<AccordionControllerState>('state')
-const toggleAccordion = inject('toggleAccordion')
+const allStates = inject<AccordionControllerState>('states')
+const toggleAccordion = inject('toggleAccordion') as (
+  id: string,
+  expanded: boolean,
+) => void
 const state: AccordionState | undefined =
   allStates && allStates.value ? allStates.value[props.id] : undefined
 
 const expanded = computed(() => (props.expanded || state?.expanded ? [props.id] : []))
 const isExpanded = computed(() => expanded.value.length)
-
-console.log('expanded', expanded.value)
 
 const model = computed<Array<string>>({
   get: () => expanded.value,
