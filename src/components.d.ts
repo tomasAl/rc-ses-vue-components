@@ -49,6 +49,7 @@ declare module 'vue' {
     SearchField: typeof import('./components/common/inputs/SearchField/SearchField.vue')['default']
     SelectField: typeof import('./components/common/inputs/SelectField/SelectField.vue')['default']
     ServiceFormContainer: typeof import('./components/layouts/ServiceFormContainer/ServiceFormContainer.vue')['default']
+    ServiceFormTabContainer: typeof import('./components/layouts/ServiceFormTabContainer/ServiceFormTabContainer.vue')['default']
     Tab: typeof import('./components/common/tabs/Tab.vue')['default']
     TabbedPanel: typeof import('./components/common/panels/TabbedPanel/TabbedPanel.vue')['default']
     TerminaiForm: typeof import('@/examples/multiForm/TerminaiForm.vue')['default']
