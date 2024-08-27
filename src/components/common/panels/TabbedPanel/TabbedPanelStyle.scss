@@ -1,3 +1,5 @@
+@use '../../../../styles/vuetify/settings.scss';
+
 .rc-tabbed-panel {
   border: 1px solid rgba(var(--v-theme-grey-400));
   padding: 0;
@@ -15,5 +17,11 @@
   .rc-tab-window {
     background: white;
     padding: 1.5rem;
+  }
+
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
   }
 }

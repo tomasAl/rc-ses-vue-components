@@ -21,6 +21,6 @@
   </TabbedPanel>
 </template>
 <script setup lang="ts">
-import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
-import UzsakymasTabForm from '@/components/examples/tabbedForm/UzsakymasTabForm.vue'
+import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
+import UzsakymasTabForm from '@/examples/tabbedForm/UzsakymasTabForm.vue'
 </script>

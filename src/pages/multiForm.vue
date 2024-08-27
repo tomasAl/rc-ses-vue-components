@@ -22,5 +22,5 @@
 
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import ExampleMultiForm from '@/components/examples/multiForm/ExampleMultiForm.vue'
+import ExampleMultiForm from '@/examples/multiForm/ExampleMultiForm.vue'
 </script>

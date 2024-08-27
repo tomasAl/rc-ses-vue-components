@@ -17,7 +17,7 @@
 </template>
 <script setup lang="ts">
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
-import FormActionsAfter from '@/components/examples/shared/FormActionsAfter.vue'
+import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
 
 import UzsakymasForm from './UzsakymasForm.vue'
 

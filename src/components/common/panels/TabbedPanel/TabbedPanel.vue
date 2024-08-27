@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <v-card class="rc-tabbed-panel">
       <v-card-text class="rc-tabbed-panel-header">
         <v-card-title class="text-h5">{{ title }}</v-card-title>

@@ -21,5 +21,5 @@
 </template>
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import ExampleTabbedForm from '@/components/examples/tabbedForm/ExampleTabbedForm.vue'
+import ExampleTabbedForm from '@/examples/tabbedForm/ExampleTabbedForm.vue'
 </script>
