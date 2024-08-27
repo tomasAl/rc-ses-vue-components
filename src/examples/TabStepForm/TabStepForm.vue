@@ -22,5 +22,5 @@
 </template>
 <script setup lang="ts">
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
-import UzsakymasTabForm from '@/examples/tabbedForm/UzsakymasTabForm.vue'
+import UzsakymasTabForm from '@/examples/TabStepForm/UzsakymasTabForm.vue'
 </script>

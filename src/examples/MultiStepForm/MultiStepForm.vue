@@ -49,10 +49,10 @@
 </template>
 <script setup lang="ts">
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
-import IsdavimasForm from '@/examples/multiForm/IsdavimasForm.vue'
-import PapildomosPaslaugosForm from '@/examples/multiForm/PapildomosPaslaugosForm.vue'
-import PaslaugosUzsakymasForm from '@/examples/multiForm/PaslaugosUzsakymasForm.vue'
-import TerminaiForm from '@/examples/multiForm/TerminaiForm.vue'
+import IsdavimasForm from '@/examples/MultiStepForm/components/IsdavimasForm.vue'
+import PapildomosPaslaugosForm from '@/examples/MultiStepForm/components/PapildomosPaslaugosForm.vue'
+import PaslaugosUzsakymasForm from '@/examples/MultiStepForm/components/PaslaugosUzsakymasForm.vue'
+import TerminaiForm from '@/examples/MultiStepForm/components/TerminaiForm.vue'
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
 
 const expandedPanels = ref<Array<string>>(['paslaugosForm'])

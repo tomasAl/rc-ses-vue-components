@@ -3,7 +3,7 @@
     <v-row no-gutters>
       <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
         <!--        <VerticalStepper
-          v-if="verticalStepperItems.length > 1 || !singleForm"
+          v-if="verticalStepperItems.length > 1 || !SingleStepForm"
           :items="verticalStepperItems"
           style="margin-top: 2.875rem"
         ></VerticalStepper>-->
