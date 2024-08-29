@@ -6,7 +6,7 @@ export type InputProps = {
   placeholder?: string
 }
 
-export type InputFieldOmits =
+/* export type InputFieldOmits =
   | 'name'
   | 'error'
   | 'disabled'
@@ -16,7 +16,7 @@ export type InputFieldOmits =
   | 'errorMessages'
   | 'color'
   | 'label'
-  | 'rounded'
+  | 'rounded' */
 
 export interface FieldProps {
   fieldLabel?: string

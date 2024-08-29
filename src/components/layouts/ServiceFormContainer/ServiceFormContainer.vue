@@ -53,11 +53,11 @@
 // import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps'
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
-import { StepFormLayoutProps } from '@/types/layouts/StepFormLayoutProps'
 
 import './ServiceFormContainerStyle.scss'
+import { ServiceFormContainerProps } from './ServiceFormContainerType'
 
-const props = defineProps<StepFormLayoutProps>()
+const props = defineProps<ServiceFormContainerProps>()
 
 const { collapseAll, expandAll, state, toggleAccordion } = props.accordionController
 

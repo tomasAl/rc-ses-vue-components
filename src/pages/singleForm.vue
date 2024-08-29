@@ -17,9 +17,10 @@
         padalinyje."
   >
   </HeaderPanel>
-  <ExampleSingleForm />
+  <SingleStepForm />
 </template>
 
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
+import SingleStepForm from '@/examples/SingleStepForm/SingleStepForm.vue';
 </script>

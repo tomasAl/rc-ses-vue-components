@@ -1,5 +1,4 @@
 export type AccordionState = {
-  defaultExpanded?: boolean | undefined
   disabled?: boolean | undefined
   expanded?: boolean | undefined
   state: 'active' | 'completed' | 'pending'
@@ -10,7 +9,6 @@ export type AccordionState = {
 // except id which links to the record and must be provided
 export type AccordionProps = {
   id: string
-  defaultExpanded?: boolean | undefined
   disabled?: boolean | undefined
   expanded?: boolean | undefined
   state?: 'active' | 'completed' | 'pending'

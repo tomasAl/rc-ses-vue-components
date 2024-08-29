@@ -9,7 +9,7 @@
     </template>
 
     <template #default>
-      <Accordion id="singleForm" state="completed">
+      <Accordion id="singleForm">
         <UzsakymasForm />
       </Accordion>
     </template>
@@ -17,6 +17,7 @@
 </template>
 <script setup lang="ts">
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
+import FormActions from '@/examples/shared/FormActions.vue'
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
 
 import UzsakymasForm from './UzsakymasForm.vue'

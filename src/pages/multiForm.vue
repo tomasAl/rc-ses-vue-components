@@ -17,10 +17,10 @@
         padalinyje."
   >
   </HeaderPanel>
-  <ExampleMultiForm />
+  <MultiStepForm />
 </template>
 
 <script setup lang="ts">
 import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import ExampleMultiForm from '@/examples/MultiStepForm/MultiStepForm.vue'
+import MultiStepForm from '@/examples/MultiStepForm/MultiStepForm.vue'
 </script>

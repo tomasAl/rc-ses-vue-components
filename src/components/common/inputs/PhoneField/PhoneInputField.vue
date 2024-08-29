@@ -7,7 +7,6 @@
   >
     <v-text-field
       ref="input"
-      v-model="inputValue"
       v-bind="$attrs"
       v-maska="{
         mask: selectedCountry?.mask,
@@ -23,17 +22,13 @@
       :counter="counter"
       :name="name"
       :messages="messages"
+      :value="inputValue"
       @update:focused="() => (searchValue = '')"
       @input="handleModel"
       @blur="activator = undefined"
     >
       <template #prepend-inner>
-        <div
-          class="flag-wrapper"
-          type="button"
-          @click="openMenu"
-          @keydown="() => {}"
-        >
+        <div class="flag-wrapper" type="button" @click="openMenu" @keydown="() => {}">
           <div
             class="flag-sprite-map mr-2"
             :class="`flag-sprite-map-${selectedCountry?.iso.toUpperCase()}`"
@@ -131,7 +126,7 @@ const model = defineModel<string | undefined>()
 const activator = ref()
 const searchValue = ref<string>()
 const selectedCountry = ref<Country | undefined>(getDefaultCountry())
-const inputValue = ref(model.value)
+const inputValue = ref<string | undefined>(model.value)
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
 const menuId = uuidv4()
@@ -143,11 +138,11 @@ const openMenu = () => {
   }
 }
 
-const handleModel = () => {
-  if (!inputValue.value) {
-    model.value = undefined
-    return
-  }
+const handleModel = (event: InputEvent) => {
+  // TODO: fix this
+
+  inputValue.value = inputValue.value ? inputValue.value + event.data : event.data ?? ''
+  //model.value = model.value ? model.value + event.data : event.data ?? ''
 
   model.value = (selectedCountry?.value?.code ?? '') + inputValue.value
 }

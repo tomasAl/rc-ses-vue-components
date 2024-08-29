@@ -6,6 +6,9 @@
   </Alert>
 
   <RadioButtonsField
+    v-model="modelIsdavimoBudas"
+    v-bind="modelIsdavimoBudasProps"
+    :error="errors.isdavimoBudas"
     field-label="Išdavimo būdas"
     class="form-control"
     :options="[
@@ -17,7 +20,9 @@
   ></RadioButtonsField>
 
   <SelectField
-    v-model="modelRCPadalinys"
+    v-model="modelRcPadalinys"
+    v-bind="modelRcPadalinysProps"
+    :error="errors.rcPadalinys"
     class="form-control"
     field-label="RC padalinys"
     placeholder="Pasirinkite"
@@ -43,7 +48,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useField, useForm } from 'vee-validate'
 
-const modelRCPadalinys = ref()
+type IsdavimasFormProps = {
+  formController: ReturnType<typeof useForm>
+}
+
+const props = defineProps<IsdavimasFormProps>()
+
+const { errors, defineField } = props.formController
+
+const [modelIsdavimoBudas, modelIsdavimoBudasProps] = defineField('isdavimoBudas')
+const [modelRcPadalinys, modelRcPadalinysProps] = defineField('rcPadalinys')
 </script>

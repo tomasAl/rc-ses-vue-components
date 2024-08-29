@@ -1,61 +1,47 @@
 <template>
-  <ServiceFormContainer :accordion-controller="accordionController">
-    <template #actions>
-      <FormActions />
-    </template>
+  <form>
+    <ServiceFormContainer :accordion-controller="accordionController">
+      <template #actions>
+        <FormActions />
+      </template>
 
-    <template #actions-after>
-      <FormActionsAfter />
-    </template>
+      <template #actions-after>
+        <FormActionsAfter />
+      </template>
 
-    <template #default>
-      <Accordion
-        id="isdavimasForm"
-        v-model="expandedPanels"
-        title="Išdavimas"
-        :completed="false"
-      >
-        <IsdavimasForm />
-      </Accordion>
+      <template #default>
+        <Accordion id="basicForm" />
 
-      <Accordion
-        id="papildomosPaslaugosForm"
-        v-model="expandedPanels"
-        title="Papildomos paslaugos"
-        :completed="false"
-      >
-        <PapildomosPaslaugosForm />
-      </Accordion>
+        <Accordion id="issueForm">
+          <IsdavimasForm :form-controller="formController" />
+        </Accordion>
 
-      <Accordion
-        id="paslaugosForm"
-        v-model="expandedPanels"
-        title="Paslaugos"
-        :completed="false"
-      >
-        <PaslaugosUzsakymasForm />
-      </Accordion>
+        <Accordion id="additionalServicesForm">
+          <PapildomosPaslaugosForm />
+        </Accordion>
+        <Accordion id="serviceForm">
+          <PaslaugosUzsakymasForm />
+        </Accordion>
 
-      <Accordion
-        id="terminaiForm"
-        v-model="expandedPanels"
-        title="Terminai"
-        :completed="false"
-      >
-        <TerminaiForm />
-      </Accordion>
-    </template>
-  </ServiceFormContainer>
+        <Accordion id="termsForm">
+          <TerminaiForm />
+        </Accordion>
+      </template>
+    </ServiceFormContainer>
+  </form>
 </template>
 <script setup lang="ts">
+import { toTypedSchema } from '@vee-validate/yup'
+import { useForm } from 'vee-validate'
+import * as yup from 'yup'
+
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 import IsdavimasForm from '@/examples/MultiStepForm/components/IsdavimasForm.vue'
 import PapildomosPaslaugosForm from '@/examples/MultiStepForm/components/PapildomosPaslaugosForm.vue'
 import PaslaugosUzsakymasForm from '@/examples/MultiStepForm/components/PaslaugosUzsakymasForm.vue'
 import TerminaiForm from '@/examples/MultiStepForm/components/TerminaiForm.vue'
+import FormActions from '@/examples/shared/FormActions.vue'
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
-
-const expandedPanels = ref<Array<string>>(['paslaugosForm'])
 
 const accordionController = useAccordionController({
   basicForm: {
@@ -83,5 +69,15 @@ const accordionController = useAccordionController({
     state: 'completed',
     title: 'Terminai ir sąlygos',
   },
+})
+
+const FormSchema = yup.object({
+  isdavimoBudas: yup.string().required(),
+  rcPadalinys: yup.string().required(),
+  // Add other form fields as needed
+})
+
+const formController = useForm({
+  validationSchema: toTypedSchema(FormSchema),
 })
 </script>
