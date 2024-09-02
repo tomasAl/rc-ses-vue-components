@@ -6,7 +6,17 @@
     :tooltip="fieldTooltip"
     :for="name"
   >
-    <div class="rc-radios">
+    <v-radio-group
+      v-model="model"
+      v-bind="$attrs"
+      class="rc-radios"
+      :inline="inline"
+      :disabled="disabled"
+      :readonly="readonly"
+      :error="!!error"
+      :hide-details="!error"
+      :error-messages="error"
+    >
       <v-btn
         v-for="(option, index) in options"
         :key="index"
@@ -19,20 +29,25 @@
       >
         {{ option.label }}
       </v-btn>
-    </div>
+    </v-radio-group>
   </FieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { RadioButtonsFieldProps } from '@/types/inputs/RadioButtonsFieldProps'
+import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/RadioButtonsFieldProps'
 
+import RadioFieldDefaults from '../RadioFields/RadioFieldDefaults'
 import './RadioButtonsFieldStyle.scss'
 
-withDefaults(defineProps<RadioButtonsFieldProps>(), {
-  options: () => [],
+defineOptions({
+  inheritAttrs: false,
 })
+
+withDefaults(defineProps<RadioButtonsFieldProps>(), RadioFieldDefaults)
+
+// withDefaults(defineProps<RadioFieldProps>(), RadioFieldDefaults)
 
 const model = defineModel<string>()
 

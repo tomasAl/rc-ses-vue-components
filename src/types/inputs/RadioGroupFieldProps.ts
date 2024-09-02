@@ -4,7 +4,7 @@ import type { ColorType } from '@/types/common/ColorType'
 import type { OptionType } from '@/types/common/OptionType'
 import type { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
-export type RadioFieldProps = FieldProps &
+export type RadioGroupFieldProps = FieldProps &
   InputProps & {
     options: Array<OptionType>
     variant?: 'text' | 'outlined'

@@ -14,7 +14,7 @@ import NumberStepper from '@/components/common/inputs/NumberStepperField/NumberS
 import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
 import PhoneInputField from '@/components/common/inputs/PhoneField/PhoneInputField.vue'
 import Radio from '@/components/common/inputs/RadioFields/Radio.vue'
-import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
+import RadioButtonsField from '@/components/common/inputs/RadioButtonsField/RadioButtonsField.vue'
 import RadioField from '@/components/common/inputs/RadioFields/RadioField.vue'
 import SearchField from '@/components/common/inputs/SearchField/SearchField.vue'
 import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'

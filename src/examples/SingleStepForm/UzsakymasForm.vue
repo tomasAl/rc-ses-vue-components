@@ -70,10 +70,9 @@
           default-iso="lt"
         />
       </Field>
-      <!--
+
       <Field v-slot="fieldProps" name="ieskoti">
         <SearchField
-          v-model="modelIeskoti"
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Ieškoti"
@@ -92,16 +91,6 @@
         />
       </Field>
 
-      <Field v-slot="fieldProps" name="skaicius">
-        <NumberStepperField
-          v-bind="fieldProps.field"
-          :error="fieldProps.errorMessage"
-          class="form-control"
-          field-label="Skaičius"
-          :max-width="300"
-        />
-      </Field> -->
-      <!--
       <Field v-slot="fieldProps" name="laikotarpis">
         <DatePickerField
           v-bind="fieldProps.field"
@@ -126,15 +115,13 @@
 
       <Field v-slot="fieldProps" name="sutikimas">
         <CheckboxField
-          v-bind="fieldProps.field"
+          v-model="fieldProps.field.value"
           :error="fieldProps.errorMessage"
           class="form-control"
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
         />
       </Field>
-
-      <v-divider class="form-control" />
 
       <Field v-slot="fieldProps" name="pavadinimas">
         <TextField
@@ -153,6 +140,7 @@
           :error="fieldProps.errorMessage"
           field-label="Pasirinkimas"
           class="form-control bg-grey-100"
+          name="radioPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -169,6 +157,7 @@
           :error="fieldProps.errorMessage"
           field-label="Pasirinkimas"
           class="form-control"
+          name="radioButtonsPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -178,17 +167,16 @@
           ]"
         />
       </Field>
-
       <Field v-slot="fieldProps" name="files">
         <FileDropzoneField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Įkelti dokumentus"
+          name="files"
           multiple
         />
       </Field>
--->
-      <v-btn type="submit" color="primary" @click="submit">Submit</v-btn>
+      <v-btn type="submit" color="primary">Submit</v-btn>
     </form>
   </VeeForm>
 </template>
@@ -196,32 +184,35 @@
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/yup'
 import { Field, Form as VeeForm, useForm } from 'vee-validate'
-import { ref } from 'vue'
 import * as yup from 'yup'
 
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
 
+const sutikimas = ref(false)
+
 const FormSchema = yup.object({
-  trumpas: yup.string().required(),
+  radioPasirinkimas: yup.string().required(),
+  radioButtonsPasirinkimas: yup.string().required(),
+  // files: yup.array().required(),
+  // trumpas: yup.string().required(),
   // ilgas: yup.string().required(),
-  tikslas: yup.array().required().min(1),
+  // tikslas: yup.array().required().min(1),
   // telefonas: yup.string().required(),
   // ieskoti: yup.string().required(),
-  // data: yup.date().required(),
+  // data: yup.string().required(),
+  // laikotarpis: yup.array().required(),
   // skaicius: yup.number().required().min(5),
+  // sutikimas: yup.boolean().required(),
   // pasirinkimas: yup.string().required(),
-  /* laikotarpis: yup.array().required(),
+  /*
   skaicius: yup.number().required().min(5),
-  sutikimas: yup.boolean().required(), */
+  , */
 })
 
-const { errors, defineField, submitForm } = useForm({
+useForm({
   validationSchema: toTypedSchema(FormSchema),
 })
-
-const telefonas = ref('')
-const modelIeskoti = ref()
 
 /* const [modelIlgasTekstas, modelIlgasTekstasProps] = defineField('ilgas')
 const [modelTikslas, modelTikslasProps] = defineField('tikslas')
@@ -236,14 +227,9 @@ const [modelSutikimas, modelSutikimasProps] = defineField('sutikimas') */
 const modeRadioPasirinkimas = ref()
 const modelPavadinimas = ref() */
 
-function submit() {
-  submitForm()
-}
-
 function onSubmit(values) {
   // Submit values to API...
   // alert(JSON.stringify(values, null, 2))
   console.log(values)
-  console.log(modelIeskoti.value)
 }
 </script>

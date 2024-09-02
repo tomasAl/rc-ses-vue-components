@@ -27,12 +27,14 @@
     <template #dp-input="inputBind">
       <TextField
         v-bind="inputBind"
+        v-model="displayValue"
         prepend-inner-icon="$calendar"
         :placeholder="placeholder"
         :name="name"
         :disabled="disabled"
         :readonly="readonly"
         :error="error"
+        :max-width="maxWidth"
       />
     </template>
 
@@ -120,7 +122,7 @@ const formatPreview = (
 
 const handleChange = (value: any) => {
   modelValue.value = value
-  displayValue.value = '' // value ? formatPreview(value) : ''
+  displayValue.value = formatPreview(value)
 }
 
 const selectDate = () => {

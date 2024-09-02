@@ -2,7 +2,7 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import RadioField from '@/components/common/inputs/RadioFields/RadioField.vue'
-import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
+import { RadioFieldProps } from '@/types/inputs/RadioGroupFieldProps'
 import FieldArgTypes from '@/stories/components/argTypes/common/FieldArgTypes'
 
 export default {

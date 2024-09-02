@@ -31,6 +31,11 @@ import './CheckboxFieldStyle.scss'
 const props = withDefaults(defineProps<CheckboxProps>(), CheckboxDefaults)
 
 const model = defineModel<boolean>()
+
+if (props.value) {
+  model.value = props.value
+}
+
 const classes = computed(() => {
   return {
     'rc-checkbox--checked': model.value,

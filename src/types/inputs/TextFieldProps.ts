@@ -48,4 +48,5 @@ export type TextFieldProps = FieldProps &
     validateOn?: VTextField['$props']['validateOn']
     validationValue?: VTextField['$props']['validationValue']
     width?: VTextField['$props']['width']
+    value?: any
   }

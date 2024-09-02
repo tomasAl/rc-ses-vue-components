@@ -1,12 +1,7 @@
 <template>
-  <FieldWrapper
-    :label="fieldLabel"
-    :description="fieldDescription"
-    :tooltip="fieldTooltip"
-    :for="name"
-  >
+  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <v-text-field
-      v-model="model"
+      v-model="displayValue"
       v-bind="$attrs"
       class="rc-field rc-text-field"
       variant="outlined"
@@ -20,7 +15,7 @@
       :name="name"
       :messages="messages"
       :max-width="maxWidth"
-      :value="value"
+      @input="updateModel"
     >
       <template v-if="$slots['append']" #append="binds">
         <slot name="append" v-bind="binds" />
@@ -48,16 +43,50 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'
 import { VTextField } from 'vuetify/components/VTextField'
 
-import TextFieldDefaults from '@/components/common/inputs/TextField/TextFieldDefaults'
+import { FieldWrapper } from '@/components/common/inputs/FieldWrapper/FieldWrapper.vue'
 import { TextFieldProps } from '@/types/inputs/TextFieldProps'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-withDefaults(defineProps<TextFieldProps>(), TextFieldDefaults)
+withDefaults(defineProps<TextFieldProps>(), {
+  fieldLabel: '',
+  fieldDescription: '',
+  fieldTooltip: '',
+  name: '',
+  error: '',
+  readonly: false,
+  disabled: false,
+  placeholder: '',
+  counter: null,
+  messages: '',
+  maxWidth: null,
+})
 
 const model = defineModel<any>()
+const displayValue = ref('')
+
+watch(model, (newValue) => {
+  // Update displayValue based on the model value
+  displayValue.value = formatDisplayValue(newValue)
+})
+
+function updateModel(value: string) {
+  // Update the model based on the display value
+  model.value = parseDisplayValue(value)
+}
+
+function formatDisplayValue(value: any): string {
+  // Custom logic to format the display value
+  return `Formatted: ${value}`
+}
+
+function parseDisplayValue(value: string): any {
+  // Custom logic to parse the display value back to the model value
+  return value.replace('Formatted: ', '')
+}
 </script>

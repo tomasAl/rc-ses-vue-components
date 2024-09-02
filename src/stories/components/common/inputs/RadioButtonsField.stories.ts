@@ -1,9 +1,9 @@
 // RadioButtonsField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
+import RadioButtonsField from '@/components/common/inputs/RadioButtonsField/RadioButtonsField.vue'
 import FieldArgTypes from '@/stories/components/argTypes/common/FieldArgTypes'
-import { RadioButtonsFieldProps } from '@/types/inputs/RadioButtonsFieldProps'
+import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/RadioButtonsFieldProps'
 
 export default {
   title: 'components/common/inputs/RadioButtonsField',

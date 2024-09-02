@@ -6,10 +6,11 @@
     :tooltip="fieldTooltip"
     :for="name"
     :variant="variant"
+    :class="classes"
   >
     <v-radio-group
       v-model="model"
-      v-bind="$attrs"
+      v-bind="attrs"
       class="rc-radios"
       :inline="inline"
       :disabled="disabled"
@@ -33,15 +34,16 @@
 import type { VRadioGroup } from 'vuetify/components'
 
 import RadioFieldDefaults from '@/components/common/inputs/RadioFields/RadioFieldDefaults'
-import { RadioFieldProps } from '@/types/inputs/RadioFieldProps'
+import { RadioGroupFieldProps } from '@/types/inputs/RadioGroupFieldProps'
 
-import './RadioButtonsFieldStyle.scss'
+import '../RadioButtonsField/RadioButtonsFieldStyle.scss'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-withDefaults(defineProps<RadioFieldProps>(), RadioFieldDefaults)
+withDefaults(defineProps<RadioGroupFieldProps>(), RadioFieldDefaults)
 
 const model = defineModel<string | undefined>()
+const { class: classes, ...attrs } = useAttrs()
 </script>
