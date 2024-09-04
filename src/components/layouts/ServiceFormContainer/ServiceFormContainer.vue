@@ -2,11 +2,11 @@
   <v-container class="pa-0">
     <v-row no-gutters>
       <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
-        <!--        <VerticalStepper
-          v-if="verticalStepperItems.length > 1 || !SingleStepForm"
-          :items="verticalStepperItems"
+        <VerticalStepper
+          v-if="Object.keys(state).length > 1"
+          :items="state"
           style="margin-top: 2.875rem"
-        ></VerticalStepper>-->
+        ></VerticalStepper>
       </v-col>
       <v-col sm="12" md="8" lg="9" xl="10">
         <div class="rc-form-wrapper">
@@ -37,9 +37,9 @@
           <slot />
         </div>
 
-        <slot name="actions-wrapper">
+        <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
           <FormActionPanel v-if="$slots.actions">
-            <slot name="actions"></slot>
+            <slot name="actions" v-bind="{ formController, accordionController }"></slot>
           </FormActionPanel>
         </slot>
 
@@ -50,7 +50,8 @@
 </template>
 
 <script setup lang="ts">
-// import { VerticalStepperItemProps } from '@/types/steppers/VerticalStepperProps'
+import { useForm } from 'vee-validate'
+
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
 
@@ -66,5 +67,5 @@ provide('collapseAll', collapseAll)
 provide('expandAll', expandAll)
 provide('toggleAccordion', toggleAccordion)
 
-// const verticalStepperItems: Array<VerticalStepperItemProps> = props.items
+provide<ReturnType<typeof useForm> | undefined>('formController', props.formController)
 </script>

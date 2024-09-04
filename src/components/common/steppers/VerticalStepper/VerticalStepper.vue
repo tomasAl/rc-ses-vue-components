@@ -6,16 +6,23 @@
         v-for="(step, index) in items"
         :key="index"
         class="step"
-        :class="{ active: step.active }"
+        :class="{ active: step.state === 'active' }"
       >
         <div class="step-icon">
-          <v-icon v-if="step.completed" icon="rc-success" color="success-500" />
-          <DotActive v-else-if="step.active" color="primary" />
+          <v-icon
+            v-if="step.state === 'completed'"
+            icon="rc-success"
+            color="success-500"
+          />
+          <DotActive v-else-if="step.state === 'active'" color="primary" />
           <DotInactive v-else />
         </div>
         <div
           class="step-title"
-          :class="{ 'text-h6': step.active, 'text-subtitle-1': !step.active }"
+          :class="{
+            'text-h6': step.state === 'active',
+            'text-subtitle-1': step.state !== 'active',
+          }"
         >
           {{ step.title }}
         </div>
@@ -27,7 +34,7 @@
 <script setup lang="ts">
 import DotActive from '@/assets/icons/filled/DotActive.vue'
 import DotInactive from '@/assets/icons/filled/DotInactive.vue'
-import { VerticalStepperProps } from '@/types/steppers/VerticalStepperProps'
+import { VerticalStepperProps } from '@/components/common/steppers/VerticalStepper/VerticalStepperProps'
 
 import './VerticalStepperStyle.scss'
 

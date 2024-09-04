@@ -1,6 +1,9 @@
 <template>
   <form>
-    <ServiceFormContainer :accordion-controller="accordionController">
+    <ServiceFormContainer
+      :accordion-controller="accordionController"
+      :form-controller="formController"
+    >
       <template #actions>
         <FormActions />
       </template>
@@ -24,10 +27,8 @@
         </Accordion>
 
         <Accordion id="termsForm">
-          <TerminaiForm :form-controller="formController" />
+          <TerminaiForm />
         </Accordion>
-
-        <v-btn color="primary" @click="handleSubmit">Submit</v-btn>
       </template>
     </ServiceFormContainer>
   </form>
@@ -51,24 +52,24 @@ const accordionController = useAccordionController({
     state: 'completed',
     title: 'Bazinė informacija',
   },
-  serviceForm: {
-    expanded: true,
-    state: 'pending',
-    title: 'Paslaugos užsakymas',
-  },
   issueForm: {
     expanded: false,
-    state: 'completed',
+    state: 'pending',
     title: 'Išdavimas',
   },
   additionalServicesForm: {
     expanded: false,
-    state: 'completed',
+    state: 'pending',
     title: 'Reikalingos papildomos paslaugos',
+  },
+  serviceForm: {
+    expanded: true,
+    state: 'active',
+    title: 'Paslaugos užsakymas',
   },
   termsForm: {
     expanded: false,
-    state: 'completed',
+    state: 'pending',
     title: 'Terminai ir sąlygos',
   },
 })

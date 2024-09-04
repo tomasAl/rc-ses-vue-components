@@ -2,7 +2,7 @@
   <Checkbox
     v-model="modelTerminoSutikimas"
     v-bind="modelTerminoSutikimasProps"
-    :error="errors.terminoSutikimas"
+    :error="errors?.terminoSutikimas"
   >
     <template #label>
       <span class="font-weight-strong"
@@ -18,13 +18,13 @@
 <script setup lang="ts">
 import { useForm } from 'vee-validate'
 
-type TerminaiFormProps = {
-  formController: ReturnType<typeof useForm>
+const formController = inject<ReturnType<typeof useForm> | undefined>('formController')
+
+if (!formController) {
+  throw new Error('Form controller is not provided')
 }
 
-const props = defineProps<TerminaiFormProps>()
-
-const { errors, defineField } = props.formController
+const { errors, defineField } = formController
 
 const [modelTerminoSutikimas, modelTerminoSutikimasProps] =
   defineField('terminoSutikimas')
