@@ -1,5 +1,6 @@
 <template>
   <FieldWrapper
+    v-bind="fieldWrapperProps"
     class="rc-radio-buttons-field"
     :label="fieldLabel"
     :description="fieldDescription"
@@ -38,16 +39,14 @@ import { computed } from 'vue'
 
 import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/RadioButtonsFieldProps'
 
-import RadioFieldDefaults from '../RadioFields/RadioFieldDefaults'
+import RadioButtonsFieldDefaults from './RadioButtonsFieldDefaults'
 import './RadioButtonsFieldStyle.scss'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-withDefaults(defineProps<RadioButtonsFieldProps>(), RadioFieldDefaults)
-
-// withDefaults(defineProps<RadioFieldProps>(), RadioFieldDefaults)
+withDefaults(defineProps<RadioButtonsFieldProps>(), RadioButtonsFieldDefaults)
 
 const model = defineModel<string>()
 

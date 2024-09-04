@@ -8,6 +8,7 @@ export type RadioGroupFieldProps = FieldProps &
   InputProps & {
     options: Array<OptionType>
     variant?: 'text' | 'outlined'
+    fieldWrapperProps?: object
 
     appendIcon?: VRadioGroup['$props']['appendIcon']
     centerAffix?: VRadioGroup['$props']['centerAffix']

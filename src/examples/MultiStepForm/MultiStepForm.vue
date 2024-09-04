@@ -17,15 +17,17 @@
         </Accordion>
 
         <Accordion id="additionalServicesForm">
-          <PapildomosPaslaugosForm />
+          <PapildomosPaslaugosForm :form-controller="formController" />
         </Accordion>
         <Accordion id="serviceForm">
-          <PaslaugosUzsakymasForm />
+          <PaslaugosUzsakymasForm :form-controller="formController" />
         </Accordion>
 
         <Accordion id="termsForm">
-          <TerminaiForm />
+          <TerminaiForm :form-controller="formController" />
         </Accordion>
+
+        <v-btn color="primary" @click="handleSubmit">Submit</v-btn>
       </template>
     </ServiceFormContainer>
   </form>
@@ -73,11 +75,28 @@ const accordionController = useAccordionController({
 
 const FormSchema = yup.object({
   isdavimoBudas: yup.string().required(),
-  rcPadalinys: yup.string().required(),
-  // Add other form fields as needed
+  padalinys: yup.string().required(),
+  skaicius: yup.number().required().min(5),
+  paslauga: yup.string().required(),
+
+  tikslas: yup.string().required(),
+  teisinisPagrindas: yup.string().required(),
+  sutikimas: yup.boolean().required(),
+  terminas: yup.string().required(),
+  egzemplioriuSkaicius: yup.number().required().min(5),
+
+  terminoSutikimas: yup.boolean().required(),
 })
 
 const formController = useForm({
   validationSchema: toTypedSchema(FormSchema),
 })
+
+function handleSubmit() {
+  formController.submitForm()
+
+  if (formController.meta.value.valid) {
+    console.log('Form is valid', formController.values)
+  }
+}
 </script>

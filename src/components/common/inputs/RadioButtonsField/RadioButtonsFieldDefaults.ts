@@ -3,7 +3,6 @@ import { ColorType } from '@/types/common/ColorType'
 const RadioFieldDefaults = {
   options: () => [],
   fieldWrapperProps: () => ({}),
-  variant: 'text' as const,
   appendIcon: undefined,
   centerAffix: undefined,
   color: 'primary' as ColorType,

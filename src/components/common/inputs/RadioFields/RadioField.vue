@@ -1,16 +1,16 @@
 <template>
   <FieldWrapper
+    v-bind="fieldWrapperProps"
     class="rc-radio-buttons-field"
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
     :for="name"
     :variant="variant"
-    :class="classes"
   >
     <v-radio-group
       v-model="model"
-      v-bind="attrs"
+      v-bind="$attrs"
       class="rc-radios"
       :inline="inline"
       :disabled="disabled"
@@ -45,5 +45,4 @@ defineOptions({
 withDefaults(defineProps<RadioGroupFieldProps>(), RadioFieldDefaults)
 
 const model = defineModel<string | undefined>()
-const { class: classes, ...attrs } = useAttrs()
 </script>

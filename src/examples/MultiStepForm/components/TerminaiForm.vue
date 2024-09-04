@@ -1,5 +1,9 @@
 <template>
-  <Checkbox v-model="checkModel">
+  <Checkbox
+    v-model="modelTerminoSutikimas"
+    v-bind="modelTerminoSutikimasProps"
+    :error="errors.terminoSutikimas"
+  >
     <template #label>
       <span class="font-weight-strong"
         >Užsakydamas darbus esu susipažinęs su darbų atlikimo ir atlyginimo tvarka ir
@@ -12,7 +16,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useForm } from 'vee-validate'
 
-const checkModel = ref()
+type TerminaiFormProps = {
+  formController: ReturnType<typeof useForm>
+}
+
+const props = defineProps<TerminaiFormProps>()
+
+const { errors, defineField } = props.formController
+
+const [modelTerminoSutikimas, modelTerminoSutikimasProps] =
+  defineField('terminoSutikimas')
 </script>

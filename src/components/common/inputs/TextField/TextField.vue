@@ -20,7 +20,6 @@
       :name="name"
       :messages="messages"
       :max-width="maxWidth"
-      :value="value"
     >
       <template v-if="$slots['append']" #append="binds">
         <slot name="append" v-bind="binds" />

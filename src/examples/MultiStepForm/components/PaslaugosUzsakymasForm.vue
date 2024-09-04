@@ -1,6 +1,8 @@
 <template>
   <SelectField
     v-model="modelTikslas"
+    v-bind="modelTikslasProps"
+    :error="errors.tikslas"
     class="form-control"
     field-label="Tikslas"
     placeholder="Pasirinkite"
@@ -27,7 +29,9 @@
   />
 
   <SelectField
-    v-model="modelTikslas"
+    v-model="modelTeisinisPagrindas"
+    v-bind="modelTeisinisPagrindasProps"
+    :error="errors.teisinisPagrindas"
     class="form-control"
     field-label="Teisinis pagrindas"
     field-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
@@ -56,13 +60,17 @@
 
   <CheckboxField
     v-model="modelSutikimas"
-    class="form-control"
+    v-bind="modelSutikimasProps"
+    :error="errors.sutikimas"
+    :field-wrapper-props="{ class: 'form-control' }"
     label="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     field-label="Sutikimas"
   />
 
   <SelectField
     v-model="modelTerminas"
+    v-bind="modelTerminasProps"
+    :error="errors.terminas"
     class="form-control"
     field-label="Terminas"
     field-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry"
@@ -88,15 +96,30 @@
   />
 
   <NumberStepperField
+    v-model="modelEgzemplioriuSkaicius"
+    v-bind="modelEgzemplioriuSkaiciusProps"
+    :error="errors.egzemplioriuSkaicius"
     field-label="Egzempliorių skaičius"
     field-description="(neprivaloma)"
   />
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useForm } from 'vee-validate'
 
-const modelTikslas = ref()
-const modelSutikimas = ref()
-const modelTerminas = ref()
+type PaslaugosUzsakymasFormProps = {
+  formController: ReturnType<typeof useForm>
+}
+
+const props = defineProps<PaslaugosUzsakymasFormProps>()
+
+const { errors, defineField } = props.formController
+
+const [modelTikslas, modelTikslasProps] = defineField('tikslas')
+const [modelTeisinisPagrindas, modelTeisinisPagrindasProps] =
+  defineField('teisinisPagrindas')
+const [modelSutikimas, modelSutikimasProps] = defineField('sutikimas')
+const [modelTerminas, modelTerminasProps] = defineField('terminas')
+const [modelEgzemplioriuSkaicius, modelEgzemplioriuSkaiciusProps] =
+  defineField('egzemplioriuSkaicius')
 </script>

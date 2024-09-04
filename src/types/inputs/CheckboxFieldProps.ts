@@ -4,6 +4,7 @@ import type { ColorType } from '@/types/common/ColorType'
 import type { FieldProps, InputProps } from '@/types/inputs/FieldProps'
 
 export type CheckboxProps = InputProps & {
+  fieldWrapperProps?: object
   appendIcon?: VCheckbox['$props']['appendIcon']
   baseColor?: VCheckbox['$props']['baseColor']
   centerAffix?: VCheckbox['$props']['centerAffix']
@@ -34,6 +35,7 @@ export type CheckboxProps = InputProps & {
   value?: VCheckbox['$props']['value']
   validationValue?: VCheckbox['$props']['validationValue']
   width?: VCheckbox['$props']['width']
+  modelValue?: VCheckbox['$props']['modelValue']
 }
 
 export type CheckboxFieldProps = FieldProps & CheckboxProps

@@ -5,12 +5,21 @@
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </Alert>
 
+  <NumberStepperField
+    v-model="modelSkaicius"
+    v-bind="modelSkaiciusProps"
+    :error="errors.skaicius"
+    class="form-control"
+    field-label="Skaičius"
+    :max-width="300"
+  />
+
   <RadioButtonsField
     v-model="modelIsdavimoBudas"
     v-bind="modelIsdavimoBudasProps"
     :error="errors.isdavimoBudas"
     field-label="Išdavimo būdas"
-    class="form-control"
+    :field-wrapper-props="{ class: 'form-control' }"
     :options="[
       { label: 'El. paštu', value: 'option1' },
       { label: 'Padalinye', value: 'option2' },
@@ -20,10 +29,10 @@
   ></RadioButtonsField>
 
   <SelectField
-    v-model="modelRcPadalinys"
-    v-bind="modelRcPadalinysProps"
-    :error="errors.rcPadalinys"
-    class="form-control"
+    v-model="modelPadalinys"
+    v-bind="modelPadalinysProps"
+    :error="errors.padalinys"
+    :field-wrapper-props="{ class: 'form-control' }"
     field-label="RC padalinys"
     placeholder="Pasirinkite"
     :searchable="false"
@@ -48,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { useField, useForm } from 'vee-validate'
+import { useForm } from 'vee-validate'
 
 type IsdavimasFormProps = {
   formController: ReturnType<typeof useForm>
@@ -59,5 +68,6 @@ const props = defineProps<IsdavimasFormProps>()
 const { errors, defineField } = props.formController
 
 const [modelIsdavimoBudas, modelIsdavimoBudasProps] = defineField('isdavimoBudas')
-const [modelRcPadalinys, modelRcPadalinysProps] = defineField('rcPadalinys')
+const [modelPadalinys, modelPadalinysProps] = defineField('padalinys')
+const [modelSkaicius, modelSkaiciusProps] = defineField('skaicius')
 </script>

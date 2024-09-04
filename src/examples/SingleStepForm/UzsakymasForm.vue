@@ -115,11 +115,14 @@
 
       <Field v-slot="fieldProps" name="sutikimas">
         <CheckboxField
-          v-model="fieldProps.field.value"
+          :model-value="fieldProps.field.value"
           :error="fieldProps.errorMessage"
-          class="form-control"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
+          @update:model-value="fieldProps.handleChange"
         />
       </Field>
 
@@ -139,7 +142,10 @@
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Pasirinkimas"
-          class="form-control bg-grey-100"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
+          class="bg-grey-100"
           name="radioPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
@@ -155,8 +161,10 @@
         <RadioButtonsField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
           field-label="Pasirinkimas"
-          class="form-control"
           name="radioButtonsPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
@@ -176,7 +184,9 @@
           multiple
         />
       </Field>
-      <v-btn type="submit" color="primary">Submit</v-btn>
+      <div class="d-flex justify-end mt-5">
+        <v-btn type="submit" color="primary">Submit</v-btn>
+      </div>
     </form>
   </VeeForm>
 </template>
@@ -189,25 +199,21 @@ import * as yup from 'yup'
 import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
 import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
 
-const sutikimas = ref(false)
+const sutikimas = ref<boolean>(false)
 
 const FormSchema = yup.object({
+  trumpas: yup.string().required(),
+  ilgas: yup.string().required(),
+  tikslas: yup.array().required().min(1),
+  // telefonas: yup.string().required(),
+  ieskoti: yup.string().required(),
+  data: yup.string().required(),
+  laikotarpis: yup.array().required(),
+  skaicius: yup.number().required().min(5),
+  // sutikimas: yup.boolean().required(),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),
   // files: yup.array().required(),
-  // trumpas: yup.string().required(),
-  // ilgas: yup.string().required(),
-  // tikslas: yup.array().required().min(1),
-  // telefonas: yup.string().required(),
-  // ieskoti: yup.string().required(),
-  // data: yup.string().required(),
-  // laikotarpis: yup.array().required(),
-  // skaicius: yup.number().required().min(5),
-  // sutikimas: yup.boolean().required(),
-  // pasirinkimas: yup.string().required(),
-  /*
-  skaicius: yup.number().required().min(5),
-  , */
 })
 
 useForm({
