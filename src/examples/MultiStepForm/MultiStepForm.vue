@@ -16,7 +16,7 @@
         <Accordion id="basicForm" />
 
         <Accordion id="issueForm">
-          <IsdavimasForm :form-controller="formController" />
+          <IsdavimasForm />
         </Accordion>
 
         <Accordion id="additionalServicesForm">
@@ -80,7 +80,7 @@ const FormSchema = yup.object({
   skaicius: yup.number().required().min(5),
   paslauga: yup.string().required(),
 
-  tikslas: yup.string().required(),
+  tikslas: yup.array().required(),
   teisinisPagrindas: yup.string().required(),
   sutikimas: yup.boolean().required(),
   terminas: yup.string().required(),
@@ -92,12 +92,4 @@ const FormSchema = yup.object({
 const formController = useForm({
   validationSchema: toTypedSchema(FormSchema),
 })
-
-function handleSubmit() {
-  formController.submitForm()
-
-  if (formController.meta.value.valid) {
-    console.log('Form is valid', formController.values)
-  }
-}
 </script>

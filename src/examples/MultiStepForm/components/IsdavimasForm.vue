@@ -57,15 +57,14 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
+import UseFormType from '@/types/forms/UseFormType'
 
-type IsdavimasFormProps = {
-  formController: ReturnType<typeof useForm>
+const formController = inject<UseFormType>('formController')
+
+if (!formController) {
+  throw new Error('Form controller is not provided')
 }
-
-const props = defineProps<IsdavimasFormProps>()
-
-const { errors, defineField } = props.formController
+const { errors, defineField } = formController
 
 const [modelIsdavimoBudas, modelIsdavimoBudasProps] = defineField('isdavimoBudas')
 const [modelPadalinys, modelPadalinysProps] = defineField('padalinys')

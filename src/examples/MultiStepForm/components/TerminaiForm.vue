@@ -16,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
+import UseFormType from '@/types/forms/UseFormType'
 
-const formController = inject<ReturnType<typeof useForm> | undefined>('formController')
+const formController = inject<UseFormType>('formController')
 
 if (!formController) {
   throw new Error('Form controller is not provided')

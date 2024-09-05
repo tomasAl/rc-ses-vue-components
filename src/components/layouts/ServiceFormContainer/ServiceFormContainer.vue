@@ -50,10 +50,9 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
+import UseFormType from '@/types/forms/UseFormType'
 
 import './ServiceFormContainerStyle.scss'
 import { ServiceFormContainerProps } from './ServiceFormContainerType'
@@ -67,5 +66,5 @@ provide('collapseAll', collapseAll)
 provide('expandAll', expandAll)
 provide('toggleAccordion', toggleAccordion)
 
-provide<ReturnType<typeof useForm> | undefined>('formController', props.formController)
+provide<UseFormType>('formController', props.formController)
 </script>

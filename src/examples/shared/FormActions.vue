@@ -7,7 +7,7 @@
     >Baigti pildyti vėliau</Button
   >
   <div class="flex-grow-1" />
-  <Button size="large" class="text-body-2 font-weight-strong" @click="submitForm">
+  <Button size="large" class="text-body-2 font-weight-strong" @click="submit">
     Pridėti į krepšelį
     <template #append>
       <ArrowRightIcon color="grey-900" />
@@ -16,15 +16,18 @@
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate'
-
 import ArrowRightIcon from '@/assets/icons/regular/ArrowRightIcon.vue'
+import UseFormType from '@/types/forms/UseFormType'
 
-const formController = inject<ReturnType<typeof useForm> | undefined>('formController')
+const formController = inject<UseFormType>('formController')
 
-if (!formController) {
-  throw new Error('Form controller is not provided')
+const submit = () => {
+  if (formController) {
+    formController.submitForm()
+
+    if (formController.meta.value.valid) {
+      console.log('Form is valid', formController.values)
+    }
+  }
 }
-
-const { submitForm } = formController
 </script>

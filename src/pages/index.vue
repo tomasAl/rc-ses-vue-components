@@ -41,5 +41,10 @@ const items = ref([
     value: 3,
     routeTo: '/tabForm',
   },
+  {
+    title: 'Duomenų lentelės pavyzdys',
+    value: 4,
+    routeTo: '/dataTable',
+  },
 ])
 </script>
