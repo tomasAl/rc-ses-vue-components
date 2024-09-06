@@ -1,8 +1,8 @@
 import { StoryFn } from '@storybook/vue3'
 
-import Button from '@/components/common/buttons/Button/Button.vue'
+import Button from '@/components/common/buttons/Button/RcSesButton.vue'
 import ButtonArgTypes from '@/stories/components/argTypes/components/ButtonArgTypes'
-import type { ButtonProps } from '@/types/common/ButtonProps'
+import type { ButtonProps } from '@/components/common/buttons/Button/types'
 
 export default {
   title: 'components/common/buttons/Button',
@@ -19,13 +19,13 @@ const Template: StoryFn<ButtonProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <Button v-bind="args">Click Me!</Button>
+        <RcSesButton v-bind="args">Click Me!</RcSesButton>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <Button color="secondary">Click Me!</Button>
-        <Button color="error">Click Me!</Button>
-        <Button color="warning">Click Me!</Button>
+        <RcSesButton color="secondary">Click Me!</RcSesButton>
+        <RcSesButton color="error">Click Me!</RcSesButton>
+        <RcSesButton color="warning">Click Me!</RcSesButton>
       </div>
     </div>
   `,

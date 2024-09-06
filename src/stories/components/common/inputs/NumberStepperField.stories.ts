@@ -1,19 +1,19 @@
 // NumberStepperField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import NumberStepperField from '@/components/common/inputs/NumberStepperField/NumberStepperField.vue'
-import { NumberStepperFieldProps } from '@/types/inputs/NumberStepperProps'
+import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
 import NumberStepperArgTypes from '@/stories/components/argTypes/components/NumberStepperArgTypes'
+import { NumberStepperFieldProps } from '@/components/common/inputs/NumberSteppers/NumberStepperField/type'
 
 export default {
   title: 'components/common/inputs/NumberStepperField',
-  component: NumberStepperField,
+  component: RcSesNumberStepperField,
   argTypes: NumberStepperArgTypes,
   tags: ['autodocs'],
 } as Meta
 
 const Template: StoryFn<NumberStepperFieldProps> = (args) => ({
-  components: { NumberStepperField },
+  components: { RcSesNumberStepperField },
   setup() {
     const modelReadOnly = ref('Negalima redaguoti')
     const modelDisabled = ref('Neaktyvus laukas')
@@ -23,13 +23,13 @@ const Template: StoryFn<NumberStepperFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <NumberStepperField v-bind="args"></NumberStepperField>
+        <RcSesNumberStepperField v-bind="args"></RcSesNumberStepperField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <NumberStepperField class="form-control" label="Read-only" readonly v-model="modelReadOnly"></NumberStepperField>
-        <NumberStepperField class="form-control" label="Disabled" disabled v-model="modelDisabled"></NumberStepperField>
-        <NumberStepperField label="Error" error="Klaidos pranešimas"></NumberStepperField>
+        <RcSesNumberStepperField class="form-control" label="Read-only" readonly v-model="modelReadOnly"></RcSesNumberStepperField>
+        <RcSesNumberStepperField class="form-control" label="Disabled" disabled v-model="modelDisabled"></RcSesNumberStepperField>
+        <RcSesNumberStepperField label="Error" error="Klaidos pranešimas"></RcSesNumberStepperField>
       </div>
     </div>
   `,

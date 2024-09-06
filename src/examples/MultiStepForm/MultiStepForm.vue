@@ -13,22 +13,22 @@
       </template>
 
       <template #default>
-        <Accordion id="basicForm" />
+        <RcSesAccordion id="basicForm" />
 
-        <Accordion id="issueForm">
+        <RcSesAccordion id="issueForm">
           <IsdavimasForm />
-        </Accordion>
+        </RcSesAccordion>
 
-        <Accordion id="additionalServicesForm">
+        <RcSesAccordion id="additionalServicesForm">
           <PapildomosPaslaugosForm :form-controller="formController" />
-        </Accordion>
-        <Accordion id="serviceForm">
+        </RcSesAccordion>
+        <RcSesAccordion id="serviceForm">
           <PaslaugosUzsakymasForm :form-controller="formController" />
-        </Accordion>
+        </RcSesAccordion>
 
-        <Accordion id="termsForm">
+        <RcSesAccordion id="termsForm">
           <TerminaiForm />
-        </Accordion>
+        </RcSesAccordion>
       </template>
     </ServiceFormContainer>
   </form>

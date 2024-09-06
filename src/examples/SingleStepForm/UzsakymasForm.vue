@@ -2,7 +2,7 @@
   <VeeForm v-slot="{ handleSubmit }" :validation-schema="FormSchema" as="div">
     <form @submit="handleSubmit($event, onSubmit)">
       <Field v-slot="fieldProps" name="trumpas">
-        <TextField
+        <RcSesTextField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           class="form-control"
@@ -12,11 +12,11 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text."
           counter="10"
-        ></TextField>
+        ></RcSesTextField>
       </Field>
 
       <Field v-slot="fieldProps" name="ilgas">
-        <TextField
+        <RcSesTextField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           class="form-control"
@@ -27,11 +27,11 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           counter="300"
-        ></TextField>
+        ></RcSesTextField>
       </Field>
 
       <Field v-slot="fieldProps" name="tikslas">
-        <SelectField
+        <RcSesSelectField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           name="tikslas"
@@ -72,7 +72,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="ieskoti">
-        <SearchField
+        <RcSesSearchField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Ieškoti"
@@ -81,7 +81,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="data">
-        <DatePickerField
+        <RcSesDatePickerField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Data"
@@ -92,7 +92,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="laikotarpis">
-        <DatePickerField
+        <RcSesDatePickerField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Laikotarpis"
@@ -104,7 +104,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="skaicius">
-        <NumberStepperField
+        <RcSesNumberStepperField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           class="form-control"
@@ -114,7 +114,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="sutikimas">
-        <CheckboxField
+        <RcSesCheckboxField
           :model-value="fieldProps.field.value"
           :error="fieldProps.errorMessage"
           :field-wrapper-props="{
@@ -127,7 +127,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="pavadinimas">
-        <TextField
+        <RcSesTextField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           class="form-control"
@@ -138,7 +138,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="radioPasirinkimas">
-        <RadioField
+        <RcSesRadioField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Pasirinkimas"
@@ -158,7 +158,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="radioButtonsPasirinkimas">
-        <RadioButtonsField
+        <RcSesRadioButtonsField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           :field-wrapper-props="{
@@ -176,7 +176,7 @@
         />
       </Field>
       <Field v-slot="fieldProps" name="files">
-        <FileDropzoneField
+        <RcSesFileDropzoneField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Įkelti dokumentus"
@@ -196,8 +196,8 @@ import { toTypedSchema } from '@vee-validate/yup'
 import { Field, Form as VeeForm, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
-import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
-import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
+import DatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
+import FileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
 
 const sutikimas = ref<boolean>(false)
 

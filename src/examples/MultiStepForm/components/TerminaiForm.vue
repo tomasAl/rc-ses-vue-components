@@ -1,5 +1,5 @@
 <template>
-  <Checkbox
+  <RcSesCheckbox
     v-model="modelTerminoSutikimas"
     v-bind="modelTerminoSutikimasProps"
     :error="errors?.terminoSutikimas"
@@ -12,7 +12,7 @@
         nebus įvykdytas.</span
       >
     </template>
-  </Checkbox>
+  </RcSesCheckbox>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <TextField
+  <RcSesTextField
     v-model="modelPaslauga"
     v-bind="modelPaslaugaProps"
     :error="errors.paslauga"

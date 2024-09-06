@@ -1,29 +1,29 @@
 // FileDropzoneField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
-import { FileDropzoneFieldProps } from '@/components/common/inputs/FileDropzoneField/FileDropzoneType'
+import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
+import { FileDropzoneFieldProps } from '@/components/common/inputs/FileDropzones/FileDropzoneField/type'
 
 export default {
   title: 'components/common/inputs/FileDropzoneField',
-  component: FileDropzoneField,
+  component: RcSesFileDropzoneField,
   // argTypes: FileInputFieldArgTypes,
 } as Meta
 
 const Template: StoryFn<FileDropzoneFieldProps> = (args) => ({
-  components: { FileDropzoneField },
+  components: { RcSesFileDropzoneField },
   setup() {
     return { args }
   },
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <FileDropzoneField v-bind="args"></FileDropzoneField>
+        <RcSesFileDropzoneField v-bind="args"></RcSesFileDropzoneField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <FileDropzoneField class="form-control" label="Disabled" disabled></FileDropzoneField>
-        <FileDropzoneField label="Error" error="Klaidos pranešimas"></FileDropzoneField>
+        <RcSesFileDropzoneField class="form-control" label="Disabled" disabled></RcSesFileDropzoneField>
+        <RcSesFileDropzoneField label="Error" error="Klaidos pranešimas"></RcSesFileDropzoneField>
       </div>
     </div>
   `,

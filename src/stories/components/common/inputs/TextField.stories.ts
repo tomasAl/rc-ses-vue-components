@@ -1,18 +1,18 @@
 // TextField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import TextField from '@/components/common/inputs/TextField/TextField.vue'
-import { TextFieldProps } from '@/types/inputs/TextFieldProps'
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import { TextFieldProps } from '@/components/common/inputs/TextField/type'
 import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 
 export default {
   title: 'components/common/inputs/TextField',
-  component: TextField,
+  component: RcSesTextField,
   argTypes: TextFieldArgTypes,
 } as Meta
 
 const Template: StoryFn<TextFieldProps> = (args) => ({
-  components: { TextField },
+  components: { RcSesTextField },
   setup() {
     const modelReadOnly = ref('Negalima redaguoti')
     const modelDisabled = ref('Neaktyvus laukas')
@@ -22,13 +22,13 @@ const Template: StoryFn<TextFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <TextField v-bind="args"></TextField>
+        <RcSesTextField v-bind="args"></RcSesTextField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <TextField class="form-control" label="Read-only" readonly v-model="modelReadOnly"></TextField>
-        <TextField class="form-control" label="Disabled" disabled v-model="modelDisabled"></TextField>
-        <TextField label="Error" error="Klaidos pranešimas"></TextField>
+        <RcSesTextField class="form-control" label="Read-only" readonly v-model="modelReadOnly"></RcSesTextField>
+        <RcSesTextField class="form-control" label="Disabled" disabled v-model="modelDisabled"></RcSesTextField>
+        <RcSesTextField label="Error" error="Klaidos pranešimas"></RcSesTextField>
       </div>
     </div>
   `,

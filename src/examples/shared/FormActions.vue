@@ -1,18 +1,18 @@
 <template>
-  <Button
+  <RcSesButton
     variant="text"
     color="primary-700"
     prepend-icon="$prev"
     class="font-weight-regular"
-    >Baigti pildyti vėliau</Button
+    >Baigti pildyti vėliau</RcSesButton
   >
   <div class="flex-grow-1" />
-  <Button size="large" class="text-body-2 font-weight-strong" @click="submit">
+  <RcSesButton size="large" class="text-body-2 font-weight-strong" @click="submit">
     Pridėti į krepšelį
     <template #append>
       <ArrowRightIcon color="grey-900" />
     </template>
-  </Button>
+  </RcSesButton>
 </template>
 
 <script setup lang="ts">

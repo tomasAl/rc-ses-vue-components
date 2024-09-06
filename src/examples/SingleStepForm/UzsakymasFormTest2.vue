@@ -16,7 +16,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="trumpas">
-        <TextField
+        <RcSesTextField
           v-bind="fieldProps.field"
           class="form-control"
           field-label="Trumpas tekstas"
@@ -26,10 +26,10 @@
           messages="Lorem Ipsum is simply dummy text."
           counter="10"
           :error="fieldProps.errorMessage"
-        ></TextField>
+        ></RcSesTextField>
       </Field>
 
-      <!--    <TextField
+      <!--    <RcSesTextField
         v-model="modelTrumpasTekstas"
         v-bind="modelTrumpasTekstasProps"
         class="form-control"
@@ -42,7 +42,7 @@
         :errors="errors.trumpas"
       ></TextField>-->
 
-      <button type="submit">Submit</button>
+      <RcSesButton type="submit">Submit</RcSesButton>
     </form>
   </VeeForm>
 </template>

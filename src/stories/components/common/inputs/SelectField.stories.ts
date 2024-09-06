@@ -1,14 +1,14 @@
 // SelectField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import SelectField from '@/components/common/inputs/SelectField/SelectField.vue'
+import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import SelectArgTypes from '@/stories/components/argTypes/components/SelectArgTypes'
-import type { SelectFieldProps } from '@/types/inputs/SelectFieldProps'
-import { SelectFieldItemType } from '@/types/inputs/SelectFieldProps'
+import type { SelectFieldProps } from '@/components/common/inputs/SelectField/type'
+import { SelectFieldItemType } from '@/components/common/inputs/SelectField/type'
 
 export default {
   title: 'components/common/inputs/SelectField',
-  component: SelectField,
+  component: RcSesSelectField,
   argTypes: SelectArgTypes,
   tags: ['autodocs'],
 } as Meta
@@ -42,7 +42,7 @@ const selectItems: Array<SelectFieldItemType> = [
 ]
 
 const Template: StoryFn<SelectFieldProps> = (args) => ({
-  components: { SelectField },
+  components: { RcSesSelectField },
   setup() {
     const modelReadOnly = ref('Pasirinkimas 5')
     const modelDisabled = ref('Pasirinkimas 2')
@@ -54,13 +54,13 @@ const Template: StoryFn<SelectFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <SelectField v-bind="args" :items="items"></SelectField>
+        <RcSesSelectField v-bind="args" :items="items"></RcSesSelectField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-         <SelectField class="form-control" field-label="Read-only" readonly v-model="modelReadOnly" :items="items"></SelectField>
-         <SelectField class="form-control" field-label="Disabled" disabled v-model="modelDisabled" :items="items"></SelectField>
-         <SelectField field-label="Error" error="Klaidos pranešimas" v-model="modelError" :items="items"></SelectField>
+         <RcSesSelectField class="form-control" field-label="Read-only" readonly v-model="modelReadOnly" :items="items"></RcSesSelectField>
+         <RcSesSelectField class="form-control" field-label="Disabled" disabled v-model="modelDisabled" :items="items"></RcSesSelectField>
+         <RcSesSelectField field-label="Error" error="Klaidos pranešimas" v-model="modelError" :items="items"></RcSesSelectField>
       </div>
     </div>
   `,

@@ -9,9 +9,9 @@
     </template>
 
     <template #default>
-      <Accordion id="singleForm">
+      <RcSesAccordion id="singleForm">
         <UzsakymasForm />
-      </Accordion>
+      </RcSesAccordion>
     </template>
   </ServiceFormContainer>
 </template>

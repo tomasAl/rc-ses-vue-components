@@ -1,5 +1,5 @@
 <template>
-  <TextField
+  <RcSesTextField
     v-model="modelTrumpasTekstas"
     class="form-control"
     field-label="Trumpas tekstas"
@@ -8,9 +8,9 @@
     placeholder="Tekstas"
     messages="Lorem Ipsum is simply dummy text."
     counter="10"
-  ></TextField>
+  ></RcSesTextField>
 
-  <TextField
+  <RcSesTextField
     v-model="modelIlgasTekstas"
     class="form-control"
     field-tooltip="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
@@ -20,9 +20,9 @@
     placeholder="Tekstas"
     messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
     counter="300"
-  ></TextField>
+  ></RcSesTextField>
 
-  <SelectField
+  <RcSesSelectField
     v-model="modelTikslas"
     class="form-control"
     field-label="Tikslas"
@@ -56,9 +56,9 @@
     default-iso="lt"
   />
 
-  <SearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
+  <RcSesSearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
 
-  <DatePickerField
+  <RcSesDatePickerField
     v-model="modelData"
     field-label="Data"
     class="form-control"
@@ -66,7 +66,7 @@
     placeholder="Data"
   />
 
-  <DatePickerField
+  <RcSesDatePickerField
     v-model="modelLaikotarpis"
     field-label="Laikotarpis"
     class="form-control"
@@ -75,14 +75,14 @@
     placeholder="Pradžia  →  Pabaiga"
   />
 
-  <NumberStepperField
+  <RcSesNumberStepperField
     v-model="modelSkaicius"
     class="form-control"
     field-label="Skaičius"
     :max-width="300"
   />
 
-  <CheckboxField
+  <RcSesCheckboxField
     v-model="modelSutikimas"
     class="form-control"
     label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
@@ -93,7 +93,7 @@
 
   <v-divider class="form-control" />
 
-  <TextField
+  <RcSesTextField
     v-model="modelPavadinimas"
     class="form-control"
     field-label="Pavadinimas"
@@ -101,7 +101,7 @@
     placeholder="Pavadinimas"
   />
 
-  <RadioField
+  <RcSesRadioField
     v-model="modeRadioPasirinkimas"
     field-label="Pasirinkimas"
     class="form-control"
@@ -117,7 +117,7 @@
     ]"
   />
 
-  <RadioButtonsField
+  <RcSesRadioButtonsField
     field-label="Pasirinkimas"
     class="form-control"
     :options="[
@@ -129,14 +129,11 @@
     ]"
   />
 
-  <FileDropzoneField v-model="modelFiles"  field-label="Įkelti dokumentus"  multiple />
+  <RcSesFileDropzoneField v-model="modelFiles"  field-label="Įkelti dokumentus"  multiple />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
-import DatePickerField from '@/components/common/inputs/DatePickerField/DatePickerField.vue'
-import FileDropzoneField from '@/components/common/inputs/FileDropzoneField/FileDropzoneField.vue'
 
 const modelFiles = ref()
 const modeRadioPasirinkimas = ref()

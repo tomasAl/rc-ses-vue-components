@@ -1,11 +1,11 @@
 <template>
-  <Alert variant="light" type="warning" class="form-control">
+  <RcSesAlert variant="light" type="warning" class="form-control">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </Alert>
+  </RcSesAlert>
 
-  <NumberStepperField
+  <RcSesNumberStepperField
     v-model="modelSkaicius"
     v-bind="modelSkaiciusProps"
     :error="errors.skaicius"
@@ -14,7 +14,7 @@
     :max-width="300"
   />
 
-  <RadioButtonsField
+  <RcSesRadioButtonsField
     v-model="modelIsdavimoBudas"
     v-bind="modelIsdavimoBudasProps"
     :error="errors.isdavimoBudas"
@@ -26,9 +26,9 @@
       { label: 'Paštu Lietuvoje', value: 'option3' },
       { label: 'Paštu užsienyje', value: 'option4' },
     ]"
-  ></RadioButtonsField>
+  ></RcSesRadioButtonsField>
 
-  <SelectField
+  <RcSesSelectField
     v-model="modelPadalinys"
     v-bind="modelPadalinysProps"
     :error="errors.padalinys"

@@ -1,13 +1,13 @@
 // RadioField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import RadioField from '@/components/common/inputs/RadioFields/RadioField.vue'
-import { RadioFieldProps } from '@/types/inputs/RadioGroupFieldProps'
+import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
 import FieldArgTypes from '@/stories/components/argTypes/common/FieldArgTypes'
+import { RadioGroupFieldProps } from '@/components/common/inputs/Radios/RadioFields/type'
 
 export default {
   title: 'components/common/inputs/RadioField',
-  component: RadioField,
+  component: RcSesRadioField,
   argTypes: FieldArgTypes,
   tags: ['autodocs'],
 } as Meta
@@ -22,8 +22,8 @@ const options = [
   { label: 'Pasirinkimas 4', value: 'p4' },
 ]
 
-const Template: StoryFn<RadioFieldProps> = (args) => ({
-  components: { RadioField },
+const Template: StoryFn<RadioGroupFieldProps> = (args) => ({
+  components: { RcSesRadioField },
   setup() {
     const model = ref('p1')
     const modelDisabled = ref('p4')
@@ -35,13 +35,13 @@ const Template: StoryFn<RadioFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <RadioField v-bind="args" v-model="model"></RadioField>
+        <RcSesRadioField v-bind="args" v-model="model"></RcSesRadioField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <RadioField v-model="modelReadOnly" class="form-control" fieldLabel="Read-only" :options="options" readonly>{{ lorem }}</RadioField>
-        <RadioField v-model="modelDisabled" class="form-control" fieldLabel="Disabled" :options="options" disabled>{{ lorem }}</RadioField>
-        <RadioField v-model="modelError" fieldLabel="Error" :options="options" error="Klaidos pranešimas">{{ lorem }}</RadioField>
+        <RcSesRadioField v-model="modelReadOnly" class="form-control" fieldLabel="Read-only" :options="options" readonly>{{ lorem }}</RcSesRadioField>
+        <RcSesRadioField v-model="modelDisabled" class="form-control" fieldLabel="Disabled" :options="options" disabled>{{ lorem }}</RcSesRadioField>
+        <RcSesRadioField v-model="modelError" fieldLabel="Error" :options="options" error="Klaidos pranešimas">{{ lorem }}</RcSesRadioField>
       </div>
     </div>
   `,

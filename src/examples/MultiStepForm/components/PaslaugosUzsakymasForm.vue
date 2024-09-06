@@ -1,5 +1,5 @@
 <template>
-  <SelectField
+  <RcSesSelectField
     v-model="modelTikslas"
     v-bind="modelTikslasProps"
     :error="errors.tikslas"
@@ -28,7 +28,7 @@
     ]"
   />
 
-  <SelectField
+  <RcSesSelectField
     v-model="modelTeisinisPagrindas"
     v-bind="modelTeisinisPagrindasProps"
     :error="errors.teisinisPagrindas"
@@ -58,7 +58,7 @@
     ]"
   />
 
-  <CheckboxField
+  <RcSesCheckboxField
     v-model="modelSutikimas"
     v-bind="modelSutikimasProps"
     :error="errors.sutikimas"
@@ -67,7 +67,7 @@
     field-label="Sutikimas"
   />
 
-  <SelectField
+  <RcSesSelectField
     v-model="modelTerminas"
     v-bind="modelTerminasProps"
     :error="errors.terminas"
@@ -95,7 +95,7 @@
     ]"
   />
 
-  <NumberStepperField
+  <RcSesNumberStepperField
     v-model="modelEgzemplioriuSkaicius"
     v-bind="modelEgzemplioriuSkaiciusProps"
     :error="errors.egzemplioriuSkaicius"

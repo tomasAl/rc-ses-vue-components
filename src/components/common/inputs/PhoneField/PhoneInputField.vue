@@ -50,7 +50,7 @@
         @update="updateVList"
       >
         <v-card elevation="4">
-          <SearchableArea v-model="searchValue" />
+          <RcSesSearchableArea v-model="searchValue" />
           <v-virtual-scroll
             :items="computedCountries"
             max-height="300"
@@ -90,7 +90,7 @@ import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
-import SearchableArea from '@/components/common/inputs/SearchableArea/SearchableArea.vue'
+import SearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
 import type { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
 
 import './PhoneFieldStyle.scss'

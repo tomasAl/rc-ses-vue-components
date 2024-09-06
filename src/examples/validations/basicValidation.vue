@@ -5,7 +5,7 @@
       <ErrorMessage name="email" />
       <Field name="password" type="password" />
       <ErrorMessage name="password" />
-      <button type="submit">Submit</button>
+      <RcSesButton type="submit">Submit</RcSesButton>
     </form>
   </VeeForm>
 </template>

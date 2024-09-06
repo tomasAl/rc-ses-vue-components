@@ -1,6 +1,6 @@
 <template>
   <!--    <Field v-slot="fieldProps" name="trumpas">
-      <TextField
+      <RcSesTextField
         v-bind="fieldProps.field"
         class="form-control"
         field-label="Trumpas tekstas"
@@ -13,7 +13,7 @@
       ></TextField>
     </Field>-->
 
-  <TextField
+  <RcSesTextField
     v-model="modelIlgasTekstas"
     v-bind="modelIlgasTekstasProps"
     class="form-control"
@@ -25,7 +25,7 @@
     messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
     counter="300"
     :error="errors.ilgas"
-  ></TextField>
+  ></RcSesTextField>
 
   <v-btn type="submit" color="primary" @click="submit">Submit</v-btn>
 </template>
