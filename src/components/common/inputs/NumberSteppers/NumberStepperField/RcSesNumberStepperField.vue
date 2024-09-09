@@ -15,6 +15,7 @@
 
 <script setup lang="ts">
 import { withDefaults } from 'vue'
+
 import { NumberStepperFieldProps } from '@/components/common/inputs/NumberSteppers/NumberStepperField/type'
 
 withDefaults(defineProps<NumberStepperFieldProps>(), {

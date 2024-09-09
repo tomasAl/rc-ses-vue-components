@@ -18,7 +18,7 @@
     <thead class="no-border">
       <tr class="bg-grey-100">
         <th class="text-left" colspan="2">Paslauga</th>
-        <th class="text-center" width="120">Kaina, Eur</th>
+        <th class="text-center" style="width: 120px">Kaina, Eur</th>
       </tr>
     </thead>
     <tbody>
@@ -32,7 +32,7 @@
             <td v-if="variantIndex === 0" :rowspan="item.variants.length">
               {{ item.name }}
             </td>
-            <td width="200">{{ variant.name }}</td>
+            <td style="width: 200px">{{ variant.name }}</td>
             <td class="text-center">{{ variant.price }}</td>
           </tr>
         </template>
