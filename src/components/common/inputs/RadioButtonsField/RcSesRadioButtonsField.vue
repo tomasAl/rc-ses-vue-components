@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper
+  <RcSesFieldWrapper
     v-bind="fieldWrapperProps"
     class="rc-radio-buttons-field"
     :label="fieldLabel"
@@ -31,7 +31,7 @@
         {{ option.label }}
       </v-btn>
     </v-radio-group>
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">

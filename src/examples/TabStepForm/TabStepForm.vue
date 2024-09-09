@@ -1,5 +1,5 @@
 <template>
-  <ServiceFormTabContainer title="test 123">
+  <RcSesFormTabContainer title="Form tab container title">
     <template #actions>
       <FormActions />
     </template>
@@ -10,14 +10,14 @@
 
     <template #default>
       <v-tabs v-model="tab" class="rc-tabs">
-        <Tab
+        <RcSesTab
           v-for="item in items"
           :key="item.value"
           variant="outlined"
           @click="tab = item.value"
         >
           {{ item.title }}
-        </Tab>
+        </RcSesTab>
       </v-tabs>
       <v-window v-model="tab">
         <v-window-item v-for="item in items" :key="item.value" class="rcs-ft-window">
@@ -25,7 +25,7 @@
         </v-window-item>
       </v-window>
     </template>
-  </ServiceFormTabContainer>
+  </RcSesFormTabContainer>
 </template>
 
 <script setup lang="ts">

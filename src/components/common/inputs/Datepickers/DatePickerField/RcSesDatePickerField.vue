@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <RcSesFieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <RcSesDatePicker
       v-model="model"
       v-bind="$attrs"
@@ -11,7 +11,7 @@
       :disabled="disabled"
       :readonly="readonly"
     />
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">

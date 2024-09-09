@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
-import { TabProps } from '@/types/tabs/TabProps'
+import { TabProps } from '@/components/common/tabs/type'
 
 const model = defineModel<never>()
 

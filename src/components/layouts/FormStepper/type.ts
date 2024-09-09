@@ -1,5 +1,5 @@
 import { AccordionControllerState } from '@/components/common/Accordion/types/AccordionControllerState'
 
-export type VerticalStepperProps = {
+export type FormStepperProps = {
   items: AccordionControllerState
 }

@@ -1,6 +1,6 @@
 <template>
   <form>
-    <ServiceFormContainer
+    <RcSesFormContainer
       :accordion-controller="accordionController"
       :form-controller="formController"
     >
@@ -30,7 +30,7 @@
           <TerminaiForm />
         </RcSesAccordion>
       </template>
-    </ServiceFormContainer>
+    </RcSesFormContainer>
   </form>
 </template>
 <script setup lang="ts">

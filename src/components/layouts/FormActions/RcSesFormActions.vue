@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import './FormActionPanelStyle.scss'
+import './style.scss'
 </script>

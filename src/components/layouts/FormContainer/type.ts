@@ -5,7 +5,7 @@ import { FormWrapperPanelProps } from '@/types/forms/FormWrapperProps'
 
 export type StepPageLayoutItemProps = FormWrapperPanelProps
 
-export type ServiceFormContainerProps = {
+export type FormContainerProps = {
   accordionController: ReturnType<typeof useAccordionController>
   formController?: ReturnType<typeof useForm>
   singleForm?: boolean

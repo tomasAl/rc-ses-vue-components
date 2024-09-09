@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper
+  <RcSesFieldWrapper
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
@@ -43,7 +43,7 @@
         <slot name="prepend-inner" v-bind="binds" />
       </template>
     </v-text-field>
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">

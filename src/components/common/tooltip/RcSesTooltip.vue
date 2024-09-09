@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import './TooltipStyle.scss'
+import './style.scss'
 
 interface TooltipProps {
   title?: string

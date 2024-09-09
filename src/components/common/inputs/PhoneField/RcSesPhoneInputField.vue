@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper
+  <RcSesFieldWrapper
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
@@ -80,7 +80,7 @@
         </v-card>
       </v-menu>
     </v-text-field>
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
@@ -90,10 +90,9 @@ import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
-import SearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
-import type { PhoneInputFieldProps } from '@/types/inputs/PhoneInputFieldProps'
+import type { PhoneInputFieldProps } from '@/components/common/inputs/PhoneField/type'
 
-import './PhoneFieldStyle.scss'
+import './style.scss'
 
 interface Country {
   name: string
@@ -142,7 +141,7 @@ const handleModel = (event: InputEvent) => {
   // TODO: fix this
 
   inputValue.value = inputValue.value ? inputValue.value + event.data : event.data ?? ''
-  //model.value = model.value ? model.value + event.data : event.data ?? ''
+  // model.value = model.value ? model.value + event.data : event.data ?? ''
 
   model.value = (selectedCountry?.value?.code ?? '') + inputValue.value
 }

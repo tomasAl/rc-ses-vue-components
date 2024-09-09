@@ -1,30 +1,29 @@
 import type { App, Plugin } from 'vue'
 
-import Alert from '@/components/common/Alert/RcSesAlert.vue'
-import Button from '@/components/common/buttons/Button/RcSesButton.vue'
-import FormWrapper from '@/components/common/forms/FormWrapper/FormWrapper.vue'
-import Checkbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
-import CheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
-import DatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
-import DatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
-import FieldWrapper from '@/components/common/inputs/FieldWrapper/FieldWrapper.vue'
-import FileInput from '@/components/common/inputs/FileInputs/FileInput/RcSesFileInput.vue'
-import FileInputField from '@/components/common/inputs/FileInputs/FileInputField/RcSesFileInputField.vue'
-import NumberStepper from '@/components/common/inputs/NumberSteppers/NumberStepper/RcSesNumberStepper.vue'
-import NumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
-import PhoneInputField from '@/components/common/inputs/PhoneField/PhoneInputField.vue'
-import Radio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
-import RadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
-import RadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
-import SearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
-import SearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
-import SelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
-import TextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
-import FormActionPanel from '@/components/common/panels/FormActionPanel/FormActionPanel.vue'
-import FormPanel from '@/components/common/panels/FormPanel/FormPanel.vue'
-import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import VerticalStepper from '@/components/common/steppers/VerticalStepper/VerticalStepper.vue'
-import ServiceFormContainer from '@/components/layouts/ServiceFormContainer/ServiceFormContainer.vue'
+import RcSesAlert from '@/components/common/Alert/RcSesAlert.vue'
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
+import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
+import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
+import RcSesDatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
+import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
+import RcSesFileInput from '@/components/common/inputs/FileInputs/FileInput/RcSesFileInput.vue'
+import RcSesFileInputField from '@/components/common/inputs/FileInputs/FileInputField/RcSesFileInputField.vue'
+import RcSesNumberStepper from '@/components/common/inputs/NumberSteppers/NumberStepper/RcSesNumberStepper.vue'
+import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
+import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
+import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
+import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
+import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
+import RcSesSearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
+import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import RcSesFormActions from '@/components/layouts/FormActions/RcSesFormActions.vue'
+import RcSesFormContainer from '@/components/layouts/FormContainer/RcSesFormContainer.vue'
+import RcSesFormStepper from '@/components/layouts/FormStepper/RcSesFormStepper.vue'
+import RcSesFormTabContainer from '@/components/layouts/FormTabContainer/RcSesFormTabContainer.vue'
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 
@@ -35,46 +34,50 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
   const install = (app: App) => {
     app.provide(globalOptions, options)
 
+    // Layout components
     app
-      .component('HeaderPanel', HeaderPanel)
-      .component('FieldWrapper', FieldWrapper)
-      .component('FormWrapper', FormWrapper)
-      .component('FormPanel', FormPanel)
-      .component('ServiceFormContainer', ServiceFormContainer)
+      .component('RcSesHeader', RcSesHeader)
+      .component('RcSesFieldWrapper', RcSesFieldWrapper)
+      .component('RcSesFormContainer', RcSesFormContainer)
+      .component('RcSesTabFormContainer', RcSesFormTabContainer)
+      .component('RcSesFormStepper', RcSesFormStepper)
+      .component('RcSesFormActions', RcSesFormActions)
 
-    app.component('VerticalStepper', VerticalStepper)
-
-    app.component('FormActionPanel', FormActionPanel)
-
-    app.component('Alert', Alert)
+    app.component('RcSesAlert', RcSesAlert)
 
     // eslint-disable-next-line vue/no-reserved-component-names
-    app.component('Button', Button)
+    app.component('RcSesButton', RcSesButton)
 
-    app.component('Checkbox', Checkbox)
+    app.component('RcSesCheckbox', RcSesCheckbox)
 
-    app.component('CheckboxField', CheckboxField)
-
-    app.component('DatePicker', DatePicker).component('DatePickerField', DatePickerField)
-
-    app.component('FileInput', FileInput).component('FileInputField', FileInputField)
+    app.component('RcSesCheckboxField', RcSesCheckboxField)
 
     app
-      .component('NumberStepper', NumberStepper)
-      .component('NumberStepperField', NumberStepperField)
-
-    app.component('PhoneInputField', PhoneInputField)
+      .component('RcSesDatePicker', RcSesDatePicker)
+      .component('RcSesDatePickerField', RcSesDatePickerField)
 
     app
-      .component('Radio', Radio)
-      .component('RadioField', RadioField)
-      .component('RadioButtonsField', RadioButtonsField)
+      .component('RcSesFileInput', RcSesFileInput)
+      .component('RcSesFileInputField', RcSesFileInputField)
 
-    app.component('SearchableArea', SearchableArea).component('SearchField', SearchField)
+    app
+      .component('RcSesNumberStepper', RcSesNumberStepper)
+      .component('RcSesNumberStepperField', RcSesNumberStepperField)
 
-    app.component('SelectField', SelectField)
+    app.component('RcSesPhoneInputField', RcSesPhoneInputField)
 
-    app.component('TextField', TextField)
+    app
+      .component('RcSesRadio', RcSesRadio)
+      .component('RcSesRadioField', RcSesRadioField)
+      .component('RcSesRadioButtonsField', RcSesRadioButtonsField)
+
+    app
+      .component('RcSesSearchableArea', RcSesSearchableArea)
+      .component('RcSesSearchField', RcSesSearchField)
+
+    app.component('RcSesSelectField', RcSesSelectField)
+
+    app.component('RcSesTextField', RcSesTextField)
   }
 
   return { install }
@@ -82,15 +85,20 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
 
 export { createRcSesVuetify }
 
-export { FormActionPanel, FormPanel, HeaderPanel }
-export { FieldWrapper, FormWrapper, VerticalStepper }
-export { Alert, Button }
-export { Checkbox, CheckboxField }
-export { FileInput, FileInputField }
-export { DatePicker, DatePickerField }
-export { ServiceFormContainer }
-export { NumberStepper, NumberStepperField }
-export { PhoneInputField }
-export { Radio, RadioButtonsField, RadioField }
-export { SearchableArea, SelectField, SearchField }
-export { TextField }
+export {
+  RcSesHeader,
+  RcSesFieldWrapper,
+  RcSesFormContainer,
+  RcSesFormTabContainer,
+  RcSesFormStepper,
+  RcSesFormActions,
+}
+export { RcSesAlert, RcSesButton }
+export { RcSesCheckbox, RcSesCheckboxField }
+export { RcSesFileInput, RcSesFileInputField }
+export { RcSesDatePicker, RcSesDatePickerField }
+export { RcSesNumberStepper, RcSesNumberStepperField }
+export { RcSesPhoneInputField }
+export { RcSesRadio, RcSesRadioButtonsField, RcSesRadioField }
+export { RcSesSearchableArea, RcSesSelectField, RcSesSearchField }
+export { RcSesTextField }

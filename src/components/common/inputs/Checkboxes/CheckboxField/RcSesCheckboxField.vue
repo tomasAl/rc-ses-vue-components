@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper
+  <RcSesFieldWrapper
     v-bind="fieldWrapperProps"
     class="rc-checkbox-field"
     :label="fieldLabel"
@@ -16,13 +16,14 @@
         @update:model-value="$emit('update:modelValue', $event)"
       />
     </v-card>
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
 import CheckboxDefaults from '@/components/common/inputs/Checkboxes/Checkbox/defaults'
+
 import { CheckboxFieldProps } from './types'
 
 defineOptions({

@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import './FieldWrapper.scss'
+import './style.scss'
 
 type Props = {
   label?: string

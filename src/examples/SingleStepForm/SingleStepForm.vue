@@ -1,5 +1,5 @@
 <template>
-  <ServiceFormContainer :accordion-controller="accordionController" single-form>
+  <RcSesFormContainer :accordion-controller="accordionController" single-form>
     <template #actions>
       <FormActions />
     </template>
@@ -13,7 +13,7 @@
         <UzsakymasForm />
       </RcSesAccordion>
     </template>
-  </ServiceFormContainer>
+  </RcSesFormContainer>
 </template>
 <script setup lang="ts">
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'

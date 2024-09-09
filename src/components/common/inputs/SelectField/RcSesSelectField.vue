@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper
+  <RcSesFieldWrapper
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
@@ -52,7 +52,7 @@
         </v-list-item>
       </template>
     </v-select>
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">

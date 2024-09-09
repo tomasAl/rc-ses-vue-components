@@ -7,17 +7,16 @@
       </v-card-text>
     </v-card>
 
-    <FormActionPanel v-if="$slots.actions" class="mt-4">
+    <RcSesFormActions v-if="$slots.actions" class="mt-4">
       <slot name="actions"></slot>
-    </FormActionPanel>
+    </RcSesFormActions>
 
     <slot v-if="$slots['actions-after']" name="actions-after" />
   </v-container>
 </template>
 
 <script setup lang="ts">
-
-import './ServiceFormTabContainerStyle.scss'
+import './style.scss'
 
 interface Props {
   title: string

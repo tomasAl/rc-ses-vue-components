@@ -2,11 +2,11 @@
   <v-container class="pa-0">
     <v-row no-gutters>
       <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
-        <VerticalStepper
+        <RcSesFormStepper
           v-if="Object.keys(state).length > 1"
           :items="state"
           style="margin-top: 2.875rem"
-        ></VerticalStepper>
+        ></RcSesFormStepper>
       </v-col>
       <v-col sm="12" md="8" lg="9" xl="10">
         <div class="rc-form-wrapper">
@@ -38,9 +38,9 @@
         </div>
 
         <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
-          <FormActionPanel v-if="$slots.actions">
+          <RcSesFormActions v-if="$slots.actions">
             <slot name="actions" v-bind="{ formController, accordionController }"></slot>
-          </FormActionPanel>
+          </RcSesFormActions>
         </slot>
 
         <slot v-if="$slots['actions-after']" name="actions-after" />
@@ -54,10 +54,10 @@ import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
 import UseFormType from '@/types/forms/UseFormType'
 
-import './ServiceFormContainerStyle.scss'
-import { ServiceFormContainerProps } from './ServiceFormContainerType'
+import './style.scss'
+import { FormContainerProps } from './type'
 
-const props = defineProps<ServiceFormContainerProps>()
+const props = defineProps<FormContainerProps>()
 
 const { collapseAll, expandAll, state, toggleAccordion } = props.accordionController
 

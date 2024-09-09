@@ -62,7 +62,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="telefonas">
-        <PhoneInputField
+        <RcSesPhoneInputField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Telefono Nr."

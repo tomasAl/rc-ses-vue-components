@@ -16,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import type { HeaderPanelProps } from '@/types/layouts/HeaderPanelProps'
+import type { HeaderPanelProps } from '@/components/layouts/Header/type'
 
-import './HeaderPanelStyle.scss'
+import './style.scss'
 
 withDefaults(defineProps<HeaderPanelProps>(), {})
 </script>

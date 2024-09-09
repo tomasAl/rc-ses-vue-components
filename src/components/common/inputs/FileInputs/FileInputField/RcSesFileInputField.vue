@@ -1,7 +1,7 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <RcSesFieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <RcSesFileInput v-model="model" v-bind="props" />
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">

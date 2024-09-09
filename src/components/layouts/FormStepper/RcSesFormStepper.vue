@@ -34,9 +34,9 @@
 <script setup lang="ts">
 import DotActive from '@/assets/icons/filled/DotActive.vue'
 import DotInactive from '@/assets/icons/filled/DotInactive.vue'
-import { VerticalStepperProps } from '@/components/common/steppers/VerticalStepper/VerticalStepperProps'
+import { FormStepperProps } from '@/components/layouts/FormStepper/type'
 
-import './VerticalStepperStyle.scss'
+import './style.scss'
 
-defineProps<VerticalStepperProps>()
+defineProps<FormStepperProps>()
 </script>

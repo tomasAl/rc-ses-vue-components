@@ -1,5 +1,5 @@
 <template>
-  <FieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <RcSesFieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
     <RcSesNumberStepper
       v-model="model"
       :min="min"
@@ -10,7 +10,7 @@
       :error="error"
       :max-width="maxWidth"
     />
-  </FieldWrapper>
+  </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
