@@ -23,6 +23,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
+
 import './style.scss'
 
 const emits = defineEmits(['updateCheckAll', 'cleared'])

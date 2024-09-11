@@ -15,6 +15,9 @@
 </template>
 
 <script setup lang="ts">
+import RcSesDatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
+
 import { DatePickerFieldProps } from './types'
 
 defineOptions({

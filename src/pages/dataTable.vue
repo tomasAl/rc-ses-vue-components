@@ -46,7 +46,9 @@
 </template>
 
 <script setup lang="ts">
+import RcSesTable from '@/components/common/tables/table/RcSesTable.vue'
 import { TableItem } from '@/components/common/tables/table/TableProps'
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 
 const services = ref<TableItem[]>([
   {

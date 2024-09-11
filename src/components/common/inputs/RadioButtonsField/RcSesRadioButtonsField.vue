@@ -37,6 +37,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/type'
 
 import RadioButtonsFieldDefaults from './defaults'

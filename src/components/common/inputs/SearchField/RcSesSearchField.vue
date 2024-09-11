@@ -35,6 +35,7 @@
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
 import SearchFieldDefaults from '@/components/common/inputs/SearchField/defaults'
 import type { SearchFieldProps } from '@/components/common/inputs/SearchField/type'
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 
 const props = withDefaults(defineProps<SearchFieldProps>(), SearchFieldDefaults)
 const model = defineModel<string | number | undefined>()

@@ -59,6 +59,8 @@
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
+import RcSesSearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
 import SelectFieldDefaults from '@/components/common/inputs/SelectField/defaults'
 import type {
   SelectFieldItemType,

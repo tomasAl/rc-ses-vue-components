@@ -16,6 +16,8 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
+import RcSesNumberStepper from '@/components/common/inputs/NumberSteppers/NumberStepper/RcSesNumberStepper.vue'
 import { NumberStepperFieldProps } from '@/components/common/inputs/NumberSteppers/NumberStepperField/type'
 
 withDefaults(defineProps<NumberStepperFieldProps>(), {

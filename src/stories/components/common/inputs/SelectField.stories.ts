@@ -2,9 +2,9 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
-import SelectArgTypes from '@/stories/components/argTypes/components/SelectArgTypes'
 import type { SelectFieldProps } from '@/components/common/inputs/SelectField/type'
 import { SelectFieldItemType } from '@/components/common/inputs/SelectField/type'
+import SelectArgTypes from '@/stories/components/argTypes/components/SelectArgTypes'
 
 export default {
   title: 'components/common/inputs/SelectField',

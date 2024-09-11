@@ -22,7 +22,9 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
+import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
 import CheckboxDefaults from '@/components/common/inputs/Checkboxes/Checkbox/defaults'
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 
 import { CheckboxFieldProps } from './types'
 

@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
 import UseFormType from '@/types/forms/UseFormType'
 
 const formController = inject<UseFormType>('formController')

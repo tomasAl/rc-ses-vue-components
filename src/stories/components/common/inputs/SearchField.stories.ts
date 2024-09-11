@@ -2,8 +2,8 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
-import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 import type { SearchFieldProps } from '@/components/common/inputs/SearchField/type'
+import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
 
 const meta = {
   title: 'components/common/inputs/SearchField',

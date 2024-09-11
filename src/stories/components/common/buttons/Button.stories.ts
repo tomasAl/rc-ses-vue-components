@@ -1,18 +1,19 @@
 import { StoryFn } from '@storybook/vue3'
 
-import Button from '@/components/common/buttons/Button/RcSesButton.vue'
-import ButtonArgTypes from '@/stories/components/argTypes/components/ButtonArgTypes'
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 import type { ButtonProps } from '@/components/common/buttons/Button/types'
+import ButtonArgTypes from '@/stories/components/argTypes/components/ButtonArgTypes'
 
 export default {
+  components: { RcSesButton },
   title: 'components/common/buttons/Button',
-  component: Button,
+  component: RcSesButton,
   tags: ['autodocs'],
   argTypes: ButtonArgTypes,
 }
 
 const Template: StoryFn<ButtonProps> = (args) => ({
-  components: { Button },
+  components: { RcSesButton },
   setup() {
     return { args }
   },

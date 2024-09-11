@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="ts">
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
+import RcSesFileInput from '@/components/common/inputs/FileInputs/FileInput/RcSesFileInput.vue'
 import { FileInputFieldProps } from '@/components/common/inputs/FileInputs/FileInputField/type'
 
 const props = defineProps<FileInputFieldProps>()

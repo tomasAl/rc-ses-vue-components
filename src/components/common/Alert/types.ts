@@ -1,12 +1,13 @@
 import type { VAlert } from 'vuetify/components'
+
 import type { ColorType } from '@/types/common/ColorType'
 
 export type AlertVariants = 'light' | 'dark'
 
 export interface AlertProps {
   id?: string
-  variant: AlertVariants
-  closeable?: boolean
+  variant?: AlertVariants
+  closable?: boolean
   color?: ColorType
   border?: VAlert['$props']['border']
   borderColor?: VAlert['$props']['borderColor']

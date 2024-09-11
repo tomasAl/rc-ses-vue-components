@@ -49,6 +49,7 @@
 <script setup lang="ts">
 import { VTextField } from 'vuetify/components/VTextField'
 
+import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import TextFieldDefaults from '@/components/common/inputs/TextField/defaults'
 import { TextFieldProps } from '@/components/common/inputs/TextField/type'
 

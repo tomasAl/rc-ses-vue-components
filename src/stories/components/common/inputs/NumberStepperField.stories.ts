@@ -2,8 +2,8 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
-import NumberStepperArgTypes from '@/stories/components/argTypes/components/NumberStepperArgTypes'
 import { NumberStepperFieldProps } from '@/components/common/inputs/NumberSteppers/NumberStepperField/type'
+import NumberStepperArgTypes from '@/stories/components/argTypes/components/NumberStepperArgTypes'
 
 export default {
   title: 'components/common/inputs/NumberStepperField',

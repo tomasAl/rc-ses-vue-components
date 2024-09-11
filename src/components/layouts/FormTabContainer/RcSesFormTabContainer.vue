@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+import RcSesFormActions from '@/components/layouts/FormActions/RcSesFormActions.vue'
+
 import './style.scss'
 
 interface Props {

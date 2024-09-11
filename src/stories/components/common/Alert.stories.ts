@@ -1,12 +1,12 @@
 // Alert.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import Alert from '@/components/common/Alert/RcSesAlert.vue'
+import RcSesAlert from '@/components/common/Alert/RcSesAlert.vue'
 import type { AlertProps } from '@/components/common/Alert/types'
 
 export default {
   title: 'components/common/Alert',
-  component: Alert,
+  component: RcSesAlert,
 
   tags: ['autodocs'],
 } as Meta
@@ -15,7 +15,7 @@ const lorem =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
 
 const Template: StoryFn<AlertProps> = (args) => ({
-  components: { Alert },
+  components: { RcSesAlert },
   setup() {
     return { args, lorem }
   },

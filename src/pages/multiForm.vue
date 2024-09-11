@@ -21,5 +21,6 @@
 </template>
 
 <script setup lang="ts">
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import MultiStepForm from '@/examples/MultiStepForm/MultiStepForm.vue'
 </script>

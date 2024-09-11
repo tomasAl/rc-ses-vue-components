@@ -6,9 +6,9 @@
 import { computed } from 'vue'
 
 import RadioDefaults from '@/components/common/inputs/Radios/Radio/defaults'
+import { RadioProps } from '@/components/common/inputs/Radios/Radio/type'
 
 import './style.scss'
-import { RadioProps } from '@/components/common/inputs/Radios/Radio/type'
 
 const props = withDefaults(defineProps<RadioProps>(), RadioDefaults)
 

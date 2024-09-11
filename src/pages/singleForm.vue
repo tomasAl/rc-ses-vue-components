@@ -21,5 +21,6 @@
 </template>
 
 <script setup lang="ts">
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import SingleStepForm from '@/examples/SingleStepForm/SingleStepForm.vue'
 </script>

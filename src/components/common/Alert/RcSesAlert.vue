@@ -1,10 +1,5 @@
 <template>
-  <v-alert
-    class="rc-alert"
-    v-bind="props"
-    variant="flat"
-    :class="classes"
-  >
+  <v-alert class="rc-alert" v-bind="props" variant="flat" :class="classes">
     <template #text>
       <slot>{{ text }}</slot>
     </template>
@@ -14,10 +9,10 @@
 <script setup lang="ts">
 import { computed, withDefaults } from 'vue'
 
+import AlertDefaults from '@/components/common/Alert/defaults'
 import type { AlertProps } from '@/components/common/Alert/types'
 
 import './style.scss'
-import AlertDefaults from '@/components/common/Alert/defaults'
 
 const props = withDefaults(defineProps<AlertProps>(), AlertDefaults)
 

@@ -16,7 +16,9 @@
   </RcSesFormContainer>
 </template>
 <script setup lang="ts">
+import RcSesAccordion from '@/components/common/Accordion/RcSesAccordion.vue'
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
+import RcSesFormContainer from '@/components/layouts/FormContainer/RcSesFormContainer.vue'
 import FormActions from '@/examples/shared/FormActions.vue'
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'
 

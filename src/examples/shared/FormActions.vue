@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import ArrowRightIcon from '@/assets/icons/regular/ArrowRightIcon.vue'
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 import UseFormType from '@/types/forms/UseFormType'
 
 const formController = inject<UseFormType>('formController')

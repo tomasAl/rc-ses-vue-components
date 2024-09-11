@@ -196,10 +196,16 @@ import { toTypedSchema } from '@vee-validate/yup'
 import { Field, Form as VeeForm, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
-import DatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
-import FileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
-
-const sutikimas = ref<boolean>(false)
+import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
+import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
+import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
+import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
+import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
+import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
+import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
+import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),

@@ -52,6 +52,8 @@
 <script setup lang="ts">
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
+import RcSesFormActions from '@/components/layouts/FormActions/RcSesFormActions.vue'
+import RcSesFormStepper from '@/components/layouts/FormStepper/RcSesFormStepper.vue'
 import UseFormType from '@/types/forms/UseFormType'
 
 import './style.scss'

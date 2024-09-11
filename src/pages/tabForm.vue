@@ -20,5 +20,6 @@
   <ExampleTabbedForm />
 </template>
 <script setup lang="ts">
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import ExampleTabbedForm from '@/examples/TabStepForm/TabStepForm.vue'
 </script>

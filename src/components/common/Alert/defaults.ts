@@ -1,4 +1,5 @@
 import type { VAlert } from 'vuetify/components'
+
 import { AlertVariants } from '@/components/common/Alert/types'
 
 export default {

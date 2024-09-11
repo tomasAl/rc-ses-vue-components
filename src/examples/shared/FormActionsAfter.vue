@@ -5,3 +5,6 @@
     >
   </div>
 </template>
+<script setup lang="ts">
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
+</script>

@@ -1,10 +1,9 @@
 // FileInputField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-
 import RcSesFileInputField from '@/components/common/inputs/FileInputs/FileInputField/RcSesFileInputField.vue'
-import FileInputFieldArgTypes from '@/stories/components/argTypes/components/FileInputFieldArgTypes'
 import { FileInputFieldProps } from '@/components/common/inputs/FileInputs/FileInputField/type'
+import FileInputFieldArgTypes from '@/stories/components/argTypes/components/FileInputFieldArgTypes'
 
 export default {
   title: 'components/common/inputs/FileInputField',

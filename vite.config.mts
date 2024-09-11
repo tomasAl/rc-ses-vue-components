@@ -27,9 +27,9 @@ export default defineConfig({
       ],
       vueTemplate: true,
     }),
-    components({
+    /* components({
       dts: 'src/components.d.ts',
-    }),
+    }), */
     vue({
       template: { transformAssetUrls },
     }),

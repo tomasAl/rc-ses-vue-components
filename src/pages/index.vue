@@ -21,6 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+
 const router = useRouter()
 
 const items = ref([

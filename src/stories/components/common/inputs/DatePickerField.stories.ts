@@ -2,8 +2,8 @@
 import { Meta, StoryFn } from '@storybook/vue3'
 
 import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
-import DatePickerFieldArgTypes from '@/stories/components/argTypes/components/DatePickerFieldArgTypes'
 import { DatePickerFieldProps } from '@/components/common/inputs/Datepickers/DatePickerField/types'
+import DatePickerFieldArgTypes from '@/stories/components/argTypes/components/DatePickerFieldArgTypes'
 
 export default {
   title: 'components/common/inputs/DatePickerField',

@@ -4,7 +4,6 @@ import { Meta, StoryFn } from '@storybook/vue3'
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
 import { CheckboxFieldProps } from '@/components/common/inputs/Checkboxes/CheckboxField/types'
 
-
 export default {
   title: 'components/common/inputs/CheckboxField',
   component: RcSesCheckboxField,
