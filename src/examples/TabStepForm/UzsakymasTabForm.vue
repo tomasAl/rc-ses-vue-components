@@ -49,7 +49,7 @@
     ]"
   />
 
-  <PhoneInputField
+  <RcSesPhoneInputField
     v-model="modelTelefonas"
     field-label="Telefono Nr."
     class="form-control"
@@ -89,8 +89,6 @@
     field-label="Sutikimas"
   />
 
-
-
   <v-divider class="form-control" />
 
   <RcSesTextField
@@ -129,11 +127,22 @@
     ]"
   />
 
-  <RcSesFileDropzoneField v-model="modelFiles"  field-label="Įkelti dokumentus"  multiple />
+  <RcSesFileDropzoneField v-model="modelFiles" field-label="Įkelti dokumentus" multiple />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
+import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
+import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
+import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
+import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
+import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
+import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
+import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
 
 const modelFiles = ref()
 const modeRadioPasirinkimas = ref()

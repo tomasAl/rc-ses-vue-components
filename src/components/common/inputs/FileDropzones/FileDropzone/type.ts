@@ -1,4 +1,4 @@
-import type { FileUploadOptions } from 'vue3-dropzone/dist/useDropzone'
+import { FileUploadOptions } from 'vue3-dropzone'
 
 export type FileDropzoneProps = Partial<FileUploadOptions> & {
   name?: string

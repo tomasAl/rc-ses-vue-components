@@ -17,12 +17,18 @@
 
 <script setup lang="ts">
 import RcSesFormActions from '@/components/layouts/FormActions/RcSesFormActions.vue'
+import UseFormType from '@/types/forms/UseFormType'
 
 import './style.scss'
 
 interface Props {
+  formController?: UseFormType
   title: string
 }
 
-withDefaults(defineProps<Props>(), {})
+const props = withDefaults(defineProps<Props>(), {
+  formController: undefined,
+})
+
+provide<UseFormType>('formController', props.formController)
 </script>

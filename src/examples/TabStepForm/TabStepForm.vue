@@ -29,6 +29,8 @@
 </template>
 
 <script setup lang="ts">
+import RcSesTab from '@/components/common/tabs/RcSesTab.vue'
+import RcSesFormTabContainer from '@/components/layouts/FormTabContainer/RcSesFormTabContainer.vue'
 import UzsakymasTabForm from '@/examples/TabStepForm/UzsakymasTabForm.vue'
 import FormActions from '@/examples/shared/FormActions.vue'
 import FormActionsAfter from '@/examples/shared/FormActionsAfter.vue'

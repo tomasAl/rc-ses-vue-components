@@ -14,7 +14,7 @@ export default defineConfig({
     // vueRouter({
     //   dts: 'src/typed-router.d.ts',
     // }),
-    layouts(),
+
     autoImport({
       dts: 'src/auto-imports.d.ts',
       imports: [
@@ -27,6 +27,7 @@ export default defineConfig({
       ],
       vueTemplate: true,
     }),
+    layouts(),
     /* components({
       dts: 'src/components.d.ts',
     }), */

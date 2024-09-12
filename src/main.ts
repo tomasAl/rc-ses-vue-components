@@ -14,7 +14,7 @@ import router from './router'
 
 const app = createApp(App)
 
-registerPlugins(app)
 app.use(router)
+registerPlugins(app)
 
 app.mount('#app')
