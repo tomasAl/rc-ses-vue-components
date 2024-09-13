@@ -15,18 +15,18 @@ export default defineConfig({
     //   dts: 'src/typed-router.d.ts',
     // }),
 
-    autoImport({
-      dts: 'src/auto-imports.d.ts',
-      imports: [
-        'vue',
-        {
-          vue: ['CSSProperties'],
-          vuetify: ['useTheme'],
-          'vue-router/auto': ['useRoute', 'useRouter'],
-        },
-      ],
-      vueTemplate: true,
-    }),
+    // autoImport({
+    //   dts: 'src/auto-imports.d.ts',
+    //   imports: [
+    //     'vue',
+    //     {
+    //       vue: ['CSSProperties'],
+    //       vuetify: ['useTheme'],
+    //       'vue-router/auto': ['useRoute', 'useRouter'],
+    //     },
+    //   ],
+    //   vueTemplate: true,
+    // }),
     layouts(),
     /* components({
       dts: 'src/components.d.ts',

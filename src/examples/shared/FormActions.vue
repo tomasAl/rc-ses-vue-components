@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+
 import ArrowRightIcon from '@/assets/icons/regular/ArrowRightIcon.vue'
 import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 import UseFormType from '@/types/forms/UseFormType'

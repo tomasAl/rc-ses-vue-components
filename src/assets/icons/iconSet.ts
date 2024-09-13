@@ -1,4 +1,4 @@
-import { h } from 'vue'
+import { defineComponent, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
@@ -11,6 +11,7 @@ import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
 import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
 import RadioOffIcon from '@/assets/icons/inputs/RadioOffIcon.vue'
 import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
+import { TrashIcon } from '@/assets/icons/regular'
 import CalendarBlankIcon from '@/assets/icons/regular/CalendarBlankIcon.vue'
 import CaretDownIcon from '@/assets/icons/regular/CaretDownIcon.vue'
 import CaretLeftIcon from '@/assets/icons/regular/CaretLeftIcon.vue'
@@ -25,7 +26,6 @@ import PlusIcon from '@/assets/icons/regular/PlusIcon.vue'
 import QuestionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import XIcon from '@/assets/icons/regular/XIcon.vue'
-import { TrashIcon } from '@/assets/icons/regular'
 
 function createIconComponent(icon: any, size: number) {
   return defineComponent({

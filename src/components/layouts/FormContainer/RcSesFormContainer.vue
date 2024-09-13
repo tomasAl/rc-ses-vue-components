@@ -50,6 +50,8 @@
 </template>
 
 <script setup lang="ts">
+import { provide } from 'vue'
+
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
 import RcSesFormActions from '@/components/layouts/FormActions/RcSesFormActions.vue'

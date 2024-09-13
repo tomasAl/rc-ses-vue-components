@@ -21,6 +21,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 
 const router = useRouter()

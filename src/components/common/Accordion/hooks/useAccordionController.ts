@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 import { AccordionControllerState } from '../types/AccordionControllerState'
 
 function useAccordionController(initialState: AccordionControllerState) {

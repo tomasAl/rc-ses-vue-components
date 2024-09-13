@@ -1,5 +1,6 @@
 // RcSesTable.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
+import { ref } from 'vue'
 
 import RcSesTable from '@/components/common/tables/table/RcSesTable.vue'
 import { TableItem } from '@/components/common/tables/table/TableProps'
