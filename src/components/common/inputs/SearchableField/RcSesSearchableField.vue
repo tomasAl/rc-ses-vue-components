@@ -1,5 +1,10 @@
 <template>
-  <RcSesFieldWrapper>
+  <RcSesFieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :for="name"
+  >
     <RcSesTextField v-model="model" v-bind="$attrs" @click="openModal">
       <template #prepend-inner>
         <v-icon icon="$search" @click.stop="openModal" />
@@ -21,7 +26,6 @@
     :on-close="closeModal"
     :on-submit="submitModal"
   />
-  <div v-if="modalOpen">Debug: Modal should be open</div>
 </template>
 
 <script setup lang="ts">
@@ -39,15 +43,12 @@ defineOptions({
 
 const model = defineModel<string | number | undefined>()
 
-const props = defineProps<SearchableFieldProps>()
+defineProps<SearchableFieldProps>()
 
 const modalOpen = ref(false)
 
 const openModal = () => {
-  console.log('openModal called')
   modalOpen.value = true
-  console.log('modalOpen set to:', modalOpen.value)
-  console.log('ModalComponent:', props.modalComponent)
 }
 
 const closeModal = () => {

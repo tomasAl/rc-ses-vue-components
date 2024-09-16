@@ -1,91 +1,128 @@
 <template>
   <v-dialog v-model="dialog" max-width="900px">
     <v-card>
-      <v-card-title>Paieška pagal adresą</v-card-title>
+      <v-card-title class="py-6 px-6">Paieška pagal adresą</v-card-title>
 
       <v-card-text>
-        <v-form ref="form" @submit.prevent="handleOnSearch">
-          <v-row>
-            <v-col cols="12" md="6">
-              <v-text-field
-                v-model="formData.city"
-                label="Miestas"
-                :rules="[(v) => !!v || 'Privalomas laukas']"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="6">
-              <v-text-field
-                v-model="formData.street"
-                label="Gatvė"
-                :rules="[(v) => !!v || 'Privalomas laukas']"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="4">
-              <v-text-field
-                v-model="formData.addressNo"
-                label="Pastato nr."
-                :rules="[(v) => !!v || 'Privalomas laukas']"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="4">
-              <v-text-field
-                v-model="formData.housingNo"
-                label="Korpuso nr."
-                :rules="[(v) => !!v || 'Privalomas laukas']"
-              ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="4">
-              <v-text-field
-                v-model="formData.aptNo"
-                label="Patalpos nr."
-                :rules="[(v) => !!v || 'Privalomas laukas']"
-              ></v-text-field>
-            </v-col>
-          </v-row>
+        <VeeForm v-slot="{ handleSubmit }" :validation-schema="FormSchema" as="div">
+          <form @submit="handleSubmit($event, handleFormSubmit)">
+            <Field name="city">
+              <template #default="{ field, errorMessage }">
+                <RcSesTextField
+                  v-bind="field"
+                  :error="errorMessage"
+                  class="form-control"
+                  field-label="Miestas"
+                  placeholder="Įveskite miestą"
+                />
+              </template>
+            </Field>
+            <Field name="street">
+              <template #default="{ field, errorMessage }">
+                <RcSesTextField
+                  v-bind="field"
+                  :error="errorMessage"
+                  class="form-control"
+                  field-label="Gatvė"
+                  placeholder="Įveskite gatvę"
+                />
+              </template>
+            </Field>
+            <Field name="addressNo">
+              <template #default="{ field, errorMessage }">
+                <RcSesTextField
+                  v-bind="field"
+                  :error="errorMessage"
+                  class="form-control"
+                  field-label="Pastato nr."
+                  placeholder="Įveskite pastato numerį"
+                />
+              </template>
+            </Field>
+            <Field name="housingNo">
+              <template #default="{ field, errorMessage }">
+                <RcSesTextField
+                  v-bind="field"
+                  :error="errorMessage"
+                  class="form-control"
+                  field-label="Korpuso nr."
+                  placeholder="Įveskite korpuso numerį"
+                />
+              </template>
+            </Field>
+            <Field name="aptNo">
+              <template #default="{ field, errorMessage }">
+                <RcSesTextField
+                  v-bind="field"
+                  :error="errorMessage"
+                  class="form-control"
+                  field-label="Patalpos nr."
+                  placeholder="Įveskite patalpos numerį"
+                />
+              </template>
+            </Field>
 
-          <v-row justify="end">
-            <v-col cols="auto">
-              <v-btn type="submit">Ieškoti</v-btn>
-              <v-btn color="grey" variant="outlined" @click="handleOnReset"
-                >Išvalyti</v-btn
+            <div class="text-right">
+              <RcSesButton type="submit" color="primary" class="mr-2"
+                >Ieškoti</RcSesButton
               >
-            </v-col>
-          </v-row>
-        </v-form>
+              <RcSesButton color="grey" variant="outlined" @click="handleOnReset">
+                Išvalyti
+              </RcSesButton>
+            </div>
+          </form>
+        </VeeForm>
 
-        <v-divider class="my-4"></v-divider>
-
-        <v-table v-if="results.length">
-          <thead>
-            <tr>
-              <th>Reg. Nr.</th>
-              <th>Daiktas(-ai)</th>
-              <th>Unikalus Nr.</th>
-              <th>Adresas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="row in results" :key="row.regNo">
-              <td>{{ row.regNo }}</td>
-              <td>{{ row.type }}</td>
-              <td>{{ row.uniqueIdentifier }}</td>
-              <td>{{ row.address }}</td>
-            </tr>
-          </tbody>
-        </v-table>
+        <div v-if="results.length">
+          <v-divider class="mt-6 mb-4"></v-divider>
+          <v-table>
+            <thead>
+              <tr>
+                <th>Reg. Nr.</th>
+                <th>Daiktas(-ai)</th>
+                <th>Unikalus Nr.</th>
+                <th>Adresas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in results" :key="row.regNo">
+                <td>{{ row.regNo }}</td>
+                <td>{{ row.type }}</td>
+                <td>{{ row.uniqueIdentifier }}</td>
+                <td>{{ row.address }}</td>
+              </tr>
+            </tbody>
+          </v-table>
+        </div>
       </v-card-text>
 
-      <v-card-actions>
-        <v-btn :disabled="!results.length" @click="handleOnSubmit">Pridėti</v-btn>
-        <v-btn color="error" variant="outlined" @click="onClose">Atšaukti</v-btn>
+      <v-card-actions class="px-6 py-4 bg-grey-50">
+        <RcSesButton
+          class="mr-2"
+          color="primary"
+          :disabled="!results.length"
+          @click="handleOnSubmit"
+        >
+          Pridėti
+        </RcSesButton>
+        <RcSesButton color="error" variant="outlined" @click="onClose">
+          Atšaukti
+        </RcSesButton>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, computed } from 'vue'
+import { Field, Form as VeeForm, useForm } from 'vee-validate'
+import { computed, ref } from 'vue'
+import * as yup from 'yup'
 
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
+// Import custom input components
+import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+
+// Define interfaces
 interface FormModel {
   city: string
   street: string
@@ -101,6 +138,7 @@ interface Result {
   address: string
 }
 
+// Define props and emits
 const props = defineProps<{
   modelValue: boolean
   onSubmit: (value: string) => void
@@ -109,45 +147,52 @@ const props = defineProps<{
 
 const emit = defineEmits(['update:modelValue'])
 
+// Dialog visibility
 const dialog = computed({
   get: () => props.modelValue,
   set: (value) => emit('update:modelValue', value),
 })
 
-const form = ref<any>(null)
-const formData = reactive<FormModel>({
-  city: '',
-  street: '',
-  addressNo: '',
-  housingNo: '',
-  aptNo: '',
+// Form Schema using yup
+const FormSchema = yup.object({
+  city: yup.string().required('Miestas yra privalomas'),
+  street: yup.string().required('Gatvė yra privaloma'),
+  addressNo: yup.string().required('Pastato nr. yra privalomas'),
+  housingNo: yup.string().required('Korpuso nr. yra privalomas'),
+  aptNo: yup.string().required('Patalpos nr. yra privalomas'),
+})
+
+// Initialize form
+const { resetForm } = useForm<FormModel>({
+  validationSchema: FormSchema,
 })
 
 const results = ref<Result[]>([])
 
-const handleOnSearch = async () => {
-  const { valid } = await form.value.validate()
-  if (valid) {
-    results.value = [
-      {
-        regNo: '44/446848',
-        type: 'Mišrus pastatas',
-        uniqueIdentifier: '1099-2018-8012',
-        address: 'Vilnius, Vydūno g. 17',
-      },
-    ]
-  }
+function handleFormSubmit() {
+  results.value = [
+    {
+      regNo: '44/446848',
+      type: 'Mišrus pastatas',
+      uniqueIdentifier: '1099-2018-8012',
+      address: 'Vilnius, Vydūno g. 17',
+    },
+  ]
 }
 
+// Handle form reset
 const handleOnReset = () => {
+  resetForm()
   results.value = []
-  form.value.reset()
 }
 
+// Handle adding the selected result
 const handleOnSubmit = () => {
-  results.value = []
-  form.value.reset()
-  props.onSubmit('1099-2018-8012')
-  props.onClose()
+  if (results.value.length > 0 && results.value[0]) {
+    props.onSubmit(`${results.value[0].type}: ${results.value[0].uniqueIdentifier}`)
+    props.onClose()
+    resetForm()
+    results.value = []
+  }
 }
 </script>

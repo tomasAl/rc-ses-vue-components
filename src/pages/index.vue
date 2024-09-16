@@ -17,11 +17,6 @@
         <v-list-item-title>{{ item.title }}</v-list-item-title>
       </v-list-item>
     </v-list>
-
-    <RcSesButton color="primary" @click="dialog = true">Click</RcSesButton>
-    <SearchModal v-model="dialog" />
-
-    <RcSesSearchableField v-model="search" :modal-component="ModalInfo" />
   </v-container>
 </template>
 
@@ -29,15 +24,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
-import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
-import ModalInfo from '@/examples/modals/ModalInfo.vue'
-import SearchModal from '@/examples/modals/SearchModal.vue'
-
-const dialog = ref(false)
-const search = ref('')
-
 const router = useRouter()
 
 const items = ref([
@@ -62,4 +49,8 @@ const items = ref([
     routeTo: '/dataTable',
   },
 ])
+
+const onSubmit = (value: string) => {
+  console.log('onSubmit', value)
+}
 </script>

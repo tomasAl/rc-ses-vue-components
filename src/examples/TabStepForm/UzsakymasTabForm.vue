@@ -56,7 +56,12 @@
     default-iso="lt"
   />
 
-  <RcSesSearchField v-model="modelIeskoti" field-label="Ieškoti" class="form-control" />
+  <RcSesSearchableField
+    v-model="modelIeskoti"
+    field-label="Ieškoti"
+    class="form-control"
+    :modal-component="SearchModal"
+  />
 
   <RcSesDatePickerField
     v-model="modelData"
@@ -137,12 +142,13 @@ import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxFi
 import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
 import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
+import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
 import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
 import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
-import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearchField.vue'
+import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
-import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const modelFiles = ref()
 const modeRadioPasirinkimas = ref()
