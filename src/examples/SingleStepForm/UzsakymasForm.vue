@@ -8,7 +8,7 @@
           class="form-control"
           field-label="Trumpas tekstas"
           field-description="lorem ipsum."
-          nname="trumpas"
+          name="trumpas"
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text."
           counter="10"
@@ -23,7 +23,7 @@
           field-tooltip="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           field-label="Ilgas tekstas"
           field-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
-          nname="ilgas"
+          name="ilgas"
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           counter="300"
@@ -68,6 +68,7 @@
           field-label="Telefono Nr."
           class="form-control"
           default-iso="lt"
+          name="telefonas"
         />
       </Field>
 
@@ -78,6 +79,7 @@
           field-label="Ieškoti"
           class="form-control"
           :modal-component="SearchModal"
+          name="ieskoti"
         />
       </Field>
 
@@ -89,6 +91,7 @@
           class="form-control"
           :max-width="150"
           placeholder="Data"
+          name="data"
         />
       </Field>
 
@@ -101,6 +104,7 @@
           range
           :max-width="300"
           placeholder="Pradžia  →  Pabaiga"
+          name="laikotarpis"
         />
       </Field>
 
@@ -111,6 +115,7 @@
           class="form-control"
           field-label="Skaičius"
           :max-width="300"
+          name="skaicius"
         />
       </Field>
 
@@ -123,6 +128,7 @@
           }"
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
+          name="sutikimas"
           @update:model-value="fieldProps.handleChange"
         />
       </Field>
@@ -218,10 +224,8 @@ const FormSchema = yup.object({
   data: yup.string().required(),
   laikotarpis: yup.array().required(),
   skaicius: yup.number().required().min(5),
-  // sutikimas: yup.boolean().required(),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),
-  // files: yup.array().required(),
 })
 
 useForm({

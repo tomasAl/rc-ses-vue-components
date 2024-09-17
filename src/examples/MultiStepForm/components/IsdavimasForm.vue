@@ -57,6 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+
 import RcSesAlert from '@/components/common/Alert/RcSesAlert.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
 import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'

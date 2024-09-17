@@ -25,6 +25,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+
 const router = useRouter()
 
 const items = ref([
@@ -49,8 +50,4 @@ const items = ref([
     routeTo: '/dataTable',
   },
 ])
-
-const onSubmit = (value: string) => {
-  console.log('onSubmit', value)
-}
 </script>

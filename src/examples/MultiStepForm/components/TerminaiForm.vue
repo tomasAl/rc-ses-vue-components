@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue'
+
 import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
 import UseFormType from '@/types/forms/UseFormType'
 
