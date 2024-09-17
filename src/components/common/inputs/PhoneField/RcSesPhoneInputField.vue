@@ -7,11 +7,12 @@
   >
     <v-text-field
       ref="input"
-      v-bind="$attrs"
+      v-model="inputValue"
       v-maska="{
         mask: selectedCountry?.mask,
         preProcess: handleMultipleMasks,
       }"
+      v-bind="$attrs"
       :placeholder="computedPlaceholder"
       class="rc-field rc-phone-input-field"
       :error="!!error"
@@ -22,9 +23,8 @@
       :counter="counter"
       :name="name"
       :messages="messages"
-      :value="inputValue"
-      @update:focused="() => (searchValue = '')"
       @input="handleModel"
+      @update:focused="() => (searchValue = '')"
       @blur="activator = undefined"
     >
       <template #prepend-inner>
@@ -91,18 +91,14 @@ import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
 
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
-import type { PhoneInputFieldProps } from '@/components/common/inputs/PhoneField/type'
+import type {
+  PhoneInputCountry,
+  PhoneInputFieldProps,
+  PhoneInputModel,
+} from '@/components/common/inputs/PhoneField/type'
 import RcSesSearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
 
 import './style.scss'
-
-interface Country {
-  name: string
-  code: string
-  iso: string
-  flag: string
-  mask: string
-}
 
 defineOptions({
   inheritAttrs: false,
@@ -116,18 +112,18 @@ const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
   density: 'default',
 })
 
-const getDefaultCountry = (): Country | undefined => {
+const getDefaultCountry = (): PhoneInputCountry | undefined => {
   const defaultCountry = countries.find(
     (country) => country.iso.toLowerCase() === props.defaultIso?.toLowerCase(),
   )
   return defaultCountry ?? countries[0] ?? undefined
 }
 
-const model = defineModel<string | undefined>()
+const model = defineModel<PhoneInputModel | undefined>()
 const activator = ref()
 const searchValue = ref<string>()
-const selectedCountry = ref<Country | undefined>(getDefaultCountry())
-const inputValue = ref<string | undefined>(model.value)
+const selectedCountry = ref<PhoneInputCountry | undefined>(getDefaultCountry())
+const inputValue = ref<string>(model.value?.value ?? '')
 const menu = ref(false)
 const input = ref<Element | undefined>(undefined)
 const menuId = uuidv4()
@@ -139,16 +135,21 @@ const openMenu = () => {
   }
 }
 
-const handleModel = (event: InputEvent) => {
-  // TODO: fix this
+const handleModel = () => {
+  if (!model.value) {
+    model.value = {
+      country: selectedCountry.value,
+      value: inputValue.value,
+    }
 
-  inputValue.value = inputValue.value ? inputValue.value + event.data : event.data ?? ''
-  // model.value = model.value ? model.value + event.data : event.data ?? ''
+    return
+  }
 
-  model.value = (selectedCountry?.value?.code ?? '') + inputValue.value
+  model.value.country = selectedCountry.value
+  model.value.value = inputValue.value
 }
 
-const getItemValueForSearch = (item: Country): string => {
+const getItemValueForSearch = (item: PhoneInputCountry): string => {
   return `${item.name} ${item?.iso} ${item?.code}`.toLowerCase()
 }
 
@@ -157,7 +158,7 @@ const computedCountries = computed(() => {
     return countries
   }
 
-  return countries.filter((item: Country) =>
+  return countries.filter((item: PhoneInputCountry) =>
     searchValue.value ? getItemValueForSearch(item).includes(searchValue.value) : false,
   )
 })
@@ -189,7 +190,7 @@ watch(computedCountries, () => {
   updateVList()
 })
 
-const selectItem = (country: Country) => {
+const selectItem = (country: PhoneInputCountry) => {
   selectedCountry.value = country
   menu.value = false
   handleModel()

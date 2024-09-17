@@ -213,7 +213,7 @@ const FormSchema = yup.object({
   trumpas: yup.string().required(),
   ilgas: yup.string().required(),
   tikslas: yup.array().required().min(1),
-  // telefonas: yup.string().required(),
+  telefonas: yup.object().required(),
   ieskoti: yup.string().required(),
   data: yup.string().required(),
   laikotarpis: yup.array().required(),
@@ -228,22 +228,8 @@ useForm({
   validationSchema: toTypedSchema(FormSchema),
 })
 
-/* const [modelIlgasTekstas, modelIlgasTekstasProps] = defineField('ilgas')
-const [modelTikslas, modelTikslasProps] = defineField('tikslas')
-const [modelTelefonas, modelTelefonasProps] = defineField('telefonas')
-const [modelIeskoti, modelIeskotiProps] = defineField('ieskoti')
-const [modelData, modelDataProps] = defineField('data')
-const [modelLaikotarpis, modelLaikotarpisProps] = defineField('laikotarpis')
-const [modelSkaicius, modelSkaiciusProps] = defineField('skaicius')
-const [modelSutikimas, modelSutikimasProps] = defineField('sutikimas') */
-
-/* const modelFiles = ref()
-const modeRadioPasirinkimas = ref()
-const modelPavadinimas = ref() */
-
 function onSubmit(values) {
   // Submit values to API...
-  // alert(JSON.stringify(values, null, 2))
   console.log(values)
 }
 </script>
