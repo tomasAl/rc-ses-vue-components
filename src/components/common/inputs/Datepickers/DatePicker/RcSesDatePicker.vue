@@ -33,6 +33,7 @@
         :disabled="disabled"
         :readonly="readonly"
         :error="error"
+        :value="displayValue"
       />
     </template>
 

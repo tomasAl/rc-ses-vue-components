@@ -88,7 +88,7 @@ import countries from 'countries-phone-masks'
 import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
-import { computed, ref, watch } from 'vue'
+import { computed, ref, useAttrs, watch } from 'vue'
 
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import type {
@@ -109,7 +109,7 @@ const props = withDefaults(defineProps<PhoneInputFieldProps>(), {
   fieldLabel: undefined,
   fieldDescription: undefined,
   fieldTooltip: undefined,
-  density: 'default',
+  veeField: undefined,
 })
 
 const getDefaultCountry = (): PhoneInputCountry | undefined => {
@@ -136,22 +136,22 @@ const openMenu = () => {
 }
 
 const handleModel = () => {
-  if (!model.value) {
-    model.value = {
-      country: selectedCountry.value,
-      value: inputValue.value,
-    }
-
-    return
+  const phoneObject = {
+    country: selectedCountry.value,
+    value: inputValue.value,
   }
 
-  model.value.country = selectedCountry.value
-  model.value.value = inputValue.value
+  model.value = phoneObject
+  props.veeField?.setValue(phoneObject)
 }
 
 const getItemValueForSearch = (item: PhoneInputCountry): string => {
   return `${item.name} ${item?.iso} ${item?.code}`.toLowerCase()
 }
+
+const error = computed(() => {
+  return props.error || props.veeField?.errorMessage
+})
 
 const computedCountries = computed(() => {
   if (!searchValue.value) {

@@ -11,7 +11,7 @@ import RcSesFileInput from '@/components/common/inputs/FileInputs/FileInput/RcSe
 import RcSesFileInputField from '@/components/common/inputs/FileInputs/FileInputField/RcSesFileInputField.vue'
 import RcSesNumberStepper from '@/components/common/inputs/NumberSteppers/NumberStepper/RcSesNumberStepper.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
-import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import RcSesPhoneField from '@/components/common/inputs/PhoneField/RcSesPhoneField.vue'
 import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
 import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
 import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
@@ -64,7 +64,7 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('RcSesNumberStepper', RcSesNumberStepper)
       .component('RcSesNumberStepperField', RcSesNumberStepperField)
 
-    app.component('RcSesPhoneInputField', RcSesPhoneInputField)
+    app.component('RcSesPhoneField', RcSesPhoneField)
 
     app
       .component('RcSesRadio', RcSesRadio)
@@ -98,7 +98,7 @@ export { RcSesCheckbox, RcSesCheckboxField }
 export { RcSesFileInput, RcSesFileInputField }
 export { RcSesDatePicker, RcSesDatePickerField }
 export { RcSesNumberStepper, RcSesNumberStepperField }
-export { RcSesPhoneInputField }
+export { RcSesPhoneField }
 export { RcSesRadio, RcSesRadioButtonsField, RcSesRadioField }
 export { RcSesSearchableArea, RcSesSelectField, RcSesSearchField }
 export { RcSesTextField }

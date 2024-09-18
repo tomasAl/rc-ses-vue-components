@@ -47,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue'
 import { VTextField } from 'vuetify/components/VTextField'
 
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
@@ -57,7 +58,15 @@ defineOptions({
   inheritAttrs: false,
 })
 
-withDefaults(defineProps<TextFieldProps>(), TextFieldDefaults)
+const props = withDefaults(defineProps<TextFieldProps>(), TextFieldDefaults)
 
 const model = defineModel<any>()
+
+watch(
+  () => props.value,
+  (newValue) => {
+    model.value = newValue
+  },
+  { immediate: true },
+)
 </script>

@@ -62,9 +62,8 @@
       </Field>
 
       <Field v-slot="fieldProps" name="telefonas">
-        <RcSesPhoneInputField
-          v-bind="fieldProps.field"
-          :error="fieldProps.errorMessage"
+        <RcSesPhoneField
+          :vee-field="fieldProps"
           field-label="Telefono Nr."
           class="form-control"
           default-iso="lt"
@@ -204,10 +203,11 @@ import { Field, Form as VeeForm, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
+import RcSesDatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
 import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
 import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
-import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import RcSesPhoneField from '@/components/common/inputs/PhoneField/RcSesPhoneField.vue'
 import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
 import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
@@ -217,15 +217,21 @@ import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),
-  ilgas: yup.string().required(),
-  tikslas: yup.array().required().min(1),
-  telefonas: yup.object().required(),
-  ieskoti: yup.string().required(),
+  //ilgas: yup.string().required(),
+  //tikslas: yup.array().required().min(1),
+  /* telefonas: yup
+    .object()
+    .shape({
+      country: yup.object().required(),
+      value: yup.string().required(),
+    })
+    .required(), */
+  // ieskoti: yup.string().required(),
   data: yup.string().required(),
-  laikotarpis: yup.array().required(),
+  /*laikotarpis: yup.array().required(),
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
-  radioButtonsPasirinkimas: yup.string().required(),
+  radioButtonsPasirinkimas: yup.string().required(), */
 })
 
 useForm({
@@ -233,7 +239,7 @@ useForm({
 })
 
 function onSubmit(values) {
-  // Submit values to API...
-  console.log(values)
+  console.log('Form submitted with values:', values)
+  console.log('Telefonas value:', values.telefonas)
 }
 </script>

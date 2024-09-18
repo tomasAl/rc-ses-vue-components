@@ -62,7 +62,7 @@
       </Field>
 
       <Field v-slot="fieldProps" name="telefonas">
-        <RcSesPhoneInputField
+        <RcSesPhoneField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Telefono Nr."
@@ -211,7 +211,7 @@ import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxFi
 import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
 import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
-import RcSesPhoneInputField from '@/components/common/inputs/PhoneField/RcSesPhoneInputField.vue'
+import RcSesPhoneField from '@/components/common/inputs/PhoneField/RcSesPhoneField.vue'
 import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
 import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
