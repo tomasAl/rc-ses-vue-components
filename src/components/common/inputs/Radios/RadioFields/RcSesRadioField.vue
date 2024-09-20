@@ -5,6 +5,7 @@
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
     :for="name"
     :variant="variant"
   >

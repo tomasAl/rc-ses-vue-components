@@ -1,5 +1,11 @@
 <template>
-  <RcSesFieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <RcSesFieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
+    :for="name"
+  >
     <RcSesFileDropzone v-model="model" v-bind="props" />
   </RcSesFieldWrapper>
 </template>

@@ -4,6 +4,8 @@
     class="rc-checkbox-field"
     :label="fieldLabel"
     :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
     :for="name"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">

@@ -1,5 +1,11 @@
 <template>
-  <RcSesFieldWrapper :label="fieldLabel" :description="fieldDescription" :for="name">
+  <RcSesFieldWrapper
+    :label="fieldLabel"
+    :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
+    :for="name"
+  >
     <RcSesDatePicker
       v-model="model"
       v-bind="$attrs"

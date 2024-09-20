@@ -11,7 +11,7 @@
             <v-card-title v-if="title" class="text-body-2">{{ title }}</v-card-title>
           </slot>
           <slot name="description">
-            <v-card-text v-if="description" class="text-body-2">{{
+            <v-card-text v-if="description" class="text-body-2 mt-1">{{
               description
             }}</v-card-text>
           </slot>
