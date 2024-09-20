@@ -1,5 +1,5 @@
 <template>
-  <HeaderPanel
+  <RcSesHeader
     drop-shadow
     :breadcrumbs="[
       {
@@ -16,9 +16,10 @@
         galėsite gauti elektroniniu būdu arba atsiimti pasirinktame VĮ Registrų centro
         padalinyje."
   >
-  </HeaderPanel>
-  <v-container> Comming soon! </v-container>
+  </RcSesHeader>
+  <ExampleTabbedForm />
 </template>
 <script setup lang="ts">
-import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+import ExampleTabbedForm from '@/examples/TabStepForm/TabStepForm.vue'
 </script>

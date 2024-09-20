@@ -1,38 +1,40 @@
 // SearchField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
+import { ref } from 'vue'
 
-import SearchField from '@/components/common/inputs/SearchField/SearchField.vue'
+import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
+import { SearchableFieldProps } from '@/components/common/inputs/SearchableField/type'
+import SearchModal from '@/examples/modals/SearchModal.vue'
 import TextFieldArgTypes from '@/stories/components/argTypes/components/TextFieldArgTypes'
-import type { SearchFieldProps } from '@/types/inputs/SearchFieldProps'
 
 const meta = {
   title: 'components/common/inputs/SearchField',
-  component: SearchField,
+  component: RcSesSearchableField,
   argTypes: TextFieldArgTypes,
 } as Meta
 
 export default meta
 
-const Template: StoryFn<SearchFieldProps> = (args) => ({
-  components: { SearchField },
+const Template: StoryFn<SearchableFieldProps> = (args) => ({
+  components: { RcSesSearchableField },
   setup() {
     const modelMain = ref(undefined)
     const modelError = ref('')
     const modelReadOnly = ref('Negalima redaguoti')
     const modelDisabled = ref('Neaktyvus laukas')
 
-    return { args, modelReadOnly, modelDisabled, modelMain, modelError }
+    return { args, modelReadOnly, modelDisabled, modelMain, modelError, SearchModal }
   },
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <SearchField v-bind="args" v-model="modelMain"></SearchField>
+        <RcSesSearchableField v-bind="args" v-model="modelMain" :modal-component="SearchModal"></RcSesSearchableField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <SearchField class="form-control" label="Read-only" readonly v-model="modelReadOnly"></SearchField>
-        <SearchField class="form-control" label="Disabled" disabled v-model="modelDisabled"></SearchField>
-        <SearchField label="Error" error="Klaidos pranešimas" v-model="modelError"></SearchField>
+        <RcSesSearchableField class="form-control" label="Read-only" readonly v-model="modelReadOnly" :modal-component="SearchModal"></RcSesSearchableField>
+        <RcSesSearchableField class="form-control" label="Disabled" disabled v-model="modelDisabled" :modal-component="SearchModal"></RcSesSearchableField>
+        <RcSesSearchableField label="Error" error="Klaidos pranešimas" v-model="modelError" :modal-component="SearchModal"></RcSesSearchableField>
       </div>
     </div>
   `,

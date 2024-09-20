@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs'
 import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
 import typescript from 'rollup-plugin-typescript2'
-import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from 'vite-plugin-dts'
@@ -42,16 +41,6 @@ export default defineConfig({
   },
   plugins: [
     commonjs(),
-    autoImport({
-      dts: false,
-      imports: [
-        'vue',
-        {
-          vue: ['CSSProperties'],
-        },
-      ],
-      vueTemplate: true,
-    }),
     vue({
       template: { transformAssetUrls },
     }),

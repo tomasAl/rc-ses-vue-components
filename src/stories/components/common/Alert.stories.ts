@@ -1,12 +1,12 @@
 // Alert.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
 
-import Alert from '@/components/common/Alert/Alert.vue'
-import type { AlertProps } from '@/types/common/AlertProps'
+import RcSesAlert from '@/components/common/Alert/RcSesAlert.vue'
+import type { AlertProps } from '@/components/common/Alert/types'
 
 export default {
   title: 'components/common/Alert',
-  component: Alert,
+  component: RcSesAlert,
 
   tags: ['autodocs'],
 } as Meta
@@ -15,21 +15,21 @@ const lorem =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
 
 const Template: StoryFn<AlertProps> = (args) => ({
-  components: { Alert },
+  components: { RcSesAlert },
   setup() {
     return { args, lorem }
   },
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <Alert v-bind="args"></Alert>
+        <RcSesAlert v-bind="args"></RcSesAlert>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <Alert class="form-control" title="Info" type="info" >{{ lorem }}</Alert>
-        <Alert class="form-control" title="Warning" type="warning" >{{ lorem }}</Alert>
-        <Alert class="form-control" title="Error" type="error" >{{ lorem }}</Alert>
-        <Alert class="form-control" title="Success" type="success" >{{ lorem }}</Alert>
+        <RcSesAlert class="form-control" title="Info" type="info" >{{ lorem }}</RcSesAlert>
+        <RcSesAlert class="form-control" title="Warning" type="warning" >{{ lorem }}</RcSesAlert>
+        <RcSesAlert class="form-control" title="Error" type="error" >{{ lorem }}</RcSesAlert>
+        <RcSesAlert class="form-control" title="Success" type="success" >{{ lorem }}</RcSesAlert>
 
       </div>
     </div>

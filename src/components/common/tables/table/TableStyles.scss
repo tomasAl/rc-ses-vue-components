@@ -1,0 +1,49 @@
+$borderColor: rgba(var(--v-theme-grey-400));
+
+.rc-table {
+  border-collapse: collapse;
+  border-top: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+
+  .no-border {
+    th::after {
+      border-right: none;
+    }
+
+    th:last-child::after {
+      border-right: 1px solid $borderColor;
+    }
+  }
+
+  th,
+  td {
+    position: relative;
+    background-clip: padding-box;
+  }
+
+  th::after,
+  td::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+  }
+}
+
+// Override Vuetify's default border styles
+.v-table.rc-table {
+  .v-table__wrapper > table {
+    border: none;
+
+    > thead > tr:last-child > th,
+    > tbody > tr:last-child > td,
+    > tbody > tr > td {
+      border: none;
+    }
+  }
+}

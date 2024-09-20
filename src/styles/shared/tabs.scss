@@ -1,4 +1,5 @@
 .rc-tabs {
+  position: relative;
   .v-slide-group__content::before {
     position:absolute;
     content: "";
@@ -6,6 +7,7 @@
     width: 100%;
     background: rgb(var(--v-theme-grey-300));
     bottom: 0;
+    z-index: 5;
   }
 }
 
@@ -23,6 +25,7 @@
   }
 
   &.v-tab-item--selected {
+    z-index: 10;
     .rc-tab-title {
       color: rgb(var(--v-theme-grey-900));
     }
@@ -46,7 +49,11 @@
     border-color: rgb(var(--v-theme-grey-300));
 
     &:first-child {
-      margin-left: 20px;
+      margin-left: 1.25rem;
+    }
+
+    &:last-child {
+      margin-right: 1.25rem;
     }
 
     .v-tab__slider {

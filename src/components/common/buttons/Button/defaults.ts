@@ -1,0 +1,42 @@
+import type { VBtn } from 'vuetify/components'
+
+import { ButtonVariants } from '@/components/common/buttons/Button/types'
+import type { ColorType } from '@/types/common/ColorType'
+
+export default {
+  active: false,
+  appendIcon: undefined,
+  baseColor: undefined,
+  block: undefined,
+  border: undefined,
+  color: 'primary' as ColorType,
+  density: 'default' as VBtn['$props']['density'],
+  disabled: false,
+  elevation: undefined,
+  exact: undefined,
+  flat: false,
+  height: undefined,
+  href: undefined,
+  icon: undefined,
+  loading: undefined,
+  maxHeight: undefined,
+  maxWidth: undefined,
+  minHeight: undefined,
+  minWidth: undefined,
+  position: undefined,
+  prependIcon: undefined,
+  readonly: undefined,
+  replace: undefined,
+  selectedClass: undefined,
+  size: undefined,
+  stacked: undefined,
+  symbol: undefined,
+  tag: undefined,
+  text: undefined,
+  theme: undefined,
+  tile: undefined,
+  to: undefined,
+  value: undefined,
+  variant: 'tonal' as ButtonVariants,
+  width: undefined,
+}

@@ -48,7 +48,7 @@
   .v-field--variant-outlined
   {
     .v-field__outline {
-      color: rgb(var(--v-theme-grey-500));
+      color: rgb(var(--v-theme-grey-600));
       --v-field-border-opacity: 1 !important;
 
       &__notch .v-label {
@@ -66,7 +66,7 @@
   // ### HOVER STATE
   .v-field--variant-outlined:hover .v-field__outline
   {
-    color: rgb(var(--v-theme-primary));
+    color: rgb(var(--v-theme-grey-900));
   }
 
   // ### FOCUSED STATE
@@ -82,8 +82,8 @@
   .v-field--variant-outlined.v-field--active.v-field--focused {
     .v-field__outline {
       --v-field-border-width: 2px;
-      color: rgb(var(--v-theme-primary));
-      box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
+      color: rgb(var(--v-theme-grey-900));
+      box-shadow: 0 0 0 3px rgba(var(--v-theme-grey-900), 0.2);
 
       &::before {
         display: none;
@@ -92,31 +92,31 @@
   }
 
   // ### DISABLED STATE
-  .v-input--disabled {
+  &.v-input--disabled {
     .v-field--disabled {
       opacity: 1;
     }
 
     input {
-      color: rgb(var(--v-theme-grey-500));
+      color: rgb(var(--v-theme-grey-600));
     }
 
     .v-field__overlay {
-      background: rgb(var(--v-theme-grey-50));
+      background: rgb(var(--v-theme-grey-100));
     }
 
     .v-field__outline {
-      color: rgb(var(--v-theme-grey-300));
+      color: rgb(var(--v-theme-grey-600));
       --v-field-border-opacity: 1;
     }
   }
 
   // ## READONLY STATE
-  .v-input--readonly {
+  &.v-input--readonly {
     .v-field--variant-outlined .v-field__outline
     {
       --v-field-border-width: 1px !important;
-      color: rgb(var(--v-theme-grey-200)) !important;
+      color: rgb(var(--v-theme-grey-600)) !important;
       box-shadow: none !important;
 
       &::before {
@@ -128,10 +128,8 @@
   // ERROR STATE
   &.v-input--error {
 
-    &:hover {
-      .v-field__outline {
-        color: rgb(var(--v-theme-error-500)) !important;
-      }
+    .v-field__outline {
+      color: rgb(var(--v-theme-error-600)) !important;
     }
 
     .v-field--focused, .rc-focused {
@@ -140,7 +138,7 @@
       }
 
       &.v-field--error:not(.v-field--disabled) .v-field__outline {
-        color: rgb(var(--v-theme-error-500)) !important;
+        color: rgb(var(--v-theme-error-600)) !important;
       }
     }
   }

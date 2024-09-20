@@ -1,0 +1,50 @@
+.rc-phone-input-field {
+  .flag-sprite-map {
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  input {
+    padding-inline-start: 0.375rem;
+  }
+
+  .divider {
+    position: relative;
+    width: 1px;
+    background: rgba(black, 0.3);
+    height: 24px;
+  }
+
+  .flag-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &.v-input--disabled {
+    .flag-wrapper {
+      opacity: 0.5;
+    }
+  }
+}
+
+.rc-phone-field-menu {
+
+  .v-select__content {
+    min-width: 400px !important;
+  }
+
+  .rc-menu-list-item {
+
+    .v-list-item-title {
+      display: flex;
+    }
+
+    .flag-sprite-map {
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}

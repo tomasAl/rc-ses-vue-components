@@ -1,0 +1,64 @@
+@import '../../../../../styles/shared/mixins/makeFocus';
+
+.dropzone-wrapper {
+
+  .dropzone {
+    position: relative;
+    border-radius: 3px;
+    border: 1px dashed grey;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+    }
+    @include make-focus(10px);
+
+    &-underlay {
+      border-radius: 3px;
+      position: absolute;
+      width: calc(100% - 1rem);
+      height: calc(100% - 1rem);
+      top: 0.5rem;
+      left: 0.5rem;
+      z-index: 0;
+    }
+
+    &-content {
+      z-index: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    &.isDragActive {
+
+      background: rgba(var(--v-theme-primary-50));
+      border-color: rgba(var(--v-theme-primary));
+      border-width: 1px;
+    }
+  }
+
+  .files {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .file-item {
+      background-color: rgba(var(--v-theme-grey-100));
+      margin-top: 0.5rem;
+
+      .icon-delete:hover {
+        color: rgba(var(--v-theme-error-700));
+      }
+
+    }
+  }
+}

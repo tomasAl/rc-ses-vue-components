@@ -1,11 +1,11 @@
 <template>
-  <HeaderPanel
+  <RcSesHeader
     drop-shadow
     :breadcrumbs="['Pradžia', 'Pavyzdžiai']"
     title="Formų bei komponentų pavyzdžiai"
     description="Formos ir komponentai yra esminės bet kokios vartotojo sąsajos dalys, kurios padeda kurti sąveiką tarp vartotojo ir programos. Formos yra struktūrizuoti laukai, skirti duomenų įvedimui, pavyzdžiui, prisijungimo vardai, slaptažodžiai ar atsiliepimai. Jos gali būti paprastos, su keletu teksto laukų, arba sudėtingos, apimantys įvairias parinktis, tokias kaip išskleidžiami sąrašai ar radijo mygtukai. Komponentai yra pakartotinai naudojami UI elementai, tokie kaip mygtukai, etiketės, perjungikliai ir slankikliai, kurie padeda standartizuoti ir optimizuoti vartotojo sąsajos kūrimą. Kartu šie elementai formuoja naudotojui draugiškas sąsajas, leidžiančias efektyviai ir patogiai bendrauti su programinės įrangos funkcijomis."
   >
-  </HeaderPanel>
+  </RcSesHeader>
   <v-container>
     <v-list>
       <v-list-item
@@ -21,7 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 
 const router = useRouter()
 
@@ -40,6 +43,11 @@ const items = ref([
     title: 'Skirtuko tipo formos pavyzdys',
     value: 3,
     routeTo: '/tabForm',
+  },
+  {
+    title: 'Duomenų lentelės pavyzdys',
+    value: 4,
+    routeTo: '/dataTable',
   },
 ])
 </script>

@@ -1,0 +1,14 @@
+@use '../../../styles/vuetify/settings';
+
+.form-action-panel {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    border-left: none;
+    border-right: none;
+    border-radius: 0 !important;
+    flex-direction: column-reverse;
+  }
+}

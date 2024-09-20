@@ -1,5 +1,5 @@
 <template>
-  <HeaderPanel
+  <RcSesHeader
     drop-shadow
     :breadcrumbs="[
       {
@@ -16,11 +16,11 @@
         galėsite gauti elektroniniu būdu arba atsiimti pasirinktame VĮ Registrų centro
         padalinyje."
   >
-  </HeaderPanel>
-  <ExampleMultiForm />
+  </RcSesHeader>
+  <MultiStepForm />
 </template>
 
 <script setup lang="ts">
-import HeaderPanel from '@/components/common/panels/HeaderPanel/HeaderPanel.vue'
-import ExampleMultiForm from '@/components/examples/multiForm/ExampleMultiForm.vue'
+import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+import MultiStepForm from '@/examples/MultiStepForm/MultiStepForm.vue'
 </script>

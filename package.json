@@ -40,18 +40,23 @@
   "dependencies": {
     "@storybook/docs-tools": "^8.2.6",
     "@storybook/vue3": "^8.2.6",
+    "@vee-validate/rules": "^4.13.2",
+    "@vee-validate/yup": "^4.13.2",
     "@vuepic/vue-datepicker": "^8.8.0",
     "core-js": "^3.34.0",
     "countries-phone-masks": "^1.1.0",
     "file-saver": "^2.0.5",
     "maska": "^3.0.0-beta4",
     "uuid": "^10.0.0",
+    "vee-validate": "^4.13.2",
     "vite-plugin-css-injected-by-js": "^3.5.1",
     "vue": "^3.4.21",
     "vue-component-type-helpers": "^2.0.21",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.3.0",
-    "vuetify": "^3.5.8"
+    "vue3-dropzone": "^2.2.1",
+    "vuetify": "^3.5.8",
+    "yup": "^1.4.0"
   },
   "peerDependencies": {
     "countries-phone-masks": "^1.1.0"
@@ -96,10 +101,7 @@
     "storybook": "^8.2.6",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.12.0",
-    "unplugin-auto-import": "^0.17.5",
     "unplugin-fonts": "^1.1.1",
-    "unplugin-vue-components": "^0.26.0",
-    "unplugin-vue-router": "^0.8.4",
     "vite": "^5.1.5",
     "vite-plugin-dts": "^4.0.0-beta.1",
     "vite-plugin-static-copy": "^1.0.6",

@@ -7,13 +7,14 @@ import { createApp } from 'vue'
 
 import registerPlugins from '@/plugins'
 import '@/styles/shared/index.scss'
+import '@/validators'
 
 import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
 
-registerPlugins(app)
 app.use(router)
+registerPlugins(app)
 
 app.mount('#app')

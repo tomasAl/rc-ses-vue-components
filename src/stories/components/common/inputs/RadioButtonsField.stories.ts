@@ -1,13 +1,14 @@
 // RadioButtonsField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
+import { ref } from 'vue'
 
-import RadioButtonsField from '@/components/common/inputs/RadioFields/RadioButtonsField.vue'
+import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField/RcSesRadioButtonsField.vue'
+import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/type'
 import FieldArgTypes from '@/stories/components/argTypes/common/FieldArgTypes'
-import { RadioButtonsFieldProps } from '@/types/inputs/RadioFieldProps'
 
 export default {
   title: 'components/common/inputs/RadioButtonsField',
-  component: RadioButtonsField,
+  component: RcSesRadioButtonsField,
   argTypes: FieldArgTypes,
   tags: ['autodocs'],
 } as Meta
@@ -23,7 +24,7 @@ const options = [
 ]
 
 const Template: StoryFn<RadioButtonsFieldProps> = (args) => ({
-  components: { RadioButtonsField },
+  components: { RcSesRadioButtonsField },
   setup() {
     const model = ref('p1')
     const modelDisabled = ref('p4')
@@ -35,13 +36,13 @@ const Template: StoryFn<RadioButtonsFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <RadioButtonsField v-bind="args" v-model="model"></RadioButtonsField>
+        <RcSesRadioButtonsField v-bind="args" v-model="model"></RcSesRadioButtonsField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <RadioButtonsField v-model="modelReadOnly" class="form-control" fieldLabel="Read-only" :options="options" readonly>{{ lorem }}</RadioButtonsField>
-        <RadioButtonsField v-model="modelDisabled" class="form-control" fieldLabel="Disabled" :options="options" disabled>{{ lorem }}</RadioButtonsField>
-        <RadioButtonsField v-model="modelError" fieldLabel="Error" :options="options" error="Klaidos pranešimas">{{ lorem }}</RadioButtonsField>
+        <RcSesRadioButtonsField v-model="modelReadOnly" class="form-control" fieldLabel="Read-only" :options="options" readonly>{{ lorem }}</RcSesRadioButtonsField>
+        <RcSesRadioButtonsField v-model="modelDisabled" class="form-control" fieldLabel="Disabled" :options="options" disabled>{{ lorem }}</RcSesRadioButtonsField>
+        <RcSesRadioButtonsField v-model="modelError" fieldLabel="Error" :options="options" error="Klaidos pranešimas">{{ lorem }}</RcSesRadioButtonsField>
       </div>
     </div>
   `,

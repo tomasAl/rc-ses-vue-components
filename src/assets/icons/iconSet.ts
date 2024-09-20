@@ -1,4 +1,4 @@
-import { h } from 'vue'
+import { defineComponent, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
@@ -11,6 +11,7 @@ import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
 import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
 import RadioOffIcon from '@/assets/icons/inputs/RadioOffIcon.vue'
 import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
+import { TrashIcon } from '@/assets/icons/regular'
 import CalendarBlankIcon from '@/assets/icons/regular/CalendarBlankIcon.vue'
 import CaretDownIcon from '@/assets/icons/regular/CaretDownIcon.vue'
 import CaretLeftIcon from '@/assets/icons/regular/CaretLeftIcon.vue'
@@ -26,15 +27,25 @@ import QuestionIcon from '@/assets/icons/regular/QuestionIcon.vue'
 import UploadIcon from '@/assets/icons/regular/UploadIcon.vue'
 import XIcon from '@/assets/icons/regular/XIcon.vue'
 
+function createIconComponent(icon: any, size: number) {
+  return defineComponent({
+    setup(_, { attrs }) {
+      return () => h(icon, { ...attrs, size })
+    },
+  })
+}
+
+const Icon16pxCaretDown = createIconComponent(CaretDownFilledIcon, 16)
+
 const aliases: Partial<IconAliases> = {
   calendar: CalendarBlankIcon,
   checkboxIndeterminate: CheckboxOffIcon,
   checkboxOff: CheckboxOffIcon,
   checkboxOn: CheckboxOnIcon,
   clear: XCircleFilledIcon,
-  delete: undefined,
+  delete: TrashIcon,
   delimiter: undefined,
-  dropdown: CaretDownFilledIcon,
+  dropdown: Icon16pxCaretDown,
   edit: undefined,
   error: WarningDiamondFilledIcon,
   expand: CaretDownIcon,

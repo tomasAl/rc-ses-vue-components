@@ -1,12 +1,13 @@
 // CheckboxField.stories.ts
 import { Meta, StoryFn } from '@storybook/vue3'
+import { ref } from 'vue'
 
-import CheckboxField from '@/components/common/inputs/CheckboxField/CheckboxField.vue'
-import { CheckboxFieldProps } from '@/types/inputs/CheckboxFieldProps'
+import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
+import { CheckboxFieldProps } from '@/components/common/inputs/Checkboxes/CheckboxField/types'
 
 export default {
   title: 'components/common/inputs/CheckboxField',
-  component: CheckboxField,
+  component: RcSesCheckboxField,
 
   tags: ['autodocs'],
 } as Meta
@@ -15,7 +16,7 @@ const lorem =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
 
 const Template: StoryFn<CheckboxFieldProps> = (args) => ({
-  components: { CheckboxField },
+  components: { RcSesCheckboxField },
   setup() {
     const model = ref(false)
     const modelReadOnly = ref(true)
@@ -26,13 +27,13 @@ const Template: StoryFn<CheckboxFieldProps> = (args) => ({
   template: `
     <div class="storybook-field">
       <div class="storybook-field-view">
-        <CheckboxField v-bind="args" v-model="model">{{ lorem }}</CheckboxField>
+        <RcSesCheckboxField v-bind="args" v-model="model">{{ lorem }}</RcSesCheckboxField>
       </div>
       <div class="storybook-field-previews">
         <div class="storybook-field-previews-title">State previews</div>
-        <CheckboxField class="form-control" label="Read-only" readonly v-model="modelReadOnly">{{ lorem }}</CheckboxField>
-        <CheckboxField class="form-control" label="Disabled" disabled v-model="modelDisabled">{{ lorem }}</CheckboxField>
-        <CheckboxField v-model="modelError" label="Error" error="Klaidos pranešimas">{{ lorem }}</CheckboxField>
+        <RcSesCheckboxField class="form-control" label="Read-only" readonly v-model="modelReadOnly">{{ lorem }}</RcSesCheckboxField>
+        <RcSesCheckboxField class="form-control" label="Disabled" disabled v-model="modelDisabled">{{ lorem }}</RcSesCheckboxField>
+        <RcSesCheckboxField v-model="modelError" label="Error" error="Klaidos pranešimas">{{ lorem }}</RcSesCheckboxField>
       </div>
     </div>
   `,
