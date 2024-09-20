@@ -1,6 +1,5 @@
 <template>
   <v-checkbox
-    v-model="model"
     class="rc-checkbox"
     v-bind="props"
     :class="classes"

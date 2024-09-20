@@ -88,7 +88,7 @@ import countries from 'countries-phone-masks'
 import { Mask, MaskOptions } from 'maska'
 import { vMaska } from 'maska/vue'
 import { v4 as uuidv4 } from 'uuid'
-import { computed, ref, useAttrs, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import type {

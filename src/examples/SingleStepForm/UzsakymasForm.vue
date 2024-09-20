@@ -203,7 +203,6 @@ import { Field, Form as VeeForm, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
-import RcSesDatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
 import RcSesDatePickerField from '@/components/common/inputs/Datepickers/DatePickerField/RcSesDatePickerField.vue'
 import RcSesFileDropzoneField from '@/components/common/inputs/FileDropzones/FileDropzoneField/RcSesFileDropzoneField.vue'
 import RcSesNumberStepperField from '@/components/common/inputs/NumberSteppers/NumberStepperField/RcSesNumberStepperField.vue'
@@ -217,21 +216,21 @@ import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),
-  //ilgas: yup.string().required(),
-  //tikslas: yup.array().required().min(1),
-  /* telefonas: yup
+  ilgas: yup.string().required(),
+  tikslas: yup.array().required().min(1),
+  telefonas: yup
     .object()
     .shape({
       country: yup.object().required(),
       value: yup.string().required(),
     })
-    .required(), */
-  // ieskoti: yup.string().required(),
+    .required(),
+  ieskoti: yup.string().required(),
   data: yup.string().required(),
-  /*laikotarpis: yup.array().required(),
+  laikotarpis: yup.array().required(),
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
-  radioButtonsPasirinkimas: yup.string().required(), */
+  radioButtonsPasirinkimas: yup.string().required(),
 })
 
 useForm({
@@ -240,6 +239,5 @@ useForm({
 
 function onSubmit(values) {
   console.log('Form submitted with values:', values)
-  console.log('Telefonas value:', values.telefonas)
 }
 </script>

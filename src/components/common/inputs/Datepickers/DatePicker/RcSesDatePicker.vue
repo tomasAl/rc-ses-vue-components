@@ -107,15 +107,27 @@ const formatDateRange = (startDate: Date, endDate: Date): any => {
 }
 
 const formatPreview = (
-  dt: string | ((date: Date) => string) | ((dates: Date[]) => string),
+  dt: string | Date | Date[] | ((date: Date) => string) | ((dates: Date[]) => string)
 ): string => {
   if (Array.isArray(dt) && dt.length === 2) {
-    // Date range function
-    return formatDateRange(dt[0], dt[1])
+    // Date range
+    const [start, end] = dt
+    if (start instanceof Date && end instanceof Date) {
+      return formatDateRange(start, end)
+    }
+    return 'Invalid date range'
   }
-  if (typeof dt === 'object') {
+  if (dt instanceof Date) {
     // Single date
-    return formatSingleDate(new Date(dt))
+    return formatSingleDate(dt)
+  }
+  if (typeof dt === 'function') {
+    // Handle function cases if needed
+    return 'Function provided'
+  }
+  if (typeof dt === 'string') {
+    // Handle string case
+    return dt
   }
   return 'Invalid date format'
 }

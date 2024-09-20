@@ -11,8 +11,10 @@ import * as yup from 'yup'
 
 // Custom validator function
 const isValidDomain = (value: string) => {
+  const domainPart = value.split('@')[1]
+  if (!domainPart) return false
   const domainRegex = /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/
-  return domainRegex.test(value.split('@')[1])
+  return domainRegex.test(domainPart)
 }
 
 // Create a custom Yup validator
@@ -20,7 +22,7 @@ yup.addMethod(yup.string, 'validDomain', function (message) {
   return this.test('valid-domain', message, function (value) {
     const { path, createError } = this
 
-    return isValidDomain(value) || createError({ path, message })
+    return (value !== undefined && isValidDomain(value)) || createError({ path, message })
   })
 })
 

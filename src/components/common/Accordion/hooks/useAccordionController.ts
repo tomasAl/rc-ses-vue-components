@@ -7,15 +7,17 @@ function useAccordionController(initialState: AccordionControllerState) {
 
   const toggleAccordion = (id: string, isExpanded: boolean) => {
     const nextState = { ...state.value }
-    if (id in nextState && nextState[id]) nextState[id].expanded = isExpanded
+    if (id in nextState && nextState[id] !== undefined) {
+      ;(nextState[id] as { expanded: boolean }).expanded = isExpanded
+    }
     state.value = nextState
   }
 
   const collapseAll = () => {
     const nextState = { ...state.value }
     Object.keys(nextState).forEach((k) => {
-      if (k in nextState && nextState[k]) {
-        nextState[k].expanded = false
+      if (k in nextState && nextState[k] !== undefined) {
+        ;(nextState[k] as { expanded: boolean }).expanded = false
       }
     })
     state.value = nextState
@@ -24,8 +26,8 @@ function useAccordionController(initialState: AccordionControllerState) {
   const expandAll = () => {
     const nextState = { ...state.value }
     Object.keys(nextState).forEach((k) => {
-      if (k in nextState && nextState[k]) {
-        nextState[k].expanded = true
+      if (k in nextState && nextState[k] !== undefined) {
+        ;(nextState[k] as { expanded: boolean }).expanded = true
       }
     })
     state.value = nextState
