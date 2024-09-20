@@ -5,7 +5,14 @@
     :tooltip="fieldTooltip"
     :for="name"
   >
-    <RcSesTextField v-model="model" v-bind="$attrs" @click="openModal">
+    <RcSesTextField
+      v-model="model"
+      v-bind="$attrs"
+      :error="error"
+      :disabled="disabled"
+      :readonly="readonly"
+      @click="openModal"
+    >
       <template #prepend-inner>
         <v-icon icon="$search" @click.stop="openModal" />
       </template>

@@ -120,7 +120,7 @@
 
       <Field v-slot="fieldProps" name="sutikimas">
         <RcSesCheckboxField
-          :model-value="fieldProps.field.value"
+          v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           :field-wrapper-props="{
             class: 'form-control',
@@ -128,7 +128,6 @@
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
           name="sutikimas"
-          @update:model-value="fieldProps.handleChange"
         />
       </Field>
 
@@ -227,6 +226,7 @@ const FormSchema = yup.object({
     .required(),
   ieskoti: yup.string().required(),
   data: yup.string().required(),
+  sutikimas: yup.boolean().required(),
   laikotarpis: yup.array().required(),
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
