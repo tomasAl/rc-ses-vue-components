@@ -31,8 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import type { VRadioGroup } from 'vuetify/components'
-
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
 import RadioFieldDefaults from '@/components/common/inputs/Radios/RadioFields/defaults'

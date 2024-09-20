@@ -19,10 +19,10 @@
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
+import ButtonDefaults from '@/components/common/buttons/Button/defaults'
 import type { ButtonProps } from '@/components/common/buttons/Button/types'
 
 import './style.scss'
-import ButtonDefaults from '@/components/common/buttons/Button/defaults'
 
 const props = withDefaults(defineProps<ButtonProps>(), ButtonDefaults)
 </script>

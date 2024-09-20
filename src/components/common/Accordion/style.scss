@@ -59,13 +59,6 @@
     }
   }
 
-  /*.v-expansion-panel--active {
-    .v-expansion-panel-title {
-      border-bottom: 1px solid rgb(var(--v-theme-grey-200));
-    }
-  }*/
-
-
   @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
     border-radius: 0;
     border: none;

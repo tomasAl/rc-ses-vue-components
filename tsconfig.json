@@ -32,7 +32,6 @@
     "target": "ESNext",
     "types": [
       "vite-plugin-vue-layouts/client",
-      // "unplugin-vue-router/client",
       "node",
     ],
     "useDefineForClassFields": true,
@@ -47,7 +46,6 @@
     "./src/**/*.vue",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    // "./src/typed-router.d.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

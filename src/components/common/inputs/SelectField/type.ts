@@ -1,7 +1,7 @@
 import type { VSelect } from 'vuetify/components'
 
-import type { ColorType } from '@/types/common/ColorType'
 import type { TextFieldProps } from '@/components/common/inputs/TextField/type'
+import type { ColorType } from '@/types/common/ColorType'
 
 export type SelectFieldItemType = {
   title: string

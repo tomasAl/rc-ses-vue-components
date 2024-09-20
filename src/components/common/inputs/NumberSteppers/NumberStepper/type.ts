@@ -6,4 +6,3 @@ export type NumberStepperProps = InputProps & {
   step?: number
   maxWidth?: number
 }
-

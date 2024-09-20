@@ -1,6 +1,7 @@
-import type { ColorType } from '@/types/common/ColorType'
 import type { VBtn } from 'vuetify/components'
+
 import { ButtonVariants } from '@/components/common/buttons/Button/types'
+import type { ColorType } from '@/types/common/ColorType'
 
 export default {
   active: false,

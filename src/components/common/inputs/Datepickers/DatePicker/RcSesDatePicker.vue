@@ -134,7 +134,7 @@ const formatPreview = (
 
 const handleChange = (value: any) => {
   modelValue.value = value
-  displayValue.value = '' // value ? formatPreview(value) : ''
+  displayValue.value = ''
 }
 
 const selectDate = () => {
