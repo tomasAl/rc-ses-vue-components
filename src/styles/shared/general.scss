@@ -4,10 +4,6 @@ body {
   font-size: 0.9375rem;
 }
 
-.v-application {
-  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
-    &.v-theme--light {
-      --v-theme-background: var(--v-theme-grey-50);
-    }
-  }
+.v-container {
+  max-width: 1200px;
 }

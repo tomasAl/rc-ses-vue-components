@@ -1,7 +1,7 @@
 <template>
   <RcSesFieldWrapper
     v-bind="fieldWrapperProps"
-    class="rc-radio-buttons-field"
+    class="rc-radios-field"
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
@@ -37,7 +37,7 @@ import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
 import RadioFieldDefaults from '@/components/common/inputs/Radios/RadioFields/defaults'
 import { RadioGroupFieldProps } from '@/components/common/inputs/Radios/RadioFields/type'
 
-import '../../RadioButtonsField/style.scss'
+import './style.scss'
 
 defineOptions({
   inheritAttrs: false,

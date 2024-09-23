@@ -15,6 +15,7 @@
           :title="tooltipTitle"
           :description="tooltip"
           location="top"
+          max-width="270"
         >
           <template #activator="activator">
             <v-icon
@@ -43,7 +44,7 @@
         v-if="tooltip"
         :title="tooltipTitle"
         :description="tooltip"
-        location="top"
+        max-width="270"
       >
         <template #activator="activator">
           <v-icon

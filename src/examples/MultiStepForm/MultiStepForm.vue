@@ -3,6 +3,8 @@
     <RcSesFormContainer
       :accordion-controller="accordionController"
       :form-controller="formController"
+      :show-progress-stepper="true"
+      :show-accordion-collapse-controls="true"
     >
       <template #actions>
         <FormActions />
