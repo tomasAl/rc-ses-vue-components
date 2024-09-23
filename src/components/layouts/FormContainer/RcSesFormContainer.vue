@@ -26,7 +26,7 @@
             <div v-if="computedAccordionControlsVisible" class="rc-form-actions">
               <v-btn
                 variant="text"
-                class="text-subtitle-1 text-primary-600"
+                class="text-body-2 text-primary-600"
                 @click="expandAll"
               >
                 <template #prepend>
@@ -36,7 +36,7 @@
               </v-btn>
               <v-btn
                 variant="text"
-                class="text-subtitle-1 text-primary-600"
+                class="text-body-2 text-primary-600"
                 @click="collapseAll"
               >
                 <template #prepend>

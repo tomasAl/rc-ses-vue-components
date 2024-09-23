@@ -4,7 +4,7 @@ $typography: (
   'h1': (
     'size': 2.25rem, // 36px
     'weight': 500,
-    'line-height': 1.1,
+    'line-height': 3rem,
     'letter-spacing': 0,
   ),
   'h2': (
@@ -38,25 +38,31 @@ $typography: (
     'letter-spacing': 0,
   ),
   'body-1': (
-    'size': 1rem,  // 16px
+    'size': 0.9375rem, // 15px
     'line-height': 1.2,
     'weight': 400,
     'letter-spacing': 0,
   ),
   'body-2': (
-    'size': 0.9375rem, // 15px
+    'size': 0.875rem, // 14px
+    'line-height': 1.125rem,
+    'weight': 400,
+    'letter-spacing': 0,
+  ),
+  'body-3': (
+    'size': 0.8125rem, // 13px
     'line-height': 1.125rem,
     'weight': 400,
     'letter-spacing': 0,
   ),
   'subtitle-1': (
-    'size': 0.875rem,  // 14px
+    'size': 0.75rem,  // 12px
     'line-height': 1.05rem,
     'weight': 400,
     'letter-spacing': 0,
   ),
   'subtitle-2': (
-    'size': 0.75rem, // 12px
+    'size': 0.6875rem, // 11px
     'line-height': 0.9rem,
     'weight': 400,
     'letter-spacing': 0,

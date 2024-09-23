@@ -21,7 +21,7 @@
           class="step-title"
           :class="{
             'text-h6': step.state === 'active',
-            'text-subtitle-1': step.state !== 'active',
+            'text-body-2': step.state !== 'active',
           }"
         >
           {{ step.title }}
