@@ -7,3 +7,33 @@ body {
 .v-container {
   max-width: 1200px;
 }
+
+.rc-container {
+  background-color: rgba(var(--v-theme-grey-100));
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+
+  &.rc-container-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .rc-container-content {
+    width: 100%;
+  }
+
+  @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+    background-color: white;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    .rc-container-content {
+      max-width: 840px;
+      width: 100%;
+    }
+  }
+}

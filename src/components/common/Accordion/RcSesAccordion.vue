@@ -2,6 +2,20 @@
   <v-expansion-panels v-model="model" flat>
     <v-expansion-panel :disabled="disabled ?? state?.disabled" :value="id">
       <v-expansion-panel-title static :collapse-icon="undefined" :expand-icon="undefined">
+        <v-icon
+          v-if="state?.state === 'completed'"
+          class="mr-2"
+          icon="$complete"
+          color="secondary"
+          size="18"
+        ></v-icon>
+        <v-icon
+          v-if="state?.state === 'error'"
+          class="mr-2"
+          icon="$error"
+          color="error"
+          size="18"
+        ></v-icon>
         <span class="text-h5">{{ title ?? state?.title }}</span>
         <span class="flex-grow-1" />
         <v-btn

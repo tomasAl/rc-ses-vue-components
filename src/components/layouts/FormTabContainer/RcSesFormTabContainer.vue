@@ -1,17 +1,19 @@
 <template>
-  <v-container class="pa-0">
-    <v-card class="rcs-ft-container">
-      <v-card-text class="rcs-ft-header">
-        <v-card-title class="text-h5">{{ title }}</v-card-title>
-        <slot />
-      </v-card-text>
-    </v-card>
+  <v-container class="rc-container rc-container-center">
+    <div class="rc-container-content">
+      <v-card class="rcs-ft-container">
+        <v-card-text class="rcs-ft-header">
+          <v-card-title class="text-h5">{{ title }}</v-card-title>
+          <slot />
+        </v-card-text>
+      </v-card>
 
-    <RcSesFormActions v-if="$slots.actions" class="mt-4">
-      <slot name="actions"></slot>
-    </RcSesFormActions>
+      <RcSesFormActions v-if="$slots.actions" class="mt-4">
+        <slot name="actions"></slot>
+      </RcSesFormActions>
 
-    <slot v-if="$slots['actions-after']" name="actions-after" />
+      <slot v-if="$slots['actions-after']" name="actions-after" />
+    </div>
   </v-container>
 </template>
 

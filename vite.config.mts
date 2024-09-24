@@ -2,13 +2,13 @@ import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
 import fonts from 'unplugin-fonts/vite'
 import { defineConfig } from 'vite'
-import layouts from 'vite-plugin-vue-layouts'
+// import layouts from 'vite-plugin-vue-layouts'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
   define: { 'process.env': {} },
   plugins: [
-    layouts(),
+    // layouts(),
     vue({
       template: { transformAssetUrls },
     }),

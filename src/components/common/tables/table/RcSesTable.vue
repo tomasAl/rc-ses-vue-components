@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-table class="rc-table">
+  <v-container class="rc-container rc-container-center">
+    <v-table class="rc-table rc-container-content">
       <slot />
     </v-table>
   </v-container>

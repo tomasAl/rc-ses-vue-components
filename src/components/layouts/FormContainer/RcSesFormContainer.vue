@@ -1,68 +1,45 @@
 <template>
-  <v-container class="rc-form-container">
-    <v-row no-gutters>
-      <v-col
+  <v-container class="rc-container rc-container-center d-flex">
+    <div
+      v-if="showProgressStepper"
+      class="rc-form-stepper d-none d-md-flex"
+      style="flex-grow: 1"
+    >
+      <RcSesFormStepper
         v-if="showProgressStepper"
-        md="4"
-        lg="3"
-        xl="2"
-        class="rc-form-stepper d-none d-md-flex"
-      >
-        <RcSesFormStepper
-          v-if="showProgressStepper"
-          :items="state"
-          style="margin-top: 2.875rem"
-        ></RcSesFormStepper>
-      </v-col>
-      <v-col
-        class="d-flex justify-center"
-        :sm="12"
-        :md="showProgressStepper ? 8 : 12"
-        :lg="showProgressStepper ? 9 : 12"
-        :xl="showProgressStepper ? 10 : 12"
-      >
-        <div class="rc-form-container-content">
-          <div class="rc-form-wrapper">
-            <div v-if="computedAccordionControlsVisible" class="rc-form-actions">
-              <v-btn
-                variant="text"
-                class="text-body-2 text-primary-600"
-                @click="expandAll"
-              >
-                <template #prepend>
-                  <OpenIcon size="16" />
-                </template>
-                Praskleisti visus
-              </v-btn>
-              <v-btn
-                variant="text"
-                class="text-body-2 text-primary-600"
-                @click="collapseAll"
-              >
-                <template #prepend>
-                  <CloseIcon size="16" />
-                </template>
-                Suskleisti visus
-              </v-btn>
-            </div>
-
-            <!-- Default CONTENT goes here         -->
-            <slot />
-          </div>
-
-          <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
-            <RcSesFormActions v-if="$slots.actions">
-              <slot
-                name="actions"
-                v-bind="{ formController, accordionController }"
-              ></slot>
-            </RcSesFormActions>
-          </slot>
-
-          <slot v-if="$slots['actions-after']" name="actions-after" />
+        :items="state"
+        style="margin-top: 2.875rem"
+      ></RcSesFormStepper>
+    </div>
+    <div class="rc-container-content">
+      <div class="rc-form-wrapper">
+        <div v-if="computedAccordionControlsVisible" class="rc-form-actions">
+          <v-btn variant="text" class="text-body-2 text-primary-600" @click="expandAll">
+            <template #prepend>
+              <OpenIcon size="16" />
+            </template>
+            Praskleisti visus
+          </v-btn>
+          <v-btn variant="text" class="text-body-2 text-primary-600" @click="collapseAll">
+            <template #prepend>
+              <CloseIcon size="16" />
+            </template>
+            Suskleisti visus
+          </v-btn>
         </div>
-      </v-col>
-    </v-row>
+
+        <!-- Default CONTENT goes here         -->
+        <slot />
+      </div>
+
+      <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
+        <RcSesFormActions v-if="$slots.actions">
+          <slot name="actions" v-bind="{ formController, accordionController }"></slot>
+        </RcSesFormActions>
+      </slot>
+
+      <slot v-if="$slots['actions-after']" name="actions-after" />
+    </div>
   </v-container>
 </template>
 

@@ -17,23 +17,3 @@
   }
 }
 
-.rc-form-container {
-  // background-color: map-get($vuetify.theme.themes.light, 'grey-darken-1');
-  padding-bottom: 0;
-  padding-top: 0;
-  padding-left: 0;
-  padding-right: 0;
-
-  @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
-    background-color: white;
-    padding-bottom: 4rem;
-    padding-top: 3rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-
-    .rc-form-container-content {
-      max-width: 840px;
-      width: 100%;
-    }
-  }
-}

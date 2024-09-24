@@ -6,8 +6,8 @@
           <slot name="breadcrumb-title" v-bind="item"></slot>
         </template>
       </v-breadcrumbs>
-      <h1 class="text-md-h1 text-h3">{{ title }}</h1>
-      <div class="font-weight-light text-md-body-1 text-subtitle-1">
+      <h1 class="text-md-h1 text-h4">{{ title }}</h1>
+      <div class="font-weight-light text-md-body-1 text-body-1">
         {{ description }}
       </div>
     </v-container>

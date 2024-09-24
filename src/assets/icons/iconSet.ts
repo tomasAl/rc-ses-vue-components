@@ -71,7 +71,7 @@ const aliases: Partial<IconAliases> = {
   unfold: undefined,
   warning: WarningFilledIcon,
   collapse: CaretUpIcon,
-  complete: undefined,
+  complete: CheckIcon,
   cancel: undefined,
   close: XIcon,
   closeFilled: XCircleFilledIcon,

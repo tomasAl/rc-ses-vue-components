@@ -58,7 +58,7 @@ const accordionController = useAccordionController({
   },
   issueForm: {
     expanded: false,
-    state: 'pending',
+    state: 'error',
     title: 'Išdavimas',
   },
   additionalServicesForm: {

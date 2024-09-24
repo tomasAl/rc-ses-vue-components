@@ -4,7 +4,6 @@
 .rcs-ft-container {
   border: 1px solid rgba(var(--v-theme-grey-400));
   padding: 0;
-  margin: 3rem 0 0;
 
   .rcs-ft-header {
     padding: 0;
@@ -17,7 +16,11 @@
 
   .rcs-ft-window {
     background: white;
-    padding: 1.5rem;
+    // padding: 1.5rem;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {

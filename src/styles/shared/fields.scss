@@ -15,15 +15,15 @@
   }
 
   &.v-input {
-    --v-input-control-height: 44px;
-    --v-input-padding-top: 16px;
+    --v-input-control-height: 2.75rem; // 44px
+    --v-input-padding-top: 1rem; // 16px
   }
 
   .v-field {
     --v-field-padding-start: 0.8125rem;
     --v-field-padding-end: 0.8125rem; // 13px
-    --v-field-input-padding-top: 0.75rem; // 12px
-    --v-field-input-padding-bottom: 0.75rem;
+    --v-field-input-padding-top: 0.625rem; // 10px
+    --v-field-input-padding-bottom: 0.625rem; // 10px
 
     .v-field__input {
       font-size: 0.9375rem;
@@ -36,7 +36,7 @@
   }
 
   .v-input--density-default {
-    --v-input-control-height: 2.75rem;
+    --v-input-control-height: 2.625rem; // 42px
   }
 
   .v-input__details {

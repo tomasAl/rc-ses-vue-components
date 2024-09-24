@@ -14,6 +14,7 @@
             icon="rc-success"
             color="success-500"
           />
+          <v-icon v-else-if="step.state === 'error'" icon="$error" color="error" />
           <DotActive v-else-if="step.state === 'active'" color="primary" />
           <DotInactive v-else />
         </div>
