@@ -1,6 +1,7 @@
 import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 import { en, lt } from 'vuetify/locale'
-import 'vuetify/styles'
 
 import { aliases, rcIcons } from '@/assets/icons/iconSet'
 import { darkTheme, lightTheme } from '@/theme/themes'
@@ -9,6 +10,8 @@ import defaults from '../theme'
 
 const createRcSesVuetify = (): ReturnType<typeof createVuetify> =>
   createVuetify({
+    components,
+    directives,
     defaults,
     locale: {
       locale: 'lt',

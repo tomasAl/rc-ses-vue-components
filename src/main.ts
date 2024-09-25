@@ -4,6 +4,7 @@
  * Bootstraps Vuetify and other plugins then mounts the App`
  */
 import { createApp } from 'vue'
+import 'vuetify/styles'
 
 import registerPlugins from '@/plugins'
 import '@/styles/shared/index.scss'
