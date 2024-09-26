@@ -9,14 +9,7 @@
     :for="name"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">
-      <RcSesCheckbox
-        :model-value="modelValue"
-        v-bind="$attrs"
-        :value="value"
-        :label="label"
-        :error="error"
-        @update:model-value="$emit('update:modelValue', $event)"
-      />
+      <RcSesCheckbox v-model="model" v-bind="$attrs" :label="label" :error="error" />
     </v-card>
   </RcSesFieldWrapper>
 </template>
@@ -36,5 +29,5 @@ defineOptions({
 
 withDefaults(defineProps<CheckboxFieldProps>(), CheckboxDefaults)
 
-defineEmits(['update:modelValue'])
+const model = defineModel<boolean>()
 </script>
