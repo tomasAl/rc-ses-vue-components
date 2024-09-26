@@ -17,6 +17,22 @@
         <v-list-item-title>{{ item.title }}</v-list-item-title>
       </v-list-item>
     </v-list>
+    <v-divider />
+    <v-list>
+      <v-list-item append-icon="$next" @click="showSuccessModal = true">
+        <v-list-item-title>Modalas: Sėkmingai atlikto veiksmo pavyzdys</v-list-item-title>
+      </v-list-item>
+      <v-list-item append-icon="$next" @click="showCancelModal = true">
+        <v-list-item-title>Modalas: Darbo užbaigimo pavyzdys</v-list-item-title>
+      </v-list-item>
+    </v-list>
+
+    <SuccessModal v-model="showSuccessModal" />
+    <CancelModal v-model="showCancelModal" />
+
+    <v-select :hide-details="false">
+      <template #details>test</template>
+    </v-select>
   </v-container>
 </template>
 
@@ -24,6 +40,11 @@
 import { ref } from 'vue'
 
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+import CancelModal from '@/examples/modals/CancelModal.vue'
+import SuccessModal from '@/examples/modals/SuccessModal.vue'
+
+const showSuccessModal = ref(false)
+const showCancelModal = ref(false)
 
 const items = ref([
   {

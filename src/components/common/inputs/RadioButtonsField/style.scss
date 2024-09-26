@@ -2,10 +2,15 @@
 
 .rc-radio-buttons-field {
 
+  .rc-field-labels {
+    margin-top: 0.5rem;
+    max-height: 2.25rem;
+  }
+
   .rc-radios {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -0.5rem;
+    margin: -0.5rem;
     border-radius: var.$border-radius-root;
     padding: 0.25rem;
 

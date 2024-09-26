@@ -15,9 +15,7 @@
       :inline="inline"
       :disabled="disabled"
       :readonly="readonly"
-      :error="!!error"
-      :hide-details="!error"
-      :error-messages="error"
+      :hide-details="true"
     >
       <v-btn
         v-for="(option, index) in options"
@@ -32,12 +30,14 @@
         {{ option.label }}
       </v-btn>
     </v-radio-group>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/type'
 

@@ -1,8 +1,12 @@
 <template>
-  <RcSesAlert variant="light" type="warning" class="form-control">
+  <RcSesAlert variant="light" type="warning" class="form-control" title="Warning">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    <a href="https://www.registrucentras.lt/" target="_blank" rel="noopener noreferrer">
+      Daugiau informacijos
+    </a>
   </RcSesAlert>
 
   <RcSesNumberStepperField
@@ -53,7 +57,11 @@
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       },
     ]"
-  />
+  >
+    <template #message>
+      <span>test</span>
+    </template>
+  </RcSesSelectField>
 </template>
 
 <script setup lang="ts">

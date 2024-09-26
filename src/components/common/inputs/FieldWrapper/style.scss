@@ -36,7 +36,10 @@
     }
   }
 
-
+  .rc-input-error {
+    width: 100%;
+    padding-top: 0.375rem;
+  }
 
   @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
     flex-direction: row;

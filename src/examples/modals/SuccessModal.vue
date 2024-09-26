@@ -7,10 +7,11 @@
         >
           <CheckCircleFilledIcon color="secondary" class="ma-4" size="40" />
         </div>
-        <h2 class="text-h4 font-weight-bold mb-2">Ar tikrai norite baigti darbą?</h2>
+        <h2 class="text-h4 font-weight-bold mb-2">Veiksmas sėkmingai atliktas</h2>
         <p class="text-body">
-          Vidutinės rinkos vertės nekilnojamojo turto mokesčiams ir kitoms reikmėms
-          nustatymas, perskaičiavimas (masinio vertinimo būdu), įrašymas ar pateikimas
+          Jūsų veiksmas buvo sėkmingai atliktas. Dėkojame už jūsų laiką ir pastangas. Jei
+          turite kokių nors klausimų ar papildomų poreikių, nedvejodami kreipkitės į mūsų
+          klientų aptarnavimo komandą.
         </p>
       </v-card-text>
       <v-card-actions class="justify-center pa-4 mb-4">
@@ -23,14 +24,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.vue'
 import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 
-// Adjust the import path as needed
-
-const isOpen = ref(false)
+const isOpen = defineModel<boolean>()
 
 const open = () => {
   isOpen.value = true

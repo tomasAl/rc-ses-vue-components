@@ -15,10 +15,11 @@
       variant="outlined"
       :placeholder="placeholder"
       :items="computedItems"
-      :hide-details="!error"
+      :hide-details="!(!!error || !!counter || !!messages)"
       :error="!!error"
       :error-messages="error"
       :menu-props="menuProps"
+      :messages="messages"
       :readonly="readonly"
       :disabled="disabled"
       transition="scroll-y-transition"
@@ -26,6 +27,10 @@
       @update:menu="updateVList"
       @update:focused="() => (searchValue = '')"
     >
+      <template v-if="$slots['message']" #message="binds">
+        <slot name="message" v-bind="binds" />
+      </template>
+
       <template v-if="searchable" #prepend-item>
         <RcSesSearchableArea
           v-model="searchValue"

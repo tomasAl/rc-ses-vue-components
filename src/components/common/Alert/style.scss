@@ -1,7 +1,11 @@
 @use '../../../styles/vuetify/variables' as var;
+@use '../../../styles/vuetify/settings.scss';
 
 .rc-alert {
   border-radius: var.$container-border-radius;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+
+
   .v-alert__prepend {
     margin-inline-end: 0.625rem;
   }
@@ -14,6 +18,10 @@
 
   .v-alert__content {
     font-size: 0.875rem;
+  }
+
+  a {
+    font-weight: 500;
   }
 
   &.v-alert--variant-flat {
@@ -37,11 +45,17 @@
       &.bg-info .v-icon {
         color: rgb(var(--v-theme-grey-600));
       }
+      &.bg-info a, &.bg-grey a {
+        color: rgb(var(--v-theme-grey-900));
+      }
 
       --v-theme-warning: var(--v-theme-warning-100);
       --v-theme-on-warning: var(--v-theme-warning-900);
       &.bg-warning .v-icon {
         color: rgb(var(--v-theme-warning-600));
+      }
+      &.bg-warning a {
+        color: rgb(var(--v-theme-warning-900));
       }
 
       --v-theme-error: var(--v-theme-error-50);
@@ -49,11 +63,17 @@
       &.bg-error .v-icon {
         color: rgb(var(--v-theme-error-600));
       }
+      &.bg-error a {
+        color: rgb(var(--v-theme-error-900));
+      }
 
       --v-theme-success: var(--v-theme-secondary-100);
       --v-theme-on-success: var(--v-theme-secondary-900);
       &.bg-success .v-icon {
         color: rgb(var(--v-theme-secondary-600));
+      }
+      &.bg-success a {
+        color: rgb(var(--v-theme-secondary-900));
       }
 
       .v-alert__content {
@@ -62,4 +82,22 @@
     }
   }
 
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+
+    .v-alert-title {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .v-alert__content {
+      font-size: 0.8125rem; // 13px
+    }
+
+    .v-icon {
+      font-size: 1.125rem !important; // 18px
+      height: 1.125rem !important;
+      width: 1.125rem !important;
+    }
+  }
 }

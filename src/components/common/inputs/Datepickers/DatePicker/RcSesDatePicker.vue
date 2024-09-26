@@ -34,7 +34,11 @@
         :readonly="readonly"
         :error="error"
         :value="displayValue"
-      />
+      >
+        <!-- <template #prepend-inner>
+          <v-icon icon="$calendar" />
+        </template> -->
+      </RcSesTextField>
     </template>
 
     <template #clear-icon="{ clear }">

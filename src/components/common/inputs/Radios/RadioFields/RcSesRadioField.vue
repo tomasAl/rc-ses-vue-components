@@ -16,9 +16,7 @@
       :inline="inline"
       :disabled="disabled"
       :readonly="readonly"
-      :error="!!error"
-      :hide-details="!error"
-      :error-messages="error"
+      :hide-details="true"
     >
       <RcSesRadio
         v-for="(option, index) in options"
@@ -28,10 +26,12 @@
       >
       </RcSesRadio>
     </v-radio-group>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
 import RadioFieldDefaults from '@/components/common/inputs/Radios/RadioFields/defaults'
