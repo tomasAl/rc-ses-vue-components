@@ -178,6 +178,25 @@
     overflow: hidden;
 
     .dp__menu_inner {
+      .dp--header-wrap {
+        height: 35px !important;
+        justify-content: center;
+
+
+        .v-icon {
+          margin: 0 2px;
+
+          &:hover {
+            fill: rgb(var(--v-theme-grey-950));
+          }
+        }
+
+        .v-icon:focus {
+          outline: none;
+        }
+      }
+
+
       .dp__instance_calendar {
         margin-right: 10px;
 
@@ -198,8 +217,8 @@
 
   .dp__clear_icon {
     height: 1.5rem;
-    top: 1.5rem;
-    right: 16px;
+    top: 1.31rem;
+    right: 12px;
     opacity: 0;
     transition: opacity 0.1s;
   }

@@ -66,6 +66,17 @@
 
   // ERROR STATE
   &.rc-error {
+
+    .rc-field {
+      .v-field__outline__end {
+        border-top-color: rgb(var(--v-theme-error));
+        border-bottom-color: rgb(var(--v-theme-error));
+      }
+      .v-field__outline__start {
+        border-color: rgb(var(--v-theme-error));
+      }
+    }
+
     .v-btn {
       .v-btn__underlay {
         border-top-color: rgb(var(--v-theme-error));

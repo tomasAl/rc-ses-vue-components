@@ -33,6 +33,13 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+
+    .v-field__prepend-inner, .v-field__append-inner {
+      .v-icon {
+        opacity: 1;
+        color: rgb(var(--v-theme-grey-600));
+      }
+    }
   }
 
   .v-input--density-default {

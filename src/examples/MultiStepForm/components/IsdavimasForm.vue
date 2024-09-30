@@ -41,6 +41,7 @@
     placeholder="Pasirinkite"
     :searchable="false"
     :multiple="false"
+    :messages="messages"
     :items="[
       {
         title: 'Padalinys 1',
@@ -58,8 +59,8 @@
       },
     ]"
   >
-    <template #message>
-      <span>test</span>
+    <template #message="{ message }">
+      <div v-html="message"></div>
     </template>
   </RcSesSelectField>
 </template>
@@ -83,4 +84,8 @@ const { errors, defineField } = formController
 const [modelIsdavimoBudas, modelIsdavimoBudasProps] = defineField('isdavimoBudas')
 const [modelPadalinys, modelPadalinysProps] = defineField('padalinys')
 const [modelSkaicius, modelSkaiciusProps] = defineField('skaicius')
+
+const messages = [
+  'Informacija apie <a href="https://www.registrucentras.lt/" target="_blank">RC Padalinius</a>',
+]
 </script>

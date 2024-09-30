@@ -1,6 +1,10 @@
 import { defineComponent, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
+import CaretDoubleLeftBoldIcon from '@/assets/icons/bold/CaretDoubleLeftBoldIcon.vue'
+import CaretDoubleRightBoldIcon from '@/assets/icons/bold/CaretDoubleRightBoldIcon.vue'
+import CaretLeftBoldIcon from '@/assets/icons/bold/CaretLeftBoldIcon.vue'
+import CaretRightBoldIcon from '@/assets/icons/bold/CaretRightBoldIcon.vue'
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
 import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.vue'
 import InfoFilledIcon from '@/assets/icons/filled/InfoFilledIcon.vue'
@@ -93,6 +97,18 @@ const rcIcons: IconSet = {
 
       case 'rc-caret-down-filled':
         return h(CaretDownFilledIcon, props)
+
+      case 'rc-caret-double-right-bold':
+        return h(CaretDoubleRightBoldIcon, props)
+
+      case 'rc-caret-double-left-bold':
+        return h(CaretDoubleLeftBoldIcon, props)
+
+      case 'rc-caret-right-bold':
+        return h(CaretRightBoldIcon, props)
+
+      case 'rc-caret-left-bold':
+        return h(CaretLeftBoldIcon, props)
 
       // Add other cases here
       default:

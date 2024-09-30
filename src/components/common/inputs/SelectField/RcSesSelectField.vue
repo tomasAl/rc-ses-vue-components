@@ -31,6 +31,10 @@
         <slot name="message" v-bind="binds" />
       </template>
 
+      <template v-if="$slots['details']" #details="binds">
+        <slot name="details" v-bind="binds" />
+      </template>
+
       <template v-if="searchable" #prepend-item>
         <RcSesSearchableArea
           v-model="searchValue"

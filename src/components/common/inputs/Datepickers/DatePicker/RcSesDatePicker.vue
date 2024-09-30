@@ -34,11 +34,46 @@
         :readonly="readonly"
         :error="error"
         :value="displayValue"
-      >
-        <!-- <template #prepend-inner>
-          <v-icon icon="$calendar" />
-        </template> -->
-      </RcSesTextField>
+      />
+    </template>
+
+    <template
+      #month-year="{ month, year, months, updateMonthYear, handleMonthYearChange }"
+    >
+      <v-icon
+        icon="rc-caret-double-left-bold"
+        size="16"
+        color="grey"
+        @click="handleMonthYearChange && handleMonthYearChange(false, true)"
+      />
+      <v-icon
+        icon="rc-caret-left-bold"
+        size="16"
+        color="grey"
+        @click="
+          updateMonthYear && month !== undefined && updateMonthYear(month - 1, year, true)
+        "
+      />
+      <div class="text-body-1 flex-grow-1 text-center font-weight-strong">
+        {{
+          months && month !== undefined ? months.find((m) => m.value === month)?.text : ''
+        }}
+        {{ year }}
+      </div>
+      <v-icon
+        icon="rc-caret-right-bold"
+        size="16"
+        color="grey"
+        @click="
+          updateMonthYear && month !== undefined && updateMonthYear(month + 1, year, true)
+        "
+      />
+      <v-icon
+        icon="rc-caret-double-right-bold"
+        size="16"
+        color="grey"
+        @click="handleMonthYearChange && handleMonthYearChange(true, true)"
+      />
     </template>
 
     <template #clear-icon="{ clear }">
@@ -111,7 +146,7 @@ const formatDateRange = (startDate: Date, endDate: Date): any => {
 }
 
 const formatPreview = (
-  dt: string | Date | Date[] | ((date: Date) => string) | ((dates: Date[]) => string)
+  dt: string | Date | Date[] | ((date: Date) => string) | ((dates: Date[]) => string),
 ): string => {
   if (Array.isArray(dt) && dt.length === 2) {
     // Date range

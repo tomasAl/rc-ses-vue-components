@@ -30,15 +30,19 @@
     <SuccessModal v-model="showSuccessModal" />
     <CancelModal v-model="showCancelModal" />
 
-    <v-select :hide-details="false">
-      <template #details>test</template>
-    </v-select>
+
+    <RcSesSelectField :messages="messages">
+      <template #message="{ message }">
+        <div v-html="message"></div>
+      </template>
+    </RcSesSelectField>
   </v-container>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import CancelModal from '@/examples/modals/CancelModal.vue'
 import SuccessModal from '@/examples/modals/SuccessModal.vue'
@@ -68,4 +72,9 @@ const items = ref([
     routeTo: '/dataTable',
   },
 ])
+
+const messages = [
+  'test',
+  'Click <a href="https://example.com" target="_blank">here</a> for more information',
+]
 </script>
