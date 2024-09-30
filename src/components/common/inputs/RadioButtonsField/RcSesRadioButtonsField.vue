@@ -17,18 +17,20 @@
       :readonly="readonly"
       :hide-details="true"
     >
-      <v-btn
+      <RcSesButton
         v-for="(option, index) in options"
         :key="index"
+        class="no-focus v-btn--variant-glow"
         :class="{ 'v-btn--active': selectedOption === option.value }"
         :value="option.value"
         variant="outlined"
+        color="grey"
         :disabled="disabled"
         :readonly="readonly"
         @click="model = option.value"
       >
         {{ option.label }}
-      </v-btn>
+      </RcSesButton>
     </v-radio-group>
     <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
@@ -38,6 +40,7 @@
 import { computed } from 'vue'
 
 import RcSesError from '@/components/common/Error/RcSesError.vue'
+import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import { RadioButtonsFieldProps } from '@/components/common/inputs/RadioButtonsField/type'
 

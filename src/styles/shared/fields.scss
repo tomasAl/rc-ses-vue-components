@@ -49,6 +49,11 @@
   .v-input__details {
     padding-inline: 0;
     min-height: auto;
+
+    .v-messages {
+      opacity: 1;
+      color: rgb(var(--v-theme-grey-500));
+    }
   }
 
   // ### DEFAULT STATE

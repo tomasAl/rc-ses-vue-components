@@ -22,6 +22,7 @@
     menu-class-name="rc-datepicker-menu"
     input-class-name="rc-datepicker-input"
     class="rc-datepicker"
+    :class="{ 'rc-datepicker--range': range }"
     @update:model-value="handleChange"
   >
     <template #dp-input="inputBind">
@@ -41,12 +42,14 @@
       #month-year="{ month, year, months, updateMonthYear, handleMonthYearChange }"
     >
       <v-icon
+        class="rc-datepicker-prev-icon"
         icon="rc-caret-double-left-bold"
         size="16"
         color="grey"
         @click="handleMonthYearChange && handleMonthYearChange(false, true)"
       />
       <v-icon
+        class="rc-datepicker-prev-icon"
         icon="rc-caret-left-bold"
         size="16"
         color="grey"
@@ -61,6 +64,7 @@
         {{ year }}
       </div>
       <v-icon
+        class="rc-datepicker-next-icon"
         icon="rc-caret-right-bold"
         size="16"
         color="grey"
@@ -69,6 +73,7 @@
         "
       />
       <v-icon
+        class="rc-datepicker-next-icon"
         icon="rc-caret-double-right-bold"
         size="16"
         color="grey"
@@ -89,13 +94,13 @@
     </template>
 
     <template v-if="range" #action-preview>
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisWeek"
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisWeek"
         >Ši savaitė</v-btn
       >
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getThisMonth"
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisMonth"
         >Šis mėnuo</v-btn
       >
-      <v-btn variant="text" color="primary" class="text-subtitle-1" @click="getLastMonth"
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getLastMonth"
         >Praėjęs mėnuo</v-btn
       >
     </template>
@@ -105,14 +110,7 @@
     </template>
 
     <template #action-buttons>
-      <v-btn
-        variant="text"
-        color="primary"
-        class="text-subtitle-1"
-        @click="closeDatepicker"
-      >
-        Uždaryti
-      </v-btn>
+      <v-btn variant="text" color="primary" @click="closeDatepicker"> Uždaryti </v-btn>
       <v-btn color="primary" @click="selectDate">Gerai</v-btn>
     </template>
   </DatePicker>
