@@ -1,6 +1,6 @@
 import type { VAlert } from 'vuetify/components'
 
-import { AlertVariants } from '@/components/common/Alert/types'
+import { AlertTypes, AlertVariants } from '@/components/common/Alert/types'
 
 export default {
   id: undefined,
@@ -27,6 +27,6 @@ export default {
   theme: undefined,
   tile: false,
   title: undefined,
-  type: 'info' as VAlert['$props']['type'],
+  type: 'info' as AlertTypes,
   width: undefined,
 }

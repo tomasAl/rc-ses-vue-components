@@ -15,7 +15,7 @@ import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
 import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
 import RadioOffIcon from '@/assets/icons/inputs/RadioOffIcon.vue'
 import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
-import { TrashIcon } from '@/assets/icons/regular'
+import { ScrollIcon, TrashIcon } from '@/assets/icons/regular'
 import CalendarBlankIcon from '@/assets/icons/regular/CalendarBlankIcon.vue'
 import CaretDownIcon from '@/assets/icons/regular/CaretDownIcon.vue'
 import CaretLeftIcon from '@/assets/icons/regular/CaretLeftIcon.vue'
@@ -84,6 +84,7 @@ const aliases: Partial<IconAliases> = {
   checkPrimary: CheckIcon,
   upload: UploadIcon,
   tooltip: QuestionIcon,
+  scroll: ScrollIcon,
 }
 
 const rcIcons: IconSet = {

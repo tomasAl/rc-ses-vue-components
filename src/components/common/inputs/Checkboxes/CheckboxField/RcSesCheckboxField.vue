@@ -23,6 +23,7 @@ import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesC
 import CheckboxDefaults from '@/components/common/inputs/Checkboxes/Checkbox/defaults'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 
+import './style.scss'
 import { CheckboxFieldProps } from './types'
 
 defineOptions({
