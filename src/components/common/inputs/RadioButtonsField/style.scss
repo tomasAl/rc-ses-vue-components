@@ -20,24 +20,29 @@
 
     .v-btn {
       margin: 0.25rem;
-      .v-btn__underlay {
-        border-radius: var.$border-radius-root;
-        background-color: white;
-        //opacity: 1;
+      border-color: transparent;
+      overflow: visible;
+
+
+      &::after {
+        border: none;
       }
 
+      .v-btn__underlay {
+        opacity: 1;
+      }
+
+      .v-btn__overlay {
+        opacity: 1;
+        background: white;
+        border-radius: var.$border-radius-root;
+        border: 1px solid rgb(var(--v-theme-grey));
+      }
 
       &.v-btn--active {
-        background-color: rgb(var(--v-theme-primary));
-        border-color: rgb(var(--v-theme-primary));
-        transition: border-color 0.3s ease-in-out;
 
         .v-btn__overlay {
-          z-index: 1;
-        }
-
-        .v-btn__underlay {
-          z-index: 0;
+          border: 1px solid rgb(var(--v-theme-primary));
           background-color: rgb(var(--v-theme-primary));
         }
 
@@ -46,22 +51,13 @@
         }
       }
 
-
-
       &:hover {
         border-color: rgb(var(--v-theme-primary));
 
         .v-btn__overlay {
           border: 1px solid rgb(var(--v-theme-primary));
           opacity: 1;
-          background-color: transparent;
         }
-
-        .v-btn__content {
-          z-index: 100;
-        }
-
-        // border-color: rgb(var(--v-theme-primary));
 
         .v-btn__underlay::before {
           content: '';
@@ -73,7 +69,7 @@
           background-color: rgb(var(--v-theme-primary-200));
           border-radius: var.$container-border-radius;
           pointer-events: none;
-          z-index: -1;
+          z-index: 1;
         }
       }
     }
