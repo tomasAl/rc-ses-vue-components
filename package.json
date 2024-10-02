@@ -1,22 +1,24 @@
 {
-  "name": "@rc-ses/vue-components",
-  "author": "Codeopera, UAB",
-  "version": "0.0.1",
+  "name": "@registrucentras/rc-ses-vue-components",
+  "author": "VĮ REGISTRŲ CENTRAS",
+  "version": "0.0.12",
+  "description": "RC SES Vue.js komponentų biblioteka",
   "type": "module",
-  "main": "./dist/rc-ses-vue-components.cjs",
-  "module": "./dist/rc-ses-vue-components.js",
+  "private": false,
+  "main": "./dist/registrucentras-rc-ses-vue-components.cjs",
+  "module": "./dist/registrucentras-rc-ses-vue-components.js",
   "exports": {
     ".": {
       "types": "./dist/library/index.d.ts",
-      "import": "./dist/rc-ses-vue-components.js",
-      "require": "./dist/rc-ses-vue-components.cjs",
-      "default": "./dist/rc-ses-vue-components.cjs"
+      "import": "./dist/registrucentras-rc-ses-vue-components.js",
+      "require": "./dist/registrucentras-rc-ses-vue-components.cjs",
+      "default": "./dist/registrucentras-rc-ses-vue-components.cjs"
     },
     "./icons": {
       "types": "./dist/library/icons.d.ts",
-      "import": "./dist/rc-ses-vue-components2.js",
-      "require": "./dist/rc-ses-vue-components2.cjs",
-      "default": "./dist/rc-ses-vue-components2.cjs"
+      "import": "./dist/registrucentras-rc-ses-vue-components2.js",
+      "require": "./dist/registrucentras-rc-ses-vue-components2.cjs",
+      "default": "./dist/registrucentras-rc-ses-vue-components2.cjs"
     },
     "./vuetify/settings.scss": "./src/styles/vuetify/settings.scss",
     "./package.json": "./package.json"
