@@ -150,7 +150,7 @@
           :field-wrapper-props="{
             class: 'form-control',
           }"
-          class="bg-grey-100"
+          class="bg-grey-100 pa-2"
           name="radioPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },

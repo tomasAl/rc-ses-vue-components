@@ -4,28 +4,26 @@
     class="rc-checkbox-field"
     :label="fieldLabel"
     :description="fieldDescription"
+    :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
     :for="name"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">
-      <RcSesCheckbox
-        :model-value="modelValue"
-        v-bind="$attrs"
-        :value="value"
-        :label="label"
-        :error="error"
-        @update:model-value="$emit('update:modelValue', $event)"
-      />
+      <RcSesCheckbox v-model="model" v-bind="$attrs" :label="label" :error="undefined" />
     </v-card>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { withDefaults } from 'vue'
 
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 import RcSesCheckbox from '@/components/common/inputs/Checkboxes/Checkbox/RcSesCheckbox.vue'
 import CheckboxDefaults from '@/components/common/inputs/Checkboxes/Checkbox/defaults'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 
+import './style.scss'
 import { CheckboxFieldProps } from './types'
 
 defineOptions({
@@ -34,5 +32,5 @@ defineOptions({
 
 withDefaults(defineProps<CheckboxFieldProps>(), CheckboxDefaults)
 
-defineEmits(['update:modelValue'])
+const model = defineModel<boolean>()
 </script>

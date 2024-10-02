@@ -32,16 +32,33 @@
 
 .rc-btn {
 
+  &.v-btn--size-default {
+    --v-btn-height: 2.625rem;
+  }
+
+  .v-btn__underlay {
+    z-index: 1;
+  }
+
+  .v-btn__overlay {
+    z-index: 2;
+  }
+
   .v-btn__content {
     text-transform: none;
+    position: relative;
+    z-index: 10;
+    // color: white;
   }
 
   &.v-btn--disabled {
     background: rgb(var(--v-theme-grey-50)) !important;
     color: rgb(var(--v-theme-grey-300)) !important;
 
-    & .v-btn__content {
+    .v-btn__content {
       color: rgb(var(--v-theme-grey-300)) !important;
+      position: relative;
+      z-index: 10;
     }
   }
 
@@ -53,7 +70,9 @@
     @include make-color('grey', $hover, $active);
     @include make-color('error', $hover, $active);
     @include make-color('warning', $hover, $active);
-    @include make-focus(8px);
+    &:not(.no-focus) {
+      @include make-focus(8px);
+    }
   }
 
   &.v-btn--variant-outlined {
@@ -66,6 +85,8 @@
     @include make-color('grey', $hover, $active, $textColor, $haTextColor);
     @include make-color('error', $hover, $active, $textColor, $haTextColor);
     @include make-color('warning', $hover, $active, $textColor, $haTextColor);
-    @include make-focus(10px);
+    &:not(.no-focus) {
+      @include make-focus(10px);
+    }
   }
 }

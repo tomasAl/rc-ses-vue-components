@@ -13,15 +13,14 @@
         title: 'Tikslas 1',
         value: 't1',
         subtitle:
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+          'Daugiau informacijos rasite &lt;a href=&quot;https://www.registrucentras.lt&quot; target=&quot;_blank&quot;&gt;Registrucentras.lt&lt;/a&gt;',
       },
       { title: 'Tikslas 2', value: 't2' },
       { title: 'Tikslas 3', value: 't3' },
       {
         title: 'Tikslas 4',
         value: 't4',
-        subtitle:
-          'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        subtitle: 'Lorem Ipsum is simply dummy text of the printing.',
       },
       { title: 'Tikslas 5', value: 't5' },
       { title: 'Tikslas 6', value: 't6' },

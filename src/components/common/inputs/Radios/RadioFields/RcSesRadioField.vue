@@ -1,10 +1,11 @@
 <template>
   <RcSesFieldWrapper
     v-bind="fieldWrapperProps"
-    class="rc-radio-buttons-field"
+    class="rc-radios-field"
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
     :for="name"
     :variant="variant"
   >
@@ -15,9 +16,7 @@
       :inline="inline"
       :disabled="disabled"
       :readonly="readonly"
-      :error="!!error"
-      :hide-details="!error"
-      :error-messages="error"
+      :hide-details="true"
     >
       <RcSesRadio
         v-for="(option, index) in options"
@@ -27,16 +26,18 @@
       >
       </RcSesRadio>
     </v-radio-group>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 import RcSesRadio from '@/components/common/inputs/Radios/Radio/RcSesRadio.vue'
 import RadioFieldDefaults from '@/components/common/inputs/Radios/RadioFields/defaults'
 import { RadioGroupFieldProps } from '@/components/common/inputs/Radios/RadioFields/type'
 
-import '../../RadioButtonsField/style.scss'
+import './style.scss'
 
 defineOptions({
   inheritAttrs: false,

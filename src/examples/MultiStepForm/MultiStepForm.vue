@@ -3,6 +3,8 @@
     <RcSesFormContainer
       :accordion-controller="accordionController"
       :form-controller="formController"
+      :show-progress-stepper="true"
+      :show-accordion-collapse-controls="true"
     >
       <template #actions>
         <FormActions />
@@ -56,7 +58,7 @@ const accordionController = useAccordionController({
   },
   issueForm: {
     expanded: false,
-    state: 'pending',
+    state: 'error',
     title: 'Išdavimas',
   },
   additionalServicesForm: {

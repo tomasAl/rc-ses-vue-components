@@ -1,8 +1,18 @@
 <template>
-  <RcSesAlert variant="light" type="warning" class="form-control">
+  <RcSesAlert
+    variant="light"
+    type="warning"
+    class="form-control"
+    title="Warning"
+    closable
+  >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    <a href="https://www.registrucentras.lt/" target="_blank" rel="noopener noreferrer">
+      Daugiau informacijos
+    </a>
   </RcSesAlert>
 
   <RcSesNumberStepperField
@@ -37,6 +47,7 @@
     placeholder="Pasirinkite"
     :searchable="false"
     :multiple="false"
+    :messages="messages"
     :items="[
       {
         title: 'Padalinys 1',
@@ -53,7 +64,11 @@
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       },
     ]"
-  />
+  >
+    <template #message="{ message }">
+      <div v-html="message"></div>
+    </template>
+  </RcSesSelectField>
 </template>
 
 <script setup lang="ts">
@@ -75,4 +90,8 @@ const { errors, defineField } = formController
 const [modelIsdavimoBudas, modelIsdavimoBudasProps] = defineField('isdavimoBudas')
 const [modelPadalinys, modelPadalinysProps] = defineField('padalinys')
 const [modelSkaicius, modelSkaiciusProps] = defineField('skaicius')
+
+const messages = [
+  'Informacija apie <a href="https://www.registrucentras.lt/" target="_blank">RC Padalinius</a>',
+]
 </script>

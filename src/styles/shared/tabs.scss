@@ -1,6 +1,6 @@
 .rc-tabs {
   position: relative;
-  .v-slide-group__content::before {
+  .v-slide-group__content::before, .v-slide-group__next::before, .v-slide-group__prev::before {
     position:absolute;
     content: "";
     height: 0.0625rem; // 1px
@@ -8,7 +8,13 @@
     background: rgb(var(--v-theme-grey-300));
     bottom: 0;
     z-index: 5;
+    opacity: 1;
   }
+
+  .v-slide-group__prev--disabled {
+    opacity: 1;
+  }
+
 }
 
 .rc-tab {

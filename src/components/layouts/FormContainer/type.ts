@@ -5,5 +5,6 @@ import type useAccordionController from '@/components/common/Accordion/hooks/use
 export type FormContainerProps = {
   accordionController: ReturnType<typeof useAccordionController>
   formController?: ReturnType<typeof useForm>
-  singleForm?: boolean
+  showAccordionCollapseControls?: boolean
+  showProgressStepper?: boolean
 }

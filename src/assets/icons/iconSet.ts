@@ -1,6 +1,10 @@
 import { defineComponent, h } from 'vue'
 import type { IconAliases, IconProps, IconSet } from 'vuetify'
 
+import CaretDoubleLeftBoldIcon from '@/assets/icons/bold/CaretDoubleLeftBoldIcon.vue'
+import CaretDoubleRightBoldIcon from '@/assets/icons/bold/CaretDoubleRightBoldIcon.vue'
+import CaretLeftBoldIcon from '@/assets/icons/bold/CaretLeftBoldIcon.vue'
+import CaretRightBoldIcon from '@/assets/icons/bold/CaretRightBoldIcon.vue'
 import CaretDownFilledIcon from '@/assets/icons/filled/CaretDownFilledIcon.vue'
 import CheckCircleFilledIcon from '@/assets/icons/filled/CheckCircleFilledIcon.vue'
 import InfoFilledIcon from '@/assets/icons/filled/InfoFilledIcon.vue'
@@ -11,7 +15,7 @@ import CheckboxOffIcon from '@/assets/icons/inputs/CheckboxOffIcon.vue'
 import CheckboxOnIcon from '@/assets/icons/inputs/CheckboxOnIcon.vue'
 import RadioOffIcon from '@/assets/icons/inputs/RadioOffIcon.vue'
 import RadioOnIcon from '@/assets/icons/inputs/RadioOnIcon.vue'
-import { TrashIcon } from '@/assets/icons/regular'
+import { ScrollIcon, TrashIcon } from '@/assets/icons/regular'
 import CalendarBlankIcon from '@/assets/icons/regular/CalendarBlankIcon.vue'
 import CaretDownIcon from '@/assets/icons/regular/CaretDownIcon.vue'
 import CaretLeftIcon from '@/assets/icons/regular/CaretLeftIcon.vue'
@@ -71,7 +75,7 @@ const aliases: Partial<IconAliases> = {
   unfold: undefined,
   warning: WarningFilledIcon,
   collapse: CaretUpIcon,
-  complete: undefined,
+  complete: CheckIcon,
   cancel: undefined,
   close: XIcon,
   closeFilled: XCircleFilledIcon,
@@ -80,6 +84,7 @@ const aliases: Partial<IconAliases> = {
   checkPrimary: CheckIcon,
   upload: UploadIcon,
   tooltip: QuestionIcon,
+  scroll: ScrollIcon,
 }
 
 const rcIcons: IconSet = {
@@ -93,6 +98,18 @@ const rcIcons: IconSet = {
 
       case 'rc-caret-down-filled':
         return h(CaretDownFilledIcon, props)
+
+      case 'rc-caret-double-right-bold':
+        return h(CaretDoubleRightBoldIcon, props)
+
+      case 'rc-caret-double-left-bold':
+        return h(CaretDoubleLeftBoldIcon, props)
+
+      case 'rc-caret-right-bold':
+        return h(CaretRightBoldIcon, props)
+
+      case 'rc-caret-left-bold':
+        return h(CaretLeftBoldIcon, props)
 
       // Add other cases here
       default:

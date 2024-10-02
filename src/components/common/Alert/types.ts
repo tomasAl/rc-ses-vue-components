@@ -3,6 +3,7 @@ import type { VAlert } from 'vuetify/components'
 import type { ColorType } from '@/types/common/ColorType'
 
 export type AlertVariants = 'light' | 'dark'
+export type AlertTypes = 'scroll' | 'success' | 'warning' | 'error' | 'info'
 
 export interface AlertProps {
   id?: string
@@ -29,6 +30,6 @@ export interface AlertProps {
   theme?: VAlert['$props']['theme']
   tile?: VAlert['$props']['tile']
   title?: VAlert['$props']['title']
-  type?: VAlert['$props']['type']
+  type?: AlertTypes
   width?: VAlert['$props']['width']
 }

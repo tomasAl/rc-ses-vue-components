@@ -1,56 +1,50 @@
 <template>
-  <v-container class="pa-0">
-    <v-row no-gutters>
-      <v-col md="4" lg="3" xl="2" class="d-none d-md-flex">
-        <RcSesFormStepper
-          v-if="Object.keys(state).length > 1"
-          :items="state"
-          style="margin-top: 2.875rem"
-        ></RcSesFormStepper>
-      </v-col>
-      <v-col sm="12" md="8" lg="9" xl="10">
-        <div class="rc-form-wrapper">
-          <div class="rc-form-actions">
-            <v-btn
-              variant="text"
-              class="text-subtitle-1 text-primary-600"
-              @click="expandAll"
-            >
-              <template #prepend>
-                <OpenIcon size="16" />
-              </template>
-              Praskleisti visus
-            </v-btn>
-            <v-btn
-              variant="text"
-              class="text-subtitle-1 text-primary-600"
-              @click="collapseAll"
-            >
-              <template #prepend>
-                <CloseIcon size="16" />
-              </template>
-              Suskleisti visus
-            </v-btn>
-          </div>
-
-          <!-- Default CONTENT goes here         -->
-          <slot />
+  <v-container class="rc-container rc-container-center d-flex">
+    <div
+      v-if="showProgressStepper"
+      class="rc-form-stepper d-none d-md-flex"
+      style="flex-grow: 1"
+    >
+      <RcSesFormStepper
+        v-if="showProgressStepper"
+        :items="state"
+        style="margin-top: 2.875rem"
+      ></RcSesFormStepper>
+    </div>
+    <div class="rc-container-content">
+      <div class="rc-form-wrapper">
+        <div v-if="computedAccordionControlsVisible" class="rc-form-actions">
+          <v-btn variant="text" class="text-body-2 text-primary-600" @click="expandAll">
+            <template #prepend>
+              <OpenIcon size="16" />
+            </template>
+            Praskleisti visus
+          </v-btn>
+          <v-btn variant="text" class="text-body-2 text-primary-600" @click="collapseAll">
+            <template #prepend>
+              <CloseIcon size="16" />
+            </template>
+            Suskleisti visus
+          </v-btn>
         </div>
 
-        <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
-          <RcSesFormActions v-if="$slots.actions">
-            <slot name="actions" v-bind="{ formController, accordionController }"></slot>
-          </RcSesFormActions>
-        </slot>
+        <!-- Default CONTENT goes here         -->
+        <slot />
+      </div>
 
-        <slot v-if="$slots['actions-after']" name="actions-after" />
-      </v-col>
-    </v-row>
+      <slot name="actions-wrapper" v-bind="{ formController, accordionController }">
+        <RcSesFormActions v-if="$slots.actions">
+          <slot name="actions" v-bind="{ formController, accordionController }"></slot>
+        </RcSesFormActions>
+      </slot>
+
+      <slot v-if="$slots['actions-after']" name="actions-after" />
+    </div>
   </v-container>
 </template>
 
 <script setup lang="ts">
-import { provide } from 'vue'
+import { computed, provide } from 'vue'
 
 import CloseIcon from '@/assets/icons/regular/CloseIcon.vue'
 import OpenIcon from '@/assets/icons/regular/OpenIcon.vue'
@@ -71,4 +65,9 @@ provide('expandAll', expandAll)
 provide('toggleAccordion', toggleAccordion)
 
 provide<UseFormType>('formController', props.formController)
+
+const computedAccordionControlsVisible = computed(() => {
+  if (Object.keys(state).length <= 1 || !props.showAccordionCollapseControls) return false
+  return true
+})
 </script>

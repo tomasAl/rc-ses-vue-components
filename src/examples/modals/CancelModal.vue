@@ -26,14 +26,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import WarningDiamondFilledIcon from '@/assets/icons/filled/WarningDiamondFilledIcon.vue'
 import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
 
-// Adjust the import path as needed
-
-const isOpen = ref(false)
+const isOpen = defineModel<boolean>()
 
 const open = () => {
   isOpen.value = true

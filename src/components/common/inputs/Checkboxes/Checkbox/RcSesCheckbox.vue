@@ -1,7 +1,7 @@
 <template>
   <v-checkbox
+    v-model="model"
     class="rc-checkbox"
-    v-bind="props"
     :class="classes"
     :name="name"
     :color="color"
@@ -26,6 +26,10 @@ import CheckboxDefaults from '@/components/common/inputs/Checkboxes/Checkbox/def
 import type { CheckboxProps } from '@/components/common/inputs/Checkboxes/Checkbox/types'
 
 import './style.scss'
+
+defineOptions({
+  inheritAttrs: false,
+})
 
 const props = withDefaults(defineProps<CheckboxProps>(), CheckboxDefaults)
 

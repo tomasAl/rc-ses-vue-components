@@ -35,5 +35,5 @@ export type CheckboxProps = InputProps & {
   value?: VCheckbox['$props']['value']
   validationValue?: VCheckbox['$props']['validationValue']
   width?: VCheckbox['$props']['width']
-  modelValue?: VCheckbox['$props']['modelValue']
+  // modelValue?: VCheckbox['$props']['modelValue'] - ommited because of v-model usage
 }

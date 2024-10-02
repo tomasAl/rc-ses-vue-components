@@ -142,7 +142,7 @@
   }
 
   .dp__action_row {
-    padding: 0.8rem;
+    padding: 0.5rem 0.625rem; // 8px 10px
     background: rgb(var(--v-theme-grey-50));
   }
 
@@ -178,6 +178,25 @@
     overflow: hidden;
 
     .dp__menu_inner {
+      .dp--header-wrap {
+        height: 35px !important;
+        justify-content: center;
+
+
+        .v-icon {
+          margin: 0 2px;
+
+          &:hover {
+            fill: rgb(var(--v-theme-grey-950));
+          }
+        }
+
+        .v-icon:focus {
+          outline: none;
+        }
+      }
+
+
       .dp__instance_calendar {
         margin-right: 10px;
 
@@ -187,7 +206,23 @@
       }
     }
   }
+}
 
+.rc-datepicker--range {
+  .rc-datepicker-menu {
+    .dp__menu_inner {
+      .dp__instance_calendar:first-child {
+        .rc-datepicker-next-icon {
+          visibility: hidden;
+        }
+      }
+      .dp__instance_calendar:last-child {
+        .rc-datepicker-prev-icon {
+          visibility: hidden;
+        }
+      }
+    }
+  }
 }
 
 
@@ -198,8 +233,8 @@
 
   .dp__clear_icon {
     height: 1.5rem;
-    top: 1.5rem;
-    right: 16px;
+    top: 1.31rem;
+    right: 12px;
     opacity: 0;
     transition: opacity 0.1s;
   }

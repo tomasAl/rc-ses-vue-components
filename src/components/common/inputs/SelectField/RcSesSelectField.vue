@@ -1,8 +1,10 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <RcSesFieldWrapper
     :label="fieldLabel"
     :description="fieldDescription"
     :tooltip="fieldTooltip"
+    :tooltip-title="fieldTooltipTitle"
     :for="name"
   >
     <v-select
@@ -13,11 +15,12 @@
       class="rc-field rc-select-field"
       variant="outlined"
       :placeholder="placeholder"
-      :items="computedItems"
-      :hide-details="!error"
+      :items="items"
+      :hide-details="!(!!error || !!counter || !!messages)"
       :error="!!error"
       :error-messages="error"
       :menu-props="menuProps"
+      :messages="messages"
       :readonly="readonly"
       :disabled="disabled"
       transition="scroll-y-transition"
@@ -25,6 +28,14 @@
       @update:menu="updateVList"
       @update:focused="() => (searchValue = '')"
     >
+      <template v-if="$slots['message']" #message="binds">
+        <slot name="message" v-bind="binds" />
+      </template>
+
+      <template v-if="$slots['details']" #details="binds">
+        <slot name="details" v-bind="binds" />
+      </template>
+
       <template v-if="searchable" #prepend-item>
         <RcSesSearchableArea
           v-model="searchValue"
@@ -35,11 +46,19 @@
 
       <template #item="{ item, props }">
         <v-list-item
+          v-if="
+            searchValue
+              ? getItemValueForSearch(item.raw).includes(searchValue.toLowerCase())
+              : true
+          "
           v-bind="props"
           class="rc-menu-list-item"
-          :subtitle="item.raw.subtitle"
           :append-icon="model === item.value ? '$checkPrimary' : undefined"
         >
+          <template #subtitle>
+            <div v-html="item.raw.subtitle"></div>
+          </template>
+
           <template #prepend>
             <v-checkbox
               v-if="multiple"
@@ -105,7 +124,9 @@ const computedItems = computed(() => {
   }
 
   return selectProps.items.filter((item: SelectFieldItemType) =>
-    searchValue.value ? getItemValueForSearch(item).includes(searchValue.value) : false,
+    searchValue.value
+      ? getItemValueForSearch(item).includes(searchValue.value.toLowerCase())
+      : false,
   )
 })
 

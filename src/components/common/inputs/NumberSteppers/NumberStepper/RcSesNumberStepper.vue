@@ -7,7 +7,7 @@
       :focused="focused"
       :readonly="readonly"
       :hide-details="true"
-      :error="!!error"
+      :error="undefined"
       :max-width="maxWidth"
       @input="handleInput"
       @blur="onBlur"
@@ -34,15 +34,14 @@
         </v-btn>
       </template>
     </v-text-field>
-    <div v-if="error" class="text-error text-subtitle-2">
-      {{ error }}
-    </div>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref, withDefaults } from 'vue'
 
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 import { NumberStepperProps } from '@/components/common/inputs/NumberSteppers/NumberStepper/type'
 
 import './style.scss'

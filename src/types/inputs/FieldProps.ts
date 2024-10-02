@@ -6,20 +6,9 @@ export type InputProps = {
   placeholder?: string
 }
 
-/* export type InputFieldOmits =
-  | 'name'
-  | 'error'
-  | 'disabled'
-  | 'readonly'
-  | 'placeholder'
-  | 'hideDetails'
-  | 'errorMessages'
-  | 'color'
-  | 'label'
-  | 'rounded' */
-
 export interface FieldProps {
   fieldLabel?: string
   fieldDescription?: string
   fieldTooltip?: string
+  fieldTooltipTitle?: string
 }

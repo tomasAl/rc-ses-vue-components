@@ -2,10 +2,15 @@
 
 .rc-radio-buttons-field {
 
+  .rc-field-labels {
+    margin-top: 0.5rem;
+    max-height: 2.25rem;
+  }
+
   .rc-radios {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -0.25rem;
+    margin: -0.5rem;
     border-radius: var.$border-radius-root;
     padding: 0.25rem;
 
@@ -15,15 +20,62 @@
 
     .v-btn {
       margin: 0.25rem;
+      border-color: transparent;
+      overflow: visible;
+
+
+      &::after {
+        border: none;
+      }
+
+      .v-btn__underlay {
+        opacity: 1;
+      }
+
+      .v-btn__overlay {
+        opacity: 1;
+        background: white;
+        border-radius: var.$border-radius-root;
+        border: 1px solid rgb(var(--v-theme-grey));
+      }
+
+      &.v-btn--active {
+
+        .v-btn__overlay {
+          border: 1px solid rgb(var(--v-theme-primary));
+          background-color: rgb(var(--v-theme-primary));
+        }
+
+        .v-btn__content {
+          color: white;
+        }
+      }
+
+      &:hover {
+        border-color: rgb(var(--v-theme-primary));
+
+        .v-btn__overlay {
+          border: 1px solid rgb(var(--v-theme-primary));
+          opacity: 1;
+        }
+
+        .v-btn__underlay::before {
+          content: '';
+          position: absolute;
+          top: -0.25rem;
+          left: -0.25rem;
+          right: -0.25rem;
+          bottom: -0.25rem;
+          background-color: rgb(var(--v-theme-primary-200));
+          border-radius: var.$container-border-radius;
+          pointer-events: none;
+          z-index: 1;
+        }
+      }
     }
 
     .v-radio {
       margin: 0 0.25rem;
     }
-  }
-
-  .v-btn--active {
-    background-color: #1976d2;
-    color: white;
   }
 }
