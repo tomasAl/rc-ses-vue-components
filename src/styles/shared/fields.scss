@@ -153,6 +153,12 @@
         color: rgb(var(--v-theme-error-600)) !important;
       }
     }
+
+    .v-input__details {
+      .v-messages {
+        color: rgb(var(--v-theme-error));
+      }
+    }
   }
 }
 

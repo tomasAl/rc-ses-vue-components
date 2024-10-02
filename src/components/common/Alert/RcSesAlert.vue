@@ -27,7 +27,7 @@
 
     <!-- Close Slot -->
     <template v-if="$slots['close']" #close="binds">
-      <slot name="close" :toggle="binds.toggle" v-bind="binds" />
+      <slot name="close" v-bind="binds" />
     </template>
   </v-alert>
 </template>
