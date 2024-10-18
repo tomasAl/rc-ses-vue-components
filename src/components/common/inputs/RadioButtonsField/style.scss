@@ -1,4 +1,5 @@
 @use '../../../../styles/vuetify/variables' as var;
+@use '../../../../styles/vuetify/settings.scss';
 
 .rc-radio-buttons-field {
 
@@ -15,7 +16,11 @@
     padding: 0.25rem;
 
     .v-btn, .v-selection-control {
-      flex-grow: 1;
+      flex: 0 1 100%;
+
+      @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+        flex: 0 0 auto;
+      }
     }
 
     .v-btn {

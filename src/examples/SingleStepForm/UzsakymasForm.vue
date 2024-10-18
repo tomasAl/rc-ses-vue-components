@@ -174,6 +174,26 @@
         />
       </Field>
 
+      <Field v-slot="fieldProps" name="radioPasirinkimas">
+        <RcSesRadioField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          field-label="Pasirinkimas"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
+          class="pa-2"
+          name="radioPasirinkimas"
+          :options="[
+            { value: 'p1', label: 'Pasirinkimas #1' },
+            { value: 'p2', label: 'Pasirinkimas #2' },
+            { value: 'p3', label: 'Pasirinkimas #3' },
+            { value: 'p4', label: 'Pasirinkimas #4' },
+            { value: 'p5', label: 'Labai ilgas pasirinkimas #5' },
+          ]"
+        />
+      </Field>
+
       <Field v-slot="fieldProps" name="radioButtonsPasirinkimas">
         <RcSesRadioButtonsField
           v-bind="fieldProps.field"

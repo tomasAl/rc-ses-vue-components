@@ -1,16 +1,24 @@
 @use '../../../../../styles/vuetify/variables' as var;
+@use '../../../../../styles/vuetify/settings.scss';
 
 .rc-radios-field {
 
   .rc-radios {
+    border-radius: var.$border-radius-root;
     display: flex;
     flex-wrap: wrap;
-    // margin: 0 -0.5rem;
-    border-radius: var.$border-radius-root;
     padding: 0.25rem;
 
+    .v-selection-control-group {
+      justify-content: flex-start;
+    }
+
     .v-btn, .v-selection-control {
-      flex-grow: 1;
+      flex: 0 1 100%;
+
+      @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+        flex: 0 0 auto;
+      }
     }
 
     .v-btn {
