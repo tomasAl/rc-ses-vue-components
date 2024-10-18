@@ -107,6 +107,18 @@
         />
       </Field>
 
+      <Field v-slot="fieldProps" name="laikas">
+        <RcSesTimepickerField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          field-label="Laikas"
+          class="form-control"
+          :max-width="300"
+          placeholder="Pasirinkite laiką"
+          name="laikas"
+        />
+      </Field>
+
       <Field v-slot="fieldProps" name="skaicius">
         <RcSesNumberStepperField
           v-bind="fieldProps.field"
@@ -211,6 +223,7 @@ import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSes
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import RcSesTimepickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
 import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const FormSchema = yup.object({
@@ -228,6 +241,7 @@ const FormSchema = yup.object({
   data: yup.string().required(),
   sutikimas: yup.boolean().required(),
   laikotarpis: yup.array().required(),
+  laikas: yup.string().required(),
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),
