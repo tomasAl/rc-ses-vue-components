@@ -107,6 +107,18 @@
         />
       </Field>
 
+      <Field v-slot="fieldProps" name="laikas">
+        <RcSesTimepickerField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          field-label="Laikas"
+          class="form-control"
+          :max-width="300"
+          placeholder="Pasirinkite laiką"
+          name="laikas"
+        />
+      </Field>
+
       <Field v-slot="fieldProps" name="skaicius">
         <RcSesNumberStepperField
           v-bind="fieldProps.field"
@@ -151,6 +163,26 @@
             class: 'form-control',
           }"
           class="bg-grey-100 pa-2"
+          name="radioPasirinkimas"
+          :options="[
+            { value: 'p1', label: 'Pasirinkimas #1' },
+            { value: 'p2', label: 'Pasirinkimas #2' },
+            { value: 'p3', label: 'Pasirinkimas #3' },
+            { value: 'p4', label: 'Pasirinkimas #4' },
+            { value: 'p5', label: 'Labai ilgas pasirinkimas #5' },
+          ]"
+        />
+      </Field>
+
+      <Field v-slot="fieldProps" name="radioPasirinkimas">
+        <RcSesRadioField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          field-label="Pasirinkimas"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
+          class="pa-2"
           name="radioPasirinkimas"
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
@@ -211,6 +243,7 @@ import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSes
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import RcSesTimepickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
 import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const FormSchema = yup.object({
@@ -228,6 +261,7 @@ const FormSchema = yup.object({
   data: yup.string().required(),
   sutikimas: yup.boolean().required(),
   laikotarpis: yup.array().required(),
+  laikas: yup.string().required(),
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),

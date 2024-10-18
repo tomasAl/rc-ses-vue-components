@@ -80,6 +80,8 @@
       <template v-if="$slots['prepend-inner']" #prepend-inner="binds">
         <slot name="prepend-inner" v-bind="binds" />
       </template>
+
+      <slot name="default" />
     </v-text-field>
   </RcSesFieldWrapper>
 </template>

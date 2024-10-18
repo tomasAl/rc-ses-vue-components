@@ -25,6 +25,7 @@ import RcSesSearchableArea from '@/components/common/inputs/SearchableArea/RcSes
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
+import RcSesTimePickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
 import RcSesTable from '@/components/common/tables/table/RcSesTable.vue'
 import RcSesTab from '@/components/common/tabs/RcSesTab.vue'
 import RcSesTooltip from '@/components/common/tooltip/RcSesTooltip.vue'
@@ -94,9 +95,12 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('RcSesSearchableArea', RcSesSearchableArea)
       .component('RcSesSearchField', RcSesSearchField)
       .component('RcSesSearchableField', RcSesSearchableField)
+
     app.component('RcSesSelectField', RcSesSelectField)
 
     app.component('RcSesTextField', RcSesTextField)
+
+    app.component('RcSesTimePickerField', RcSesTimePickerField)
 
     app.component('RcSesTable', RcSesTable)
     app.component('RcSesTab', RcSesTab)
